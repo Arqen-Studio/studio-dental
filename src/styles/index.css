@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@config '../../tailwind.config.cjs';
+
+@layer base {
+  :root {
+    --nav-h: 78px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px; /* mobile base */
+  }
+
+  @media (min-width: 900px) {
+    html {
+      font-size: 20px; /* desktop base */
+    }
+  }
+
+  body {
+    background: #fbfbfa;
+    color: #5f6057;
+    font-family: 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #87cefa;
+    color: #0f1b24;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Bricolage Grotesque', 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 800;
+    color: #0f1b24;
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes sd-scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
