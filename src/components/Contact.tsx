@@ -16,32 +16,33 @@ export default function Contact() {
           <ul className="mt-8 grid gap-5">
             <li className="flex items-start gap-4">
               <span className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z" strokeLinejoin="round" />
-                  <circle cx="12" cy="10" r="3" />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-pin" />
                 </svg>
               </span>
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Visit us</strong>
-                <p className="mt-0.5 text-[0.92rem] text-muted">221 Aurora Lane, Suite 4, San Francisco, CA</p>
+                <p className="mt-0.5 text-[0.92rem] text-muted">
+                  1st Floor, Plaza No. 26, Main Iqbal Boulevard, Street 2, Sector A DHA Phase II, Islamabad
+                </p>
+                <p className="mt-0.5 text-[0.92rem] text-muted">Office #:7, 2nd Floor, Near Shoe Planet, F-7 Markaz, Islamabad</p>
               </div>
             </li>
             <li className="flex items-start gap-4">
               <span className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-phone" />
                 </svg>
               </span>
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Call / Text</strong>
-                <p className="mt-0.5 text-[0.92rem] text-muted">(000) 000-0000 &middot; Mon&ndash;Sat 9am&ndash;7pm</p>
+                <p className="mt-0.5 text-[0.92rem] text-muted">(+92)329-9961999 &middot; Mon&ndash;Sat 9am&ndash;7pm</p>
               </div>
             </li>
             <li className="flex items-start gap-4">
               <span className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="m3 7 9 6 9-6" />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-mail" />
                 </svg>
               </span>
               <div>
@@ -135,8 +136,8 @@ export default function Contact() {
           >
             Request appointment
             <span className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10" aria-hidden="true">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <use href="/svg/sprite.svg#icon-arrow-right" />
               </svg>
             </span>
           </button>

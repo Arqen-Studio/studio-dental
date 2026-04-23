@@ -34,32 +34,32 @@ export default function About() {
           <ul className="mt-6 grid gap-3">
             <li className="flex items-start gap-3 text-[0.98rem] text-ink2">
               <span className="mt-1 inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-skyBrand text-ink" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M5 12l5 5 9-11" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-check" />
                 </svg>
               </span>
               Transparent pricing — no surprise bills
             </li>
             <li className="flex items-start gap-3 text-[0.98rem] text-ink2">
               <span className="mt-1 inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-skyBrand text-ink" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M5 12l5 5 9-11" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-check" />
                 </svg>
               </span>
               Digital scans, clear aligners, 3D imaging
             </li>
             <li className="flex items-start gap-3 text-[0.98rem] text-ink2">
               <span className="mt-1 inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-skyBrand text-ink" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M5 12l5 5 9-11" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-check" />
                 </svg>
               </span>
               Dentists who explain everything in plain language
             </li>
             <li className="flex items-start gap-3 text-[0.98rem] text-ink2">
               <span className="mt-1 inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-skyBrand text-ink" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M5 12l5 5 9-11" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                  <use href="/svg/sprite.svg#icon-check" />
                 </svg>
               </span>
               A calm, aesthetic space designed to lower anxiety
@@ -68,13 +68,13 @@ export default function About() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              to="/#contact"
+              to="/contact-us"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-skyBrand px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky"
             >
               Meet the team
             </Link>
             <Link
-              to="/#services"
+              to="/services"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/10 bg-transparent px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-ink hover:text-creamBrand hover:shadow-soft-md"
             >
               What we offer

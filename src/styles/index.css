@@ -37,11 +37,18 @@
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5,
+  h6 {
     font-family: 'Bricolage Grotesque', 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
     font-weight: 800;
     color: #0f1b24;
     letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 1.5rem + 2.2vw, 3.1rem);
+    line-height: 1.08;
   }
 }
 
