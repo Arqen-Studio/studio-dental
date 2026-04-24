@@ -150,7 +150,7 @@ export default function Contact() {
               type="email"
               value={form.email}
               onChange={onChange("email")}
-              placeholder="hello@email.com"
+              placeholder="hello@gmail.com"
               required
               className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
