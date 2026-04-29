@@ -10,8 +10,11 @@ import HomeServicesShowcase from '../components/HomeServicesShowcase'
 import Testimonials from './Testimonials'
 import WhyUs from './WhyUs'
 
-const HERO_VIDEO =
-  'https://cdn.coverr.co/videos/coverr-a-dentist-checking-a-patients-teeth-4728/1080p.mp4'
+/** Dental clinic footage — Pexels (royalty-free): “A Dentist Cleaning the Teeth of a Man”, Pavel Danilyuk */
+const HERO_VIDEO_HD =
+  'https://videos.pexels.com/video-files/6763244/6763244-hd_1920_1080_25fps.mp4'
+const HERO_VIDEO_SD =
+  'https://videos.pexels.com/video-files/6763244/6763244-sd_640_360_25fps.mp4'
 
 const HERO_POSTER =
   'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=60'
@@ -55,7 +58,8 @@ export default function Hero() {
             preload="metadata"
             poster={HERO_POSTER}
           >
-            <source src={HERO_VIDEO} type="video/mp4" />
+            <source src={HERO_VIDEO_SD} type="video/mp4" media="(max-width: 768px)" />
+            <source src={HERO_VIDEO_HD} type="video/mp4" />
           </video>
           <div
             className="absolute inset-0"
