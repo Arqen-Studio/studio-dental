@@ -40,8 +40,9 @@ export default function Navbar() {
   const hasHeroHeader = pathname === "/" || pathname === "/services" || pathname === "/doctors";
   const isTransparent = hasHeroHeader && !scrolled && !open;
   const isSolid = !isTransparent;
-  const navHeadingColor = "rgb(52, 53, 46)";
-  const transparentNavColor = "#87CEFA";
+const navHeadingColor = "rgb(52, 53, 46)";
+const transparentNavColor = "#87CEFA";
+const mobileMenuHeadingColor = "#83BFE3";
 
   return (
     <header
@@ -221,7 +222,7 @@ export default function Navbar() {
               to={item.href}
               onClick={() => setOpen(false)}
               className="flex items-center border-b border-white/10 py-4 text-[1.05rem] font-semibold transition hover:text-skyBrand"
-              style={{ color: navHeadingColor }}
+              style={{ color: mobileMenuHeadingColor }}
             >
               {item.label}
             </Link>
