@@ -1,21 +1,19 @@
 export default function Contact() {
   return (
-    <section id="contact" className="bg-creamBrand py-16 md:py-24">
-      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-10 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
+    <section id="contact" className="bg-creamBrand py-10 md:py-16">
+      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-12">
         <div>
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span
               className="h-1.5 w-1.5 rounded-full bg-skyBrand"
               aria-hidden="true"
             />
-            Book a visit
+            Contacts
           </span>
-          <h2 className="mt-3 text-balance">
-            Let&rsquo;s get you a healthier, happier smile.
-          </h2>
+          <h2 className="mt-3 text-balance">Visit Studio Dental in Islamabad.</h2>
           <p className="mt-4 max-w-[60ch] text-[1.05rem] text-muted">
-            Tell us a little about yourself and we&rsquo;ll reach out within one
-            business day to confirm your appointment.
+            Studio Dental provides expert dental care with a focus on comfort,
+            advanced technology, and affordable treatment.
           </p>
 
           <ul className="mt-8 grid gap-5">
@@ -35,15 +33,10 @@ export default function Contact() {
                 </svg>
               </span>
               <div>
-                <strong className="block text-[0.98rem] font-semibold text-ink">
-                  Visit us
-                </strong>
+                <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  1st Floor, Plaza No. 26, Main Iqbal Boulevard, Street 2,
-                  Sector A DHA Phase II, Islamabad
-                </p>
-                <p className="mt-0.5 text-[0.92rem] text-muted">
-                  Office #:7, 2nd Floor, Near Shoe Planet, F-7 Markaz, Islamabad
+                  1st Floor, Plaza No. 26, Main Iqbal Boulevard, Street 2, Sector A
+                  DHA Phase II, Islamabad
                 </p>
               </div>
             </li>
@@ -59,15 +52,13 @@ export default function Contact() {
                   fill="none"
                   aria-hidden="true"
                 >
-                  <use href="/svg/sprite.svg#icon-phone" />
+                  <use href="/svg/sprite.svg#icon-pin" />
                 </svg>
               </span>
               <div>
-                <strong className="block text-[0.98rem] font-semibold text-ink">
-                  Call / Text
-                </strong>
+                <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  (+92)329-9961999 &middot; Mon&ndash;Sat 9am&ndash;7pm
+                  Office #:7, 2nd Floor, Near Shoe Planet, F-7 Markaz, Islamabad
                 </p>
               </div>
             </li>
@@ -87,11 +78,12 @@ export default function Contact() {
                 </svg>
               </span>
               <div>
-                <strong className="block text-[0.98rem] font-semibold text-ink">
-                  Email
-                </strong>
+                <strong className="block text-[0.98rem] font-semibold text-ink">Contact</strong>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  hello@studiodental.com
+                  0329 9961999 | 032935199999
+                </p>
+                <p className="mt-0.5 text-[0.92rem] text-muted">
+                  info@thestudiodental.com
                 </p>
               </div>
             </li>
@@ -107,13 +99,13 @@ export default function Contact() {
               htmlFor="name"
               className="text-[0.82rem] font-semibold tracking-wide text-ink2"
             >
-              Full name
+                Full name
             </label>
             <input
               id="name"
               type="text"
               name="name"
-              placeholder="Ali Ahmed"
+                placeholder="Your full name"
               required
               className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
@@ -130,7 +122,7 @@ export default function Contact() {
               id="email"
               type="email"
               name="email"
-              placeholder="hello@gmail.com"
+                placeholder="you@example.com"
               required
               className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
@@ -147,15 +139,15 @@ export default function Contact() {
               <select
                 id="service"
                 name="service"
-                defaultValue="General Check-up"
+                defaultValue="Dental implantation"
                 className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
               >
-                <option>General Check-up</option>
-                <option>Cosmetic &amp; Whitening</option>
-                <option>Invisalign Consultation</option>
-                <option>Implants / Crowns</option>
-                <option>Kids&rsquo; Dentistry</option>
-                <option>Emergency</option>
+                <option>Dental implantation</option>
+                <option>All teeth on 4 implants</option>
+                <option>Teeth straightening with aligners</option>
+                <option>Teeth straightening with braces</option>
+                <option>Prosthetics: teeth and implants</option>
+                <option>Dental fillings</option>
               </select>
             </div>
             <div className="flex flex-col gap-2">
@@ -179,13 +171,13 @@ export default function Contact() {
               htmlFor="message"
               className="text-[0.82rem] font-semibold tracking-wide text-ink2"
             >
-              Tell us a bit more (optional)
+              Tell us more (optional)
             </label>
             <textarea
               id="message"
               name="message"
               rows={4}
-              placeholder="Any specific concerns or questions?"
+              placeholder="Any additional details for your consultation?"
               className="min-h-[110px] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
           </div>
@@ -194,7 +186,7 @@ export default function Contact() {
             type="button"
             className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-skyBrand px-7 py-4 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky disabled:opacity-95 disabled:hover:translate-y-0"
           >
-            Request appointment
+            Send request
             <span
               className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10"
               aria-hidden="true"
@@ -212,8 +204,8 @@ export default function Contact() {
           </button>
 
           <p className="mt-3 text-[0.78rem] text-muted">
-            By submitting, you agree to be contacted about your appointment. We
-            never share your info.
+            By submitting, you agree to be contacted regarding your registration.
+            We never share your data.
           </p>
         </form>
       </div>

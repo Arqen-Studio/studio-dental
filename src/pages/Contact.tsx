@@ -39,8 +39,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-creamBrand py-16 md:py-24">
-      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-10 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
+    <section id="contact" className="bg-creamBrand py-10 md:py-16">
+      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-12">
         <div>
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span

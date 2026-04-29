@@ -6,6 +6,9 @@ import Footer from "./components/layout/Footer";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 import About from "./pages/About";
+import TeamPage from "./pages/TeamPage";
+import Gallery from "./pages/Gallery";
+import Blog from "./pages/Blog";
 import WhyUs from "./pages/WhyUs";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./components/Contact";
@@ -57,6 +60,9 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Hero />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/doctors" element={<TeamPage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/why-us" element={<WhyUs />} />
           <Route path="/testimonials" element={<Testimonials />} />

@@ -42,7 +42,7 @@
   h6 {
     font-family: 'Bricolage Grotesque', 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
     font-weight: 800;
-    color: #0f1b24;
+    color: rgb(52, 53, 46);
     letter-spacing: -0.02em;
   }
 
@@ -63,6 +63,73 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes sd-doctor-float {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.04) translateY(-6px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes sd-slide-in-next {
+  0% {
+    opacity: 0;
+    transform: translateX(34px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes sd-slide-in-prev {
+  0% {
+    opacity: 0;
+    transform: translateX(-34px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes sd-services-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+@keyframes sd-wave-drift {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(-4%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes sd-float-soft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 

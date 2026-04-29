@@ -1,18 +1,26 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const LINKS = [
-  { href: "/", label: "Home" },
+const NAV_ITEMS = [
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/why-us", label: "Why Us" },
-  { href: "/testimonials", label: "Testimonials" },
-  { href: "/contact-us", label: "Contact" },
+  { href: "/doctors", label: "Team" },
+  { href: "/services", label: "Prices" },
+  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "News" },
+  { href: "/contact-us", label: "Clinics" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -22,143 +30,246 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-  }, [open]);
+    const onResize = () => {
+      if (window.innerWidth >= 1280) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const hasHeroHeader = pathname === "/" || pathname === "/services" || pathname === "/doctors";
+  const isTransparent = hasHeroHeader && !scrolled && !open;
+  const isSolid = !isTransparent;
+  const navHeadingColor = "rgb(52, 53, 46)";
+  const transparentNavColor = "#87CEFA";
 
   return (
     <header
       className={[
-        "fixed inset-x-0 top-0 z-[100] flex h-[78px] items-center border-b border-transparent transition duration-300 ease-out",
-        scrolled
-          ? "bg-skyBrand text-ink shadow-soft-md"
-          : "bg-transparent text-creamBrand",
+        "fixed inset-x-0 top-0 z-[100] h-[78px] transition duration-300 ease-out",
+        isTransparent
+          ? "bg-transparent"
+          : "border-b border-black/10 bg-skyBrand text-muted shadow-[0_2px_12px_rgba(15,27,36,0.16)]",
       ].join(" ")}
     >
-      <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-6 px-5 md:px-8">
-        <NavLink
+      <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
+        <Link
           to="/"
-          className="inline-flex items-center gap-3 text-[1.05rem] font-bold tracking-tight"
+          className="inline-flex shrink-0 items-center gap-3"
           aria-label="Studio Dental home"
         >
           <span
-            className={[
-              "inline-flex h-10 w-10 items-center justify-center rounded-xl transition duration-300 ease-out",
-              scrolled
-                ? "bg-ink text-creamBrand"
-                : "bg-creamBrand text-skyBrand",
-            ].join(" ")}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-skyBrand text-ink"
             aria-hidden="true"
           >
-            <svg viewBox="0 0 32 32" width="28" height="28" fill="none" aria-hidden="true">
-              <use href="/svg/sprite.svg#sd-logo" />
-            </svg>
+            <img src="/favicon.svg" alt="" className="h-6 w-6 object-contain" />
           </span>
-          <span>
-            Studio<span className="ml-0.5 font-normal opacity-80">Dental</span>
-          </span>
-        </NavLink>
-
-        <nav
-          className="hidden items-center gap-8 text-[0.95rem] font-medium lg:flex"
-          aria-label="Primary"
-        >
-          {LINKS.map((l) => (
-            <NavLink
-              key={l.href}
-              to={l.href}
-              onClick={() => setOpen(false)}
-              className="relative whitespace-nowrap py-1 opacity-95 transition duration-300 ease-out hover:opacity-100"
+          <span className="flex flex-col leading-none">
+            <span
+              className="text-[1rem] font-extrabold tracking-tight"
+              style={{
+                color: isTransparent ? transparentNavColor : navHeadingColor,
+              }}
             >
-              {l.label}
-            </NavLink>
-          ))}
-        </nav>
+              Studio Dental
+            </span>
+            <span
+              className={[
+                "mt-[3px] text-[0.68rem] font-medium uppercase tracking-[0.14em]",
+                isTransparent ? "text-[#87CEFA]/60" : "text-muted/75",
+              ].join(" ")}
+            >
+              Clinic
+            </span>
+          </span>
+        </Link>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <span className="inline-flex items-center gap-2 text-[0.9rem] font-medium opacity-95" aria-label="Clinic phone number">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <div className="ml-6 flex flex-1 items-center justify-end gap-2 lg:gap-4">
+          <nav
+            className="hidden items-center gap-5 text-[0.875rem] font-semibold xl:flex"
+            aria-label="Primary navigation"
+          >
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                className={[
+                  "whitespace-nowrap transition duration-200",
+                  isTransparent
+                    ? "text-[#87CEFA] hover:text-white"
+                    : "text-muted/90 hover:text-ink",
+                ].join(" ")}
+                style={!isTransparent ? { color: navHeadingColor } : undefined}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <a
+            href="tel:03299961999"
+            className={[
+              "hidden h-10 w-10 items-center justify-center rounded-full transition duration-200 xl:inline-flex",
+              isTransparent
+                ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
+                : "text-muted/85 hover:bg-black/5 hover:text-ink",
+            ].join(" ")}
+            aria-label="Call us"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+            >
               <use href="/svg/sprite.svg#icon-phone" />
             </svg>
-            <span className="whitespace-nowrap">(+92)329-9961999</span>
-          </span>
-          <NavLink
+          </a>
+
+          <a
+            href="mailto:info@thestudiodental.com"
+            className={[
+              "hidden h-10 w-10 items-center justify-center rounded-full transition duration-200 xl:inline-flex",
+              isTransparent
+                ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
+                : "text-muted/85 hover:bg-black/5 hover:text-ink",
+            ].join(" ")}
+            aria-label="Email us"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+            >
+              <use href="/svg/sprite.svg#icon-mail" />
+            </svg>
+          </a>
+
+          <span
+            className={[
+              "mx-1 hidden h-5 w-px xl:block",
+              isTransparent ? "bg-[#87CEFA]/35" : "bg-black/15",
+            ].join(" ")}
+            aria-hidden="true"
+          />
+
+          <Link
             to="/contact-us"
             className={[
-              "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent px-6 py-3 text-[0.95rem] font-semibold transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md",
-              scrolled
-                ? "bg-skyBrand text-ink hover:bg-skyBrand/90 hover:shadow-sky"
-                : "bg-creamBrand text-ink",
+              "hidden whitespace-nowrap rounded-full px-5 py-2.5 text-[0.85rem] font-semibold transition duration-200 xl:inline-flex",
+              isSolid
+                ? "bg-ink text-creamBrand hover:bg-ink/85"
+                : "bg-skyBrand text-ink hover:bg-skyBrand/85 hover:shadow-sky",
             ].join(" ")}
           >
-            Book Visit
-            <span
-              className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10 transition duration-300 ease-out group-hover:translate-x-0.5"
-              aria-hidden="true"
-            >
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <use href="/svg/sprite.svg#icon-arrow-right" />
-              </svg>
-            </span>
-          </NavLink>
-        </div>
+            Online Registration
+          </Link>
 
-        <button
-          className="inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-xl md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span
+          <button
             className={[
-              "h-0.5 w-[22px] rounded bg-current transition duration-300 ease-out",
-              open ? "translate-y-[7px] rotate-45" : "",
+              "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full transition xl:hidden",
+              isTransparent
+                ? "text-[#87CEFA] hover:bg-white/10"
+                : "text-muted hover:bg-black/5",
             ].join(" ")}
-          />
-          <span
-            className={[
-              "h-0.5 w-[22px] rounded bg-current transition duration-300 ease-out",
-              open ? "opacity-0" : "",
-            ].join(" ")}
-          />
-          <span
-            className={[
-              "h-0.5 w-[22px] rounded bg-current transition duration-300 ease-out",
-              open ? "-translate-y-[7px] -rotate-45" : "",
-            ].join(" ")}
-          />
-        </button>
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span
+              className={[
+                "h-[2px] w-5 rounded bg-current transition duration-300 ease-out",
+                open ? "translate-y-[7px] rotate-45" : "",
+              ].join(" ")}
+            />
+            <span
+              className={[
+                "h-[2px] w-5 rounded bg-current transition duration-300 ease-out",
+                open ? "opacity-0" : "",
+              ].join(" ")}
+            />
+            <span
+              className={[
+                "h-[2px] w-5 rounded bg-current transition duration-300 ease-out",
+                open ? "-translate-y-[7px] -rotate-45" : "",
+              ].join(" ")}
+            />
+          </button>
+        </div>
       </div>
 
       <div
         className={[
-          "fixed left-0 right-0 top-[78px] border-b border-black/10 bg-skyBrand px-5 pb-10 pt-6 text-ink shadow-soft-md transition duration-300 ease-out md:hidden",
-          open ? "translate-y-0" : "-translate-y-[110%]",
+          "fixed left-0 right-0 top-[78px] border-t border-white/10 bg-ink px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out xl:hidden",
+          open
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0",
         ].join(" ")}
         role="dialog"
+        aria-modal="true"
         aria-label="Mobile menu"
       >
-        <nav
-          className="flex flex-col gap-1 text-[1.25rem] font-semibold"
-          aria-label="Mobile primary"
-        >
-          {LINKS.map((l) => (
-            <NavLink
-              key={l.href}
-              to={l.href}
+        <nav className="flex flex-col" aria-label="Mobile primary navigation">
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.label}
+              to={item.href}
               onClick={() => setOpen(false)}
-              className="whitespace-nowrap border-b border-black/10 py-3"
+              className="flex items-center border-b border-white/10 py-4 text-[1.05rem] font-semibold transition hover:text-skyBrand"
+              style={{ color: navHeadingColor }}
             >
-              {l.label}
-            </NavLink>
+              {item.label}
+            </Link>
           ))}
         </nav>
-        <NavLink
+
+        <div className="mt-6 flex flex-col gap-3">
+          <a
+            href="tel:03299961999"
+            className="inline-flex items-center gap-3 text-[0.9rem] text-creamBrand/60 transition hover:text-skyBrand"
+          >
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+            >
+              <use href="/svg/sprite.svg#icon-phone" />
+            </svg>
+            0329 9961999
+          </a>
+          <a
+            href="mailto:info@thestudiodental.com"
+            className="inline-flex items-center gap-3 text-[0.9rem] text-creamBrand/60 transition hover:text-skyBrand"
+          >
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+            >
+              <use href="/svg/sprite.svg#icon-mail" />
+            </svg>
+            info@thestudiodental.com
+          </a>
+        </div>
+
+        <Link
           to="/contact-us"
-          className="mt-6 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-skyBrand px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky"
           onClick={() => setOpen(false)}
+          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-skyBrand px-6 py-3 text-[0.95rem] font-semibold text-ink transition hover:bg-skyBrand/85 hover:shadow-sky"
         >
-          Book Visit
-        </NavLink>
+          Online Registration
+        </Link>
       </div>
     </header>
   );
