@@ -102,7 +102,7 @@ const mobileMenuHeadingColor = "#83BFE3";
                 key={item.label}
                 to={item.href}
                 className={[
-                  "whitespace-nowrap transition duration-200",
+                  "whitespace-nowrap transition duration-200 focus:outline-none",
                   isTransparent
                     ? "text-[#87CEFA] hover:text-white"
                     : "text-muted/90 hover:text-ink",

@@ -75,14 +75,14 @@ export default function Clinics() {
       {/* ── Hero ── */}
       <section className="bg-skyBrand pb-12 pt-[calc(78px+2rem)]">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
-          <h1 className="text-[clamp(2.6rem,5vw,4rem)] font-bold leading-none text-ink">
+          <h1 className="text-[clamp(2.6rem,5vw,4rem)] font-bold leading-none text-ink [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             Contacts
           </h1>
         </div>
       </section>
 
       {/* ── Clinic photo cards ── */}
-      <section className="bg-[#f0efeb] py-12 md:py-16">
+      <section className="reveal bg-[#f0efeb] py-12 md:py-16">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {CLINICS.map((clinic) => (
@@ -161,7 +161,7 @@ export default function Clinics() {
       </section>
 
       {/* ── "You will be welcomed." staff grid ── */}
-      <section className="bg-[#f0efeb] pb-16 md:pb-24">
+      <section className="reveal bg-[#f0efeb] pb-16 md:pb-24">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="mb-10 text-center text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
             You will be welcomed.

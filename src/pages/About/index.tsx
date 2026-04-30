@@ -94,7 +94,7 @@ function ClockIcon() {
 
 function VideoBlock({ poster }: { poster: string }) {
   return (
-    <div className="relative mx-auto max-w-[860px] overflow-hidden rounded-2xl">
+    <div className="relative mx-auto max-w-[920px] 2xl:max-w-[1240px] overflow-hidden rounded-2xl">
       <img src={poster} alt="" className="aspect-video w-full object-cover" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/20">
         <button
@@ -116,44 +116,46 @@ export default function About() {
       {/* ── 1. Split hero ── */}
       <section className="grid min-h-screen lg:grid-cols-2">
         {/* Left — photo */}
-        <div className="relative min-h-[50vw] lg:min-h-screen">
+        <div className="relative min-h-[50vw] overflow-hidden lg:min-h-screen">
           <img
             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75"
             alt="Studio Dental team"
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
           />
         </div>
 
         {/* Right — blue panel */}
         <div className="flex flex-col justify-center bg-skyBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
-          <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
-            About us
-          </h1>
-          <p className="mt-6 text-[0.875rem] leading-relaxed text-ink/80">
-            Studio Dental brings world-class dentistry to Islamabad. Our two specialized
-            clinics combine experience and leadership — integrating advanced treatment with
-            exceptional patient service.
-          </p>
-          <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
-            In our clinics at DHA Phase II and F-7 Markaz, a large team of specialists
-            takes care of patients — including implantologists, orthodontists, and oral
-            surgeons who share their knowledge at international conferences.
-          </p>
-          <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
-            Patients can receive all necessary dental services under one roof: from modern
-            diagnostics and X-ray to implantation, orthodontics, restorative dentistry,
-            and pediatric dental care.
-          </p>
-          <p className="mt-6 text-[0.75rem] font-normal uppercase tracking-widest text-ink/50">
-            Experience. Quality. Excellence.
-          </p>
-          <p className="mt-3 text-[0.95rem] text-ink/60">At Studio Dental</p>
+          <div className="w-full max-w-[620px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+            <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
+              About us
+            </h1>
+            <p className="mt-6 text-[0.875rem] leading-relaxed text-ink/80">
+              Studio Dental brings world-class dentistry to Islamabad. Our two specialized
+              clinics combine experience and leadership — integrating advanced treatment with
+              exceptional patient service.
+            </p>
+            <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
+              In our clinics at DHA Phase II and F-7 Markaz, a large team of specialists
+              takes care of patients — including implantologists, orthodontists, and oral
+              surgeons who share their knowledge at international conferences.
+            </p>
+            <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
+              Patients can receive all necessary dental services under one roof: from modern
+              diagnostics and X-ray to implantation, orthodontics, restorative dentistry,
+              and pediatric dental care.
+            </p>
+            <p className="mt-6 text-[0.75rem] font-normal uppercase tracking-widest text-ink/50">
+              Experience. Quality. Excellence.
+            </p>
+            <p className="mt-3 text-[0.95rem] text-ink/60">At Studio Dental</p>
+          </div>
         </div>
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[920px] px-5 md:px-8">
+      <section className="reveal bg-white py-16 md:py-20">
+        <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work, are
             professionals in our field, and always take care of you. We want to tell you
@@ -169,12 +171,12 @@ export default function About() {
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="bg-white px-5 pb-16 md:px-8 md:pb-20">
+      <section className="reveal bg-white px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=70" />
       </section>
 
       {/* ── 4. Full-bleed image with overlay text ── */}
-      <section className="relative min-h-[540px] md:min-h-[680px]">
+      <section className="reveal relative min-h-[540px] md:min-h-[680px]">
         <img
           src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=70"
           alt="Studio Dental team"
@@ -189,8 +191,8 @@ export default function About() {
       </section>
 
       {/* ── 5. Text block ── */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[920px] px-5 md:px-8">
+      <section className="reveal bg-white py-16 md:py-20">
+        <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions — which often come in
             handy in our daily clinical work and in connecting with patients. Our interests
@@ -201,8 +203,8 @@ export default function About() {
       </section>
 
       {/* ── 6. Seamless 3-col team cards ── */}
-      <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="reveal">
+        <div className="mx-auto grid max-w-[1800px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM_CARDS.map((card) => (
             <div
               key={card.name}
@@ -239,12 +241,12 @@ export default function About() {
       </section>
 
       {/* ── 7. Second video ── */}
-      <section className="bg-white px-5 py-16 md:px-8 md:py-20">
+      <section className="reveal bg-white px-5 py-16 md:px-8 md:py-20">
         <VideoBlock poster="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1400&q=70" />
       </section>
 
       {/* ── 8. Contacts ── */}
-      <section className="bg-white pb-20">
+      <section className="reveal bg-white pb-20">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="mb-6 text-[clamp(1.6rem,3vw,2.2rem)] font-normal text-ink">Contacts</h2>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
