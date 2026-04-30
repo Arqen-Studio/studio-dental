@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import WhyUs from "./pages/WhyUs";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./components/Contact";
+import Clinics from "./pages/Clinics";
 
 
 
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/why-us" element={<WhyUs />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/clinics" element={<Clinics />} />
         </Route>
       </Routes>
     </>
