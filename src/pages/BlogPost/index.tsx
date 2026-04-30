@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import ContactFormSection from "../../components/ContactFormSection";
 
 const IMG_A = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=75";
 const IMG_B = "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=70";
@@ -39,7 +38,9 @@ export default function BlogPost() {
 
       {/* ── Article ── */}
       <article className="bg-white">
-        <div className="mx-auto w-full max-w-[780px] px-5 py-14 md:px-8 md:py-20">
+        <div
+          className="mx-auto w-full max-w-[780px] px-5 py-14 md:px-8 md:py-20 [animation:sd-hero-text-in_0.8s_cubic-bezier(0.25,0.46,0.45,0.94)_0.2s_both]"
+        >
           <p className="text-[0.82rem] font-semibold text-skyBrand/80">{post.date}</p>
           <h1 className="mt-3 text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-tight tracking-tight text-ink">
             {post.title}
@@ -60,7 +61,7 @@ export default function BlogPost() {
           </p>
 
           {/* Image */}
-          <div className="my-10 overflow-hidden rounded-2xl">
+          <div className="my-10 overflow-hidden rounded-2xl [animation:sd-hero-img-in_1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.4s_both]">
             <img
               src={post.image}
               alt={post.title}
@@ -105,6 +106,9 @@ export default function BlogPost() {
                   "flex flex-col overflow-hidden rounded-2xl shadow-sm",
                   i === 1 ? "bg-skyBrand/10" : "bg-white",
                 ].join(" ")}
+                style={{
+                  animation: `sd-hero-text-in 0.55s cubic-bezier(0.25,0.46,0.45,0.94) ${i * 100}ms both`,
+                }}
               >
                 <div className="aspect-[3/2] overflow-hidden">
                   <img
@@ -133,8 +137,6 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
-
-      <ContactFormSection />
     </>
   );
 }

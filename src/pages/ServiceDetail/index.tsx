@@ -40,14 +40,21 @@ export default function ServiceDetail() {
       {/* ── Hero — full-screen split ── */}
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2 lg:min-h-screen">
-          {/* Photo — left */}
+          {/* Video — left */}
           <div className="relative min-h-[56vw] overflow-hidden lg:min-h-screen">
-            <img
-              src={service.heroImage}
-              alt={service.title}
-              loading="eager"
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={service.heroImage}
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
-            />
+            >
+              <source
+                src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4"
+                type="video/mp4"
+              />
+            </video>
           </div>
 
           {/* Text — right */}
@@ -289,30 +296,37 @@ export default function ServiceDetail() {
       {/* ── Other services ── */}
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
-          {/* Text left — dark bg */}
-          <div className="flex flex-col justify-center bg-ink px-6 py-16 md:px-12 lg:min-h-[520px] lg:px-16">
-            <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-creamBrand">
-              Other services
-            </h2>
-            <ul className="mt-6 flex flex-col">
-              {otherServices.map((s) => (
-                <li key={s.id}>
-                  <Link
-                    to={`/services/${s.id}`}
-                    className="flex items-center border-b border-white/10 py-3 text-[0.95rem] text-white/70 transition duration-150 hover:text-skyBrand"
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 px-7 py-3 text-[0.88rem] font-semibold text-white transition duration-200 hover:bg-skyBrand hover:text-ink"
-              >
-                All services
-              </Link>
+          {/* Text left — skyBrand bg */}
+          <div className="relative flex flex-col justify-center bg-skyBrand px-6 py-16 md:px-12 lg:min-h-[520px] lg:px-16">
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{ background: "radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.32) 0%, transparent 55%)" }}
+              aria-hidden="true"
+            />
+            <div className="relative z-[1]">
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
+                Other services
+              </h2>
+              <ul className="mt-6 flex flex-col">
+                {otherServices.map((s) => (
+                  <li key={s.id}>
+                    <Link
+                      to={`/services/${s.id}`}
+                      className="flex items-center border-b border-ink/10 py-3 text-[0.95rem] text-ink/75 transition duration-150 hover:text-ink"
+                    >
+                      {s.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <Link
+                  to="/services"
+                  className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3 text-[0.88rem] font-semibold text-creamBrand transition duration-200 hover:bg-ink/80"
+                >
+                  All services
+                </Link>
+              </div>
             </div>
           </div>
 
