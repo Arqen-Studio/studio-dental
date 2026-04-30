@@ -32,7 +32,7 @@ function ClockIcon() {
 
 export default function SiteContactsSection() {
   return (
-    <section className="bg-[#f9f9f9] pb-20 pt-5">
+    <section className="bg-[#f9f9f9] pb-20 pt-10">
       <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <h2 className="mb-6 text-[clamp(1.6rem,3vw,2.2rem)] font-normal text-ink">Contacts</h2>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
