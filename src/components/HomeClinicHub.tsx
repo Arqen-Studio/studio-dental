@@ -59,7 +59,7 @@ const hoverEase = 'ease-[cubic-bezier(0.22,1,0.36,1)]'
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-creamBrand px-5 py-14 md:px-8 md:py-20"
+      className="bg-creamBrand px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full max-w-[1240px]">
@@ -70,7 +70,7 @@ export default function HomeClinicHub() {
           >
             Dental and implantology clinics — Studio Dental
           </h2>
-          <p className="mx-auto mt-5 max-w-[52ch] text-[0.875rem] leading-relaxed text-muted md:text-[0.92rem]">
+          <p className="mx-auto mt-4 max-w-[52ch] text-[0.875rem] leading-relaxed text-muted md:text-[0.92rem]">
             With over 17 years of experience, Studio Dental brings specialized care to Islamabad — at DHA Phase II
             and F-7 Markaz. From diagnostics and imaging to implants, orthodontics, restorative dentistry, and
             pediatric care, our teams help you plan treatment with clarity and confidence.
@@ -78,7 +78,7 @@ export default function HomeClinicHub() {
         </header>
 
         {/* 2 columns × 3 rows on sm+ (reference layout) */}
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:gap-6">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-10 lg:gap-6">
           {HUB_CARDS.map((card) => (
             <Link
               key={card.title}

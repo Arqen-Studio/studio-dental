@@ -67,7 +67,7 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-creamBrand px-5 py-14 md:px-8 md:py-20" aria-labelledby="home-doctors-heading">
+    <section className="bg-creamBrand px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="home-doctors-heading"
@@ -76,7 +76,7 @@ export default function HomeDoctorsCarousel() {
           Doctors
         </h2>
 
-        <div className="relative mt-10 md:mt-12">
+        <div className="relative mt-7 md:mt-8">
           <div
             ref={scrollRef}
             className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -128,7 +128,7 @@ export default function HomeDoctorsCarousel() {
           </button>
         </div>
 
-        <div className="mt-12 flex justify-center md:mt-14">
+        <div className="mt-8 flex justify-center md:mt-10">
           <Link
             to="/doctors"
             className="inline-flex items-center justify-center rounded-full border border-transparent bg-skyBrand px-9 py-3 text-[0.88rem] font-semibold text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky"

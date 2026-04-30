@@ -66,11 +66,11 @@ function ChevronRightIcon() {
 
 export default function HomePopularServices() {
   return (
-    <section className="bg-[#f9f9f9] px-5 py-14 md:px-8 md:py-20" aria-labelledby="popular-services-heading">
+    <section className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12" aria-labelledby="popular-services-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="popular-services-heading"
-          className="mb-10 text-center text-[clamp(1.5rem,2.8vw,2.25rem)] font-semibold tracking-tight text-ink md:mb-12"
+          className="mb-7 text-center text-[clamp(1.5rem,2.8vw,2.25rem)] font-semibold tracking-tight text-ink md:mb-8"
         >
           Most popular services
         </h2>
@@ -106,7 +106,7 @@ export default function HomePopularServices() {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center md:mt-14">
+        <div className="mt-8 flex justify-center md:mt-10">
           <Link
             to="/services"
             className="inline-flex items-center justify-center rounded-full border border-transparent bg-skyBrand px-10 py-3.5 text-[0.95rem] font-semibold text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky"

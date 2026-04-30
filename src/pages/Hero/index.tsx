@@ -140,7 +140,7 @@ export default function Hero() {
       </Link>
     </section>
 
-    <section className="bg-creamBrand px-5 pb-12 pt-6 md:px-8 md:pb-16 md:pt-8" aria-label="Featured campaign">
+    <section className="bg-creamBrand px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5" aria-label="Featured campaign">
       <div className="mx-auto max-w-[1240px]">
         <MissionCampaignBanner />
       </div>
