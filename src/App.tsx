@@ -1,5 +1,6 @@
-import { useEffect } from "react";
-import { Route, Routes, Outlet } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 import ScrollToHash from "./ScrollToHash";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -14,14 +15,43 @@ import Testimonials from "./pages/Testimonials";
 import Contact from "./components/Contact";
 import Clinics from "./pages/Clinics";
 
-
+const TRANSITION_MS = 500;
 
 function Layout() {
+  const location = useLocation();
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const locationRef = useRef(location);
+  locationRef.current = location;
+
   return (
     <>
       <Navbar />
-      <main>
-        <Outlet />
+      <main className="flex min-h-0 flex-1 flex-col">
+        <SwitchTransition mode="out-in">
+          <CSSTransition
+            nodeRef={nodeRef}
+            key={`${location.pathname}${location.search}`}
+            timeout={TRANSITION_MS}
+            classNames="page"
+            onExited={() => setDisplayLocation(locationRef.current)}
+          >
+            <div ref={nodeRef} className="page-transition-root">
+              <Routes location={displayLocation}>
+                <Route path="/" element={<Hero />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/doctors" element={<TeamPage />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/why-us" element={<WhyUs />} />
+                <Route path="/testimonials" element={<Testimonials />} />
+                <Route path="/contact-us" element={<Contact />} />
+                <Route path="/clinics" element={<Clinics />} />
+              </Routes>
+            </div>
+          </CSSTransition>
+        </SwitchTransition>
       </main>
       <Footer />
     </>
@@ -58,18 +88,7 @@ export default function App() {
     <>
       <ScrollToHash />
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Hero />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/doctors" element={<TeamPage />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/why-us" element={<WhyUs />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact-us" element={<Contact />} />
-          <Route path="/clinics" element={<Clinics />} />
-        </Route>
+        <Route path="*" element={<Layout />} />
       </Routes>
     </>
   );

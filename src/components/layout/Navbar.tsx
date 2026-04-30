@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ContactDrawer from "../ContactDrawer";
 
 const NAV_ITEMS = [
   { href: "/services", label: "Services" },
@@ -12,15 +13,16 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    document.body.style.overflow = open || contactOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, contactOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -38,13 +40,18 @@ export default function Navbar() {
   }, []);
 
   const hasHeroHeader = pathname === "/" || pathname === "/services" || pathname === "/doctors";
-  const isTransparent = hasHeroHeader && !scrolled && !open;
-  const isSolid = !isTransparent;
+  const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 const navHeadingColor = "rgb(52, 53, 46)";
 const transparentNavColor = "#87CEFA";
 const mobileMenuHeadingColor = "#83BFE3";
 
+  const openContactDrawer = () => {
+    setOpen(false);
+    setContactOpen(true);
+  };
+
   return (
+    <>
     <header
       className={[
         "fixed inset-x-0 top-0 z-[100] h-[78px] transition duration-300 ease-out",
@@ -87,7 +94,7 @@ const mobileMenuHeadingColor = "#83BFE3";
 
         <div className="ml-6 flex flex-1 items-center justify-end gap-2 lg:gap-4">
           <nav
-            className="hidden items-center gap-5 text-[0.875rem] font-semibold xl:flex"
+            className="hidden items-center gap-5 text-[14px] font-semibold xl:flex"
             aria-label="Primary navigation"
           >
             {NAV_ITEMS.map((item) => (
@@ -107,69 +114,54 @@ const mobileMenuHeadingColor = "#83BFE3";
             ))}
           </nav>
 
-          <a
-            href="tel:03299961999"
-            className={[
-              "hidden h-10 w-10 items-center justify-center rounded-full transition duration-200 xl:inline-flex",
-              isTransparent
-                ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
-                : "text-muted/85 hover:bg-black/5 hover:text-ink",
-            ].join(" ")}
-            aria-label="Call us"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+          <div className="hidden items-center gap-0 xl:flex" aria-label="Contact shortcuts">
+            <a
+              href="tel:03299961999"
+              className={[
+                "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
+                isTransparent
+                  ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
+                  : "text-muted/85 hover:bg-black/5 hover:text-ink",
+              ].join(" ")}
+              aria-label="Call us"
             >
-              <use href="/svg/sprite.svg#icon-phone" />
-            </svg>
-          </a>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+              >
+                <use href="/svg/sprite.svg#icon-phone" />
+              </svg>
+            </a>
 
-          <a
-            href="mailto:info@thestudiodental.com"
-            className={[
-              "hidden h-10 w-10 items-center justify-center rounded-full transition duration-200 xl:inline-flex",
-              isTransparent
-                ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
-                : "text-muted/85 hover:bg-black/5 hover:text-ink",
-            ].join(" ")}
-            aria-label="Email us"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+            <button
+              type="button"
+              onClick={openContactDrawer}
+              className={[
+                "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
+                isTransparent
+                  ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
+                  : "text-muted/85 hover:bg-black/5 hover:text-ink",
+              ].join(" ")}
+              aria-label="Open contact form"
+              aria-haspopup="dialog"
+              aria-expanded={contactOpen}
             >
-              <use href="/svg/sprite.svg#icon-mail" />
-            </svg>
-          </a>
-
-          <span
-            className={[
-              "mx-1 hidden h-5 w-px xl:block",
-              isTransparent ? "bg-[#87CEFA]/35" : "bg-black/15",
-            ].join(" ")}
-            aria-hidden="true"
-          />
-
-          <Link
-            to="/contact-us"
-            className={[
-              "hidden whitespace-nowrap rounded-full px-5 py-2.5 text-[0.85rem] font-semibold transition duration-200 xl:inline-flex",
-              isSolid
-                ? "bg-ink text-creamBrand hover:bg-ink/85"
-                : "bg-skyBrand text-ink hover:bg-skyBrand/85 hover:shadow-sky",
-            ].join(" ")}
-          >
-            Online Registration
-          </Link>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
+              >
+                <use href="/svg/sprite.svg#icon-mail" />
+              </svg>
+            </button>
+          </div>
 
           <button
             className={[
@@ -221,7 +213,7 @@ const mobileMenuHeadingColor = "#83BFE3";
               key={item.label}
               to={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center border-b border-white/10 py-4 text-[1.05rem] font-semibold transition hover:text-skyBrand"
+              className="flex items-center border-b border-white/10 py-4 text-[14px] font-semibold transition hover:text-skyBrand"
               style={{ color: mobileMenuHeadingColor }}
             >
               {item.label}
@@ -232,7 +224,7 @@ const mobileMenuHeadingColor = "#83BFE3";
         <div className="mt-6 flex flex-col gap-3">
           <a
             href="tel:03299961999"
-            className="inline-flex items-center gap-3 text-[0.9rem] text-creamBrand/60 transition hover:text-skyBrand"
+            className="inline-flex items-center gap-3 text-[14px] text-creamBrand/60 transition hover:text-skyBrand"
           >
             <svg
               width="17"
@@ -246,9 +238,10 @@ const mobileMenuHeadingColor = "#83BFE3";
             </svg>
             0329 9961999
           </a>
-          <a
-            href="mailto:info@thestudiodental.com"
-            className="inline-flex items-center gap-3 text-[0.9rem] text-creamBrand/60 transition hover:text-skyBrand"
+          <button
+            type="button"
+            onClick={openContactDrawer}
+            className="inline-flex items-center gap-3 text-left text-[14px] text-creamBrand/60 transition hover:text-skyBrand"
           >
             <svg
               width="17"
@@ -261,17 +254,11 @@ const mobileMenuHeadingColor = "#83BFE3";
               <use href="/svg/sprite.svg#icon-mail" />
             </svg>
             info@thestudiodental.com
-          </a>
+          </button>
         </div>
-
-        <Link
-          to="/contact-us"
-          onClick={() => setOpen(false)}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-skyBrand px-6 py-3 text-[0.95rem] font-semibold text-ink transition hover:bg-skyBrand/85 hover:shadow-sky"
-        >
-          Online Registration
-        </Link>
       </div>
     </header>
+    <ContactDrawer open={contactOpen} onClose={() => setContactOpen(false)} />
+    </>
   );
 }
