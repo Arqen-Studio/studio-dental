@@ -12,8 +12,8 @@ const HUB_CARDS: HubCard[] = [
     to: '/services',
     title: 'Services',
     image:
-      'https://images.unsplash.com/photo-1606811971618-4486bf146bc9?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Dentist providing clinical care',
+      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=75',
+    imageAlt: 'Dental instruments and clinical setup in a modern practice',
   },
   {
     to: '/services',

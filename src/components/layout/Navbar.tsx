@@ -68,7 +68,7 @@ const transparentNavColor = "#87CEFA";
         "fixed inset-x-0 top-0 z-[100] h-[78px] transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
-          : "border-b border-black/10 bg-creamBrand text-muted shadow-[0_2px_12px_rgba(15,27,36,0.06)]",
+          : "border-b border-ink/10 bg-skyBrand text-ink shadow-[0_2px_14px_rgba(15,27,36,0.08)]",
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -78,7 +78,12 @@ const transparentNavColor = "#87CEFA";
           aria-label="Studio Dental home"
         >
           <span
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-skyBrand text-ink"
+            className={[
+              "inline-flex h-10 w-10 items-center justify-center rounded-xl transition",
+              isTransparent
+                ? ["border border-white/25 bg-white/10", TRANSPARENT_ICON_SHADOW].join(" ")
+                : "border border-ink/15 bg-white/40 text-ink shadow-soft-sm",
+            ].join(" ")}
             aria-hidden="true"
           >
             <img src="/favicon.svg" alt="" className="h-6 w-6 object-contain" />
@@ -100,7 +105,7 @@ const transparentNavColor = "#87CEFA";
                 "mt-[3px] text-[0.68rem] font-medium uppercase tracking-[0.14em]",
                 isTransparent
                   ? ["text-[#87CEFA]/60", TRANSPARENT_TITLE_SHADOW].join(" ")
-                  : "text-muted/75",
+                  : "text-ink/70",
               ].join(" ")}
             >
               Clinic
@@ -121,7 +126,7 @@ const transparentNavColor = "#87CEFA";
                   "whitespace-nowrap transition duration-200 focus:outline-none",
                   isTransparent
                     ? ["text-[#ffffff] hover:text-white", TRANSPARENT_LINK_SHADOW].join(" ")
-                    : "text-muted/90 hover:text-ink",
+                    : "text-ink/90 hover:text-ink",
                 ].join(" ")}
                 style={!isTransparent ? { color: navHeadingColor } : undefined}
               >
@@ -136,10 +141,8 @@ const transparentNavColor = "#87CEFA";
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
                 isTransparent
-                  ? ["text-[#87CEFA] hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(
-                      " ",
-                    )
-                  : "text-muted/85 hover:bg-skyBrand/15 hover:text-ink",
+                  ? ["text-white hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(" ")
+                  : "text-ink hover:bg-white/35 hover:text-ink",
               ].join(" ")}
               aria-label="Call us"
             >
@@ -161,10 +164,8 @@ const transparentNavColor = "#87CEFA";
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
                 isTransparent
-                  ? ["text-[#87CEFA] hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(
-                      " ",
-                    )
-                  : "text-muted/85 hover:bg-skyBrand/15 hover:text-ink",
+                  ? ["text-white hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(" ")
+                  : "text-ink hover:bg-white/35 hover:text-ink",
               ].join(" ")}
               aria-label="Open contact form"
               aria-haspopup="dialog"
@@ -185,8 +186,13 @@ const transparentNavColor = "#87CEFA";
 
           <button
             className={[
-              "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border border-black/10 bg-creamBrand text-ink shadow-soft-sm transition xl:hidden hover:bg-skyBrand/15",
-              isTransparent ? TRANSPARENT_ICON_SHADOW : "",
+              "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border transition xl:hidden",
+              isTransparent
+                ? [
+                    "border-white/25 bg-white/10 text-white shadow-soft-sm hover:bg-white/15",
+                    TRANSPARENT_ICON_SHADOW,
+                  ].join(" ")
+                : "border-ink/15 bg-white/45 text-ink shadow-soft-sm hover:bg-white/65",
             ].join(" ")}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}

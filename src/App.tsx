@@ -4,7 +4,6 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import ScrollToHash from "./ScrollToHash";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import SiteContactsSection from "./components/SiteContactsSection";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -80,7 +79,6 @@ function Layout() {
           </CSSTransition>
         </SwitchTransition>
       </main>
-      {location.pathname !== "/contact-us" && <SiteContactsSection />}
       <Footer />
     </>
   );
