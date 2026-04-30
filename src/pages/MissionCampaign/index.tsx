@@ -1,7 +1,7 @@
 export default function MissionCampaign() {
   return (
-    <section className="bg-gradient-to-b from-skyBrand via-[#e6f5fc] to-white pb-16 pt-[calc(78px+2rem)] md:pb-24 md:pt-[calc(78px+2.5rem)]">
-      <div className="mx-auto max-w-[1240px] px-5 md:px-8">
+    <section className="no-reveal bg-gradient-to-b from-skyBrand via-[#e6f5fc] to-white pb-16 pt-[calc(78px+2rem)] md:pb-24 md:pt-[calc(78px+2.5rem)]">
+      <div className="mx-auto max-w-[1240px] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2">
           <span className="h-1.5 w-1.5 rounded-full bg-skyBrand" aria-hidden="true" />
           Campaign

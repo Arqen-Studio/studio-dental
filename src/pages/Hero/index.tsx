@@ -46,12 +46,12 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className="relative isolate flex min-h-screen items-center overflow-hidden text-creamBrand"
+        className="no-reveal relative isolate flex min-h-screen items-center overflow-hidden text-creamBrand"
       >
         <div className="absolute inset-0 z-0" aria-hidden="true">
           <video
             ref={heroVideoRef}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
             autoPlay
             muted
             loop
@@ -75,7 +75,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <div className="mb-8 flex h-[220px] items-start md:h-[260px]">
             <div className="inline-flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">

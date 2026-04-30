@@ -218,7 +218,7 @@ export default function Services() {
   return (
     <>
       {/* ── 1. Split hero (primary gradient panel — matches Team / Mission campaign) ── */}
-      <section className="grid min-h-screen border-t border-skyBrand/25 pt-[78px] lg:grid-cols-2 lg:pt-0">
+      <section className="no-reveal grid min-h-screen border-t border-skyBrand/25 pt-[78px] lg:grid-cols-2 lg:pt-0">
         {/* Left — primary gradient + accordion */}
         <div className="relative flex flex-col justify-center overflow-hidden border-b border-skyBrand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-skyBrand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div

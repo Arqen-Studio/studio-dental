@@ -25,9 +25,9 @@ export default function WhyUs() {
   return (
     <section
       id="why"
-      className="mx-4 overflow-hidden rounded-xl border border-white/10 bg-ink py-10 text-creamBrand md:mx-8 md:py-16"
+      className="no-reveal mx-4 overflow-hidden rounded-xl border border-white/10 bg-ink py-10 text-creamBrand md:mx-8 md:py-16"
     >
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-10 md:px-8 md:py-14">
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-10 md:px-8 md:py-14 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
         <div className="mb-8 max-w-[720px] md:mb-10">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/40 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-skyBrand">
             <span className="h-1.5 w-1.5 rounded-full bg-skyBrand" aria-hidden="true" />

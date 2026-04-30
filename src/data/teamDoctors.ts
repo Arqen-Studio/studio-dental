@@ -4,6 +4,7 @@ export type TeamDoctor = {
   role: string
   image: string
   clinic: string
+  bio: string
   services: string[]
 }
 
@@ -15,6 +16,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=70',
     clinic: 'DHA Phase II, Islamabad',
+    bio:
+      'Has run marathons across three continents. The endurance and focus required at mile 26 are the same qualities he brings to every implant procedure.',
     services: ['Implants', 'Cosmetic Dentistry'],
   },
   {
@@ -24,6 +27,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image:
       'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=70',
     clinic: 'F-7 Markaz, Islamabad',
+    bio:
+      'An avid painter who finds that the patience and precision of art translates perfectly to the delicate craft of root canal therapy.',
     services: ['Root Canal', 'Restorative Dentistry'],
   },
   {
@@ -33,6 +38,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image:
       'https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=900&q=70',
     clinic: 'DHA Phase II, Islamabad',
+    bio:
+      'A cycling enthusiast who believes the rhythm and balance found on the road mirrors the harmony needed in restorative dentistry.',
     services: ['Restorative Dentistry', 'Smile Design'],
   },
   {
@@ -42,6 +49,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image:
       'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=70',
     clinic: 'F-7 Markaz, Islamabad',
+    bio:
+      'Loves hiking and mountaineering. The focus required at altitude is the same precision she brings to every oral surgery procedure.',
     services: ['Oral Surgery', 'Facial Aesthetics'],
   },
   {
@@ -51,6 +60,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image:
       'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=70',
     clinic: 'DHA Phase II, Islamabad',
+    bio:
+      'A yoga practitioner who channels mindfulness and attention to detail into designing perfect, comfortable aligner treatment plans.',
     services: ['Aligners', 'General Dentistry'],
   },
   {
@@ -60,6 +71,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image:
       'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=900&q=70',
     clinic: 'F-7 Markaz, Islamabad',
+    bio:
+      'Passionate about cooking — the curiosity to understand textures and nuances in food is the same curiosity he applies to patient care.',
     services: ['General Dentistry', 'Preventive Care'],
   },
 ]

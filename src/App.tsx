@@ -23,14 +23,27 @@ function Layout() {
   const [displayLocation, setDisplayLocation] = useState(location);
   const nodeRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef(location);
+  const revealObserverRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     locationRef.current = location;
   }, [location]);
 
   useEffect(() => {
+    revealObserverRef.current?.disconnect();
+    revealObserverRef.current = null;
+
     const timer = setTimeout(() => {
-      const els = document.querySelectorAll<HTMLElement>('.reveal:not(.is-visible)');
+      const root = document.querySelector('.page-transition-root');
+      if (root) {
+        root.querySelectorAll('section:not(.no-reveal)').forEach((el) => {
+          if (!el.classList.contains('reveal')) el.classList.add('reveal');
+        });
+      }
+
+      const els = document.querySelectorAll<HTMLElement>(
+        '.page-transition-root .reveal:not(.is-visible)',
+      );
       if (!('IntersectionObserver' in window) || els.length === 0) {
         els.forEach((el) => el.classList.add('is-visible'));
         return;
@@ -46,10 +59,15 @@ function Layout() {
         },
         { threshold: 0.08 },
       );
+      revealObserverRef.current = io;
       els.forEach((el) => io.observe(el));
-      return () => io.disconnect();
     }, 550);
-    return () => clearTimeout(timer);
+
+    return () => {
+      clearTimeout(timer);
+      revealObserverRef.current?.disconnect();
+      revealObserverRef.current = null;
+    };
   }, [location.pathname]);
 
   return (

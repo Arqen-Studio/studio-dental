@@ -20,7 +20,7 @@ export default function TeamPage() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden border-t border-skyBrand/25">
+      <section className="no-reveal relative min-h-screen overflow-hidden border-t border-skyBrand/25">
         <div className="grid min-h-screen lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div className="relative border-b border-skyBrand/25 lg:border-b-0 lg:border-r lg:border-skyBrand/25">
             <div className="relative flex min-h-[min(100vh,760px)] flex-col justify-center overflow-hidden px-5 pb-14 pt-[calc(78px+2.2rem)] md:px-8 lg:min-h-screen">
@@ -59,7 +59,7 @@ export default function TeamPage() {
               src={TEAM_HERO_IMAGE}
               alt="Studio Dental doctors team in clinic"
               loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
             />
             <div
               className="absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/12 to-transparent lg:bg-gradient-to-r lg:from-[#5aadde]/28 lg:via-ink/12 lg:to-transparent"
