@@ -114,7 +114,7 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-white py-10 md:py-16"
+      className="relative overflow-hidden bg-[#f9f9f9] py-10 md:py-16"
       aria-labelledby="home-services-heading"
     >
       <div
