@@ -1,65 +1,65 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 type HubCard = {
-  to: string
-  title: string
-  image: string
-  imageAlt: string
-}
+  to: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+};
 
 const HUB_CARDS: HubCard[] = [
   {
-    to: '/services',
-    title: 'Services',
+    to: "/services",
+    title: "Services",
     image:
-      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Dental instruments and clinical setup in a modern practice',
+      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=75",
+    imageAlt: "Dental instruments and clinical setup in a modern practice",
   },
   {
-    to: '/services',
-    title: 'Prices',
+    to: "/services",
+    title: "Prices",
     image:
-      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Consultation notes and planning documents',
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=75",
+    imageAlt: "Consultation notes and planning documents",
   },
   {
-    to: '/doctors',
-    title: 'Doctors',
+    to: "/doctors",
+    title: "Doctors",
     image:
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Dental specialists reviewing patient care together',
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=75",
+    imageAlt: "Dental specialists reviewing patient care together",
   },
   {
-    to: '/about',
-    title: 'About us',
+    to: "/about",
+    title: "About us",
     image:
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Welcoming clinic reception area',
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=75",
+    imageAlt: "Welcoming clinic reception area",
   },
   {
-    to: '/blog',
-    title: 'News',
+    to: "/blog",
+    title: "News",
     image:
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Reading updates on a smartphone',
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=75",
+    imageAlt: "Reading updates on a smartphone",
   },
   {
-    to: '/contact-us',
-    title: 'Contacts',
+    to: "/contact-us",
+    title: "Contacts",
     image:
-      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=75',
-    imageAlt: 'Bright modern dental clinic interior',
+      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=75",
+    imageAlt: "Bright modern dental clinic interior",
   },
-]
+];
 
 /** Transform-only transitions (GPU-friendly); overlay + text share timing */
-const hoverDur = 'duration-[680ms]'
-const hoverEase = 'ease-[cubic-bezier(0.22,1,0.36,1)]'
+const hoverDur = "duration-[680ms]";
+const hoverEase = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-white px-5 py-9 md:px-8 md:py-12"
+      className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full max-w-[1240px]">
@@ -71,9 +71,11 @@ export default function HomeClinicHub() {
             Dental and implantology clinics — Studio Dental
           </h2>
           <p className="mx-auto mt-4 max-w-[52ch] text-[0.875rem] leading-relaxed text-muted md:text-[0.92rem]">
-            With over 17 years of experience, Studio Dental brings specialized care to Islamabad — at DHA Phase II
-            and F-7 Markaz. From diagnostics and imaging to implants, orthodontics, restorative dentistry, and
-            pediatric care, our teams help you plan treatment with clarity and confidence.
+            With over 17 years of experience, Studio Dental brings specialized
+            care to Islamabad — at DHA Phase II and F-7 Markaz. From diagnostics
+            and imaging to implants, orthodontics, restorative dentistry, and
+            pediatric care, our teams help you plan treatment with clarity and
+            confidence.
           </p>
         </header>
 
@@ -123,5 +125,5 @@ export default function HomeClinicHub() {
         </div>
       </div>
     </section>
-  )
+  );
 }

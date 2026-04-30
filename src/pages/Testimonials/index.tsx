@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const CLINIC_LINKS = [
@@ -53,9 +54,7 @@ export default function Testimonials() {
             >
               <div className="absolute left-0 top-0 h-[3px] w-full bg-gradient-to-r from-skyBrand to-transparent" aria-hidden="true" />
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-skyBrand/20 text-skyBrand" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <use href="/svg/sprite.svg#icon-arrow-right" />
-                </svg>
+                <ArrowRight size={18} strokeWidth={2.25} aria-hidden />
               </div>
               <h3 className="text-[1.12rem] font-semibold text-ink">{item.title}</h3>
               <p className="m-0 flex-1 text-[0.98rem] leading-relaxed text-ink2">

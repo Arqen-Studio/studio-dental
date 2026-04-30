@@ -1,4 +1,4 @@
-import { Mail, Smartphone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ContactDrawer from "../ContactDrawer";
@@ -13,8 +13,6 @@ const NAV_ITEMS = [
 ];
 
 /** Improves contrast on hero imagery when the header is transparent */
-const TRANSPARENT_TITLE_SHADOW =
-  "[text-shadow:0_1px_4px_rgba(15,27,36,0.92),0_0_22px_rgba(15,27,36,0.5)]";
 const TRANSPARENT_LINK_SHADOW =
   "[text-shadow:0_1px_4px_rgba(15,27,36,0.95),0_0_18px_rgba(15,27,36,0.45)]";
 const TRANSPARENT_ICON_SHADOW =
@@ -55,7 +53,6 @@ export default function Navbar() {
     pathname === "/about";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 const navHeadingColor = "rgb(52, 53, 46)";
-const transparentNavColor = "#87CEFA";
 
   const openContactDrawer = () => {
     setOpen(false);
@@ -75,38 +72,23 @@ const transparentNavColor = "#87CEFA";
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
         <Link
           to="/"
-          className="inline-flex shrink-0 items-center gap-3"
+          className="inline-flex shrink-0 items-center"
           aria-label="Studio Dental home"
         >
-          <span
-            className={[
-              "inline-flex h-10 w-10 items-center justify-center rounded-xl transition",
-              isTransparent
-                ? ["border border-white/25 bg-white/10", TRANSPARENT_ICON_SHADOW].join(" ")
-                : "border border-ink/15 bg-white/40 text-ink shadow-soft-sm",
-            ].join(" ")}
-            aria-hidden="true"
-          >
-            <img src="/favicon.svg" alt="" className="h-6 w-6 object-contain" />
-          </span>
           <span className="flex flex-col leading-none">
             <span
               className={[
                 "text-[1rem] font-extrabold tracking-tight",
-                isTransparent ? TRANSPARENT_TITLE_SHADOW : "",
+                isTransparent ? "text-white" : "",
               ].join(" ")}
-              style={{
-                color: isTransparent ? transparentNavColor : navHeadingColor,
-              }}
+              style={isTransparent ? undefined : { color: navHeadingColor }}
             >
               Studio Dental
             </span>
             <span
               className={[
                 "mt-[3px] text-[0.68rem] font-medium uppercase tracking-[0.14em]",
-                isTransparent
-                  ? ["text-[#87CEFA]/60", TRANSPARENT_TITLE_SHADOW].join(" ")
-                  : "text-ink/70",
+                isTransparent ? "text-white/78" : "text-ink/70",
               ].join(" ")}
             >
               Clinic
@@ -147,7 +129,7 @@ const transparentNavColor = "#87CEFA";
               ].join(" ")}
               aria-label="Call us"
             >
-              <Smartphone
+              <Phone
                 size={20}
                 strokeWidth={2.2}
                 className="[vector-effect:non-scaling-stroke]"
@@ -242,7 +224,7 @@ const transparentNavColor = "#87CEFA";
             href="tel:03299961999"
             className="inline-flex items-center gap-3 text-[14px] text-creamBrand/75 transition hover:text-skyBrand"
           >
-            <Smartphone
+            <Phone
               size={17}
               strokeWidth={2.2}
               className="shrink-0 [vector-effect:non-scaling-stroke]"

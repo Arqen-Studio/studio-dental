@@ -1,3 +1,5 @@
+import { ArrowRight, Mail, MapPin } from "lucide-react";
+
 export default function Contact() {
   return (
     <section id="contact" className="bg-white py-10 md:py-16">
@@ -22,15 +24,7 @@ export default function Contact() {
                 className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand"
                 aria-hidden="true"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <use href="/svg/sprite.svg#icon-pin" />
-                </svg>
+                <MapPin size={18} strokeWidth={2} aria-hidden />
               </span>
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
@@ -45,15 +39,7 @@ export default function Contact() {
                 className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand"
                 aria-hidden="true"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <use href="/svg/sprite.svg#icon-pin" />
-                </svg>
+                <MapPin size={18} strokeWidth={2} aria-hidden />
               </span>
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
@@ -67,15 +53,7 @@ export default function Contact() {
                 className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand"
                 aria-hidden="true"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <use href="/svg/sprite.svg#icon-mail" />
-                </svg>
+                <Mail size={18} strokeWidth={2} aria-hidden />
               </span>
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Contact</strong>
@@ -191,15 +169,7 @@ export default function Contact() {
               className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10"
               aria-hidden="true"
             >
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <use href="/svg/sprite.svg#icon-arrow-right" />
-              </svg>
+              <ArrowRight size={11} strokeWidth={2.5} className="text-ink" aria-hidden />
             </span>
           </button>
 

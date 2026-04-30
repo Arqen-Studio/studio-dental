@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 type PopularService = {
@@ -56,17 +57,9 @@ const POPULAR_SERVICES: PopularService[] = [
   },
 ]
 
-function ChevronRightIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m9 18 6-6-6-6" />
-    </svg>
-  )
-}
-
 export default function HomePopularServices() {
   return (
-    <section className="bg-white px-5 py-9 md:px-8 md:py-12" aria-labelledby="popular-services-heading">
+    <section className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12" aria-labelledby="popular-services-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="popular-services-heading"
@@ -99,7 +92,7 @@ export default function HomePopularServices() {
                   className="mt-5 inline-flex items-center gap-1 text-[0.88rem] font-medium text-skyBrand transition hover:text-ink hover:underline"
                 >
                   In detail
-                  <ChevronRightIcon />
+                  <ChevronRight size={14} strokeWidth={2} aria-hidden />
                 </Link>
               </div>
             </article>

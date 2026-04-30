@@ -1,3 +1,4 @@
+import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ServiceCard } from "../../components/ServiceCard";
@@ -140,42 +141,6 @@ const SERVICE_CATALOG: ServiceItem[] = [
   },
 ];
 
-// ── icons ──────────────────────────────────────────────────────────────────
-function ChevronRight() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <polyline points="9 18 15 12 9 6" />
-    </svg>
-  );
-}
-function ChevronDown() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
-  );
-}
-
 // ── home-page services marquee (rendered inside Hero) ──────────────────────
 function HomeServicesSection() {
   return (
@@ -206,15 +171,7 @@ function HomeServicesSection() {
           >
             View all services
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-skyBrand/25 text-ink transition group-hover:bg-skyBrand/40">
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <use href="/svg/sprite.svg#icon-arrow-right" />
-              </svg>
+              <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
           </Link>
         </div>
@@ -260,11 +217,23 @@ export default function Services() {
 
   return (
     <>
-      {/* ── 1. Split hero ── */}
-      <section className="grid bg-skyBrand pt-[78px] min-h-screen lg:bg-transparent lg:pt-0 lg:grid-cols-2">
-        {/* Left — brand blue panel with accordion */}
-        <div className="flex flex-col justify-center bg-skyBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
-          <div className="w-full max-w-[580px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+      {/* ── 1. Split hero (primary gradient panel — matches Team / Mission campaign) ── */}
+      <section className="grid min-h-screen border-t border-skyBrand/25 pt-[78px] lg:grid-cols-2 lg:pt-0">
+        {/* Left — primary gradient + accordion */}
+        <div className="relative flex flex-col justify-center overflow-hidden border-b border-skyBrand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-skyBrand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#5aadde] via-skyBrand to-[#c9ebfc]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-90"
+            style={{
+              background:
+                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(15, 27, 36, 0.08) 0%, transparent 50%)",
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative z-[1] w-full max-w-[580px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               Services
             </h1>
@@ -282,7 +251,11 @@ export default function Services() {
                         className="flex w-full items-center gap-3 py-3.5 text-left text-[0.95rem] font-normal text-ink/85 transition hover:text-ink"
                       >
                         <span className="flex-shrink-0 text-ink/50">
-                          {isOpen ? <ChevronDown /> : <ChevronRight />}
+                          {isOpen ? (
+                            <ChevronDown size={14} strokeWidth={2} />
+                          ) : (
+                            <ChevronRight size={14} strokeWidth={2} />
+                          )}
                         </span>
                         {svc.title}
                       </button>
@@ -341,7 +314,7 @@ export default function Services() {
         </div>
 
         {/* Right — form */}
-        <div className="flex flex-col justify-center bg-white px-8 py-16 md:px-12 lg:px-16">
+        <div className="flex flex-col justify-center bg-[#f9f9f9] px-8 py-16 md:px-12 lg:px-16">
           <div className="w-full max-w-[580px]">
             <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">
               Let's get in touch
@@ -358,7 +331,7 @@ export default function Services() {
                     id="clinic"
                     name="clinic"
                     defaultValue=""
-                    className="w-full appearance-none rounded-sm border border-black/15 bg-white px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                    className="w-full appearance-none rounded-sm border border-black/15 bg-[#f9f9f9] px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
                   >
                     <option value="" disabled />
                     {CLINICS.map((c) => (

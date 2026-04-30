@@ -67,7 +67,7 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-white px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
+    <section className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="home-doctors-heading"

@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { DoctorFlipCard } from '../../components/DoctorFlipCard'
@@ -174,16 +175,7 @@ export default function Doctors() {
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-skyBrand/25 bg-white text-ink2 shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:text-ink hover:shadow-soft-md disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Previous doctors"
           >
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="rotate-180"
-            >
-              <use href="/svg/sprite.svg#icon-arrow-right" />
-            </svg>
+            <ChevronLeft size={15} strokeWidth={2.25} aria-hidden />
           </button>
           <button
             type="button"
@@ -192,9 +184,7 @@ export default function Doctors() {
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-skyBrand/25 bg-white text-ink shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:shadow-soft-md disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Next doctors"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <use href="/svg/sprite.svg#icon-arrow-right" />
-            </svg>
+            <ChevronRight size={15} strokeWidth={2.25} aria-hidden />
           </button>
         </div>
 

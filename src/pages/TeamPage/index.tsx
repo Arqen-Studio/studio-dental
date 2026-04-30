@@ -20,23 +20,37 @@ export default function TeamPage() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden bg-ink text-creamBrand">
+      <section className="relative min-h-screen overflow-hidden border-t border-skyBrand/25">
         <div className="grid min-h-screen lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="border-b border-white/10 lg:border-b-0 lg:border-r lg:border-white/10">
-            <div className="mx-auto flex h-full w-full max-w-[620px] flex-col justify-center px-5 pb-14 pt-[calc(78px+2.2rem)] md:px-8">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-creamBrand">
-                <img src="/favicon.svg" alt="" className="h-3.5 w-3.5 object-contain" />
+          <div className="relative border-b border-skyBrand/25 lg:border-b-0 lg:border-r lg:border-skyBrand/25">
+            <div className="relative flex min-h-[min(100vh,760px)] flex-col justify-center overflow-hidden px-5 pb-14 pt-[calc(78px+2.2rem)] md:px-8 lg:min-h-screen">
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#5aadde] via-skyBrand to-[#c9ebfc]"
+                aria-hidden="true"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 opacity-90"
+                style={{
+                  background:
+                    'radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(15, 27, 36, 0.08) 0%, transparent 50%)',
+                }}
+                aria-hidden="true"
+              />
+              <div className="relative z-[1] mx-auto flex h-full w-full max-w-[620px] flex-col justify-center">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/35 bg-white/45 px-4 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-ink shadow-soft-sm backdrop-blur-[2px]">
+                <img src="/favicon.svg" alt="" className="h-3.5 w-3.5 object-contain drop-shadow-none" />
                 Studio Dental Team
               </span>
-              <h1 className="mt-5 text-[clamp(2rem,3.6vw,3.4rem)] leading-[0.98] text-creamBrand">
+              <h1 className="mt-5 text-[clamp(2rem,3.6vw,3.4rem)] font-semibold leading-[0.98] tracking-tight text-ink">
                 Meet our dental specialists.
               </h1>
-              <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-relaxed text-creamBrand/75">
+              <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-relaxed text-ink/72">
                 Our multidisciplinary team combines modern clinical skills with a
                 patient-first approach. From general dentistry and restorative care
                 to surgery and aligners, each doctor focuses on safe treatment, clear
                 guidance, and long-term results.
               </p>
+              </div>
             </div>
           </div>
 
@@ -47,12 +61,15 @@ export default function TeamPage() {
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" aria-hidden="true" />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/12 to-transparent lg:bg-gradient-to-r lg:from-[#5aadde]/28 lg:via-ink/12 lg:to-transparent"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-[#f9f9f9] py-16 md:py-24">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
 

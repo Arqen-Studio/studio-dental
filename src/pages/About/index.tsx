@@ -1,68 +1,68 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const TEAM_CARDS = [
   {
-    name: 'Dr. Yousaf Kamal',
+    name: "Dr. Yousaf Kamal",
     blurb:
-      'Has run marathons across three continents. The endurance and focus required at mile 26 are the same qualities he brings to every implant procedure.',
-    bg: 'blue',
+      "Has run marathons across three continents. The endurance and focus required at mile 26 are the same qualities he brings to every implant procedure.",
+    bg: "blue",
     image:
-      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=60',
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=60",
   },
   {
-    name: 'Dr. Nayab Farooq',
+    name: "Dr. Nayab Farooq",
     blurb:
-      'An avid painter who finds that the patience and precision of art translates perfectly to the delicate craft of root canal therapy.',
-    bg: 'white',
+      "An avid painter who finds that the patience and precision of art translates perfectly to the delicate craft of root canal therapy.",
+    bg: "white",
   },
   {
-    name: 'Dr. Umair Usman',
+    name: "Dr. Umair Usman",
     blurb:
-      'A cycling enthusiast who believes the rhythm and balance found on the road mirrors the harmony needed in restorative dentistry.',
-    bg: 'gray',
+      "A cycling enthusiast who believes the rhythm and balance found on the road mirrors the harmony needed in restorative dentistry.",
+    bg: "gray",
   },
   {
-    name: 'Dr. Amna Hassan',
+    name: "Dr. Amna Hassan",
     blurb:
-      'Loves hiking and mountaineering. The focus required at altitude is the same precision she brings to every oral surgery procedure.',
-    bg: 'lightblue',
+      "Loves hiking and mountaineering. The focus required at altitude is the same precision she brings to every oral surgery procedure.",
+    bg: "lightblue",
   },
   {
-    name: 'Dr. Aqsa Malik',
+    name: "Dr. Aqsa Malik",
     blurb:
-      'A yoga practitioner who channels mindfulness and attention to detail into designing perfect, comfortable aligner treatment plans.',
-    bg: 'blue',
+      "A yoga practitioner who channels mindfulness and attention to detail into designing perfect, comfortable aligner treatment plans.",
+    bg: "blue",
     image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60',
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60",
   },
   {
-    name: 'Dr. Hassan Ali',
+    name: "Dr. Hassan Ali",
     blurb:
-      'Passionate about cooking — the curiosity to understand textures and nuances in food is the same curiosity he applies to patient care.',
-    bg: 'gray',
+      "Passionate about cooking — the curiosity to understand textures and nuances in food is the same curiosity he applies to patient care.",
+    bg: "gray",
   },
-]
+];
 
 const BG: Record<string, string> = {
-  blue: 'bg-skyBrand',
-  white: 'bg-white',
-  gray: 'bg-neutral-100',
-  lightblue: 'bg-skyBrand/15',
-}
+  blue: "bg-skyBrand",
+  white: "bg-white",
+  gray: "bg-neutral-100",
+  lightblue: "bg-skyBrand/15",
+};
 
 const TEXT: Record<string, string> = {
-  blue: 'text-ink',
-  white: 'text-ink',
-  gray: 'text-ink',
-  lightblue: 'text-ink',
-}
+  blue: "text-ink",
+  white: "text-ink",
+  gray: "text-ink",
+  lightblue: "text-ink",
+};
 
 const LINK_COLOR: Record<string, string> = {
-  blue: 'text-ink/70 hover:text-ink',
-  white: 'text-skyBrand hover:text-skyBrand/80',
-  gray: 'text-skyBrand hover:text-skyBrand/80',
-  lightblue: 'text-skyBrand hover:text-skyBrand/80',
-}
+  blue: "text-ink/70 hover:text-ink",
+  white: "text-skyBrand hover:text-skyBrand/80",
+  gray: "text-skyBrand hover:text-skyBrand/80",
+  lightblue: "text-skyBrand hover:text-skyBrand/80",
+};
 
 function VideoBlock({ poster }: { poster: string }) {
   return (
@@ -73,13 +73,20 @@ function VideoBlock({ poster }: { poster: string }) {
           aria-label="Play video"
           className="flex h-16 w-16 items-center justify-center rounded-full bg-skyBrand shadow-sky transition hover:scale-105 hover:bg-skyBrand/90"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="ml-1 text-ink" aria-hidden="true">
-            <polygon points="5,3 19,12 5,21"/>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="ml-1 text-ink"
+            aria-hidden="true"
+          >
+            <polygon points="5,3 19,12 5,21" />
           </svg>
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 export default function About() {
@@ -103,19 +110,20 @@ export default function About() {
               About us
             </h1>
             <p className="mt-6 text-[0.875rem] leading-relaxed text-ink/80">
-              Studio Dental brings world-class dentistry to Islamabad. Our two specialized
-              clinics combine experience and leadership — integrating advanced treatment with
-              exceptional patient service.
+              Studio Dental brings world-class dentistry to Islamabad. Our two
+              specialized clinics combine experience and leadership —
+              integrating advanced treatment with exceptional patient service.
             </p>
             <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
-              In our clinics at DHA Phase II and F-7 Markaz, a large team of specialists
-              takes care of patients — including implantologists, orthodontists, and oral
-              surgeons who share their knowledge at international conferences.
+              In our clinics at DHA Phase II and F-7 Markaz, a large team of
+              specialists takes care of patients — including implantologists,
+              orthodontists, and oral surgeons who share their knowledge at
+              international conferences.
             </p>
             <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
-              Patients can receive all necessary dental services under one roof: from modern
-              diagnostics and X-ray to implantation, orthodontics, restorative dentistry,
-              and pediatric dental care.
+              Patients can receive all necessary dental services under one roof:
+              from modern diagnostics and X-ray to implantation, orthodontics,
+              restorative dentistry, and pediatric dental care.
             </p>
             <p className="mt-6 text-[0.75rem] font-normal uppercase tracking-widest text-ink/50">
               Experience. Quality. Excellence.
@@ -126,24 +134,25 @@ export default function About() {
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="reveal bg-white py-16 md:py-20">
+      <section className="reveal bg-[#f9f9f9] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
-            We are sure you know that all of us at Studio Dental love our work, are
-            professionals in our field, and always take care of you. We want to tell you
-            about ourselves from a slightly different angle — one we think you'll find
-            interesting.
+            We are sure you know that all of us at Studio Dental love our work,
+            are professionals in our field, and always take care of you. We want
+            to tell you about ourselves from a slightly different angle — one we
+            think you'll find interesting.
           </p>
           <p className="mt-5 text-[0.875rem] leading-relaxed text-ink/80">
-            Behind the clinic doors, we are just like you: young and driven, parents
-            rushing home to family, people who love to exercise, eat well, and travel. We
-            love, dream, laugh — and we know that great work usually begins with a smile.
+            Behind the clinic doors, we are just like you: young and driven,
+            parents rushing home to family, people who love to exercise, eat
+            well, and travel. We love, dream, laugh — and we know that great
+            work usually begins with a smile.
           </p>
         </div>
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="reveal bg-white px-5 pb-16 md:px-8 md:pb-20">
+      <section className="reveal bg-[#f9f9f9] px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=70" />
       </section>
 
@@ -163,13 +172,13 @@ export default function About() {
       </section>
 
       {/* ── 5. Text block ── */}
-      <section className="reveal bg-white py-16 md:py-20">
+      <section className="reveal bg-[#f9f9f9] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
-            We are all dentists with our own hobbies and passions — which often come in
-            handy in our daily clinical work and in connecting with patients. Our interests
-            range from marathon running to mountain climbing, from painting to yoga.
-            Curious who does what and why?
+            We are all dentists with our own hobbies and passions — which often
+            come in handy in our daily clinical work and in connecting with
+            patients. Our interests range from marathon running to mountain
+            climbing, from painting to yoga. Curious who does what and why?
           </p>
         </div>
       </section>
@@ -190,14 +199,21 @@ export default function About() {
                     aria-hidden="true"
                     className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
                   />
-                  <div className="absolute inset-0 bg-skyBrand/60" aria-hidden="true" />
+                  <div
+                    className="absolute inset-0 bg-skyBrand/60"
+                    aria-hidden="true"
+                  />
                 </>
               )}
               <div className="relative">
-                <h3 className={`text-[1.15rem] font-semibold leading-tight ${TEXT[card.bg]}`}>
+                <h3
+                  className={`text-[1.15rem] font-semibold leading-tight ${TEXT[card.bg]}`}
+                >
                   {card.name}
                 </h3>
-                <p className={`mt-3 text-[0.82rem] leading-relaxed ${TEXT[card.bg]} opacity-80`}>
+                <p
+                  className={`mt-3 text-[0.82rem] leading-relaxed ${TEXT[card.bg]} opacity-80`}
+                >
                   {card.blurb}
                 </p>
                 <Link
@@ -213,9 +229,9 @@ export default function About() {
       </section>
 
       {/* ── 7. Second video ── */}
-      <section className="reveal bg-white px-5 py-16 md:px-8 md:py-20">
+      <section className="reveal bg-[#f9f9f9] px-5 py-16 md:px-8 md:py-20">
         <VideoBlock poster="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1400&q=70" />
       </section>
     </>
-  )
+  );
 }

@@ -201,7 +201,7 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-creamBrand pb-10 pt-14 text-ink md:pb-14 md:pt-16">
+    <footer className="bg-[#f9f9f9] pb-10 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="mx-auto w-full max-w-5xl px-5 md:px-8">
         <h2 className="mb-8 text-[clamp(1.75rem,3.2vw,2.35rem)] font-bold tracking-tight text-ink md:mb-10">
           Contacts
