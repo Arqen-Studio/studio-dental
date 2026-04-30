@@ -17,7 +17,7 @@ export function DoctorFlipCard({
 }: DoctorFlipCardProps) {
   return (
     <div className="relative h-[480px] [transform-style:preserve-3d] transition duration-700 ease-out group-hover:[transform:rotateY(180deg)]">
-      <div className="absolute inset-0 overflow-hidden rounded-lg border border-black/10 bg-creamBrand shadow-soft-sm [backface-visibility:hidden]">
+      <div className="absolute inset-0 overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm [backface-visibility:hidden]">
         <div className="relative h-56 w-full overflow-hidden bg-black/[0.04]" aria-hidden="true">
           <img
             src={image}
@@ -64,7 +64,7 @@ export function DoctorFlipCard({
             {highlights.map((item) => (
               <span
                 key={item}
-                className="rounded-full bg-creamBrand/90 px-3 py-1 text-[0.58rem] font-bold uppercase tracking-[0.12em] text-ink2"
+                className="rounded-full bg-white/90 px-3 py-1 text-[0.58rem] font-bold uppercase tracking-[0.12em] text-ink2"
               >
                 {item}
               </span>

@@ -59,7 +59,7 @@ const hoverEase = 'ease-[cubic-bezier(0.22,1,0.36,1)]'
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-creamBrand px-5 py-9 md:px-8 md:py-12"
+      className="bg-white px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full max-w-[1240px]">
@@ -83,7 +83,7 @@ export default function HomeClinicHub() {
             <Link
               key={card.title}
               to={card.to}
-              className={`group relative aspect-[4/3] min-h-[200px] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-creamBrand transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-skyBrand`}
+              className={`group relative aspect-[4/3] min-h-[200px] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-white transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-skyBrand`}
             >
               <img
                 src={card.image}

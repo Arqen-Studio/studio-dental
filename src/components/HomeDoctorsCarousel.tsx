@@ -67,7 +67,7 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-creamBrand px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
+    <section className="bg-white px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="home-doctors-heading"
@@ -85,7 +85,7 @@ export default function HomeDoctorsCarousel() {
               <article
                 key={doctor.name}
                 data-doctor-slide
-                className="w-[min(196px,calc(100vw-2.5rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-creamBrand shadow-[0_2px_12px_rgba(15,27,36,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,27,36,0.12)] sm:w-[210px]"
+                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(15,27,36,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,27,36,0.12)] sm:w-[260px] md:w-[280px]"
               >
                 <div className="aspect-[4/5] bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
                   <img
@@ -95,7 +95,7 @@ export default function HomeDoctorsCarousel() {
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-                <div className="flex flex-col bg-creamBrand px-3 pb-3 pt-2.5">
+                <div className="flex flex-col bg-white px-3 pb-3 pt-2.5">
                   <h3 className="text-[0.84rem] font-bold leading-tight text-skyBrand sm:text-[0.88rem]">{doctor.name}</h3>
                   <p className="mt-1.5 text-[0.64rem] leading-snug text-muted sm:text-[0.66rem]">{doctor.role}</p>
                   <p className="mt-1 line-clamp-2 text-[0.58rem] leading-snug text-muted sm:text-[0.6rem]">{doctor.creds}</p>

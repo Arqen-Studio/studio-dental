@@ -35,7 +35,7 @@ const CLINIC_LINKS = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-creamBrand py-10 md:py-16">
+    <section className="bg-white py-10 md:py-16">
       <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <div className="mx-auto mb-6 flex max-w-[720px] flex-col items-center gap-3 text-center md:mb-9">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
@@ -49,7 +49,7 @@ export default function Testimonials() {
           {CLINIC_LINKS.map((item) => (
             <article
               key={item.title}
-              className="relative flex flex-col gap-5 overflow-hidden rounded-lg border border-black/10 bg-creamBrand p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-skyBrand/40 hover:shadow-soft-md"
+              className="relative flex flex-col gap-5 overflow-hidden rounded-lg border border-black/10 bg-white p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-skyBrand/40 hover:shadow-soft-md"
             >
               <div className="absolute left-0 top-0 h-[3px] w-full bg-gradient-to-r from-skyBrand to-transparent" aria-hidden="true" />
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-skyBrand/20 text-skyBrand" aria-hidden="true">

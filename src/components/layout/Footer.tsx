@@ -89,7 +89,9 @@ function ClinicCard({
 }) {
   return (
     <article className="rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(15,27,36,0.08)] md:p-9">
-      <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">{city}</h3>
+      <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">
+        {city}
+      </h3>
 
       <div className="mt-8 space-y-8">
         <div className="flex gap-4">
@@ -116,14 +118,18 @@ function ClinicCard({
             <PhoneIcon />
           </IconCircle>
           <div className="min-w-0 flex-1 pt-0.5">
-            <p className="text-[0.78rem] font-medium text-muted">Tel. for registration:</p>
+            <p className="text-[0.78rem] font-medium text-muted">
+              Tel. for registration:
+            </p>
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
               className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-skyBrand"
             >
               {phone}
             </a>
-            <p className="mt-3 text-[0.78rem] font-medium text-muted">E-mail:</p>
+            <p className="mt-3 text-[0.78rem] font-medium text-muted">
+              E-mail:
+            </p>
             <a
               href={`mailto:${email}`}
               className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-skyBrand"
@@ -146,7 +152,9 @@ function ClinicCard({
             <ClockIcon />
           </IconCircle>
           <div className="min-w-0 flex-1 pt-0.5">
-            <p className="text-[0.78rem] font-medium text-muted">Working hours:</p>
+            <p className="text-[0.78rem] font-medium text-muted">
+              Working hours:
+            </p>
             {hours.map((h) => (
               <p key={h} className="mt-1 text-[0.88rem] leading-snug text-ink">
                 {h}
@@ -168,16 +176,33 @@ export default function Footer() {
   const LINKEDIN_URL = "https://www.linkedin.com/";
   const YOUTUBE_URL = "https://www.youtube.com/";
 
+  /** Assets under `public/svg/` */
   const socialLinks = [
-    { label: "Facebook", href: FACEBOOK_URL, src: "/svg/facebook.svg" },
-    { label: "Instagram", href: INSTAGRAM_URL, src: "/svg/instagram.svg" },
-    { label: "LinkedIn", href: LINKEDIN_URL, src: "/svg/linkedin.svg" },
-    { label: "YouTube", href: YOUTUBE_URL, src: "/svg/youtube.svg" },
+    {
+      label: "Facebook",
+      href: FACEBOOK_URL,
+      src: "/svg/facebook-circle-svgrepo-com.svg",
+    },
+    {
+      label: "Instagram",
+      href: INSTAGRAM_URL,
+      src: "/svg/instagram-167-svgrepo-com.svg",
+    },
+    {
+      label: "LinkedIn",
+      href: LINKEDIN_URL,
+      src: "/svg/linkedin-linked-in-svgrepo-com.svg",
+    },
+    {
+      label: "YouTube",
+      href: YOUTUBE_URL,
+      src: "/svg/social-youtube-svgrepo-com.svg",
+    },
   ] as const;
 
   return (
     <footer className="bg-creamBrand pb-10 pt-14 text-ink md:pb-14 md:pt-16">
-      <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+      <div className="mx-auto w-full max-w-5xl px-5 md:px-8">
         <h2 className="mb-8 text-[clamp(1.75rem,3.2vw,2.35rem)] font-bold tracking-tight text-ink md:mb-10">
           Contacts
         </h2>
@@ -196,9 +221,9 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 border-t border-black/10 pt-10 md:mt-16 md:pt-12">
+        <div className="mt-5   pt-10 ">
           <div className="flex flex-col items-start text-left">
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
@@ -206,20 +231,25 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-skyBrand shadow-soft-sm ring-1 ring-ink/10 transition duration-200 hover:bg-skyBrand/90 hover:shadow-md"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-skyBrand shadow-[0_1px_3px_rgba(15,27,36,0.12)] ring-1 ring-ink/10 transition duration-200 hover:bg-skyBrand/90 hover:shadow-md sm:h-12 sm:w-12"
                 >
-                  <img src={s.src} alt="" className="h-[28px] w-[28px] object-contain" />
+                  <img
+                    src={s.src}
+                    alt=""
+                    className="h-[22px] w-[22px] object-contain sm:h-[26px] sm:w-[26px]"
+                  />
                 </a>
               ))}
             </div>
 
-            <p className="mt-8 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-skyBrand">
-              Report potential ethical, corruption, violence or harassment-related violations and other concerns.
+            <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-skyBrand md:text-[0.875rem]">
+              Report potential ethical, corruption, violence or
+              harassment-related violations and other concerns.
             </p>
 
             <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-muted">
-              &copy; {new Date().getFullYear()} Studio Dental — clinics at DHA Phase II and F-7 Markaz, Islamabad. All
-              rights reserved.{" "}
+              &copy; {new Date().getFullYear()} Studio Dental — clinics at DHA
+              Phase II and F-7 Markaz, Islamabad. All rights reserved.{" "}
               <a
                 href="https://thestudiodental.com"
                 target="_blank"

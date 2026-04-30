@@ -20,7 +20,7 @@ const POSTS = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="bg-creamBrand py-10 md:py-16">
+    <section id="blog" className="bg-white py-10 md:py-16">
       <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <div className="mb-6 flex max-w-[760px] flex-col gap-3 md:mb-9">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
@@ -34,7 +34,7 @@ export default function Blog() {
           {POSTS.map((p) => (
             <article
               key={p.title}
-              className="rounded-lg border border-black/10 bg-creamBrand p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-md"
+              className="rounded-lg border border-black/10 bg-white p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-md"
             >
               <h3 className="text-[1.15rem]">{p.title}</h3>
               <p className="mt-3 text-[0.96rem] leading-relaxed text-muted">{p.excerpt}</p>

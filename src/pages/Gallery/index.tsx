@@ -11,7 +11,7 @@ const GALLERY = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-creamBrand py-10 md:py-16">
+    <section id="gallery" className="bg-white py-10 md:py-16">
       <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <div className="mb-6 flex max-w-[760px] flex-col gap-3 md:mb-9">
           <Link
@@ -30,7 +30,7 @@ export default function Gallery() {
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
           {GALLERY.map((src, idx) => (
-            <div key={src} className="overflow-hidden rounded-lg border border-black/10 bg-creamBrand">
+            <div key={src} className="overflow-hidden rounded-lg border border-black/10 bg-white">
               <img
                 src={src}
                 alt={`Studio Dental gallery ${idx + 1}`}

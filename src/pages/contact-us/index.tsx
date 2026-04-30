@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="bg-creamBrand py-10 md:py-16">
+    <section id="contact" className="bg-white py-10 md:py-16">
       <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-12">
         <div>
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
@@ -91,7 +91,7 @@ export default function Contact() {
         </div>
 
         <form
-          className="rounded-lg border border-black/10 bg-creamBrand p-6 shadow-soft-md md:p-9"
+          className="rounded-lg border border-black/10 bg-white p-6 shadow-soft-md md:p-9"
           noValidate
         >
           <div className="flex flex-col gap-2">
@@ -107,7 +107,7 @@ export default function Contact() {
               name="name"
                 placeholder="Your full name"
               required
-              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-creamBrand focus:ring-4 focus:ring-skyBrand/25"
+              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
           </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
               name="email"
                 placeholder="you@example.com"
               required
-              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-creamBrand focus:ring-4 focus:ring-skyBrand/25"
+              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
           </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                 id="service"
                 name="service"
                 defaultValue="Dental implantation"
-                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-creamBrand focus:ring-4 focus:ring-skyBrand/25"
+                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
               >
                 <option>Dental implantation</option>
                 <option>All teeth on 4 implants</option>
@@ -161,7 +161,7 @@ export default function Contact() {
                 id="date"
                 type="date"
                 name="date"
-                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-creamBrand focus:ring-4 focus:ring-skyBrand/25"
+                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function Contact() {
               name="message"
               rows={4}
               placeholder="Any additional details for your consultation?"
-              className="min-h-[110px] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-skyBrand focus:bg-creamBrand focus:ring-4 focus:ring-skyBrand/25"
+              className="min-h-[110px] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
             />
           </div>
 

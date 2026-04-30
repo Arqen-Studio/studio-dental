@@ -10,7 +10,7 @@
   html {
     scroll-behavior: smooth;
     font-size: 18px; /* mobile base */
-    background: #f9f9f9;
+    background: #ffffff;
   }
 
   @media (min-width: 900px) {
@@ -21,11 +21,11 @@
 
   #root {
     min-height: 100dvh;
-    background: #f9f9f9;
+    background: #ffffff;
   }
 
   body {
-    background: #f9f9f9;
+    background: #ffffff;
     color: #5f6057;
     font-family: 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
     font-weight: 500;

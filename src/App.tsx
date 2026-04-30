@@ -23,7 +23,10 @@ function Layout() {
   const [displayLocation, setDisplayLocation] = useState(location);
   const nodeRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef(location);
-  locationRef.current = location;
+
+  useEffect(() => {
+    locationRef.current = location;
+  }, [location]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -52,7 +55,7 @@ function Layout() {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-0 flex-1 flex-col bg-creamBrand">
+      <main className="flex min-h-0 flex-1 flex-col bg-white">
         <SwitchTransition mode="out-in">
           <CSSTransition
             nodeRef={nodeRef}

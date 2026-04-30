@@ -60,10 +60,13 @@ export function useCountUp(target: number, shouldStart: boolean, duration = 1300
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    if (!shouldStart) {
-      setValue(0);
-      return;
-    }
+    if (shouldStart) return;
+    const id = requestAnimationFrame(() => setValue(0));
+    return () => cancelAnimationFrame(id);
+  }, [shouldStart]);
+
+  useEffect(() => {
+    if (!shouldStart) return;
 
     let frameId = 0;
     const startTime = performance.now();

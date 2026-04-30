@@ -1,10 +1,12 @@
+import type { LucideIcon } from 'lucide-react'
+import { Anchor, ArrowRight, Baby, BarChart3, Rows3, Star, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 type ShowcaseItem = {
   title: string
   desc: string
   price: string
-  iconId: string
+  Icon: LucideIcon
   featured?: boolean
   image?: string
   imageAlt?: string
@@ -45,7 +47,8 @@ function ServicePriceLine({ price, light }: { price: string; light?: boolean }) 
   )
 }
 
-function IconBubble({ iconId, featured }: { iconId: string; featured?: boolean }) {
+function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }) {
+  const size = featured ? 26 : 22
   return (
     <span
       className={[
@@ -56,9 +59,7 @@ function IconBubble({ iconId, featured }: { iconId: string; featured?: boolean }
       ].join(' ')}
       aria-hidden="true"
     >
-      <svg width={featured ? 26 : 22} height={featured ? 26 : 22} viewBox="0 0 24 24" fill="none" className="[stroke-width:2]">
-        <use href={`/svg/sprite.svg#${iconId}`} />
-      </svg>
+      <Icon size={size} strokeWidth={2} className="shrink-0" />
     </span>
   )
 }
@@ -68,7 +69,7 @@ const SHOWCASE: ShowcaseItem[] = [
     title: 'New patient consultation',
     desc: 'Full oral exam, digital screening, and a clear treatment roadmap tailored to your goals.',
     price: 'From PKR 3,500',
-    iconId: 'icon-tooth',
+    Icon: BarChart3,
     featured: true,
     image:
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=72',
@@ -78,31 +79,31 @@ const SHOWCASE: ShowcaseItem[] = [
     title: 'Clear aligners',
     desc: 'Discreet orthodontic plans with digital bite analysis.',
     price: 'Custom quote',
-    iconId: 'icon-aligners',
+    Icon: Rows3,
   },
   {
     title: 'Dental implants',
     desc: 'Replace missing teeth with planned implant placement.',
     price: 'Custom quote',
-    iconId: 'icon-implants',
+    Icon: Anchor,
   },
   {
     title: 'Teeth whitening',
     desc: 'Safe in-clinic whitening for a brighter smile.',
     price: 'From PKR 15,000',
-    iconId: 'icon-star-outline',
+    Icon: Star,
   },
   {
     title: 'Emergency care',
     desc: 'Same-day attention for pain, swelling, or trauma.',
     price: 'Starts at PKR 5,000',
-    iconId: 'icon-bolt',
+    Icon: Zap,
   },
   {
     title: 'Pediatric dentistry',
     desc: 'Gentle preventive and restorative care for children.',
     price: 'From PKR 4,500',
-    iconId: 'icon-kids',
+    Icon: Baby,
   },
 ]
 
@@ -116,7 +117,7 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-creamBrand py-10 md:py-16"
+      className="relative overflow-hidden bg-white py-10 md:py-16"
     >
       <div
         className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#83BFE3]/20 blur-3xl"
@@ -130,7 +131,7 @@ export default function HomeServicesShowcase({
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <div className="mb-7 flex flex-col gap-5 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[42rem]">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-creamBrand/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-[#83BFE3]" aria-hidden="true" />
               Our services
             </span>
@@ -145,13 +146,11 @@ export default function HomeServicesShowcase({
 
           <Link
             to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-skyBrand/35 bg-creamBrand px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-skyBrand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
           >
             Full price list & services
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#83BFE3]/20 text-ink transition group-hover:bg-[#83BFE3]/35">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <use href="/svg/sprite.svg#icon-arrow-right" />
-              </svg>
+              <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
           </Link>
         </div>
@@ -173,7 +172,7 @@ export default function HomeServicesShowcase({
               aria-hidden="true"
             />
             <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
-              <IconBubble iconId={featured.iconId} featured />
+              <IconBubble Icon={featured.Icon} featured />
               <h3 className="mt-5 text-[1.35rem] font-extrabold leading-tight text-[#83BFE3] sm:text-[1.5rem]">
                 {featured.title}
               </h3>
@@ -188,9 +187,7 @@ export default function HomeServicesShowcase({
                 className="mt-5 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-creamBrand/90 underline-offset-4 transition hover:text-white hover:underline"
               >
                 Explore all treatments
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="opacity-90">
-                  <use href="/svg/sprite.svg#icon-arrow-right" />
-                </svg>
+                <ArrowRight size={12} strokeWidth={2.25} className="opacity-90" aria-hidden />
               </Link>
             </div>
           </article>
@@ -198,10 +195,10 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.title}
-              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-creamBrand/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/28 hover:shadow-soft-md sm:min-h-0"
+              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/28 hover:shadow-soft-md sm:min-h-0"
             >
               <div className="flex items-start gap-3">
-                <IconBubble iconId={item.iconId} />
+                <IconBubble Icon={item.Icon} />
                 <div className="min-w-0 flex-1">
                   <h3 className="text-[1.02rem] font-extrabold leading-snug text-[#83BFE3]">{item.title}</h3>
                   <p className="mt-2 text-[0.82rem] leading-relaxed text-muted">{item.desc}</p>

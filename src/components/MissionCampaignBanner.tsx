@@ -8,24 +8,24 @@ export default function MissionCampaignBanner() {
   return (
     <Link
       to="/mission-campaign"
-      className="group relative block min-h-[260px] overflow-hidden rounded-[24px] shadow-soft-md outline-none ring-offset-2 ring-offset-creamBrand transition hover:shadow-soft-lg focus-visible:ring-2 focus-visible:ring-skyBrand md:min-h-[300px] md:rounded-[28px]"
+      className="group relative block min-h-[260px] overflow-hidden rounded-[24px] shadow-soft-md outline-none ring-offset-2 ring-offset-white transition hover:shadow-soft-lg focus-visible:ring-2 focus-visible:ring-skyBrand md:min-h-[300px] md:rounded-[28px]"
       aria-label="A mission for life — New image campaign. Open campaign page."
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
-        {/* Left: light panel */}
-        <div className="relative flex flex-1 flex-col justify-end border border-black/10 bg-creamBrand px-8 pb-12 pt-10 md:border-r md:px-12 md:pb-14 md:pr-12 md:pt-14">
+        {/* Left: primary gradient panel */}
+        <div className="relative flex flex-1 flex-col justify-end border border-skyBrand/25 bg-gradient-to-br from-[#5aadde] via-skyBrand to-[#c9ebfc] px-8 pb-12 pt-10 md:border-r md:px-12 md:pb-14 md:pr-12 md:pt-14">
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.35]"
+            className="pointer-events-none absolute inset-0 opacity-90"
             style={{
               background:
-                'radial-gradient(ellipse 90% 70% at 0% 100%, rgba(135, 206, 250, 0.35) 0%, transparent 55%)',
+                'radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(15, 27, 36, 0.08) 0%, transparent 50%)',
             }}
             aria-hidden="true"
           />
           <h2 className="relative z-[1] font-heading text-[clamp(1.5rem,4vw,2.35rem)] font-extrabold leading-[1.08] tracking-tight text-ink">
             A mission for life
           </h2>
-          <p className="relative z-[1] mt-2 text-[0.95rem] font-medium text-muted md:text-[1.05rem]">
+          <p className="relative z-[1] mt-2 text-[0.95rem] font-medium text-ink/72 md:text-[1.05rem]">
             New image campaign
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function MissionCampaignBanner() {
             decoding="async"
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/10 to-transparent md:bg-gradient-to-r md:from-ink/35 md:via-ink/10 md:to-transparent"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/10 to-transparent md:bg-gradient-to-r md:from-[#5aadde]/25 md:via-ink/15 md:to-transparent"
             aria-hidden="true"
           />
 

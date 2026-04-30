@@ -1,3 +1,4 @@
+import { Mail, Smartphone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ContactDrawer from "../ContactDrawer";
@@ -146,16 +147,12 @@ const transparentNavColor = "#87CEFA";
               ].join(" ")}
               aria-label="Call us"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-                className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
-              >
-                <use href="/svg/sprite.svg#icon-phone" />
-              </svg>
+              <Smartphone
+                size={20}
+                strokeWidth={2.2}
+                className="[vector-effect:non-scaling-stroke]"
+                aria-hidden
+              />
             </a>
 
             <button
@@ -171,16 +168,12 @@ const transparentNavColor = "#87CEFA";
               aria-haspopup="dialog"
               aria-expanded={contactOpen}
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-                className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
-              >
-                <use href="/svg/sprite.svg#icon-mail" />
-              </svg>
+              <Mail
+                size={20}
+                strokeWidth={2.2}
+                className="[vector-effect:non-scaling-stroke]"
+                aria-hidden
+              />
             </button>
           </div>
 
@@ -222,7 +215,7 @@ const transparentNavColor = "#87CEFA";
 
       <div
         className={[
-          "fixed left-0 right-0 top-[78px] border-t border-black/10 bg-creamBrand px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(15,27,36,0.08)] transition-all duration-300 ease-out xl:hidden",
+          "fixed left-0 right-0 top-[78px] border-t border-white/10 bg-ink px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(15,27,36,0.25)] transition-all duration-300 ease-out xl:hidden",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
@@ -237,7 +230,7 @@ const transparentNavColor = "#87CEFA";
               key={item.label}
               to={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center border-b border-black/10 py-4 text-[14px] font-semibold text-ink transition hover:text-skyBrand"
+              className="flex items-center border-b border-white/10 py-4 text-[14px] font-semibold text-creamBrand transition hover:text-skyBrand"
             >
               {item.label}
             </Link>
@@ -247,35 +240,27 @@ const transparentNavColor = "#87CEFA";
         <div className="mt-6 flex flex-col gap-3">
           <a
             href="tel:03299961999"
-            className="inline-flex items-center gap-3 text-[14px] text-muted transition hover:text-skyBrand"
+            className="inline-flex items-center gap-3 text-[14px] text-creamBrand/75 transition hover:text-skyBrand"
           >
-            <svg
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
-            >
-              <use href="/svg/sprite.svg#icon-phone" />
-            </svg>
+            <Smartphone
+              size={17}
+              strokeWidth={2.2}
+              className="shrink-0 [vector-effect:non-scaling-stroke]"
+              aria-hidden
+            />
             0329 9961999
           </a>
           <button
             type="button"
             onClick={openContactDrawer}
-            className="inline-flex items-center gap-3 text-left text-[14px] text-muted transition hover:text-skyBrand"
+            className="inline-flex items-center gap-3 text-left text-[14px] text-creamBrand/75 transition hover:text-skyBrand"
           >
-            <svg
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="[stroke-width:2.2] [vector-effect:non-scaling-stroke]"
-            >
-              <use href="/svg/sprite.svg#icon-mail" />
-            </svg>
+            <Mail
+              size={17}
+              strokeWidth={2.2}
+              className="shrink-0 [vector-effect:non-scaling-stroke]"
+              aria-hidden
+            />
             info@thestudiodental.com
           </button>
         </div>

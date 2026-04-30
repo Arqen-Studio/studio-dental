@@ -104,7 +104,7 @@ export default function Hero() {
           </Link>
           <Link
             to="/services"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-creamBrand px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-white px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md"
           >
             View all services
           </Link>
@@ -136,11 +136,11 @@ export default function Hero() {
         className="absolute bottom-7 left-1/2 z-10 hidden h-[42px] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
         aria-label="Go to services"
       >
-        <span className="h-2 w-[3px] rounded bg-creamBrand animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
+        <span className="h-2 w-[3px] rounded bg-white animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
       </Link>
     </section>
 
-    <section className="bg-creamBrand px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5" aria-label="Featured campaign">
+    <section className="bg-white px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5" aria-label="Featured campaign">
       <div className="mx-auto max-w-[1240px]">
         <MissionCampaignBanner />
       </div>

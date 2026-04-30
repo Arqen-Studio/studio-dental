@@ -44,9 +44,9 @@ const TEAM_CARDS = [
 ]
 
 const BG: Record<string, string> = {
-  blue: 'bg-creamBrand',
-  white: 'bg-creamBrand',
-  gray: 'bg-creamBrand',
+  blue: 'bg-skyBrand',
+  white: 'bg-white',
+  gray: 'bg-neutral-100',
   lightblue: 'bg-skyBrand/15',
 }
 
@@ -96,8 +96,8 @@ export default function About() {
           />
         </div>
 
-        {/* Right — cream panel */}
-        <div className="flex flex-col justify-center border-black/10 bg-creamBrand px-8 py-16 md:px-12 lg:border-l lg:px-16 lg:pt-[calc(78px+3rem)]">
+        {/* Right — blue panel */}
+        <div className="flex flex-col justify-center bg-skyBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[620px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               About us
@@ -126,7 +126,7 @@ export default function About() {
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="reveal bg-creamBrand py-16 md:py-20">
+      <section className="reveal bg-white py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work, are
@@ -143,7 +143,7 @@ export default function About() {
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="reveal bg-creamBrand px-5 pb-16 md:px-8 md:pb-20">
+      <section className="reveal bg-white px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=70" />
       </section>
 
@@ -163,7 +163,7 @@ export default function About() {
       </section>
 
       {/* ── 5. Text block ── */}
-      <section className="reveal bg-creamBrand py-16 md:py-20">
+      <section className="reveal bg-white py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions — which often come in
@@ -190,7 +190,7 @@ export default function About() {
                     aria-hidden="true"
                     className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
                   />
-                  <div className="absolute inset-0 bg-ink/45" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-skyBrand/60" aria-hidden="true" />
                 </>
               )}
               <div className="relative">
@@ -213,7 +213,7 @@ export default function About() {
       </section>
 
       {/* ── 7. Second video ── */}
-      <section className="reveal bg-creamBrand px-5 py-16 md:px-8 md:py-20">
+      <section className="reveal bg-white px-5 py-16 md:px-8 md:py-20">
         <VideoBlock poster="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1400&q=70" />
       </section>
     </>
