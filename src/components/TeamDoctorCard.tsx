@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom'
+
 export type TeamDoctorCardProps = {
+  slug: string
   name: string
   creds: string
   role: string
@@ -6,9 +9,13 @@ export type TeamDoctorCardProps = {
   clinic: string
 }
 
-export function TeamDoctorCard({ name, creds, role, image, clinic }: TeamDoctorCardProps) {
+export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamDoctorCardProps) {
   return (
-    <article className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm">
+    <Link
+      to={`/doctors/${slug}`}
+      className="block overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skyBrand"
+    >
+    <article className="overflow-hidden">
       <div className="aspect-[4/3] bg-[#c7c3c7]">
         <img
           src={image}
@@ -26,5 +33,6 @@ export function TeamDoctorCard({ name, creds, role, image, clinic }: TeamDoctorC
         </span>
       </div>
     </article>
+    </Link>
   )
 }

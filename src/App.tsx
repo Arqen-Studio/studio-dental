@@ -19,6 +19,7 @@ import Clinics from "./pages/Clinics";
 import MissionCampaign from "./pages/MissionCampaign";
 import Prices from "./pages/Prices";
 import BlogPost from "./pages/BlogPost";
+import DoctorProfile from "./pages/DoctorProfile";
 import ServiceDetail from "./pages/ServiceDetail";
 
 const TRANSITION_MS = 500;
@@ -103,6 +104,7 @@ function Layout() {
               <Routes location={displayLocation}>
                 <Route path="/" element={<Hero />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/doctors/:slug" element={<DoctorProfile />} />
                 <Route path="/doctors" element={<TeamPage />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/blog" element={<Blog />} />

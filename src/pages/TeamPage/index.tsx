@@ -138,6 +138,7 @@ export default function TeamPage() {
             {filteredDoctors.map((doctor) => (
               <TeamDoctorCard
                 key={doctor.name}
+                slug={doctor.slug}
                 name={doctor.name}
                 creds={doctor.creds}
                 role={doctor.role}

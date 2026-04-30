@@ -162,7 +162,7 @@ export default function Hero() {
                 {clinicsCount} clinics
               </strong>
               <span className="text-[0.82rem] text-creamBrand/70">
-                Vilnius and Kaunas
+               DHA Phase II and F-7 Markaz
               </span>
             </div>
           </div>

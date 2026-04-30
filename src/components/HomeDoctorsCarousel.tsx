@@ -82,11 +82,13 @@ export default function HomeDoctorsCarousel() {
             className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {TEAM_DOCTORS.map((doctor) => (
-              <article
+              <Link
                 key={doctor.name}
+                to={`/doctors/${doctor.slug}`}
                 data-doctor-slide
-                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(15,27,36,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,27,36,0.12)] sm:w-[260px] md:w-[280px]"
+                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(15,27,36,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,27,36,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skyBrand sm:w-[260px] md:w-[280px]"
               >
+              <article className="h-full">
                 <div className="aspect-[4/5] bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
                   <img
                     src={doctor.image}
@@ -104,6 +106,7 @@ export default function HomeDoctorsCarousel() {
                   </span>
                 </div>
               </article>
+              </Link>
             ))}
           </div>
 

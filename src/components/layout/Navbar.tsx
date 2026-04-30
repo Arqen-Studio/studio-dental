@@ -50,6 +50,7 @@ export default function Navbar() {
     pathname === "/" ||
     pathname === "/services" ||
     pathname === "/doctors" ||
+    /^\/doctors\/.+/.test(pathname) ||
     pathname === "/about";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 const navHeadingColor = "rgb(52, 53, 46)";
