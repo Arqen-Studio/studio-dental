@@ -30,7 +30,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
   if (typeof document === "undefined") return null;
 
   const fieldClass =
-    "w-full rounded-[8px] border border-neutral-300 bg-white px-3 py-2 text-[13px] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-skyBrand focus:ring-2 focus:ring-skyBrand/25";
+    "w-full rounded-[8px] border border-neutral-300 bg-creamBrand px-3 py-2 text-[13px] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-skyBrand focus:ring-2 focus:ring-skyBrand/25";
 
   const inset = "px-10 sm:px-12";
 
@@ -60,7 +60,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,520px)] flex-col bg-white font-sans text-[13px] leading-normal text-ink shadow-[-4px_0_28px_rgba(15,27,36,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,520px)]",
+          "relative flex h-full w-[min(100%,520px)] flex-col bg-creamBrand font-sans text-[13px] leading-normal text-ink shadow-[-4px_0_28px_rgba(15,27,36,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,520px)]",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >

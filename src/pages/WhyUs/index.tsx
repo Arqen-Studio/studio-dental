@@ -25,7 +25,7 @@ export default function WhyUs() {
   return (
     <section
       id="why"
-      className="mx-4 overflow-hidden rounded-xl bg-ink py-10 text-creamBrand md:mx-8 md:py-16"
+      className="mx-4 overflow-hidden rounded-xl border border-black/10 bg-creamBrand py-10 text-ink md:mx-8 md:py-16"
     >
       <div className="mx-auto w-full max-w-[1240px] px-5 py-10 md:px-8 md:py-14">
         <div className="mb-8 max-w-[720px] md:mb-10">
@@ -33,47 +33,47 @@ export default function WhyUs() {
             <span className="h-1.5 w-1.5 rounded-full bg-skyBrand" aria-hidden="true" />
             Why Studio Dental
           </span>
-          <h2 className="mt-4 text-balance text-creamBrand">Experienced specialists and modern dentistry.</h2>
+          <h2 className="mt-4 text-balance text-ink">Experienced specialists and modern dentistry.</h2>
         </div>
 
         <div
           ref={statsRef}
-          className="mb-8 grid grid-cols-2 gap-6 border-y border-white/15 py-8 md:mb-10 md:grid-cols-4"
+          className="mb-8 grid grid-cols-2 gap-6 border-y border-black/10 py-8 md:mb-10 md:grid-cols-4"
         >
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-skyBrand">
               {yearsCount}+
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/70">Years of experience</div>
+            <div className="mt-2 text-[0.9rem] text-muted">Years of experience</div>
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-skyBrand">
               {clinicsCount}
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/70">Specialized clinics</div>
+            <div className="mt-2 text-[0.9rem] text-muted">Specialized clinics</div>
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-skyBrand">
               {specialistsCount}+
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/70">Top specialists</div>
+            <div className="mt-2 text-[0.9rem] text-muted">Top specialists</div>
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-skyBrand">
               {clientsCount}+
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/70">Happy clients treated</div>
+            <div className="mt-2 text-[0.9rem] text-muted">Happy clients treated</div>
           </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
-            <div key={f.title} className="border-t border-white/15 py-6">
+            <div key={f.title} className="border-t border-black/10 py-6">
               <div className="mb-4 text-[0.85rem] font-semibold tracking-[0.18em] text-skyBrand">
                 {String(i + 1).padStart(2, '0')}
               </div>
-              <h3 className="text-[1.3rem] font-semibold text-creamBrand">{f.title}</h3>
-              <p className="mt-2 text-[0.98rem] leading-relaxed text-creamBrand/75">{f.desc}</p>
+              <h3 className="text-[1.3rem] font-semibold text-ink">{f.title}</h3>
+              <p className="mt-2 text-[0.98rem] leading-relaxed text-muted">{f.desc}</p>
             </div>
           ))}
         </div>

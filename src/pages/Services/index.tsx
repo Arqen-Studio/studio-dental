@@ -139,7 +139,7 @@ function HomeServicesSection() {
           </p>
           <Link
             to="/services"
-            className="group inline-flex h-[40px] items-center justify-center gap-2 self-start whitespace-nowrap rounded-full border border-skyBrand/30 bg-white px-5 text-[0.75rem] font-semibold text-ink2 shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:text-ink hover:shadow-soft-md"
+            className="group inline-flex h-[40px] items-center justify-center gap-2 self-start whitespace-nowrap rounded-full border border-skyBrand/30 bg-creamBrand px-5 text-[0.75rem] font-semibold text-ink2 shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:text-ink hover:shadow-soft-md"
           >
             View all services
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-skyBrand/25 text-ink transition group-hover:bg-skyBrand/40">
@@ -184,9 +184,9 @@ export default function Services() {
   return (
     <>
       {/* ── 1. Split hero ── */}
-      <section className="grid bg-skyBrand pt-[78px] min-h-screen lg:bg-transparent lg:pt-0 lg:grid-cols-2">
+      <section className="grid bg-creamBrand pt-[78px] min-h-screen lg:bg-transparent lg:pt-0 lg:grid-cols-2">
         {/* Left — brand blue panel with accordion */}
-        <div className="flex flex-col justify-center bg-skyBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
+        <div className="flex flex-col justify-center bg-creamBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[580px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
             Services
@@ -258,7 +258,7 @@ export default function Services() {
         </div>
 
         {/* Right — form */}
-        <div className="flex flex-col justify-center bg-white px-8 py-16 md:px-12 lg:px-16">
+        <div className="flex flex-col justify-center bg-creamBrand px-8 py-16 md:px-12 lg:px-16">
           <div className="w-full max-w-[580px]">
           <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">
             Let's get in touch
@@ -275,7 +275,7 @@ export default function Services() {
                   id="clinic"
                   name="clinic"
                   defaultValue=""
-                  className="w-full appearance-none rounded-sm border border-black/15 bg-white px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                  className="w-full appearance-none rounded-sm border border-black/15 bg-creamBrand px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
                 >
                   <option value="" disabled />
                   {CLINICS.map((c) => (
@@ -363,12 +363,12 @@ export default function Services() {
       </section>
 
       {/* ── 3. Contacts ── */}
-      <section className="reveal bg-white py-16 md:py-20">
+      <section className="reveal bg-creamBrand py-16 md:py-20">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="mb-8 text-[clamp(1.6rem,3vw,2.2rem)] font-semibold text-ink">Contacts</h2>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
             {CLINICS.map((clinic) => (
-              <div key={clinic.id} className="rounded-xl border border-black/8 bg-white p-7 shadow-soft-sm md:p-9">
+              <div key={clinic.id} className="rounded-xl border border-black/8 bg-creamBrand p-7 shadow-soft-sm md:p-9">
                 <h3 className="mb-5 text-[1.35rem] font-semibold text-ink">{clinic.city}</h3>
 
                 <div className="flex items-start gap-4">

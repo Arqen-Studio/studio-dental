@@ -49,7 +49,7 @@ export default function Testimonials() {
           {CLINIC_LINKS.map((item) => (
             <article
               key={item.title}
-              className="relative flex flex-col gap-5 overflow-hidden rounded-lg border border-black/10 bg-white p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-skyBrand/40 hover:shadow-soft-md"
+              className="relative flex flex-col gap-5 overflow-hidden rounded-lg border border-black/10 bg-creamBrand p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-skyBrand/40 hover:shadow-soft-md"
             >
               <div className="absolute left-0 top-0 h-[3px] w-full bg-gradient-to-r from-skyBrand to-transparent" aria-hidden="true" />
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-skyBrand/20 text-skyBrand" aria-hidden="true">

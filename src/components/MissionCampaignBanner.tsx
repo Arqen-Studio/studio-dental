@@ -12,24 +12,20 @@ export default function MissionCampaignBanner() {
       aria-label="A mission for life — New image campaign. Open campaign page."
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
-        {/* Left: dark panel + white copy; subtle primary glow */}
-        <div className="relative flex flex-1 flex-col justify-end bg-gradient-to-br from-ink via-ink2 to-ink px-8 pb-12 pt-10 md:px-12 md:pb-14 md:pr-12 md:pt-14">
+        {/* Left: light panel */}
+        <div className="relative flex flex-1 flex-col justify-end border border-black/10 bg-creamBrand px-8 pb-12 pt-10 md:border-r md:px-12 md:pb-14 md:pr-12 md:pt-14">
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.12]"
+            className="pointer-events-none absolute inset-0 opacity-[0.35]"
             style={{
               background:
-                'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(135, 206, 250, 0.65) 0%, transparent 55%)',
+                'radial-gradient(ellipse 90% 70% at 0% 100%, rgba(135, 206, 250, 0.35) 0%, transparent 55%)',
             }}
             aria-hidden="true"
           />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-32 bg-gradient-to-r from-ink to-transparent md:block"
-            aria-hidden="true"
-          />
-          <h2 className="relative z-[1] font-heading text-[clamp(1.5rem,4vw,2.35rem)] font-extrabold leading-[1.08] tracking-tight text-white">
+          <h2 className="relative z-[1] font-heading text-[clamp(1.5rem,4vw,2.35rem)] font-extrabold leading-[1.08] tracking-tight text-ink">
             A mission for life
           </h2>
-          <p className="relative z-[1] mt-2 text-[0.95rem] font-medium text-white/90 md:text-[1.05rem]">
+          <p className="relative z-[1] mt-2 text-[0.95rem] font-medium text-muted md:text-[1.05rem]">
             New image campaign
           </p>
         </div>
@@ -44,7 +40,7 @@ export default function MissionCampaignBanner() {
             decoding="async"
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent md:bg-gradient-to-r md:from-ink/55 md:via-ink/10 md:to-transparent"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/10 to-transparent md:bg-gradient-to-r md:from-ink/35 md:via-ink/10 md:to-transparent"
             aria-hidden="true"
           />
 

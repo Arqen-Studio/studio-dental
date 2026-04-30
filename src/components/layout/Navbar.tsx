@@ -55,7 +55,6 @@ export default function Navbar() {
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 const navHeadingColor = "rgb(52, 53, 46)";
 const transparentNavColor = "#87CEFA";
-const mobileMenuHeadingColor = "#83BFE3";
 
   const openContactDrawer = () => {
     setOpen(false);
@@ -69,7 +68,7 @@ const mobileMenuHeadingColor = "#83BFE3";
         "fixed inset-x-0 top-0 z-[100] h-[78px] transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
-          : "border-b border-black/10 bg-skyBrand text-muted shadow-[0_2px_12px_rgba(15,27,36,0.16)]",
+          : "border-b border-black/10 bg-creamBrand text-muted shadow-[0_2px_12px_rgba(15,27,36,0.06)]",
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -140,7 +139,7 @@ const mobileMenuHeadingColor = "#83BFE3";
                   ? ["text-[#87CEFA] hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(
                       " ",
                     )
-                  : "text-muted/85 hover:bg-black/5 hover:text-ink",
+                  : "text-muted/85 hover:bg-skyBrand/15 hover:text-ink",
               ].join(" ")}
               aria-label="Call us"
             >
@@ -165,7 +164,7 @@ const mobileMenuHeadingColor = "#83BFE3";
                   ? ["text-[#87CEFA] hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(
                       " ",
                     )
-                  : "text-muted/85 hover:bg-black/5 hover:text-ink",
+                  : "text-muted/85 hover:bg-skyBrand/15 hover:text-ink",
               ].join(" ")}
               aria-label="Open contact form"
               aria-haspopup="dialog"
@@ -186,10 +185,8 @@ const mobileMenuHeadingColor = "#83BFE3";
 
           <button
             className={[
-              "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full transition xl:hidden",
-              isTransparent
-                ? ["text-[#87CEFA] hover:bg-white/10", TRANSPARENT_ICON_SHADOW].join(" ")
-                : "text-muted hover:bg-black/5",
+              "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border border-black/10 bg-creamBrand text-ink shadow-soft-sm transition xl:hidden hover:bg-skyBrand/15",
+              isTransparent ? TRANSPARENT_ICON_SHADOW : "",
             ].join(" ")}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -219,7 +216,7 @@ const mobileMenuHeadingColor = "#83BFE3";
 
       <div
         className={[
-          "fixed left-0 right-0 top-[78px] border-t border-white/10 bg-ink px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out xl:hidden",
+          "fixed left-0 right-0 top-[78px] border-t border-black/10 bg-creamBrand px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(15,27,36,0.08)] transition-all duration-300 ease-out xl:hidden",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
@@ -234,8 +231,7 @@ const mobileMenuHeadingColor = "#83BFE3";
               key={item.label}
               to={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center border-b border-white/10 py-4 text-[14px] font-semibold transition hover:text-skyBrand"
-              style={{ color: mobileMenuHeadingColor }}
+              className="flex items-center border-b border-black/10 py-4 text-[14px] font-semibold text-ink transition hover:text-skyBrand"
             >
               {item.label}
             </Link>
@@ -245,7 +241,7 @@ const mobileMenuHeadingColor = "#83BFE3";
         <div className="mt-6 flex flex-col gap-3">
           <a
             href="tel:03299961999"
-            className="inline-flex items-center gap-3 text-[14px] text-creamBrand/60 transition hover:text-skyBrand"
+            className="inline-flex items-center gap-3 text-[14px] text-muted transition hover:text-skyBrand"
           >
             <svg
               width="17"
@@ -262,7 +258,7 @@ const mobileMenuHeadingColor = "#83BFE3";
           <button
             type="button"
             onClick={openContactDrawer}
-            className="inline-flex items-center gap-3 text-left text-[14px] text-creamBrand/60 transition hover:text-skyBrand"
+            className="inline-flex items-center gap-3 text-left text-[14px] text-muted transition hover:text-skyBrand"
           >
             <svg
               width="17"

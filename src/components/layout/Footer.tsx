@@ -11,7 +11,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden  pb-6 pt-24 text-ink md:pt-28">
+    <footer className="relative overflow-hidden bg-creamBrand pb-6 pt-24 text-ink md:pt-28">
       {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-20 md:h-24" aria-hidden="true">
         <svg
           viewBox="0 0 1440 120"
@@ -35,7 +35,7 @@ export default function Footer() {
         </svg>
       </div> */}
       <div
-        className="pointer-events-none absolute -left-24 top-8 h-64 w-64 rounded-full bg-white/35 blur-3xl animate-[sd-float-soft_7s_ease-in-out_infinite]"
+        className="pointer-events-none absolute -left-24 top-8 h-64 w-64 rounded-full bg-skyBrand/15 blur-3xl animate-[sd-float-soft_7s_ease-in-out_infinite]"
         aria-hidden="true"
       />
       <div
@@ -44,10 +44,10 @@ export default function Footer() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 md:px-8">
-        <div className="grid grid-cols-1 gap-10 rounded-xl bg-gradient-to-br from-skyBrand p-6 backdrop-blur-sm md:grid-cols-[1.1fr_2fr] md:gap-16 md:p-8">
+        <div className="grid grid-cols-1 gap-10 rounded-xl border border-black/10 bg-creamBrand p-6 shadow-soft-sm md:grid-cols-[1.1fr_2fr] md:gap-16 md:p-8">
           <div>
             <div className="inline-flex items-center gap-3 text-[1.05rem] font-bold tracking-tight text-ink">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/45 bg-white/70 text-ink shadow-soft-sm">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-black/12 bg-creamBrand text-ink shadow-soft-sm">
                 <img
                   src="/favicon.svg"
                   alt=""
@@ -71,7 +71,7 @@ export default function Footer() {
                   key={s.label}
                   to={SOCIAL_URL}
                   target="_blank"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/45 bg-white/55 text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-white/80"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/12 bg-creamBrand text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/15"
                 >
                   <img
                     src={s.icon}

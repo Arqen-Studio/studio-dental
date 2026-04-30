@@ -48,7 +48,7 @@ function ServicePriceBlock({ price, compact }: { price: string; compact?: boolea
 export function ServiceCard({ title, desc, price, variant = 'grid' }: ServiceCardProps) {
   if (variant === 'marquee') {
     return (
-      <article className="flex min-h-[215px] w-[290px] flex-shrink-0 flex-col rounded-lg border border-black/10 bg-white p-5 shadow-soft-sm">
+      <article className="flex min-h-[215px] w-[290px] flex-shrink-0 flex-col rounded-lg border border-black/10 bg-creamBrand p-5 shadow-soft-sm">
         <h3 className="text-[1rem] text-[#83BFE3]">{title}</h3>
         <p className="mt-2.5 flex-1 text-[0.86rem] leading-relaxed text-muted [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
           {desc}
@@ -61,7 +61,7 @@ export function ServiceCard({ title, desc, price, variant = 'grid' }: ServiceCar
   }
 
   return (
-    <article className="flex h-full flex-col rounded-lg border border-black/10 bg-white p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-md">
+    <article className="flex h-full flex-col rounded-lg border border-black/10 bg-creamBrand p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-md">
       <h3 className="text-[1.05rem] text-[#83BFE3]">{title}</h3>
       <p className="mt-3 flex-1 text-[0.92rem] leading-relaxed text-muted">{desc}</p>
       <div className="mt-auto pt-5">

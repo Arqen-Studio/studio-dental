@@ -34,7 +34,7 @@ export default function Blog() {
           {POSTS.map((p) => (
             <article
               key={p.title}
-              className="rounded-lg border border-black/10 bg-white p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-md"
+              className="rounded-lg border border-black/10 bg-creamBrand p-6 shadow-soft-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-md"
             >
               <h3 className="text-[1.15rem]">{p.title}</h3>
               <p className="mt-3 text-[0.96rem] leading-relaxed text-muted">{p.excerpt}</p>

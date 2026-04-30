@@ -8,7 +8,7 @@ export type TeamDoctorCardProps = {
 
 export function TeamDoctorCard({ name, creds, role, image, clinic }: TeamDoctorCardProps) {
   return (
-    <article className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm">
+    <article className="overflow-hidden rounded-lg border border-black/10 bg-creamBrand shadow-soft-sm">
       <div className="aspect-[4/3] bg-[#c7c3c7]">
         <img
           src={image}

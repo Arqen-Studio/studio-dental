@@ -66,7 +66,7 @@ function ChevronRightIcon() {
 
 export default function HomePopularServices() {
   return (
-    <section className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12" aria-labelledby="popular-services-heading">
+    <section className="bg-creamBrand px-5 py-9 md:px-8 md:py-12" aria-labelledby="popular-services-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="popular-services-heading"
@@ -79,7 +79,7 @@ export default function HomePopularServices() {
           {POPULAR_SERVICES.map((item) => (
             <article
               key={item.title}
-              className="flex flex-col overflow-hidden rounded-xl border border-black/8 bg-white shadow-soft-sm transition duration-300 hover:border-skyBrand/35 hover:shadow-soft-md"
+              className="flex flex-col overflow-hidden rounded-xl border border-black/8 bg-creamBrand shadow-soft-sm transition duration-300 hover:border-skyBrand/35 hover:shadow-soft-md"
             >
               <div className="aspect-[4/3] overflow-hidden rounded-t-xl bg-ink/5">
                 <img

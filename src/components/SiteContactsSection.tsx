@@ -32,12 +32,12 @@ function ClockIcon() {
 
 export default function SiteContactsSection() {
   return (
-    <section className="bg-[#f9f9f9] pb-20 pt-10">
+    <section className="bg-creamBrand pb-20 pt-10">
       <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <h2 className="mb-6 text-[clamp(1.6rem,3vw,2.2rem)] font-normal text-ink">Contacts</h2>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           {CLINICS.map((clinic) => (
-            <div key={clinic.id} className="rounded-xl border border-black/8 bg-white p-7 shadow-soft-sm md:p-9">
+            <div key={clinic.id} className="rounded-xl border border-black/8 bg-creamBrand p-7 shadow-soft-sm md:p-9">
               <h3 className="mb-5 text-[1.35rem] font-semibold text-ink">{clinic.city}</h3>
 
               <div className="flex items-start gap-4">

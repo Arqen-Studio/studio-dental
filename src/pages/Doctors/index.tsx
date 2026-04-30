@@ -171,7 +171,7 @@ export default function Doctors() {
             type="button"
             onClick={goPrev}
             disabled={!hasMultipleDoctors}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-skyBrand/25 bg-white text-ink2 shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:text-ink hover:shadow-soft-md disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-skyBrand/25 bg-creamBrand text-ink2 shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:text-ink hover:shadow-soft-md disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Previous doctors"
           >
             <svg
@@ -189,7 +189,7 @@ export default function Doctors() {
             type="button"
             onClick={goNext}
             disabled={!hasMultipleDoctors}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-skyBrand/25 bg-white text-ink shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:shadow-soft-md disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-skyBrand/25 bg-creamBrand text-ink shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:shadow-soft-md disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Next doctors"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">

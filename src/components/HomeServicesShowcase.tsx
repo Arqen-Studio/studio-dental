@@ -116,7 +116,7 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-gradient-to-b from-[#f3f9fd] via-white to-[#f9f9f9] py-10 md:py-16"
+      className="relative overflow-hidden bg-creamBrand py-10 md:py-16"
     >
       <div
         className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#83BFE3]/20 blur-3xl"
@@ -130,7 +130,7 @@ export default function HomeServicesShowcase({
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 md:px-8">
         <div className="mb-7 flex flex-col gap-5 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[42rem]">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-creamBrand/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-[#83BFE3]" aria-hidden="true" />
               Our services
             </span>
@@ -145,7 +145,7 @@ export default function HomeServicesShowcase({
 
           <Link
             to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-skyBrand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-skyBrand/35 bg-creamBrand px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
           >
             Full price list & services
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#83BFE3]/20 text-ink transition group-hover:bg-[#83BFE3]/35">
@@ -198,7 +198,7 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.title}
-              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/28 hover:shadow-soft-md sm:min-h-0"
+              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-creamBrand/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/28 hover:shadow-soft-md sm:min-h-0"
             >
               <div className="flex items-start gap-3">
                 <IconBubble iconId={item.iconId} />

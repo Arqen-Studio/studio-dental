@@ -20,18 +20,18 @@ export default function TeamPage() {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden bg-ink text-creamBrand">
+      <section className="relative min-h-screen overflow-hidden bg-creamBrand text-ink">
         <div className="grid min-h-screen lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="bg-gradient-to-br from-ink via-ink2 to-[#1d6078]">
+          <div className="border-b border-black/10 bg-creamBrand lg:border-b-0 lg:border-r lg:border-black/10">
             <div className="mx-auto flex h-full w-full max-w-[620px] flex-col justify-center px-5 pb-14 pt-[calc(78px+2.2rem)] md:px-8">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.12em]">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 bg-skyBrand/15 px-4 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-ink2">
                 <img src="/favicon.svg" alt="" className="h-3.5 w-3.5 object-contain" />
                 Studio Dental Team
               </span>
-              <h1 className="mt-5 text-[clamp(2rem,3.6vw,3.4rem)] leading-[0.98] text-creamBrand">
+              <h1 className="mt-5 text-[clamp(2rem,3.6vw,3.4rem)] leading-[0.98] text-ink">
                 Meet our dental specialists.
               </h1>
-              <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-relaxed text-creamBrand/80">
+              <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-relaxed text-muted">
                 Our multidisciplinary team combines modern clinical skills with a
                 patient-first approach. From general dentistry and restorative care
                 to surgery and aligners, each doctor focuses on safe treatment, clear
@@ -47,12 +47,12 @@ export default function TeamPage() {
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/20 to-transparent" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent" aria-hidden="true" />
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f2f2f3] py-16 md:py-24">
+      <section className="bg-creamBrand py-16 md:py-24">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
 
