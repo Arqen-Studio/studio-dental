@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import { Mail } from "lucide-react";
 import ScrollToHash from "./ScrollToHash";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ContactDrawer from "./components/ContactDrawer";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -15,12 +17,15 @@ import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/contact-us";
 import Clinics from "./pages/Clinics";
 import MissionCampaign from "./pages/MissionCampaign";
+import Prices from "./pages/Prices";
+import BlogPost from "./pages/BlogPost";
 
 const TRANSITION_MS = 500;
 
 function Layout() {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
+  const [regOpen, setRegOpen] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef(location);
   const revealObserverRef = useRef<IntersectionObserver | null>(null);
@@ -73,6 +78,17 @@ function Layout() {
   return (
     <>
       <Navbar />
+      {/* Floating registration button */}
+      <button
+        type="button"
+        onClick={() => setRegOpen(true)}
+        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-skyBrand px-5 py-3.5 text-[0.85rem] font-semibold text-ink shadow-[0_4px_20px_rgba(135,206,250,0.55)] transition duration-300 hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-[0_6px_24px_rgba(135,206,250,0.65)]"
+        aria-label="Open online registration"
+      >
+        <Mail size={16} strokeWidth={2.2} aria-hidden />
+        Online registration
+      </button>
+      <ContactDrawer open={regOpen} onClose={() => setRegOpen(false)} />
       <main className="flex min-h-0 flex-1 flex-col bg-white">
         <SwitchTransition mode="out-in">
           <CSSTransition
@@ -94,6 +110,8 @@ function Layout() {
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contact-us" element={<Contact />} />
                 <Route path="/clinics" element={<Clinics />} />
+                <Route path="/prices" element={<Prices />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
                 <Route path="/mission-campaign" element={<MissionCampaign />} />
               </Routes>
             </div>

@@ -1,0 +1,132 @@
+import { Link } from "react-router-dom";
+import { CLINICS } from "../data/clinics";
+
+export default function ContactFormSection() {
+  return (
+    <section className="reveal grid lg:grid-cols-2">
+      {/* Left — clinic interior photo */}
+      <div className="relative min-h-[380px] lg:min-h-full">
+        <img
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=75"
+          alt="Studio Dental clinic interior"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+      </div>
+
+      {/* Right — form */}
+      <div className="flex flex-col justify-center bg-[#f9f9f9] px-8 py-16 md:px-12 lg:px-16">
+        <div className="w-full max-w-[580px]">
+          <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">
+            Let's get in touch
+          </h2>
+
+          <form className="mt-8 flex flex-col gap-5" noValidate>
+            {/* Choose a clinic */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="cf-clinic" className="text-[0.82rem] text-ink2">
+                Choose a clinic
+              </label>
+              <div className="relative">
+                <select
+                  id="cf-clinic"
+                  name="clinic"
+                  defaultValue=""
+                  className="w-full appearance-none rounded-sm border border-black/15 bg-[#f9f9f9] px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                >
+                  <option value="" disabled />
+                  {CLINICS.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.city}
+                    </option>
+                  ))}
+                </select>
+                <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            {/* Name + Phone */}
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="cf-name" className="text-[0.82rem] text-ink2">
+                  Your name
+                </label>
+                <input
+                  id="cf-name"
+                  type="text"
+                  name="name"
+                  className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="cf-phone" className="text-[0.82rem] text-ink2">
+                  Your phone
+                </label>
+                <input
+                  id="cf-phone"
+                  type="tel"
+                  name="phone"
+                  className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                />
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="cf-email" className="text-[0.82rem] text-ink2">
+                Your email
+              </label>
+              <input
+                id="cf-email"
+                type="email"
+                name="email"
+                className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+              />
+            </div>
+
+            {/* Message */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="cf-message" className="text-[0.82rem] text-ink2">
+                Message
+              </label>
+              <textarea
+                id="cf-message"
+                name="message"
+                rows={4}
+                className="min-h-[110px] resize-y rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+              />
+            </div>
+
+            {/* Checkboxes */}
+            <div className="flex flex-col gap-3">
+              <label className="flex cursor-pointer items-start gap-3 text-[0.82rem] text-ink2">
+                <input type="checkbox" name="privacy" className="mt-0.5 h-4 w-4 flex-shrink-0 accent-ink" />
+                <span>
+                  I have read and agree to{" "}
+                  <Link to="/contact-us" className="text-ink underline hover:opacity-80">
+                    the privacy policy of Studio Dental
+                  </Link>
+                </span>
+              </label>
+              <label className="flex cursor-pointer items-start gap-3 text-[0.82rem] text-ink2">
+                <input type="checkbox" name="marketing" className="mt-0.5 h-4 w-4 flex-shrink-0 accent-ink" />
+                <span>I agree that my data will be used for marketing purposes.</span>
+              </label>
+            </div>
+
+            <button
+              type="button"
+              className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-skyBrand px-8 py-4 text-[0.95rem] font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-skyBrand/85"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}

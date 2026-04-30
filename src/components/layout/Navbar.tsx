@@ -6,7 +6,7 @@ import ContactDrawer from "../ContactDrawer";
 const NAV_ITEMS = [
   { href: "/services", label: "Services" },
   { href: "/doctors", label: "Team" },
-  { href: "/services", label: "Prices" },
+  { href: "/prices", label: "Prices" },
   { href: "/about", label: "About Us" },
   { href: "/blog", label: "News" },
   { href: "/clinics", label: "Clinics" },

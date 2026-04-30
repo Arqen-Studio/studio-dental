@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { TeamDoctorCard } from '../../components/TeamDoctorCard'
 import { TEAM_DOCTORS } from '../../data/teamDoctors'
+import ContactFormSection from '../../components/ContactFormSection'
 
 const ALL_SERVICES = 'Select a service'
 const TEAM_HERO_IMAGE = '/images/team-hero.png'
@@ -20,56 +21,88 @@ export default function TeamPage() {
 
   return (
     <>
-      <section className="no-reveal relative min-h-screen overflow-hidden border-t border-skyBrand/25">
-        <div className="grid min-h-screen lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="relative border-b border-skyBrand/25 lg:border-b-0 lg:border-r lg:border-skyBrand/25">
-            <div className="relative flex min-h-[min(100vh,760px)] flex-col justify-center overflow-hidden px-5 pb-14 pt-[calc(78px+2.2rem)] md:px-8 lg:min-h-screen">
-              <div
-                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#5aadde] via-skyBrand to-[#c9ebfc]"
-                aria-hidden="true"
-              />
-              <div
-                className="pointer-events-none absolute inset-0 opacity-90"
-                style={{
-                  background:
-                    'radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(15, 27, 36, 0.08) 0%, transparent 50%)',
-                }}
-                aria-hidden="true"
-              />
-              <div className="relative z-[1] mx-auto flex h-full w-full max-w-[620px] flex-col justify-center">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/35 bg-white/45 px-4 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-ink shadow-soft-sm backdrop-blur-[2px]">
-                <img src="/favicon.svg" alt="" className="h-3.5 w-3.5 object-contain drop-shadow-none" />
-                Studio Dental Team
-              </span>
-              <h1 className="mt-5 text-[clamp(2rem,3.6vw,3.4rem)] font-semibold leading-[0.98] tracking-tight text-ink">
-                Meet our dental specialists.
-              </h1>
-              <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-relaxed text-ink/72">
-                Our multidisciplinary team combines modern clinical skills with a
-                patient-first approach. From general dentistry and restorative care
-                to surgery and aligners, each doctor focuses on safe treatment, clear
-                guidance, and long-term results.
-              </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative min-h-[360px] lg:min-h-screen">
+      {/* ── Hero — two stacked 50/50 rows ── */}
+      <section className="no-reveal">
+        {/* Row 1: photo left · text right — DHA Phase II */}
+        <div className="grid min-h-[50vh] lg:grid-cols-2">
+          {/* Photo */}
+          <div className="relative min-h-[52vw] overflow-hidden lg:min-h-[50vh]">
             <img
               src={TEAM_HERO_IMAGE}
-              alt="Studio Dental doctors team in clinic"
+              alt="Studio Dental DHA Phase II team"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
             />
+          </div>
+          {/* Text */}
+          <div className="relative flex flex-col justify-center overflow-hidden bg-skyBrand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
             <div
-              className="absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/12 to-transparent lg:bg-gradient-to-r lg:from-[#5aadde]/28 lg:via-ink/12 lg:to-transparent"
+              className="pointer-events-none absolute inset-0"
+              style={{ background: 'radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.35) 0%, transparent 55%)' }}
               aria-hidden="true"
+            />
+            <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+              <h1 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
+                DHA Phase II
+              </h1>
+              <ul className="mt-7 flex flex-col gap-0.5">
+                {['Doctors', 'Services', 'Contact'].map((label) => (
+                  <li key={label}>
+                    <a
+                      href="#doctors"
+                      className="group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold text-ink/75 transition duration-200 hover:text-ink"
+                    >
+                      <span className="h-px w-5 bg-ink/30 transition-all duration-300 group-hover:w-9 group-hover:bg-ink" />
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Row 2: text left · photo right — F-7 Markaz */}
+        <div className="grid min-h-[50vh] lg:grid-cols-2">
+          {/* Text */}
+          <div className="relative flex flex-col justify-center overflow-hidden bg-[#5aadde] px-6 py-14 md:px-12 lg:px-16">
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{ background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.28) 0%, transparent 55%)' }}
+              aria-hidden="true"
+            />
+            <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.7s_both]">
+              <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
+                F-7 Markaz
+              </h2>
+              <ul className="mt-7 flex flex-col gap-0.5">
+                {['Doctors', 'Services', 'Contact'].map((label) => (
+                  <li key={label}>
+                    <a
+                      href="#doctors"
+                      className="group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold text-ink/75 transition duration-200 hover:text-ink"
+                    >
+                      <span className="h-px w-5 bg-ink/30 transition-all duration-300 group-hover:w-9 group-hover:bg-ink" />
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* Photo */}
+          <div className="relative order-first min-h-[52vw] overflow-hidden lg:order-last lg:min-h-[50vh]">
+            <img
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=75"
+              alt="Studio Dental F-7 Markaz team"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f9f9f9] py-16 md:py-24">
+      <section id="doctors" className="bg-[#f9f9f9] py-16 md:py-24">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
 
@@ -115,6 +148,8 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+
+      <ContactFormSection />
     </>
   )
 }
