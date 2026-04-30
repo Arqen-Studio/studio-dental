@@ -4,6 +4,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import ScrollToHash from "./ScrollToHash";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import SiteContactsSection from "./components/SiteContactsSection";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -12,8 +13,9 @@ import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import WhyUs from "./pages/WhyUs";
 import Testimonials from "./pages/Testimonials";
-import Contact from "./components/Contact";
+import Contact from "./pages/contact-us";
 import Clinics from "./pages/Clinics";
+import MissionCampaign from "./pages/MissionCampaign";
 
 const TRANSITION_MS = 500;
 
@@ -48,11 +50,13 @@ function Layout() {
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contact-us" element={<Contact />} />
                 <Route path="/clinics" element={<Clinics />} />
+                <Route path="/mission-campaign" element={<MissionCampaign />} />
               </Routes>
             </div>
           </CSSTransition>
         </SwitchTransition>
       </main>
+      {location.pathname !== "/contact-us" && <SiteContactsSection />}
       <Footer />
     </>
   );

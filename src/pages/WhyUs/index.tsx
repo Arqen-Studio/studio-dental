@@ -1,4 +1,4 @@
-import { useCountUp, useInView } from "../hooks/useCountUp";
+import { useCountUp, useInView } from "../../hooks/useCountUp";
 
 const FEATURES = [
   {

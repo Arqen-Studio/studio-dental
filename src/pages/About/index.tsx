@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { CLINICS } from '../../data/clinics'
 
 const TEAM_CARDS = [
   {
@@ -40,27 +41,6 @@ const TEAM_CARDS = [
     blurb:
       'Passionate about cooking — the curiosity to understand textures and nuances in food is the same curiosity he applies to patient care.',
     bg: 'gray',
-  },
-]
-
-const CLINICS = [
-  {
-    id: 'dha',
-    city: 'DHA Phase II',
-    address: 'Plaza No. 26, Main Iqbal Boulevard, DHA Phase II, Islamabad',
-    mapUrl: 'https://maps.google.com/?q=DHA+Phase+II+Islamabad',
-    phone: '+92 329 9961999',
-    email: 'info@thestudiodental.com',
-    hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
-  },
-  {
-    id: 'f7',
-    city: 'F-7 Markaz',
-    address: 'Office #7, 2nd Floor, Near Shoe Planet, F-7 Markaz, Islamabad',
-    mapUrl: 'https://maps.google.com/?q=F-7+Markaz+Islamabad',
-    phone: '+92 329 3519999',
-    email: 'info@thestudiodental.com',
-    hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
   },
 ]
 
@@ -112,7 +92,7 @@ function ClockIcon() {
   )
 }
 
-function VideoBlock({ src, poster }: { src?: string; poster: string }) {
+function VideoBlock({ poster }: { poster: string }) {
   return (
     <div className="relative mx-auto max-w-[860px] overflow-hidden rounded-2xl">
       <img src={poster} alt="" className="aspect-video w-full object-cover" />

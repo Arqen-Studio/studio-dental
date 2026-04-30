@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { DoctorFlipCard } from '../components/DoctorFlipCard'
+import { DoctorFlipCard } from '../../components/DoctorFlipCard'
 
 type Doctor = {
   name: string

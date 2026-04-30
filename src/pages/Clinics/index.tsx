@@ -1,29 +1,5 @@
 import { Link } from 'react-router-dom'
-
-const CLINICS = [
-  {
-    id: 'dha',
-    name: 'DHA Phase II',
-    city: 'DHA Phase II',
-    photo: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=75',
-    address: 'Plaza No. 26, Main Iqbal Boulevard, DHA Phase II, Islamabad',
-    mapUrl: 'https://maps.google.com/?q=DHA+Phase+II+Islamabad',
-    phone: '+92 329 9961999',
-    email: 'info@thestudiodental.com',
-    hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
-  },
-  {
-    id: 'f7',
-    name: 'F-7 Markaz',
-    city: 'F-7 Markaz',
-    photo: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=75',
-    address: 'Office #7, 2nd Floor, Near Shoe Planet, F-7 Markaz, Islamabad',
-    mapUrl: 'https://maps.google.com/?q=F-7+Markaz+Islamabad',
-    phone: '+92 329 3519999',
-    email: 'info@thestudiodental.com',
-    hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
-  },
-]
+import { CLINICS } from '../../data/clinics'
 
 const STAFF = [
   {
@@ -207,65 +183,6 @@ export default function Clinics() {
                   <span className="mt-2 inline-block rounded-sm bg-skyBrand/15 px-2 py-0.5 text-[0.68rem] font-medium text-skyBrand sm:mt-3 sm:px-3 sm:py-1 sm:text-[0.75rem]">
                     {person.clinic}
                   </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Second Contacts section — simple city cards ── */}
-      <section className="bg-[#f0efeb] pb-20">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
-          <h2 className="mb-6 text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-ink">Contacts</h2>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {CLINICS.map((clinic) => (
-              <div key={`simple-${clinic.id}`} className="rounded-xl bg-white p-7 shadow-soft-sm md:p-9">
-                <h3 className="mb-5 text-[1.6rem] font-bold text-ink">{clinic.city}</h3>
-
-                {/* Address */}
-                <div className="flex items-start gap-4">
-                  <span className="mt-0.5 flex-shrink-0 text-skyBrand"><PinIcon /></span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[0.92rem] text-ink">{clinic.address}</p>
-                    <a href={clinic.mapUrl} target="_blank" rel="noopener noreferrer"
-                      className="mt-1 block text-[0.85rem] font-medium text-skyBrand transition hover:underline">
-                      Location on the map
-                    </a>
-                    <div className="mt-3 h-px w-10 bg-skyBrand/60" />
-                  </div>
-                </div>
-
-                {/* Phone & Email */}
-                <div className="mt-5 flex items-start gap-4">
-                  <span className="mt-0.5 flex-shrink-0 text-skyBrand"><PhoneIcon /></span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[0.88rem] text-ink2">Tel. for registration:</p>
-                    <a href={`tel:${clinic.phone.replace(/\s/g, '')}`}
-                      className="block text-[0.92rem] font-medium text-skyBrand transition hover:underline">
-                      {clinic.phone}
-                    </a>
-                    <p className="mt-1 text-[0.88rem] text-ink2">E-mail:</p>
-                    <a href={`mailto:${clinic.email}`}
-                      className="block break-all text-[0.92rem] font-medium text-skyBrand transition hover:underline">
-                      {clinic.email}
-                    </a>
-                    <Link to="/contact-us"
-                      className="mt-1 block text-[0.88rem] font-medium text-skyBrand transition hover:underline">
-                      Contact
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Hours */}
-                <div className="mt-5 flex items-start gap-4">
-                  <span className="mt-0.5 flex-shrink-0 text-skyBrand"><ClockIcon /></span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[0.88rem] font-medium text-ink2">Working hours:</p>
-                    {clinic.hours.map((h) => (
-                      <p key={h} className="text-[0.92rem] text-ink">{h}</p>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}

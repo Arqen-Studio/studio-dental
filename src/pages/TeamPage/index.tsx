@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { TeamDoctorCard } from '../components/TeamDoctorCard'
+import { TeamDoctorCard } from '../../components/TeamDoctorCard'
 
 type TeamDoctor = {
   name: string

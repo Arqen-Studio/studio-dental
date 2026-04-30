@@ -106,12 +106,16 @@ const SHOWCASE: ShowcaseItem[] = [
   },
 ]
 
-export default function HomeServicesShowcase() {
+export default function HomeServicesShowcase({
+  omitAnchorId = false,
+}: {
+  omitAnchorId?: boolean
+} = {}) {
   const [featured, ...rest] = SHOWCASE
 
   return (
     <section
-      id="services"
+      {...(!omitAnchorId ? { id: 'services' } : {})}
       className="relative overflow-hidden bg-gradient-to-b from-[#f3f9fd] via-white to-[#fbfbfa] py-10 md:py-16"
     >
       <div
