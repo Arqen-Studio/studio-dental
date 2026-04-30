@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { href: "/services", label: "Prices" },
   { href: "/about", label: "About Us" },
   { href: "/blog", label: "News" },
-  { href: "/contact-us", label: "Clinics" },
+  { href: "/clinics", label: "Clinics" },
 ];
 
 export default function Navbar() {
