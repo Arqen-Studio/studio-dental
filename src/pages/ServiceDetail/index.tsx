@@ -41,7 +41,7 @@ export default function ServiceDetail() {
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2 lg:min-h-screen">
           {/* Video — left */}
-          <div className="relative min-h-[56vw] overflow-hidden lg:min-h-screen">
+          <div className="relative aspect-video overflow-hidden lg:aspect-auto lg:min-h-screen">
             <video
               autoPlay
               muted
