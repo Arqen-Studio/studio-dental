@@ -1,8 +1,29 @@
 import type { LucideIcon } from 'lucide-react'
 import { Anchor, ArrowRight, Baby, BarChart3, Rows3, Star, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import type { ServiceData } from '../data/services'
+import { SERVICES_DATA } from '../data/services'
+
+/** Same slot count as the legacy home showcase (1 featured + 5 tiles). IDs must exist in SERVICES_DATA. */
+const HOME_SHOWCASE_SERVICE_IDS = [
+  'oral-hygiene',
+  'teeth-straightening',
+  'dental-implantation',
+  'all-on-4-implants',
+  'tooth-extraction',
+  'dental-fillings',
+] as const
+
+function servicesForHomeShowcase(): ServiceData[] {
+  const byId = new Map(SERVICES_DATA.map((s) => [s.id, s]))
+  return HOME_SHOWCASE_SERVICE_IDS.flatMap((id) => {
+    const s = byId.get(id)
+    return s ? [s] : []
+  })
+}
 
 type ShowcaseItem = {
+  serviceId: string
   title: string
   desc: string
   price: string
@@ -11,6 +32,25 @@ type ShowcaseItem = {
   image?: string
   imageAlt?: string
 }
+
+const SHOWCASE_ICONS: LucideIcon[] = [BarChart3, Rows3, Anchor, Star, Zap, Baby]
+
+function priceLineFromService(prices: { name: string; price: string }[]): string {
+  const first = prices[0]
+  if (!first) return 'Custom quote'
+  return `From ${first.price.trim()}`
+}
+
+const SHOWCASE: ShowcaseItem[] = servicesForHomeShowcase().map((s, i) => ({
+  serviceId: s.id,
+  title: s.title,
+  desc: s.subtitle,
+  price: priceLineFromService(s.prices),
+  Icon: SHOWCASE_ICONS[i % SHOWCASE_ICONS.length] ?? BarChart3,
+  featured: i === 0,
+  image: i === 0 ? s.heroImage : undefined,
+  imageAlt: s.title,
+}))
 
 function splitPriceLine(price: string): { qualifier?: string; amount: string } {
   const t = price.trim()
@@ -36,7 +76,7 @@ function ServicePriceLine({ price, light }: { price: string; light?: boolean }) 
         <span
           className={[
             'mb-0.5 block text-[0.58rem] font-semibold uppercase tracking-[0.12em]',
-            light ? 'text-creamBrand/65' : 'text-muted',
+            light ? 'text-white/65' : 'text-muted',
           ].join(' ')}
         >
           {qualifier}
@@ -54,7 +94,7 @@ function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }
       className={[
         'inline-flex shrink-0 items-center justify-center rounded-2xl border shadow-soft-sm',
         featured
-          ? 'h-12 w-12 border-white/35 bg-white/15 text-creamBrand backdrop-blur-sm'
+          ? 'h-12 w-12 border-white/35 bg-white/15 text-white backdrop-blur-sm'
           : 'h-11 w-11 border-[#83BFE3]/25 bg-[#83BFE3]/10 text-[#2a6a8a]',
       ].join(' ')}
       aria-hidden="true"
@@ -63,49 +103,6 @@ function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }
     </span>
   )
 }
-
-const SHOWCASE: ShowcaseItem[] = [
-  {
-    title: 'New patient consultation',
-    desc: 'Full oral exam, digital screening, and a clear treatment roadmap tailored to your goals.',
-    price: 'From PKR 3,500',
-    Icon: BarChart3,
-    featured: true,
-    image:
-      'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=72',
-    imageAlt: 'Dentist reviewing care with a patient in a bright modern surgery',
-  },
-  {
-    title: 'Clear aligners',
-    desc: 'Discreet orthodontic plans with digital bite analysis.',
-    price: 'Custom quote',
-    Icon: Rows3,
-  },
-  {
-    title: 'Dental implants',
-    desc: 'Replace missing teeth with planned implant placement.',
-    price: 'Custom quote',
-    Icon: Anchor,
-  },
-  {
-    title: 'Teeth whitening',
-    desc: 'Safe in-clinic whitening for a brighter smile.',
-    price: 'From PKR 15,000',
-    Icon: Star,
-  },
-  {
-    title: 'Emergency care',
-    desc: 'Same-day attention for pain, swelling, or trauma.',
-    price: 'Starts at PKR 5,000',
-    Icon: Zap,
-  },
-  {
-    title: 'Pediatric dentistry',
-    desc: 'Gentle preventive and restorative care for children.',
-    price: 'From PKR 4,500',
-    Icon: Baby,
-  },
-]
 
 export default function HomeServicesShowcase({
   omitAnchorId = false,
@@ -118,6 +115,7 @@ export default function HomeServicesShowcase({
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
       className="relative overflow-hidden bg-white py-10 md:py-16"
+      aria-labelledby="home-services-heading"
     >
       <div
         className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#83BFE3]/20 blur-3xl"
@@ -129,15 +127,22 @@ export default function HomeServicesShowcase({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 md:px-8">
-        <div className="mb-7 flex flex-col gap-5 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
+        <h2
+          id="home-services-heading"
+          className="text-center text-[clamp(1.45rem,2.6vw,2.1rem)] font-semibold tracking-tight text-ink"
+        >
+          Services
+        </h2>
+
+        <div className="mt-7 mb-7 flex flex-col gap-5 md:mt-8 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[42rem]">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
+            {/* <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-[#83BFE3]" aria-hidden="true" />
               Our services
-            </span>
-            <h2 className="mt-4 text-[clamp(1.55rem,2.6vw,2.35rem)] leading-[1.05] tracking-tight text-ink">
+            </span> */}
+            <p className="mt-4 font-heading text-[clamp(1.55rem,2.6vw,2.35rem)] font-extrabold leading-[1.05] tracking-tight text-ink">
               Everything your smile needs, in one place.
-            </h2>
+            </p>
             <p className="mt-3 max-w-[52ch] text-[0.95rem] leading-relaxed text-muted">
               From checkups and hygiene to implants, aligners, and emergencies — browse a few highlights below, then see
               the full fee guide and catalog on our services page.
@@ -173,10 +178,10 @@ export default function HomeServicesShowcase({
             />
             <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
               <IconBubble Icon={featured.Icon} featured />
-              <h3 className="mt-5 text-[1.35rem] font-extrabold leading-tight text-[#83BFE3] sm:text-[1.5rem]">
+              <h3 className="mt-5 text-[1.35rem] font-extrabold leading-tight text-white sm:text-[1.5rem]">
                 {featured.title}
               </h3>
-              <p className="mt-3 max-w-[40ch] text-[0.88rem] leading-relaxed text-creamBrand/90 sm:text-[0.92rem]">
+              <p className="mt-3 max-w-[40ch] text-[0.88rem] leading-relaxed text-white/90 sm:text-[0.92rem]">
                 {featured.desc}
               </p>
               <div className="mt-auto">
@@ -184,17 +189,17 @@ export default function HomeServicesShowcase({
               </div>
               <Link
                 to="/services"
-                className="mt-5 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-creamBrand/90 underline-offset-4 transition hover:text-white hover:underline"
+                className="mt-5 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-white underline-offset-4 transition hover:text-white hover:underline"
               >
                 Explore all treatments
-                <ArrowRight size={12} strokeWidth={2.25} className="opacity-90" aria-hidden />
+                <ArrowRight size={12} strokeWidth={2.25} className="text-white opacity-90" aria-hidden />
               </Link>
             </div>
           </article>
 
           {rest.map((item) => (
             <article
-              key={item.title}
+              key={item.serviceId}
               className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/28 hover:shadow-soft-md sm:min-h-0"
             >
               <div className="flex items-start gap-3">

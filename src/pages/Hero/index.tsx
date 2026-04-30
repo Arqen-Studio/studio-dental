@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { useCountUp, useInView } from "../../hooks/useCountUp";
 import MissionCampaignBanner from "../../components/MissionCampaignBanner";
 import HomeClinicHub from "../../components/HomeClinicHub";
-import HomePopularServices from "../../components/HomePopularServices";
+// import HomePopularServices from "../../components/HomePopularServices";
 import HomeDoctorsCarousel from "../../components/HomeDoctorsCarousel";
+import HomeServicesShowcase from "../../components/HomeServicesShowcase";
 
 /** Dental clinic footage — Pexels (royalty-free): “A Dentist Cleaning the Teeth of a Man”, Pavel Danilyuk */
 const HERO_VIDEO_HD =
@@ -162,7 +163,7 @@ export default function Hero() {
                 {clinicsCount} clinics
               </strong>
               <span className="text-[0.82rem] text-creamBrand/70">
-               DHA Phase II and F-7 Markaz
+                DHA Phase II and F-7 Markaz
               </span>
             </div>
           </div>
@@ -186,8 +187,8 @@ export default function Hero() {
         </div>
       </section>
 
-      <HomePopularServices />
-
+      {/* <HomePopularServices /> */}
+      <HomeServicesShowcase />
       <HomeDoctorsCarousel />
 
       <HomeClinicHub />
