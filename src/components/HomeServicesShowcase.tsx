@@ -116,7 +116,7 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-gradient-to-b from-[#f3f9fd] via-white to-[#fbfbfa] py-10 md:py-16"
+      className="relative overflow-hidden bg-gradient-to-b from-[#f3f9fd] via-white to-[#f9f9f9] py-10 md:py-16"
     >
       <div
         className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#83BFE3]/20 blur-3xl"

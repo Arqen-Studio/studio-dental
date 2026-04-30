@@ -11,6 +11,14 @@ const NAV_ITEMS = [
   { href: "/clinics", label: "Clinics" },
 ];
 
+/** Improves contrast on hero imagery when the header is transparent */
+const TRANSPARENT_TITLE_SHADOW =
+  "[text-shadow:0_1px_4px_rgba(15,27,36,0.92),0_0_22px_rgba(15,27,36,0.5)]";
+const TRANSPARENT_LINK_SHADOW =
+  "[text-shadow:0_1px_4px_rgba(15,27,36,0.95),0_0_18px_rgba(15,27,36,0.45)]";
+const TRANSPARENT_ICON_SHADOW =
+  "drop-shadow-[0_1px_3px_rgba(15,27,36,0.95)] drop-shadow-[0_0_12px_rgba(15,27,36,0.35)]";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
@@ -39,7 +47,11 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const hasHeroHeader = pathname === "/" || pathname === "/services" || pathname === "/doctors";
+  const hasHeroHeader =
+    pathname === "/" ||
+    pathname === "/services" ||
+    pathname === "/doctors" ||
+    pathname === "/about";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 const navHeadingColor = "rgb(52, 53, 46)";
 const transparentNavColor = "#87CEFA";
@@ -74,7 +86,10 @@ const mobileMenuHeadingColor = "#83BFE3";
           </span>
           <span className="flex flex-col leading-none">
             <span
-              className="text-[1rem] font-extrabold tracking-tight"
+              className={[
+                "text-[1rem] font-extrabold tracking-tight",
+                isTransparent ? TRANSPARENT_TITLE_SHADOW : "",
+              ].join(" ")}
               style={{
                 color: isTransparent ? transparentNavColor : navHeadingColor,
               }}
@@ -84,7 +99,9 @@ const mobileMenuHeadingColor = "#83BFE3";
             <span
               className={[
                 "mt-[3px] text-[0.68rem] font-medium uppercase tracking-[0.14em]",
-                isTransparent ? "text-[#87CEFA]/60" : "text-muted/75",
+                isTransparent
+                  ? ["text-[#87CEFA]/60", TRANSPARENT_TITLE_SHADOW].join(" ")
+                  : "text-muted/75",
               ].join(" ")}
             >
               Clinic
@@ -104,7 +121,7 @@ const mobileMenuHeadingColor = "#83BFE3";
                 className={[
                   "whitespace-nowrap transition duration-200 focus:outline-none",
                   isTransparent
-                    ? "text-[#87CEFA] hover:text-white"
+                    ? ["text-[#ffffff] hover:text-white", TRANSPARENT_LINK_SHADOW].join(" ")
                     : "text-muted/90 hover:text-ink",
                 ].join(" ")}
                 style={!isTransparent ? { color: navHeadingColor } : undefined}
@@ -120,7 +137,9 @@ const mobileMenuHeadingColor = "#83BFE3";
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
                 isTransparent
-                  ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
+                  ? ["text-[#87CEFA] hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(
+                      " ",
+                    )
                   : "text-muted/85 hover:bg-black/5 hover:text-ink",
               ].join(" ")}
               aria-label="Call us"
@@ -143,7 +162,9 @@ const mobileMenuHeadingColor = "#83BFE3";
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
                 isTransparent
-                  ? "text-[#87CEFA] hover:bg-white/10 hover:text-white"
+                  ? ["text-[#87CEFA] hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(
+                      " ",
+                    )
                   : "text-muted/85 hover:bg-black/5 hover:text-ink",
               ].join(" ")}
               aria-label="Open contact form"
@@ -167,7 +188,7 @@ const mobileMenuHeadingColor = "#83BFE3";
             className={[
               "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full transition xl:hidden",
               isTransparent
-                ? "text-[#87CEFA] hover:bg-white/10"
+                ? ["text-[#87CEFA] hover:bg-white/10", TRANSPARENT_ICON_SHADOW].join(" ")
                 : "text-muted hover:bg-black/5",
             ].join(" ")}
             aria-label={open ? "Close menu" : "Open menu"}

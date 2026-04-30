@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         skyBrand: '#87CEFA',
-        creamBrand: '#FBFBFA',
+        creamBrand: '#F9F9F9',
         ink: '#0F1B24',
         ink2: '#223440',
         muted: '#5F6057',

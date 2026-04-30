@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useCountUp, useInView } from '../../hooks/useCountUp'
 import MissionCampaignBanner from '../../components/MissionCampaignBanner'
+import HomeClinicHub from '../../components/HomeClinicHub'
+import HomePopularServices from '../../components/HomePopularServices'
+import HomeDoctorsCarousel from '../../components/HomeDoctorsCarousel'
 
 /** Dental clinic footage — Pexels (royalty-free): “A Dentist Cleaning the Teeth of a Man”, Pavel Danilyuk */
 const HERO_VIDEO_HD =
@@ -39,8 +42,8 @@ export default function Hero() {
 
   return (
     <>
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden text-creamBrand">
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
+    <section id="home" className="relative isolate flex min-h-screen items-center overflow-hidden text-creamBrand">
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <video
           ref={heroVideoRef}
           className="h-full w-full object-cover"
@@ -63,7 +66,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto w-full max-w-[1240px] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8">
         <div className="mb-8 flex h-[220px] items-start md:h-[260px]">
           <div className="inline-flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
@@ -130,7 +133,7 @@ export default function Hero() {
 
       <Link
         to="/services"
-        className="absolute bottom-7 left-1/2 hidden h-[42px] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
+        className="absolute bottom-7 left-1/2 z-10 hidden h-[42px] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
         aria-label="Go to services"
       >
         <span className="h-2 w-[3px] rounded bg-creamBrand animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
@@ -142,6 +145,12 @@ export default function Hero() {
         <MissionCampaignBanner />
       </div>
     </section>
+
+    <HomePopularServices />
+
+    <HomeDoctorsCarousel />
+
+    <HomeClinicHub />
     </>
   )
 }
