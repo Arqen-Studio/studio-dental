@@ -5,33 +5,37 @@ import { ServiceCard } from "../../components/ServiceCard";
 import ContactFormSection from "../../components/ContactFormSection";
 
 // ── service accordion data ─────────────────────────────────────────────────
-type ServiceEntry = { title: string; children?: string[] };
+type ServiceEntry = { id: string; title: string; children?: string[] };
 
 const SERVICES: ServiceEntry[] = [
-  { title: "Dental implantation" },
-  { title: 'Implantation "All teeth on 4 implants"' },
-  { title: "Prosthetics: teeth and implants" },
+  { id: "dental-implantation",  title: "Dental implantation" },
+  { id: "all-on-4-implants",    title: 'Implantation "All teeth on 4 implants"' },
+  { id: "prosthetics",          title: "Prosthetics: teeth and implants" },
   {
+    id: "dental-fillings",
     title: "Dental fillings (adults and children)",
     children: ["Dental fillings", "Pediatric dentistry"],
   },
-  { title: "Orthognathic surgery" },
-  { title: "Treatment of jaw joint pain" },
+  { id: "orthognathic-surgery", title: "Orthognathic surgery" },
+  { id: "jaw-joint-treatment",  title: "Treatment of jaw joint pain" },
   {
+    id: "teeth-straightening",
     title: "Teeth straightening",
     children: ["Braces", "Clear aligners"],
   },
-  { title: "Aesthetic dental fillings" },
+  { id: "aesthetic-fillings",   title: "Aesthetic dental fillings" },
   {
+    id: "periodontal-treatment",
     title: "Periodontal treatment (conservative and laser)",
     children: ["Conservative treatment", "Laser therapy"],
   },
-  { title: "Root canal treatment" },
+  { id: "root-canal",           title: "Root canal treatment" },
   {
+    id: "oral-hygiene",
     title: "Oral hygiene and whitening",
     children: ["Professional cleaning", "Teeth whitening"],
   },
-  { title: "Tooth extraction" },
+  { id: "tooth-extraction",     title: "Tooth extraction" },
 ];
 
 // ── home-page marquee data (kept for Hero section) ─────────────────────────
@@ -239,9 +243,13 @@ export default function Services() {
                         {svc.title}
                       </button>
                     ) : (
-                      <div className="py-3.5 pl-[22px] text-[0.95rem] text-ink/85">
+                      <Link
+                        to={`/services/${svc.id}`}
+                        className="flex items-center justify-between py-3.5 pl-[22px] text-[0.95rem] text-ink/85 transition hover:text-ink"
+                      >
                         {svc.title}
-                      </div>
+                        <ChevronRight size={14} strokeWidth={2} className="text-ink/30" />
+                      </Link>
                     )}
                     {hasChildren && isOpen && (
                       <ul className="mb-2 ml-[22px] flex flex-col gap-1">

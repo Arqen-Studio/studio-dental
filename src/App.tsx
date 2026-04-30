@@ -19,6 +19,7 @@ import Clinics from "./pages/Clinics";
 import MissionCampaign from "./pages/MissionCampaign";
 import Prices from "./pages/Prices";
 import BlogPost from "./pages/BlogPost";
+import ServiceDetail from "./pages/ServiceDetail";
 
 const TRANSITION_MS = 500;
 
@@ -112,6 +113,7 @@ function Layout() {
                 <Route path="/clinics" element={<Clinics />} />
                 <Route path="/prices" element={<Prices />} />
                 <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/services/:id" element={<ServiceDetail />} />
                 <Route path="/mission-campaign" element={<MissionCampaign />} />
               </Routes>
             </div>
