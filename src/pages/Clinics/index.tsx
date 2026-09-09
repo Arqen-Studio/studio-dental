@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
 const CLINICS = [
   {
@@ -27,50 +28,12 @@ const CLINICS = [
   },
 ];
 
-const STAFF = [
-  {
-    name: "Dr. Yousaf Kamal",
-    role: "Implantologist",
-    clinic: "DHA Phase II",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=70",
-  },
-  {
-    name: "Dr. Nayab Farooq",
-    role: "Endodontist",
-    clinic: "F-7 Markaz",
-    image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=70",
-  },
-  {
-    name: "Dr. Umair Usman",
-    role: "Restorative Dentist",
-    clinic: "DHA Phase II",
-    image:
-      "https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=600&q=70",
-  },
-  {
-    name: "Dr. Amna Hassan",
-    role: "OMFS Specialist",
-    clinic: "F-7 Markaz",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=70",
-  },
-  {
-    name: "Dr. Aqsa Malik",
-    role: "Aligners Specialist",
-    clinic: "DHA Phase II",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=70",
-  },
-  {
-    name: "Dr. Hassan Ali",
-    role: "General Dentistry",
-    clinic: "F-7 Markaz",
-    image:
-      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=70",
-  },
-];
+const STAFF = TEAM_DOCTORS.map((doctor) => ({
+  name: doctor.name,
+  role: doctor.role,
+  clinic: doctor.clinic.split(",")[0],
+  image: doctor.image,
+}));
 
 function PinIcon() {
   return (

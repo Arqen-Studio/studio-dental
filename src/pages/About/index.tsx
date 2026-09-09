@@ -1,47 +1,17 @@
 import { Link } from "react-router-dom";
+import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
-const TEAM_CARDS = [
-  {
-    name: "Dr. Yousaf Kamal",
-    blurb:
-      "Has run marathons across three continents. The endurance and focus required at mile 26 are the same qualities he brings to every implant procedure.",
-    bg: "blue",
-    image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    name: "Dr. Nayab Farooq",
-    blurb:
-      "An avid painter who finds that the patience and precision of art translates perfectly to the delicate craft of root canal therapy.",
-    bg: "white",
-  },
-  {
-    name: "Dr. Umair Usman",
-    blurb:
-      "A cycling enthusiast who believes the rhythm and balance found on the road mirrors the harmony needed in restorative dentistry.",
-    bg: "gray",
-  },
-  {
-    name: "Dr. Amna Hassan",
-    blurb:
-      "Loves hiking and mountaineering. The focus required at altitude is the same precision she brings to every oral surgery procedure.",
-    bg: "lightblue",
-  },
-  {
-    name: "Dr. Aqsa Malik",
-    blurb:
-      "A yoga practitioner who channels mindfulness and attention to detail into designing perfect, comfortable aligner treatment plans.",
-    bg: "blue",
-    image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    name: "Dr. Hassan Ali",
-    blurb:
-      "Passionate about cooking — the curiosity to understand textures and nuances in food is the same curiosity he applies to patient care.",
-    bg: "gray",
-  },
-];
+const CARD_BG = ["blue", "white", "gray", "lightblue"] as const;
+
+const TEAM_CARDS = TEAM_DOCTORS.map((doctor, i) => {
+  const bg = CARD_BG[i % CARD_BG.length];
+  return {
+    name: doctor.name,
+    blurb: doctor.bio,
+    bg,
+    image: bg === "blue" ? doctor.image : undefined,
+  };
+});
 
 const BG: Record<string, string> = {
   blue: "bg-skyBrand",
