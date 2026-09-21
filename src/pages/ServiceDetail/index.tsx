@@ -47,11 +47,11 @@ export default function ServiceDetail() {
               muted
               loop
               playsInline
-              poster="/videos/consultation-poster.jpg"
+              poster="/videos/treatment-room-poster.jpg"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
             >
               <source
-                src="/videos/consultation-720.mp4"
+                src="/videos/treatment-room-720.mp4"
                 type="video/mp4"
               />
             </video>
