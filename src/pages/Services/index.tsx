@@ -277,11 +277,11 @@ export default function Services() {
             muted
             loop
             playsInline
-            poster="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?auto=format&fit=crop&w=1200&q=75"
+            poster="/videos/clinic-team-poster.jpg"
             className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
           >
             <source
-              src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4"
+              src="/videos/clinic-team-720.mp4"
               type="video/mp4"
             />
           </video>

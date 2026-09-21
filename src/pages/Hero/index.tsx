@@ -8,14 +8,11 @@ import HomeClinicHub from "../../components/HomeClinicHub";
 import HomeDoctorsCarousel from "../../components/HomeDoctorsCarousel";
 import HomeServicesShowcase from "../../components/HomeServicesShowcase";
 
-/** Dental clinic footage — Pexels (royalty-free): “A Dentist Cleaning the Teeth of a Man”, Pavel Danilyuk */
-const HERO_VIDEO_HD =
-  "https://videos.pexels.com/video-files/6763244/6763244-hd_1920_1080_25fps.mp4";
-const HERO_VIDEO_SD =
-  "https://videos.pexels.com/video-files/6763244/6763244-sd_640_360_25fps.mp4";
+/** Studio Dental clinic walkaround — supplied by the client */
+const HERO_VIDEO_HD = "/videos/clinic-walkaround-1600.mp4";
+const HERO_VIDEO_SD = "/videos/clinic-walkaround-640.mp4";
 
-const HERO_POSTER =
-  "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=60";
+const HERO_POSTER = "/videos/clinic-walkaround-poster.jpg";
 
 export default function Hero() {
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
