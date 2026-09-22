@@ -2,6 +2,7 @@ import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ServiceCard } from "../../components/ServiceCard";
+import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import ContactFormSection from "../../components/ContactFormSection";
 
 // ── service accordion data ─────────────────────────────────────────────────
@@ -188,6 +189,7 @@ function HomeServicesSection() {
 // ── main services page ─────────────────────────────────────────────────────
 export default function Services() {
   const { pathname } = useLocation();
+  const videoRef = useAutoplayVideo();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   if (pathname === "/") {
@@ -273,15 +275,16 @@ export default function Services() {
         {/* Right — video */}
         <div className="relative order-first min-h-[50vw] overflow-hidden lg:order-last lg:min-h-screen">
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            poster="/videos/clinic-team-poster.jpg"
+            poster="/videos/clinic-room-poster.jpg"
             className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
           >
             <source
-              src="/videos/clinic-team-720.mp4"
+              src="/videos/clinic-room-720.mp4"
               type="video/mp4"
             />
           </video>

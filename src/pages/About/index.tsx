@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
 const CARD_BG = ["blue", "white", "gray", "lightblue"] as const;
@@ -34,27 +35,22 @@ const LINK_COLOR: Record<string, string> = {
   lightblue: "text-skyBrand hover:text-skyBrand/80",
 };
 
-function VideoBlock({ poster }: { poster: string }) {
+function VideoBlock({ src, poster }: { src: string; poster: string }) {
+  const videoRef = useAutoplayVideo();
   return (
     <div className="relative mx-auto max-w-[920px] 2xl:max-w-[1240px] overflow-hidden rounded-2xl">
-      <img src={poster} alt="" className="aspect-video w-full object-cover" />
-      <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-        <button
-          aria-label="Play video"
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-skyBrand shadow-sky transition hover:scale-105 hover:bg-skyBrand/90"
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="ml-1 text-ink"
-            aria-hidden="true"
-          >
-            <polygon points="5,3 19,12 5,21" />
-          </svg>
-        </button>
-      </div>
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={poster}
+        className="aspect-video w-full object-cover"
+      >
+        <source src={src} type="video/mp4" />
+      </video>
     </div>
   );
 }
@@ -123,7 +119,7 @@ export default function About() {
 
       {/* ── 3. Video ── */}
       <section className="reveal bg-[#f9f9f9] px-5 pb-16 md:px-8 md:pb-20">
-        <VideoBlock poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=70" />
+        <VideoBlock src="/videos/clinic-team-720.mp4" poster="/videos/clinic-team-poster.jpg" />
       </section>
 
       {/* ── 4. Full-bleed image with overlay text ── */}
@@ -200,7 +196,7 @@ export default function About() {
 
       {/* ── 7. Second video ── */}
       <section className="reveal bg-[#f9f9f9] px-5 py-16 md:px-8 md:py-20">
-        <VideoBlock poster="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1400&q=70" />
+        <VideoBlock src="/videos/surgical-light-720.mp4" poster="/videos/surgical-light-poster.jpg" />
       </section>
     </>
   );

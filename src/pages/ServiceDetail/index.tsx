@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { SERVICES_DATA } from "../../data/services";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 import { TeamDoctorCard } from "../../components/TeamDoctorCard";
+import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 
 const DENTIST_PHOTO =
   "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=75";
@@ -25,6 +26,7 @@ const CLINIC_CARDS = [
 
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
+  const videoRef = useAutoplayVideo();
   const service = SERVICES_DATA.find((s) => s.id === id);
 
   if (!service) return <Navigate to="/services" replace />;
@@ -43,6 +45,7 @@ export default function ServiceDetail() {
           {/* Video — left */}
           <div className="relative min-h-[45vh] overflow-hidden lg:min-h-screen">
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop

@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useCountUp, useInView } from "../../hooks/useCountUp";
+import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import MissionCampaignBanner from "../../components/MissionCampaignBanner";
 import HomeClinicHub from "../../components/HomeClinicHub";
 // import HomePopularServices from "../../components/HomePopularServices";
@@ -15,30 +15,11 @@ const HERO_VIDEO_SD = "/videos/clinic-walkaround-640.mp4";
 const HERO_POSTER = "/videos/clinic-walkaround-poster.jpg";
 
 export default function Hero() {
-  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+  const heroVideoRef = useAutoplayVideo();
   const { ref: heroStatsRef, inView: heroStatsInView } =
     useInView<HTMLDivElement>(0.3);
   const yearsCount = useCountUp(17, heroStatsInView);
   const clinicsCount = useCountUp(2, heroStatsInView);
-
-  useEffect(() => {
-    const video = heroVideoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-
-    const tryPlay = async () => {
-      try {
-        await video.play();
-      } catch {
-        // Autoplay can still be blocked by browser policies.
-      }
-    };
-
-    void tryPlay();
-  }, []);
 
   return (
     <>
