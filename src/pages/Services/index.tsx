@@ -17,19 +17,12 @@ const SERVICES: ServiceEntry[] = [
     title: "Dental fillings (adults and children)",
     children: ["Dental fillings", "Pediatric dentistry"],
   },
-  { id: "orthognathic-surgery", title: "Orthognathic surgery" },
-  { id: "jaw-joint-treatment",  title: "Treatment of jaw joint pain" },
   {
     id: "teeth-straightening",
     title: "Teeth straightening",
     children: ["Braces", "Clear aligners"],
   },
   { id: "aesthetic-fillings",   title: "Aesthetic dental fillings" },
-  {
-    id: "periodontal-treatment",
-    title: "Periodontal treatment (conservative and laser)",
-    children: ["Conservative treatment", "Laser therapy"],
-  },
   { id: "root-canal",           title: "Root canal treatment" },
   {
     id: "oral-hygiene",
