@@ -1,7 +1,6 @@
-import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { ServiceCard } from "../../components/ServiceCard";
+import { Link } from "react-router-dom";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import ContactFormSection from "../../components/ContactFormSection";
 
@@ -32,162 +31,10 @@ const SERVICES: ServiceEntry[] = [
   { id: "tooth-extraction",     title: "Tooth extraction" },
 ];
 
-// ── home-page marquee data (kept for Hero section) ─────────────────────────
-type ServiceItem = { title: string; desc: string; price: string };
-
-const SERVICE_CATALOG: ServiceItem[] = [
-  {
-    title: "Dental Consultation",
-    desc: "Comprehensive oral exam and treatment planning with digital screening.",
-    price: "From PKR 3,500",
-  },
-  {
-    title: "Scaling & Polishing",
-    desc: "Professional cleaning to remove plaque, tartar, and surface stains.",
-    price: "From PKR 6,000",
-  },
-  {
-    title: "Tooth-Colored Fillings",
-    desc: "Aesthetic restorations designed to match your natural teeth.",
-    price: "From PKR 8,000",
-  },
-  {
-    title: "Root Canal Treatment",
-    desc: "Pain-relieving endodontic care to preserve infected teeth.",
-    price: "From PKR 18,000",
-  },
-  {
-    title: "Dental Crowns",
-    desc: "Durable ceramic and zirconia crowns for strength and aesthetics.",
-    price: "From PKR 25,000",
-  },
-  {
-    title: "Braces & Aligners",
-    desc: "Orthodontic treatment options tailored to bite and smile goals.",
-    price: "Custom quote",
-  },
-  {
-    title: "Teeth Whitening",
-    desc: "Safe in-clinic and supervised whitening options for brighter teeth.",
-    price: "From PKR 15,000",
-  },
-  {
-    title: "Dental Veneers",
-    desc: "Porcelain and composite veneers to improve smile shape and color.",
-    price: "From PKR 30,000",
-  },
-  {
-    title: "Wisdom Tooth Removal",
-    desc: "Surgical and non-surgical removal for impacted or painful molars.",
-    price: "From PKR 18,000",
-  },
-  {
-    title: "Tooth Extraction",
-    desc: "Simple extractions performed with comfort-focused protocols.",
-    price: "From PKR 7,000",
-  },
-  {
-    title: "Dental Implants",
-    desc: "Single and multiple implant options with digital planning.",
-    price: "Custom quote",
-  },
-  {
-    title: "Smile Makeover",
-    desc: "Comprehensive cosmetic treatment plans for balanced facial aesthetics.",
-    price: "Custom quote",
-  },
-  {
-    title: "Pediatric Dentistry",
-    desc: "Preventive and restorative dental care tailored for children.",
-    price: "From PKR 4,500",
-  },
-  {
-    title: "Gum Treatment",
-    desc: "Periodontal therapy for bleeding gums, recession, and gum infections.",
-    price: "From PKR 12,000",
-  },
-  {
-    title: "Dentures & Partials",
-    desc: "Custom full and partial dentures for comfort and chewing function.",
-    price: "From PKR 35,000",
-  },
-  {
-    title: "Emergency Dental Care",
-    desc: "Urgent same-day care for severe pain, swelling, trauma, and infection.",
-    price: "Starts at PKR 5,000",
-  },
-];
-
-// ── home-page services marquee (rendered inside Hero) ──────────────────────
-function HomeServicesSection() {
-  return (
-    <section id="services" className="bg-white py-16 md:py-24">
-      <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
-        <div className="mb-8 grid gap-5 lg:grid-cols-[1.2fr_1fr_auto] lg:items-start">
-          <div className="flex max-w-[760px] flex-col gap-3">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
-              <span
-                className="h-1.5 w-1.5 rounded-full bg-skyBrand"
-                aria-hidden="true"
-              />
-              Services
-            </span>
-            <h2>Dental services at Studio Dental.</h2>
-            <p className="max-w-[60ch] text-[1.02rem] text-muted">
-              Explore preventive, restorative, cosmetic, and surgical treatments
-              with specialist-led care plans.
-            </p>
-          </div>
-          <p className="max-w-[33ch] border-l-2 border-skyBrand/40 pl-3 pt-1.5 text-[0.78rem] font-semibold leading-snug text-ink2">
-            Service cards move continuously so you can quickly scan options and
-            visit the full services page for details.
-          </p>
-          <Link
-            to="/services"
-            className="group inline-flex h-[40px] items-center justify-center gap-2 self-start whitespace-nowrap rounded-full border border-skyBrand/30 bg-white px-5 text-[0.75rem] font-semibold text-ink2 shadow-soft-sm transition hover:-translate-y-0.5 hover:border-skyBrand/70 hover:text-ink hover:shadow-soft-md"
-          >
-            View all services
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-skyBrand/25 text-ink transition group-hover:bg-skyBrand/40">
-              <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
-            </span>
-          </Link>
-        </div>
-        <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
-          <div className="flex w-max animate-[sd-services-marquee_34s_linear_infinite] [will-change:transform]">
-            <div className="flex gap-5 pr-5">
-              {SERVICE_CATALOG.map((service) => (
-                <ServiceCard
-                  key={`home-a-${service.title}`}
-                  {...service}
-                  variant="marquee"
-                />
-              ))}
-            </div>
-            <div className="flex gap-5 pr-5" aria-hidden="true">
-              {SERVICE_CATALOG.map((service) => (
-                <ServiceCard
-                  key={`home-b-${service.title}`}
-                  {...service}
-                  variant="marquee"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // ── main services page ─────────────────────────────────────────────────────
 export default function Services() {
-  const { pathname } = useLocation();
   const videoRef = useAutoplayVideo();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
-
-  if (pathname === "/") {
-    return <HomeServicesSection />;
-  }
 
   function toggle(idx: number) {
     setOpenIdx((prev) => (prev === idx ? null : idx));

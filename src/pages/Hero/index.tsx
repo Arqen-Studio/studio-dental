@@ -4,7 +4,6 @@ import { useCountUp, useInView } from "../../hooks/useCountUp";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import MissionCampaignBanner from "../../components/MissionCampaignBanner";
 import HomeClinicHub from "../../components/HomeClinicHub";
-// import HomePopularServices from "../../components/HomePopularServices";
 import HomeDoctorsCarousel from "../../components/HomeDoctorsCarousel";
 import HomeServicesShowcase from "../../components/HomeServicesShowcase";
 
@@ -165,7 +164,6 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* <HomePopularServices /> */}
       <HomeServicesShowcase />
       <HomeDoctorsCarousel />
 
