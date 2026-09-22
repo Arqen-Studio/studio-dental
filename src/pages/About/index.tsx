@@ -196,7 +196,7 @@ export default function About() {
 
       {/* ── 7. Second video ── */}
       <section className="reveal bg-[#f9f9f9] px-5 py-16 md:px-8 md:py-20">
-        <VideoBlock src="/videos/surgical-light-720.mp4" poster="/videos/surgical-light-poster.jpg" />
+        <VideoBlock src="/videos/clinic-detail-720.mp4" poster="/videos/clinic-detail-poster.jpg" />
       </section>
     </>
   );
