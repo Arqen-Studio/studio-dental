@@ -264,4 +264,38 @@ export const SERVICES_DATA: ServiceData[] = [
     ],
     specialistTags: ["Oral Surgery"],
   },
+  {
+    id: "childrens-dentistry",
+    title: "Children's Dentistry",
+    subtitle: "Gentle dental care for children, from first check-ups and cleaning through to fillings and extractions.",
+    heroImage: IMG_PATIENT,
+    intro: "Children's teeth need a different approach to adults'. Appointments are unhurried, everything is explained before it happens, and the aim of a first visit is simply that a child leaves happy to come back. Both branches treat children.",
+    whenHeading: "What we treat",
+    scenarios: [
+      {
+        title: "Check-ups and cleaning.",
+        text: "Regular visits let small problems be spotted while they are still small. A clean removes what brushing at home leaves behind, and gives us a chance to show a child how to look after their own teeth.",
+        image: IMG_DENTIST,
+      },
+      {
+        title: "Fillings for milk teeth.",
+        text: "Decay in a baby tooth still needs treating, both to stop the discomfort and to protect the adult tooth forming beneath it. Tooth-coloured materials are used so the repair is hard to spot.",
+        image: IMG_FDENTIST,
+      },
+      {
+        title: "Extractions.",
+        text: "Sometimes a baby tooth cannot be saved, or is holding up the adult tooth behind it. Where removal is the right course, it is done gently and the reasons are explained to both child and parent beforehand.",
+        image: IMG_OFFICE,
+      },
+    ],
+    priceCategories: ['paediatric'],
+    steps: [
+      "The visit starts with a look and a chat, so the child knows what is going to happen before anything is done.",
+      "Teeth and gums are examined, and anything needing attention is pointed out to the parent.",
+      "Any treatment agreed is carried out, with breaks whenever the child needs one.",
+      "Brushing and diet are talked through with the parent before you leave.",
+      "A follow-up is arranged where one is needed.",
+    ],
+    specialistTags: ["Preventive Care", "General Dentistry"],
+  },
 ];

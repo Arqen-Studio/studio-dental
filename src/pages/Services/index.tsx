@@ -28,6 +28,7 @@ const SERVICES: ServiceEntry[] = [
     children: ["Professional cleaning", "Teeth whitening"],
   },
   { id: "tooth-extraction",     title: "Tooth extraction" },
+  { id: "childrens-dentistry",  title: "Children\u2019s dentistry" },
 ];
 
 // ── main services page ─────────────────────────────────────────────────────
