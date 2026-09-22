@@ -62,35 +62,6 @@ export const SERVICES_DATA: ServiceData[] = [
     specialistTags: ["Implants"],
   },
   {
-    id: "all-on-4-implants",
-    title: "All Teeth on 4 Implants",
-    subtitle: "A full-arch restoration supported by just four implants — a modern solution for patients who have lost all or most of their teeth.",
-    heroImage: IMG_MDENTIST,
-    intro: "The All-on-4 technique allows us to replace an entire jaw of teeth using only four strategically placed implants. The prosthesis is often fitted on the same day as the implant surgery, giving patients immediate function and aesthetics.",
-    whenHeading: "Who is All-on-4 suitable for?",
-    scenarios: [
-      {
-        title: "Fully edentulous jaw.",
-        text: "When a patient has lost all teeth in one or both jaws, All-on-4 restores the complete arch on four implants. The angled posterior implants maximise bone contact without the need for grafting in most cases.",
-        image: IMG_DENTIST,
-      },
-      {
-        title: "Failing or hopeless teeth.",
-        text: "Patients with multiple failing teeth — severely decayed, fractured, or with advanced bone loss — can have all remaining teeth removed and replaced with a fixed All-on-4 prosthesis in a single procedure.",
-        image: IMG_OFFICE,
-      },
-    ],
-    priceCategories: ['implants'],
-    steps: [
-      "A 3D CBCT scan is taken to assess bone volume and plan the precise implant positions.",
-      "Four implants are placed at calculated angles to maximise contact with available bone.",
-      "A temporary prosthesis is often attached the same day, restoring appearance and function immediately.",
-      "After 3–6 months of osseointegration, the final high-strength prosthesis is manufactured and fitted.",
-      "Bite, aesthetics, and phonetics are fine-tuned at the final fitting appointment.",
-    ],
-    specialistTags: ["Implants"],
-  },
-  {
     id: "prosthetics",
     title: "Prosthetics: Teeth & Implants",
     subtitle: "Crowns, bridges, and prostheses crafted from premium materials — restoring function and aesthetics to damaged or missing teeth.",

@@ -9,7 +9,6 @@ type ServiceEntry = { id: string; title: string; children?: string[] };
 
 const SERVICES: ServiceEntry[] = [
   { id: "dental-implantation",  title: "Dental implantation" },
-  { id: "all-on-4-implants",    title: 'Implantation "All teeth on 4 implants"' },
   { id: "prosthetics",          title: "Prosthetics: teeth and implants" },
   {
     id: "dental-fillings",

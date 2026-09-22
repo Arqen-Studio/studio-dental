@@ -10,7 +10,6 @@ const HOME_SHOWCASE_SERVICE_IDS = [
   'oral-hygiene',
   'teeth-straightening',
   'dental-implantation',
-  'all-on-4-implants',
   'tooth-extraction',
   'dental-fillings',
 ] as const

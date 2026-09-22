@@ -1,4 +1,5 @@
 import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { SERVICES_DATA } from "../../data/services";
 
 export default function Contact() {
   return (
@@ -117,15 +118,12 @@ export default function Contact() {
               <select
                 id="service"
                 name="service"
-                defaultValue="Dental implantation"
+                defaultValue={SERVICES_DATA[0]?.title}
                 className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
               >
-                <option>Dental implantation</option>
-                <option>All teeth on 4 implants</option>
-                <option>Teeth straightening with aligners</option>
-                <option>Teeth straightening with braces</option>
-                <option>Prosthetics: teeth and implants</option>
-                <option>Dental fillings</option>
+                {SERVICES_DATA.map((service) => (
+                  <option key={service.id}>{service.title}</option>
+                ))}
               </select>
             </div>
             <div className="flex flex-col gap-2">
