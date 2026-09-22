@@ -3,6 +3,7 @@ import { Anchor, ArrowRight, Baby, BarChart3, Rows3, Star, Zap } from 'lucide-re
 import { Link } from 'react-router-dom'
 import type { ServiceData } from '../data/services'
 import { SERVICES_DATA } from '../data/services'
+import { PRICE_CATEGORIES, formatPrice } from '../data/prices'
 
 /** Same slot count as the legacy home showcase (1 featured + 5 tiles). IDs must exist in SERVICES_DATA. */
 const HOME_SHOWCASE_SERVICE_IDS = [
@@ -35,17 +36,20 @@ type ShowcaseItem = {
 
 const SHOWCASE_ICONS: LucideIcon[] = [BarChart3, Rows3, Anchor, Star, Zap, Baby]
 
-function priceLineFromService(prices: { name: string; price: string }[]): string {
-  const first = prices[0]
-  if (!first) return 'Custom quote'
-  return `From ${first.price.trim()}`
+function priceLineFromService(service: ServiceData): string {
+  const values = PRICE_CATEGORIES
+    .filter((c) => service.priceCategories.includes(c.id))
+    .flatMap((c) => c.items.flatMap((i) => [i.dha, i.f7]))
+    .filter((v): v is number => typeof v === 'number')
+  if (!values.length) return 'Custom quote'
+  return `From ${formatPrice(Math.min(...values))}`
 }
 
 const SHOWCASE: ShowcaseItem[] = servicesForHomeShowcase().map((s, i) => ({
   serviceId: s.id,
   title: s.title,
   desc: s.subtitle,
-  price: priceLineFromService(s.prices),
+  price: priceLineFromService(s),
   Icon: SHOWCASE_ICONS[i % SHOWCASE_ICONS.length] ?? BarChart3,
   featured: i === 0,
   image: i === 0 ? s.heroImage : undefined,

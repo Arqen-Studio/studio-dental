@@ -1,169 +1,16 @@
 import React from "react";
+import {
+  PRICE_CLINICS,
+  categoriesForClinic,
+  formatPrice,
+  type ClinicId,
+} from "../../data/prices";
 
-type PriceItem = { name: string; price: string };
-type SubGroup = { title?: string; items: PriceItem[] };
-type Category = { id: string; label: string; groups: SubGroup[] };
-
-const CATEGORIES: Category[] = [
-  {
-    id: "consultation",
-    label: "Consultation & Diagnostics",
-    groups: [
-      {
-        items: [
-          { name: "Initial consultation & examination", price: "Rs. 2,000" },
-          { name: "Specialist consultation", price: "Rs. 3,000" },
-          { name: "Re-consultation", price: "Complimentary" },
-          { name: "Digital X-ray (periapical)", price: "Rs. 1,500" },
-          { name: "Panoramic X-ray (OPG)", price: "Rs. 3,500" },
-          { name: "CBCT scan (3D)", price: "Rs. 15,000" },
-          { name: "Disinfection & single-use supplies (per visit)", price: "Rs. 500" },
-          { name: "Treatment planning session", price: "Complimentary" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "surgery",
-    label: "Oral Surgery",
-    groups: [
-      {
-        title: "Tooth Extractions",
-        items: [
-          { name: "Simple extraction (milk tooth)", price: "Rs. 3,500" },
-          { name: "Simple extraction (permanent tooth)", price: "Rs. 5,000" },
-          { name: "Surgical extraction", price: "Rs. 12,000" },
-          { name: "Wisdom tooth removal", price: "Rs. 18,000" },
-          { name: "Complex surgical extraction", price: "Rs. 28,000" },
-          { name: "PRF therapy (accelerated healing)", price: "Rs. 8,000" },
-        ],
-      },
-      {
-        title: "Other Surgical Procedures",
-        items: [
-          { name: "Cyst removal", price: "Rs. 25,000" },
-          { name: "Sinus cyst removal", price: "Rs. 45,000" },
-          { name: "Frenectomy", price: "Rs. 12,000" },
-          { name: "Gingivectomy (per tooth)", price: "Rs. 6,000" },
-          { name: "Gum contouring (per quadrant)", price: "Rs. 15,000" },
-          { name: "Biostimulation / regeneration therapy", price: "Rs. 4,000" },
-          { name: "Fibroma / mucocele removal", price: "Rs. 9,000" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "implants",
-    label: "Dental Implants",
-    groups: [
-      {
-        title: "Implant Placement",
-        items: [
-          { name: "Single implant (titanium fixture)", price: "Rs. 75,000 – 95,000" },
-          { name: "Implant abutment", price: "Rs. 15,000 – 22,000" },
-          { name: "Implant crown (zirconia)", price: "Rs. 35,000 – 50,000" },
-          { name: "Full implant package (fixture + abutment + crown)", price: "Rs. 110,000 – 140,000" },
-        ],
-      },
-      {
-        title: "Full Arch Restorations",
-        items: [
-          { name: "All-on-4 (per jaw)", price: "Rs. 550,000 – 750,000" },
-          { name: "All-on-6 (per jaw)", price: "Rs. 700,000 – 950,000" },
-          { name: "Bone grafting", price: "Rs. 30,000 – 60,000" },
-          { name: "Sinus lift", price: "Rs. 50,000 – 80,000" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "periodontal",
-    label: "Periodontal Treatment",
-    groups: [
-      {
-        items: [
-          { name: "Ultrasonic scaling & polishing", price: "Rs. 5,000 – 9,000" },
-          { name: "Deep cleaning / root planing (per quadrant)", price: "Rs. 8,000 – 14,000" },
-          { name: "Fluoride treatment", price: "Rs. 3,000" },
-          { name: "Fissure sealants (per tooth)", price: "Rs. 2,500" },
-          { name: "Gum disease therapy", price: "Rs. 12,000 – 20,000" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "prosthetics",
-    label: "Prosthetics",
-    groups: [
-      {
-        title: "Crowns & Bridges",
-        items: [
-          { name: "Zirconia crown", price: "Rs. 30,000 – 45,000" },
-          { name: "PFM crown (porcelain-fused-to-metal)", price: "Rs. 18,000 – 28,000" },
-          { name: "Full-ceramic crown (e.max)", price: "Rs. 35,000 – 50,000" },
-          { name: "Temporary crown", price: "Rs. 4,000 – 7,000" },
-          { name: "3-unit bridge (zirconia)", price: "Rs. 90,000 – 130,000" },
-        ],
-      },
-      {
-        title: "Removable Dentures",
-        items: [
-          { name: "Full acrylic denture (per jaw)", price: "Rs. 35,000 – 55,000" },
-          { name: "Partial flexible denture", price: "Rs. 28,000 – 45,000" },
-          { name: "Implant-supported overdenture", price: "Rs. 180,000 – 280,000" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "restorations",
-    label: "Dental Treatment",
-    groups: [
-      {
-        title: "Fillings",
-        items: [
-          { name: "Composite filling (tooth-coloured)", price: "Rs. 4,000 – 8,000" },
-          { name: "GIC filling", price: "Rs. 3,000 – 5,000" },
-          { name: "Inlay / onlay (ceramic)", price: "Rs. 18,000 – 28,000" },
-          { name: "Dental bonding", price: "Rs. 6,000 – 12,000" },
-        ],
-      },
-      {
-        title: "Root Canal Treatment",
-        items: [
-          { name: "Single-canal tooth (anterior)", price: "Rs. 12,000 – 18,000" },
-          { name: "Two-canal tooth (premolar)", price: "Rs. 18,000 – 25,000" },
-          { name: "Three-canal tooth (molar)", price: "Rs. 25,000 – 35,000" },
-          { name: "Re-treatment (previously treated)", price: "Rs. 30,000 – 45,000" },
-          { name: "Post & core build-up", price: "Rs. 8,000 – 14,000" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "orthodontics",
-    label: "Orthodontic Treatment",
-    groups: [
-      {
-        items: [
-          { name: "Clear aligners (full treatment)", price: "Rs. 150,000 – 250,000" },
-          { name: "Metal braces (full treatment)", price: "Rs. 80,000 – 120,000" },
-          { name: "Ceramic braces (full treatment)", price: "Rs. 120,000 – 160,000" },
-          { name: "Retainer (post-treatment)", price: "Rs. 8,000 – 15,000" },
-          { name: "Teeth whitening (after orthodontics)", price: "Rs. 18,000 – 25,000" },
-        ],
-      },
-    ],
-  },
-];
-
-const CLINICS = [
-  { id: "dha", name: "DHA Phase II", address: "Plaza No. 26, Main Iqbal Boulevard" },
-  { id: "f7",  name: "F-7 Markaz",   address: "Office #7, 2nd Floor, Near Shoe Planet" },
-];
+const CLINICS = PRICE_CLINICS;
 
 export default function Prices() {
-  const [selectedClinic, setSelectedClinic] = React.useState<string | null>(null);
+  const [selectedClinic, setSelectedClinic] = React.useState<ClinicId | null>(null);
+  const categories = selectedClinic ? categoriesForClinic(selectedClinic) : [];
   const [listKey, setListKey] = React.useState(0);
 
   React.useLayoutEffect(() => {
@@ -174,7 +21,7 @@ export default function Prices() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
-  function handleClinicSelect(id: string) {
+  function handleClinicSelect(id: ClinicId) {
     setSelectedClinic(id);
     setListKey((k) => k + 1);
   }
@@ -225,7 +72,7 @@ export default function Prices() {
                   key={listKey}
                   className="mt-6 flex flex-col [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_both]"
                 >
-                  {CATEGORIES.map((cat) => (
+                  {categories.map((cat) => (
                     <li key={cat.id}>
                       <a
                         href={`#${cat.id}`}
@@ -290,7 +137,7 @@ export default function Prices() {
       </section>
 
       {/* ── Price sections — rendered only after clinic selected ── */}
-      {selectedClinic && CATEGORIES.map((cat) => (
+      {selectedClinic && categories.map((cat) => (
         <section key={cat.id} id={cat.id} className="scroll-mt-[78px]">
           {/* Category heading band */}
           <div className="bg-[#ddf0f8] py-10 text-center">
@@ -300,35 +147,27 @@ export default function Prices() {
             <div className="mx-auto mt-3 h-0.5 w-12 bg-skyBrand/50" />
           </div>
 
-          {/* Price groups */}
+          {/* Price rows */}
           <div className="bg-white py-10">
             <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8">
-              {cat.groups.map((group, gi) => (
-                <div key={gi} className={gi > 0 ? "mt-12" : ""}>
-                  {group.title && (
-                    <div className="mb-5 border-b border-black/15 pb-3">
-                      <h3 className="text-[1.3rem] font-bold text-ink">{group.title}</h3>
-                    </div>
-                  )}
-                  <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
-                    {group.items.map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center justify-between gap-4 px-4 py-3 odd:bg-black/[0.025]"
-                      >
-                        <span className="text-[0.92rem] text-ink">{item.name}</span>
-                        <span className="flex-shrink-0 text-[0.92rem] font-semibold text-ink">
-                          {item.price}
-                        </span>
-                      </div>
-                    ))}
+              <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
+                {cat.items.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between gap-4 px-4 py-3 odd:bg-black/[0.025]"
+                  >
+                    <span className="text-[0.92rem] text-ink">{item.name}</span>
+                    <span className="flex-shrink-0 text-[0.92rem] font-semibold text-ink">
+                      {formatPrice(item[selectedClinic])}
+                    </span>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
       ))}
+
     </>
   );
 }

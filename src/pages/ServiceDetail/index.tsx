@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { SERVICES_DATA } from "../../data/services";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 import { TeamDoctorCard } from "../../components/TeamDoctorCard";
+import { PRICE_CATEGORIES, formatPrice } from "../../data/prices";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 
 const DENTIST_PHOTO =
@@ -28,6 +29,9 @@ export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const videoRef = useAutoplayVideo();
   const service = SERVICES_DATA.find((s) => s.id === id);
+  const priceCategories = PRICE_CATEGORIES.filter((c) =>
+    service?.priceCategories.includes(c.id)
+  );
 
   if (!service) return <Navigate to="/services" replace />;
 
@@ -187,20 +191,30 @@ export default function ServiceDetail() {
           <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">Prices</h2>
           <div className="mb-8 mt-3 h-px bg-ink/15" />
 
-          {/* Price rows */}
-          <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
-            {service.prices.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between gap-4 px-4 py-3.5 odd:bg-black/[0.03]"
-              >
-                <span className="text-[0.92rem] text-ink">{item.name}</span>
-                <span className="flex-shrink-0 text-[0.92rem] font-semibold text-ink">
-                  {item.price}
-                </span>
+          {/* Price rows — the two branches price most treatments differently */}
+          {priceCategories.map((cat) => (
+            <div key={cat.id} className="mb-8 last:mb-0">
+              <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 border-b border-ink/15 pb-2 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-ink/45 sm:gap-x-10">
+                <span>{cat.label}</span>
+                <span className="text-right">DHA Phase II</span>
+                <span className="text-right">F-7 Markaz</span>
               </div>
-            ))}
-          </div>
+              {cat.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 px-1 py-3 text-[0.92rem] odd:bg-black/[0.03] sm:gap-x-10 sm:px-3"
+                >
+                  <span className="text-ink">{item.name}</span>
+                  <span className="text-right font-semibold tabular-nums text-ink">
+                    {"dha" in item ? formatPrice(item.dha) : <span className="text-ink/30">&mdash;</span>}
+                  </span>
+                  <span className="text-right font-semibold tabular-nums text-ink">
+                    {"f7" in item ? formatPrice(item.f7) : <span className="text-ink/30">&mdash;</span>}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
 
           {/* Disclaimer */}
           <div className="mt-6 rounded-xl bg-skyBrand/10 px-5 py-4">

@@ -12,7 +12,8 @@ export type ServiceData = {
   intro: string;
   whenHeading: string;
   scenarios: ServiceScenario[];
-  prices: { name: string; price: string }[];
+  /** ids from PRICE_CATEGORIES in data/prices.ts */
+  priceCategories: string[];
   steps: string[];
   specialistTags: string[];
 };
@@ -50,12 +51,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_PATIENT,
       },
     ],
-    prices: [
-      { name: "Single implant (titanium fixture)",              price: "Rs. 75,000 – 95,000"  },
-      { name: "Implant abutment",                              price: "Rs. 15,000 – 22,000"  },
-      { name: "Implant crown (zirconia)",                      price: "Rs. 35,000 – 50,000"  },
-      { name: "Full implant package (fixture + abutment + crown)", price: "Rs. 110,000 – 140,000" },
-    ],
+    priceCategories: ['implants'],
     steps: [
       "Sedation or local anaesthesia is administered — the patient feels no pain throughout.",
       "The implant site is prepared and the titanium fixture is carefully threaded into the jawbone.",
@@ -84,12 +80,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_OFFICE,
       },
     ],
-    prices: [
-      { name: "All-on-4 (per jaw)",     price: "Rs. 550,000 – 750,000" },
-      { name: "All-on-6 (per jaw)",     price: "Rs. 700,000 – 950,000" },
-      { name: "Bone grafting",          price: "Rs. 30,000 – 60,000"   },
-      { name: "Sinus lift",             price: "Rs. 50,000 – 80,000"   },
-    ],
+    priceCategories: ['implants'],
     steps: [
       "A 3D CBCT scan is taken to assess bone volume and plan the precise implant positions.",
       "Four implants are placed at calculated angles to maximise contact with available bone.",
@@ -118,12 +109,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_OFFICE,
       },
     ],
-    prices: [
-      { name: "Zirconia crown",                    price: "Rs. 30,000 – 45,000"  },
-      { name: "Full-ceramic crown (e.max)",         price: "Rs. 35,000 – 50,000"  },
-      { name: "3-unit bridge (zirconia)",           price: "Rs. 90,000 – 130,000" },
-      { name: "Full acrylic denture (per jaw)",     price: "Rs. 35,000 – 55,000"  },
-    ],
+    priceCategories: ['crowns'],
     steps: [
       "The tooth is prepared — shaped to accommodate the crown with minimal removal of healthy tissue.",
       "Digital impressions are taken and sent to the laboratory for custom fabrication.",
@@ -152,12 +138,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_FDENTIST,
       },
     ],
-    prices: [
-      { name: "Composite filling (tooth-coloured)", price: "Rs. 4,000 – 8,000"   },
-      { name: "GIC filling",                        price: "Rs. 3,000 – 5,000"   },
-      { name: "Inlay / onlay (ceramic)",            price: "Rs. 18,000 – 28,000" },
-      { name: "Dental bonding",                     price: "Rs. 6,000 – 12,000"  },
-    ],
+    priceCategories: ['fillings', 'paediatric'],
     steps: [
       "Local anaesthesia is applied to ensure a completely pain-free procedure.",
       "All decayed or damaged tooth material is carefully removed using precision instruments.",
@@ -186,12 +167,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_FDENTIST,
       },
     ],
-    prices: [
-      { name: "Surgical extraction",         price: "Rs. 12,000"         },
-      { name: "Cyst removal",                price: "Rs. 25,000"         },
-      { name: "Frenectomy",                  price: "Rs. 12,000"         },
-      { name: "Orthognathic consultation",   price: "Complimentary"      },
-    ],
+    priceCategories: ['extractions'],
     steps: [
       "A comprehensive workup including X-rays, CBCT, photographs, and digital planning is completed.",
       "Pre-surgical orthodontic treatment aligns teeth within each jaw over 12–18 months.",
@@ -220,11 +196,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_OFFICE,
       },
     ],
-    prices: [
-      { name: "TMJ consultation & examination",    price: "Rs. 3,000"          },
-      { name: "Custom occlusal splint (night guard)", price: "Rs. 15,000 – 22,000" },
-      { name: "Physiotherapy referral assessment", price: "Complimentary"      },
-    ],
+    priceCategories: ['consultation'],
     steps: [
       "A detailed clinical examination assesses jaw movement, muscle tenderness, and joint sounds.",
       "Imaging (OPG or CBCT) is taken to evaluate joint structure and rule out pathology.",
@@ -253,12 +225,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_DENTIST,
       },
     ],
-    prices: [
-      { name: "Clear aligners (full treatment)",    price: "Rs. 150,000 – 250,000" },
-      { name: "Metal braces (full treatment)",      price: "Rs. 80,000 – 120,000"  },
-      { name: "Ceramic braces (full treatment)",    price: "Rs. 120,000 – 160,000" },
-      { name: "Retainer (post-treatment)",          price: "Rs. 8,000 – 15,000"    },
-    ],
+    priceCategories: ['orthodontics'],
     steps: [
       "A thorough orthodontic examination including X-rays and digital scan is completed.",
       "A customised treatment plan is prepared and discussed — duration, options, and cost are agreed upfront.",
@@ -287,11 +254,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_FDENTIST,
       },
     ],
-    prices: [
-      { name: "Composite filling (tooth-coloured)", price: "Rs. 4,000 – 8,000"   },
-      { name: "Dental bonding",                     price: "Rs. 6,000 – 12,000"  },
-      { name: "Inlay / onlay (ceramic)",            price: "Rs. 18,000 – 28,000" },
-    ],
+    priceCategories: ['fillings', 'crowns'],
     steps: [
       "The tooth surface is cleaned and lightly etched to ensure strong adhesion.",
       "The correct composite shade is selected by comparing against adjacent natural teeth.",
@@ -320,12 +283,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_OFFICE,
       },
     ],
-    prices: [
-      { name: "Ultrasonic scaling & polishing",              price: "Rs. 5,000 – 9,000"   },
-      { name: "Deep cleaning / root planing (per quadrant)", price: "Rs. 8,000 – 14,000"  },
-      { name: "Fluoride treatment",                          price: "Rs. 3,000"            },
-      { name: "Gum disease therapy",                        price: "Rs. 12,000 – 20,000"  },
-    ],
+    priceCategories: ['consultation'],
     steps: [
       "A full periodontal charting records pocket depths, bleeding points, and bone levels.",
       "Ultrasonic scaling removes plaque and tartar above and below the gumline.",
@@ -354,13 +312,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_PATIENT,
       },
     ],
-    prices: [
-      { name: "Single-canal tooth (anterior)",   price: "Rs. 12,000 – 18,000" },
-      { name: "Two-canal tooth (premolar)",       price: "Rs. 18,000 – 25,000" },
-      { name: "Three-canal tooth (molar)",        price: "Rs. 25,000 – 35,000" },
-      { name: "Re-treatment (previously treated)", price: "Rs. 30,000 – 45,000" },
-      { name: "Post & core build-up",             price: "Rs. 8,000 – 14,000"  },
-    ],
+    priceCategories: ['endodontics'],
     steps: [
       "Local anaesthesia is administered — patients are surprised at how comfortable the procedure is.",
       "An access cavity is made through the crown to reach the pulp chamber.",
@@ -389,12 +341,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_OFFICE,
       },
     ],
-    prices: [
-      { name: "Ultrasonic scaling & polishing", price: "Rs. 5,000 – 9,000"  },
-      { name: "Fluoride treatment",              price: "Rs. 3,000"          },
-      { name: "Fissure sealants (per tooth)",    price: "Rs. 2,500"          },
-      { name: "Teeth whitening",                 price: "Rs. 18,000 – 25,000" },
-    ],
+    priceCategories: ['consultation'],
     steps: [
       "A brief examination identifies any areas of concern before cleaning begins.",
       "Ultrasonic scaling removes calculus and hard deposits above and just below the gumline.",
@@ -423,13 +370,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_FDENTIST,
       },
     ],
-    prices: [
-      { name: "Simple extraction (milk tooth)",      price: "Rs. 3,500"  },
-      { name: "Simple extraction (permanent tooth)", price: "Rs. 5,000"  },
-      { name: "Surgical extraction",                price: "Rs. 12,000" },
-      { name: "Wisdom tooth removal",               price: "Rs. 18,000" },
-      { name: "PRF therapy (accelerated healing)",  price: "Rs. 8,000"  },
-    ],
+    priceCategories: ['extractions'],
     steps: [
       "Local anaesthesia or sedation is administered for a completely comfortable procedure.",
       "For simple extractions, the tooth is gently loosened and removed with minimal trauma.",
