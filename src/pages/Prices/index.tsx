@@ -28,7 +28,7 @@ export default function Prices() {
 
   return (
     <>
-      {/* ── Hero — full-screen split ── */}
+      {/* ── Hero, full-screen split ── */}
       <section className="no-reveal lg:min-h-screen">
         <div className="grid lg:grid-cols-2">
           {/* Left panel */}
@@ -66,7 +66,7 @@ export default function Prices() {
                 ))}
               </div>
 
-              {/* Category links — re-animate on every clinic switch */}
+              {/* Category links, re-animate on every clinic switch */}
               {selectedClinic && (
                 <ul
                   key={listKey}
@@ -96,7 +96,7 @@ export default function Prices() {
             </div>
           </div>
 
-          {/* Right panel — photo */}
+          {/* Right panel, photo */}
           <div className="relative hidden overflow-hidden lg:block lg:min-h-screen">
             <img
               src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=75"
@@ -108,7 +108,7 @@ export default function Prices() {
         </div>
       </section>
 
-      {/* ── Info text — hidden once a clinic is selected ── */}
+      {/* ── Info text, hidden once a clinic is selected ── */}
       <section className={`reveal bg-white py-14 md:py-20 ${selectedClinic ? "hidden" : ""}`}>
         <div className="mx-auto w-full max-w-[780px] px-5 md:px-8">
           <h2 className="text-[1.2rem] font-bold text-ink">
@@ -122,21 +122,21 @@ export default function Prices() {
             treatment plan.
           </p>
           <p className="mt-4 text-[1rem] leading-relaxed text-muted">
-            Some treatments may require additional procedures — such as bone
-            grafting before implant placement, or a build-up before a crown — which
+            Some treatments may require additional procedures, such as bone
+            grafting before implant placement, or a build-up before a crown, which
             will always be communicated and agreed upon before any work begins.
             Our team is committed to providing clear, honest guidance at every step.
           </p>
           <p className="mt-4 text-[1rem] leading-relaxed text-muted">
             For a personalised cost estimate, book a consultation at either our
             <strong className="text-ink"> DHA Phase II</strong> or
-            <strong className="text-ink"> F-7 Markaz</strong> clinic — the initial
+            <strong className="text-ink"> F-7 Markaz</strong> clinic, the initial
             assessment and treatment planning session is complimentary.
           </p>
         </div>
       </section>
 
-      {/* ── Price sections — rendered only after clinic selected ── */}
+      {/* ── Price sections, rendered only after clinic selected ── */}
       {selectedClinic && categories.map((cat) => (
         <section key={cat.id} id={cat.id} className="scroll-mt-[78px]">
           {/* Category heading band */}

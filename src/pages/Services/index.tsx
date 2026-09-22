@@ -42,9 +42,9 @@ export default function Services() {
 
   return (
     <>
-      {/* ── 1. Split hero (primary gradient panel — matches Team / Mission campaign) ── */}
+      {/* ── 1. Split hero (primary gradient panel, matches Team / Mission campaign) ── */}
       <section className="no-reveal grid min-h-screen border-t border-skyBrand/25 pt-[78px] lg:grid-cols-2 lg:pt-0">
-        {/* Left — primary gradient + accordion */}
+        {/* Left, primary gradient + accordion */}
         <div className="relative flex flex-col justify-center overflow-hidden border-b border-skyBrand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-skyBrand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div
             className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#5aadde] via-skyBrand to-[#c9ebfc]"
@@ -112,7 +112,7 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Right — video */}
+        {/* Right, video */}
         <div className="relative order-first min-h-[50vw] overflow-hidden lg:order-last lg:min-h-screen">
           <video
             ref={videoRef}

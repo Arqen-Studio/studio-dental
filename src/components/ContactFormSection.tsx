@@ -4,7 +4,7 @@ import { CLINICS } from "../data/clinics";
 export default function ContactFormSection() {
   return (
     <section className="reveal grid lg:grid-cols-2">
-      {/* Left — clinic interior photo */}
+      {/* Left, clinic interior photo */}
       <div className="relative min-h-[380px] lg:min-h-full">
         <img
           src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=75"
@@ -14,7 +14,7 @@ export default function ContactFormSection() {
         />
       </div>
 
-      {/* Right — form */}
+      {/* Right, form */}
       <div className="flex flex-col justify-center bg-[#f9f9f9] px-8 py-16 md:px-12 lg:px-16">
         <div className="w-full max-w-[580px]">
           <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">

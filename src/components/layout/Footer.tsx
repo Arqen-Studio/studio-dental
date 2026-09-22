@@ -248,7 +248,7 @@ export default function Footer() {
             </p>
 
             <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-muted">
-              &copy; {new Date().getFullYear()} Studio Dental — clinics at DHA
+              &copy; {new Date().getFullYear()} Studio Dental, clinics at DHA
               Phase II and F-7 Markaz, Islamabad. All rights reserved.{" "}
               <a
                 href="https://thestudiodental.com"

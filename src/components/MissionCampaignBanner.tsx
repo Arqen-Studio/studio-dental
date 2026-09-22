@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-/** Healthcare portrait — Unsplash (royalty-free). Replace with `public/` asset when ready. */
+/** Healthcare portrait, Unsplash (royalty-free). Replace with `public/` asset when ready. */
 const CAMPAIGN_IMG =
   'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80'
 
@@ -9,7 +9,7 @@ export default function MissionCampaignBanner() {
     <Link
       to="/mission-campaign"
       className="group relative block min-h-[260px] overflow-hidden rounded-[24px] shadow-soft-md outline-none ring-offset-2 ring-offset-white transition hover:shadow-soft-lg focus-visible:ring-2 focus-visible:ring-skyBrand md:min-h-[300px] md:rounded-[28px]"
-      aria-label="A mission for life — New image campaign. Open campaign page."
+      aria-label="A mission for life. New image campaign. Open campaign page."
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
         {/* Left: primary gradient panel */}

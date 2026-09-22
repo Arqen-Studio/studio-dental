@@ -17,7 +17,7 @@ export default function DoctorProfile() {
 
   return (
     <div className="no-reveal bg-[#F9f9f9]">
-      {/* Hero — photo left · primary panel right */}
+      {/* Hero, photo left · primary panel right */}
       <section className="grid min-h-[min(100dvh,920px)] lg:grid-cols-2">
         <div className="relative min-h-[52vw] bg-[#c8c8c8] lg:min-h-0">
           <img
@@ -73,7 +73,7 @@ export default function DoctorProfile() {
         </div>
       </section>
 
-      {/* Practice areas — full viewport width */}
+      {/* Practice areas, full viewport width */}
       <section className="w-full bg-[#f4f4f4] py-12 md:py-16">
         <div className="mx-auto w-full max-w-[900px] px-5 md:px-8">
           <ProfileSection title="Practice areas:">

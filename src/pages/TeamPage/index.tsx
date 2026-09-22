@@ -21,9 +21,9 @@ export default function TeamPage() {
 
   return (
     <>
-      {/* ── Hero — two stacked 50/50 rows ── */}
+      {/* ── Hero, two stacked 50/50 rows ── */}
       <section className="no-reveal">
-        {/* Row 1: photo left · text right — DHA Phase II */}
+        {/* Row 1: photo left · text right, DHA Phase II */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Photo */}
           <div className="relative min-h-[52vw] overflow-hidden lg:min-h-[50vh]">
@@ -62,7 +62,7 @@ export default function TeamPage() {
           </div>
         </div>
 
-        {/* Row 2: text left · photo right — F-7 Markaz */}
+        {/* Row 2: text left · photo right, F-7 Markaz */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Text */}
           <div className="relative flex flex-col justify-center overflow-hidden bg-[#5aadde] px-6 py-14 md:px-12 lg:px-16">

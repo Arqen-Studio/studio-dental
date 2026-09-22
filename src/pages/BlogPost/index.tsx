@@ -6,11 +6,11 @@ const IMG_B = "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto
 const POSTS = [
   { id: "1", date: "2026-03-15", title: "How often should you visit the dentist?",                       image: IMG_A },
   { id: "2", date: "2026-02-28", title: "Dental implants: what to expect before, during and after.",    image: IMG_B },
-  { id: "3", date: "2026-02-10", title: "Clear aligners vs braces — which is right for you?",           image: IMG_A },
-  { id: "4", date: "2026-01-22", title: "Gum disease — seek treatment as early as possible.",           image: IMG_B },
+  { id: "3", date: "2026-02-10", title: "Clear aligners vs braces, which is right for you?",           image: IMG_A },
+  { id: "4", date: "2026-01-22", title: "Gum disease, seek treatment as early as possible.",           image: IMG_B },
   { id: "5", date: "2025-12-18", title: "Studio Dental DHA Phase II: updated working hours for 2026.",  image: IMG_A },
   { id: "6", date: "2025-12-05", title: "New zirconia crowns now available at F-7 Markaz.",             image: IMG_B },
-  { id: "7", date: "2025-11-14", title: "How to brush your teeth properly — a simple guide.",           image: IMG_A },
+  { id: "7", date: "2025-11-14", title: "How to brush your teeth properly, a simple guide.",           image: IMG_A },
   { id: "8", date: "2025-10-30", title: "What is a root canal and does it hurt?",                       image: IMG_B },
 ];
 
@@ -48,7 +48,7 @@ export default function BlogPost() {
 
           <p className="mt-8 text-[1rem] leading-relaxed text-muted">
             Regular dental check-ups are one of the most effective ways to maintain
-            your oral health and catch problems early — before they become painful
+            your oral health and catch problems early, before they become painful
             or expensive. Most dental professionals recommend visiting at least
             twice a year, but your individual needs may vary.
           </p>
@@ -73,7 +73,7 @@ export default function BlogPost() {
           <p className="text-[1rem] leading-relaxed text-muted">
             If you have a history of gum disease, a weakened immune system, or are
             prone to cavities, your dentist may recommend more frequent appointments
-            — every three to four months. Children and older adults often benefit
+           , every three to four months. Children and older adults often benefit
             from more regular check-ins as well.
           </p>
 

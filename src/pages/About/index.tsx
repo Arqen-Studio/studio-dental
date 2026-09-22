@@ -60,7 +60,7 @@ export default function About() {
     <>
       {/* ── 1. Split hero ── */}
       <section className="no-reveal grid min-h-screen lg:grid-cols-2">
-        {/* Left — photo */}
+        {/* Left, photo */}
         <div className="relative min-h-[50vw] overflow-hidden lg:min-h-screen">
           <img
             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75"
@@ -69,7 +69,7 @@ export default function About() {
           />
         </div>
 
-        {/* Right — blue panel */}
+        {/* Right, blue panel */}
         <div className="flex flex-col justify-center bg-skyBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[620px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
@@ -77,12 +77,12 @@ export default function About() {
             </h1>
             <p className="mt-6 text-[0.875rem] leading-relaxed text-ink/80">
               Studio Dental brings world-class dentistry to Islamabad. Our two
-              specialized clinics combine experience and leadership —
+              specialized clinics combine experience and leadership ,
               integrating advanced treatment with exceptional patient service.
             </p>
             <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
               In our clinics at DHA Phase II and F-7 Markaz, a large team of
-              specialists takes care of patients — including implantologists,
+              specialists takes care of patients, including implantologists,
               orthodontists, and oral surgeons who share their knowledge at
               international conferences.
             </p>
@@ -105,13 +105,13 @@ export default function About() {
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work,
             are professionals in our field, and always take care of you. We want
-            to tell you about ourselves from a slightly different angle — one we
+            to tell you about ourselves from a slightly different angle, one we
             think you'll find interesting.
           </p>
           <p className="mt-5 text-[0.875rem] leading-relaxed text-ink/80">
             Behind the clinic doors, we are just like you: young and driven,
             parents rushing home to family, people who love to exercise, eat
-            well, and travel. We love, dream, laugh — and we know that great
+            well, and travel. We love, dream, laugh, and we know that great
             work usually begins with a smile.
           </p>
         </div>
@@ -141,7 +141,7 @@ export default function About() {
       <section className="reveal bg-[#f9f9f9] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
-            We are all dentists with our own hobbies and passions — which often
+            We are all dentists with our own hobbies and passions, which often
             come in handy in our daily clinical work and in connecting with
             patients. Our interests range from marathon running to mountain
             climbing, from painting to yoga. Curious who does what and why?

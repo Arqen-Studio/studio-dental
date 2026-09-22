@@ -53,7 +53,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     membership: [
       'Pakistan Dental Association',
       'International Team for Implantology (study clubs & continuing education)',
-      'Regional restorative dentistry study group — Islamabad chapter',
+      'Regional restorative dentistry study group, Islamabad chapter',
     ],
     professionalTraining: [
       'Courses / conferences / hands-on modules in implant surgery and prosthetics',
@@ -72,7 +72,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     bio:
       'A cycling enthusiast who believes the rhythm and balance found on the road mirrors the harmony needed in restorative dentistry.',
     services: ['Restorative Dentistry', 'Smile Design'],
-    licenseLine: 'FCPS Restorative Dentistry — College of Physicians & Surgeons Pakistan',
+    licenseLine: 'FCPS Restorative Dentistry, College of Physicians & Surgeons Pakistan',
     locationLine: 'Islamabad / DHA Phase II clinic',
     practiceAreas: [
       'Full-mouth rehabilitation and occlusal reorganisation',
@@ -112,7 +112,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     bio:
       'Loves hiking and mountaineering. The focus required at altitude is the same precision she brings to every oral surgery procedure.',
     services: ['Oral Surgery', 'Facial Aesthetics'],
-    licenseLine: 'FCPS Oral & Maxillofacial Surgery — CPSP',
+    licenseLine: 'FCPS Oral & Maxillofacial Surgery, CPSP',
     locationLine: 'Islamabad / F-7 Markaz clinic',
     practiceAreas: [
       'Third molar and complicated extractions',
@@ -133,7 +133,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     ],
     membership: [
       'Pakistan Association of Oral & Maxillofacial Surgeons',
-      'International Association of Oral & Maxillofacial Surgeons — affiliated member',
+      'International Association of Oral & Maxillofacial Surgeons, affiliated member',
     ],
     professionalTraining: [
       'Advanced trauma and infection-control simulations',
@@ -171,8 +171,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'IADSR-certified coursework in contemporary minimally invasive dentistry.',
     ],
     membership: [
-      'International Association for Dental Research — affiliate participant',
-      'Digital orthodontics study circle — Islamabad',
+      'International Association for Dental Research, affiliate participant',
+      'Digital orthodontics study circle, Islamabad',
     ],
     professionalTraining: [
       'Annual aligner biomechanics updates',

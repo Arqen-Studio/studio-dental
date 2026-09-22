@@ -68,11 +68,11 @@ export default function HomeClinicHub() {
             id="home-clinic-hub-heading"
             className="text-[clamp(1.35rem,2.5vw,2rem)] font-bold leading-tight tracking-tight text-ink"
           >
-            Dental and implantology clinics — Studio Dental
+            Dental and implantology clinics, Studio Dental
           </h2>
           <p className="mx-auto mt-4 max-w-[52ch] text-[0.875rem] leading-relaxed text-muted md:text-[0.92rem]">
             With over 17 years of experience, Studio Dental brings specialized
-            care to Islamabad — at DHA Phase II and F-7 Markaz. From diagnostics
+            care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics
             and imaging to implants, orthodontics, restorative dentistry, and
             pediatric care, our teams help you plan treatment with clarity and
             confidence.
@@ -94,7 +94,7 @@ export default function HomeClinicHub() {
                 className={`absolute inset-0 z-0 h-full w-full object-cover transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:scale-[1.03]`}
               />
 
-              {/* Bottom gradient — fades as primary sheet rises */}
+              {/* Bottom gradient, fades as primary sheet rises */}
               <div
                 className={`pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/30 to-black/10 opacity-100 transition-opacity ${hoverDur} ${hoverEase} group-hover:opacity-20`}
                 aria-hidden="true"
@@ -108,7 +108,7 @@ export default function HomeClinicHub() {
 
               {/*
                 Text: anchored at card center; default translate pushes it toward bottom,
-                hover moves to true vertical center — pure transform (smooth).
+                hover moves to true vertical center, pure transform (smooth).
               */}
               <div
                 className={`absolute left-1/2 top-1/2 z-[3] w-full max-w-[18rem] px-5 text-center -translate-x-1/2 translate-y-[calc(-50%+6.25rem)] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:-translate-y-1/2`}

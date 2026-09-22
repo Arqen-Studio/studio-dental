@@ -10,7 +10,7 @@ export default function MissionCampaign() {
           A mission for life
         </h1>
         <p className="mt-4 max-w-[60ch] text-[1.05rem] text-muted">
-          New image campaign — content for this page can be updated with your story, media kit, and calls to action.
+          New image campaign, content for this page can be updated with your story, media kit, and calls to action.
         </p>
       </div>
     </section>

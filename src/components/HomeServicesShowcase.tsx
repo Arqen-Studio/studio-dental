@@ -147,7 +147,7 @@ export default function HomeServicesShowcase({
               Everything your smile needs, in one place.
             </p>
             <p className="mt-3 max-w-[52ch] text-[0.95rem] leading-relaxed text-muted">
-              From checkups and hygiene to implants, aligners, and emergencies — browse a few highlights below, then see
+              From checkups and hygiene to implants, aligners, and emergencies, browse a few highlights below, then see
               the full fee guide and catalog on our services page.
             </p>
           </div>

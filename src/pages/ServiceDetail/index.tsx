@@ -43,10 +43,10 @@ export default function ServiceDetail() {
 
   return (
     <>
-      {/* ── Hero — full-screen split ── */}
+      {/* ── Hero, full-screen split ── */}
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2 lg:min-h-screen">
-          {/* Video — left */}
+          {/* Video, left */}
           <div className="relative min-h-[45vh] overflow-hidden lg:min-h-screen">
             <video
               ref={videoRef}
@@ -64,7 +64,7 @@ export default function ServiceDetail() {
             </video>
           </div>
 
-          {/* Text — right */}
+          {/* Text, right */}
           <div className="relative flex flex-col justify-center overflow-hidden bg-skyBrand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
             <div
               className="pointer-events-none absolute inset-0"
@@ -128,7 +128,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* ── When necessary — alternating split rows ── */}
+      {/* ── When necessary, alternating split rows ── */}
       <section className="reveal bg-white">
         <div className="mx-auto w-full max-w-[1240px] px-5 pb-4 pt-0 text-center md:px-8">
           <h2 className="text-[clamp(1.6rem,3.5vw,2.4rem)] font-bold text-ink">
@@ -191,7 +191,7 @@ export default function ServiceDetail() {
           <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">Prices</h2>
           <div className="mb-8 mt-3 h-px bg-ink/15" />
 
-          {/* Price rows — the two branches price most treatments differently */}
+          {/* Price rows, the two branches price most treatments differently */}
           {priceCategories.map((cat) => (
             <div key={cat.id} className="mb-8 last:mb-0">
               <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 border-b border-ink/15 pb-2 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-ink/45 sm:gap-x-10">
@@ -206,10 +206,10 @@ export default function ServiceDetail() {
                 >
                   <span className="text-ink">{item.name}</span>
                   <span className="text-right font-semibold tabular-nums text-ink">
-                    {"dha" in item ? formatPrice(item.dha) : <span className="text-ink/30">&mdash;</span>}
+                    {"dha" in item ? formatPrice(item.dha) : <span className="text-[0.78rem] font-normal text-ink/35">Not offered</span>}
                   </span>
                   <span className="text-right font-semibold tabular-nums text-ink">
-                    {"f7" in item ? formatPrice(item.f7) : <span className="text-ink/30">&mdash;</span>}
+                    {"f7" in item ? formatPrice(item.f7) : <span className="text-[0.78rem] font-normal text-ink/35">Not offered</span>}
                   </span>
                 </div>
               ))}
@@ -314,7 +314,7 @@ export default function ServiceDetail() {
       {/* ── Other services ── */}
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
-          {/* Text left — skyBrand bg */}
+          {/* Text left, skyBrand bg */}
           <div className="relative flex flex-col justify-center bg-skyBrand px-6 py-16 md:px-12 lg:min-h-[520px] lg:px-16">
             <div
               className="pointer-events-none absolute inset-0"

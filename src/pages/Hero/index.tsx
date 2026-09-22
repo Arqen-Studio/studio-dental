@@ -7,7 +7,7 @@ import HomeClinicHub from "../../components/HomeClinicHub";
 import HomeDoctorsCarousel from "../../components/HomeDoctorsCarousel";
 import HomeServicesShowcase from "../../components/HomeServicesShowcase";
 
-/** Studio Dental clinic walkaround — supplied by the client */
+/** Studio Dental clinic walkaround, supplied by the client */
 const HERO_VIDEO_HD = "/videos/clinic-walkaround-1600.mp4";
 const HERO_VIDEO_SD = "/videos/clinic-walkaround-640.mp4";
 
@@ -78,7 +78,7 @@ export default function Hero() {
           {/*
           Previous hero text (kept as requested):
           "Gentle, modern dental care designed around you."
-          "Studio Dental blends advanced technology with a warm, aesthetic experience — so every visit feels calm, clear, and genuinely good."
+          "Studio Dental blends advanced technology with a warm, aesthetic experience, so every visit feels calm, clear, and genuinely good."
         */}
 
           <div className="mb-10 flex flex-wrap items-center gap-3">
