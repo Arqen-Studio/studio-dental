@@ -12,14 +12,14 @@ const CLINIC_CARDS = [
   {
     id: "dha",
     name: "DHA Phase II",
-    address: "Plaza No. 26, Main Iqbal Boulevard",
+    address: "1st Floor, Plaza No. 26, Main Iqbal Boulevard",
     image:
       "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=70",
   },
   {
     id: "f7",
     name: "F-7 Markaz",
-    address: "Office #7, 2nd Floor, Near Shoe Planet",
+    address: "Jinnah Super, F-7 Markaz",
     image:
       "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=70",
   },

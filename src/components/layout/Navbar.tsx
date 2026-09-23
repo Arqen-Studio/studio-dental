@@ -244,7 +244,7 @@ const navHeadingColor = "rgb(52, 53, 46)";
               className="shrink-0 [vector-effect:non-scaling-stroke]"
               aria-hidden
             />
-            info@thestudiodental.com
+            thestudiodentalclinic@gmail.com
           </button>
         </div>
       </div>

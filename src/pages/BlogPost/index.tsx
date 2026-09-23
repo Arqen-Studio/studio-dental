@@ -87,7 +87,7 @@ export default function BlogPost() {
           <div className="mt-10 border-t border-ink/10 pt-8">
             <p className="text-[0.85rem] font-semibold text-ink/50">Registration and information:</p>
             <p className="mt-2 text-[0.9rem] text-ink/70">📍 Plaza No. 26, Main Iqbal Boulevard, DHA Phase II | 0329 9961999</p>
-            <p className="mt-1 text-[0.9rem] text-ink/70">📍 Office #7, 2nd Floor, Near Shoe Planet, F-7 Markaz | 0329 9961999</p>
+            <p className="mt-1 text-[0.9rem] text-ink/70">📍 Jinnah Super, F-7 Markaz, F-7 Markaz | 0329 9961999</p>
           </div>
         </div>
       </article>

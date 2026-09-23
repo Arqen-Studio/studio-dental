@@ -48,7 +48,7 @@ export default function Contact() {
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  Office #:7, 2nd Floor, Near Shoe Planet, F-7 Markaz, Islamabad
+                  Office #:7, 2nd Floor, Jinnah Super, F-7 Markaz, Islamabad
                 </p>
               </div>
             </li>
@@ -65,7 +65,7 @@ export default function Contact() {
                   0329 9961999 | 032935199999
                 </p>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  info@thestudiodental.com
+                  thestudiodentalclinic@gmail.com
                 </p>
               </div>
             </li>

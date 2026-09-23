@@ -127,7 +127,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
                 <option value="dha-phase-ii">
                   DHA Phase II: Plaza No. 26, Main Iqbal Boulevard
                 </option>
-                <option value="f7-markaz">F-7 Markaz: Near Shoe Planet</option>
+                <option value="f7-markaz">F-7 Markaz: Jinnah Super</option>
               </select>
             </div>
 
