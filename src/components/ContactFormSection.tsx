@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CLINICS } from "../data/clinics";
 
+type Status = "idle" | "sending" | "sent" | "error";
+
 export default function ContactFormSection() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
 
   return (
     <section className="reveal grid lg:grid-cols-2">
@@ -27,9 +30,26 @@ export default function ContactFormSection() {
           <form
             className="mt-8 flex flex-col gap-5"
             noValidate
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              setSubmitted(true);
+              const data = Object.fromEntries(new FormData(e.currentTarget));
+              setStatus("sending");
+              setError("");
+              try {
+                const res = await fetch("/api/enquiry", {
+                  method: "POST",
+                  headers: { "content-type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+                if (!res.ok) {
+                  const body = await res.json().catch(() => ({}));
+                  throw new Error(body.error || "Something went wrong.");
+                }
+                setStatus("sent");
+              } catch (err) {
+                setError(err instanceof Error ? err.message : "Something went wrong.");
+                setStatus("error");
+              }
             }}
           >
             {/* Choose a clinic */}
@@ -128,20 +148,41 @@ export default function ContactFormSection() {
               </label>
             </div>
 
+            {/* Hidden from people, tempting to bots. */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
+
             <button
               type="submit"
-              className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-skyBrand px-8 py-4 text-[0.95rem] font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-skyBrand/85"
+              disabled={status === "sending" || status === "sent"}
+              className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-skyBrand px-8 py-4 text-[0.95rem] font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-skyBrand/85 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
             >
-              Send
+              {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send"}
             </button>
 
-            {submitted && (
+            {status === "sent" && (
               <p role="status" className="rounded-xl bg-skyBrand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
-                To book your appointment, please call{" "}
+                Thank you. Your enquiry has reached the clinic and we will be in
+                touch shortly. If it is urgent, please call{" "}
+                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
+                  0329 9961999
+                </a>.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p role="alert" className="rounded-xl bg-[#FBEBD9] px-5 py-4 text-[0.9rem] leading-relaxed text-[#8A3D0B]">
+                {error} Please call us on{" "}
                 <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
                   0329 9961999
                 </a>{" "}
-                and quote the treatment you are interested in.
+                and we will book you in.
               </p>
             )}
           </form>

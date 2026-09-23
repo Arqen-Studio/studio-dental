@@ -25,4 +25,4 @@ dist-ssr
 
 
 # Claude
-.claude/
+.claude/.env
