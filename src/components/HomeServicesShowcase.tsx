@@ -38,7 +38,8 @@ const SHOWCASE_ICONS: LucideIcon[] = [BarChart3, Rows3, Anchor, Star, Zap, Baby]
 function priceLineFromService(service: ServiceData): string {
   const values = PRICE_CATEGORIES
     .filter((c) => service.priceCategories.includes(c.id))
-    .flatMap((c) => c.items.flatMap((i) => [i.dha, i.f7]))
+    .flatMap((c) => c.items.filter((i) => !i.partCost))
+    .flatMap((i) => [i.dha, i.f7])
     .filter((v): v is number => typeof v === 'number')
   if (!values.length) return 'Custom quote'
   return `From ${formatPrice(Math.min(...values))}`

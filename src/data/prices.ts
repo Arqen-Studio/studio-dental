@@ -11,6 +11,11 @@ export type PriceItem = {
   name: string;
   dha?: number | null;
   f7?: number | null;
+  /** A part-cost rather than the price of the finished treatment, so it
+   *  must never be used as a headline "from" price. Covers instalments
+   *  (braces are paid monthly) and components (an implant crown is fitted
+   *  on top of an implant, and is priced separately from it). */
+  partCost?: true;
 };
 
 export type PriceCategory = {
@@ -81,7 +86,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
       { name: "Dental implant",                 f7: 200000 },
       { name: "Dental implant (category 1)",    dha: 200000 },
       { name: "Dental implant (category 2)",    dha: 150000 },
-      { name: "Dental implant crown",           dha: 50000, f7: 50000 },
+      { name: "Dental implant crown",           dha: 50000, f7: 50000, partCost: true },
     ],
   },
   {
@@ -90,7 +95,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
     items: [
       { name: "Invisible teeth aligners",         dha: 250000, f7: 350000 },
       { name: "Metal braces (initial payment)",   dha: 150000 },
-      { name: "Metal braces (monthly payment)",   dha: 10000  },
+      { name: "Metal braces (monthly payment)",   dha: 10000, partCost: true },
     ],
   },
   {

@@ -88,8 +88,8 @@ export default function HomeDoctorsCarousel() {
                 data-doctor-slide
                 className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(15,27,36,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,27,36,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skyBrand sm:w-[260px] md:w-[280px]"
               >
-              <article className="h-full">
-                <div className="aspect-[4/5] bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
+              <article className="flex h-full flex-col">
+                <div className="aspect-[4/5] flex-none bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
                   <img
                     src={doctor.image}
                     alt={doctor.name}
@@ -97,13 +97,15 @@ export default function HomeDoctorsCarousel() {
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-                <div className="flex flex-col bg-white px-3 pb-3 pt-2.5">
+                <div className="flex flex-1 flex-col bg-white px-3 pb-3 pt-2.5">
                   <h3 className="text-[0.84rem] font-bold leading-tight text-skyBrand sm:text-[0.88rem]">{doctor.name}</h3>
                   <p className="mt-1.5 text-[0.64rem] leading-snug text-muted sm:text-[0.66rem]">{doctor.role}</p>
                   <p className="mt-1 line-clamp-2 text-[0.58rem] leading-snug text-muted sm:text-[0.6rem]">{doctor.creds}</p>
-                  <span className="mt-3 inline-flex w-fit max-w-full rounded-md bg-skyBrand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-skyBrand sm:text-[0.6rem]">
-                    {doctor.clinic}
-                  </span>
+                  <div className="mt-auto pt-3">
+                    <span className="inline-flex w-fit max-w-full rounded-md bg-skyBrand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-skyBrand sm:text-[0.6rem]">
+                      {doctor.clinic}
+                    </span>
+                  </div>
                 </div>
               </article>
               </Link>
