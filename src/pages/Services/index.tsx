@@ -1,44 +1,28 @@
-import { ChevronDown, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import ContactFormSection from "../../components/ContactFormSection";
 
 // ── service accordion data ─────────────────────────────────────────────────
-type ServiceEntry = { id: string; title: string; children?: string[] };
+type ServiceEntry = { id: string; title: string };
 
 const SERVICES: ServiceEntry[] = [
   { id: "dental-implantation",  title: "Dental implantation" },
   { id: "prosthetics",          title: "Prosthetics: teeth and implants" },
-  {
-    id: "dental-fillings",
-    title: "Dental fillings (adults and children)",
-    children: ["Dental fillings", "Pediatric dentistry"],
-  },
-  {
-    id: "teeth-straightening",
-    title: "Teeth straightening",
-    children: ["Braces", "Clear aligners"],
-  },
+  { id: "dental-fillings",      title: "Dental fillings" },
+  { id: "teeth-straightening",  title: "Teeth straightening" },
   { id: "aesthetic-fillings",   title: "Aesthetic dental fillings" },
   { id: "root-canal",           title: "Root canal treatment" },
-  {
-    id: "oral-hygiene",
-    title: "Oral hygiene and whitening",
-    children: ["Professional cleaning", "Teeth whitening"],
-  },
+  { id: "oral-hygiene",         title: "Oral hygiene and whitening" },
   { id: "tooth-extraction",     title: "Tooth extraction" },
   { id: "childrens-dentistry",  title: "Children\u2019s dentistry" },
 ];
 
+
 // ── main services page ─────────────────────────────────────────────────────
 export default function Services() {
   const videoRef = useAutoplayVideo();
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
-  function toggle(idx: number) {
-    setOpenIdx((prev) => (prev === idx ? null : idx));
-  }
 
   return (
     <>
@@ -64,50 +48,17 @@ export default function Services() {
             </h1>
 
             <ul className="mt-8 divide-y divide-ink/10">
-              {SERVICES.map((svc, idx) => {
-                const hasChildren = Boolean(svc.children?.length);
-                const isOpen = openIdx === idx;
-                return (
-                  <li key={svc.title}>
-                    {hasChildren ? (
-                      <button
-                        type="button"
-                        onClick={() => toggle(idx)}
-                        className="flex w-full items-center gap-3 py-3.5 text-left text-[0.95rem] font-normal text-ink/85 transition hover:text-ink"
-                      >
-                        <span className="flex-shrink-0 text-ink/50">
-                          {isOpen ? (
-                            <ChevronDown size={14} strokeWidth={2} />
-                          ) : (
-                            <ChevronRight size={14} strokeWidth={2} />
-                          )}
-                        </span>
-                        {svc.title}
-                      </button>
-                    ) : (
-                      <Link
-                        to={`/services/${svc.id}`}
-                        className="flex items-center justify-between py-3.5 pl-[22px] text-[0.95rem] text-ink/85 transition hover:text-ink"
-                      >
-                        {svc.title}
-                        <ChevronRight size={14} strokeWidth={2} className="text-ink/30" />
-                      </Link>
-                    )}
-                    {hasChildren && isOpen && (
-                      <ul className="mb-2 ml-[22px] flex flex-col gap-1">
-                        {svc.children!.map((child) => (
-                          <li
-                            key={child}
-                            className="py-1.5 pl-4 text-[0.88rem] text-ink/65"
-                          >
-                            {child}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                );
-              })}
+              {SERVICES.map((svc) => (
+                <li key={svc.id}>
+                  <Link
+                    to={`/services/${svc.id}`}
+                    className="flex items-center justify-between gap-3 py-3.5 text-[0.95rem] text-ink/85 transition hover:text-ink"
+                  >
+                    {svc.title}
+                    <ChevronRight size={14} strokeWidth={2} className="flex-shrink-0 text-ink/30" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
