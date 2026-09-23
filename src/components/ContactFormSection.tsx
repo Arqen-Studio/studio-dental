@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CLINICS } from "../data/clinics";
 
 export default function ContactFormSection() {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <section className="reveal grid lg:grid-cols-2">
       {/* Left, clinic interior photo */}
@@ -21,7 +24,14 @@ export default function ContactFormSection() {
             Let's get in touch
           </h2>
 
-          <form className="mt-8 flex flex-col gap-5" noValidate>
+          <form
+            className="mt-8 flex flex-col gap-5"
+            noValidate
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSubmitted(true);
+            }}
+          >
             {/* Choose a clinic */}
             <div className="flex flex-col gap-1.5">
               <label htmlFor="cf-clinic" className="text-[0.82rem] text-ink2">
@@ -119,11 +129,21 @@ export default function ContactFormSection() {
             </div>
 
             <button
-              type="button"
+              type="submit"
               className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-skyBrand px-8 py-4 text-[0.95rem] font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-skyBrand/85"
             >
               Send
             </button>
+
+            {submitted && (
+              <p role="status" className="rounded-xl bg-skyBrand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
+                To book your appointment, please call{" "}
+                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
+                  0329 9961999
+                </a>{" "}
+                and quote the treatment you are interested in.
+              </p>
+            )}
           </form>
         </div>
       </div>

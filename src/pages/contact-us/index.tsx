@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { SERVICES_DATA } from "../../data/services";
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <section id="contact" className="bg-white py-10 md:py-16">
       <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-12">
@@ -72,6 +75,10 @@ export default function Contact() {
         <form
           className="rounded-lg border border-black/10 bg-white p-6 shadow-soft-md md:p-9"
           noValidate
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSubmitted(true);
+          }}
         >
           <div className="flex flex-col gap-2">
             <label
@@ -159,7 +166,7 @@ export default function Contact() {
           </div>
 
           <button
-            type="button"
+            type="submit"
             className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-skyBrand px-7 py-4 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky disabled:opacity-95 disabled:hover:translate-y-0"
           >
             Send request
@@ -170,6 +177,16 @@ export default function Contact() {
               <ArrowRight size={11} strokeWidth={2.5} className="text-ink" aria-hidden />
             </span>
           </button>
+
+          {submitted && (
+            <p role="status" className="mt-5 rounded-xl bg-skyBrand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
+              To book your appointment, please call{" "}
+              <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
+                0329 9961999
+              </a>{" "}
+              and quote the treatment you are interested in.
+            </p>
+          )}
 
           <p className="mt-3 text-[0.78rem] text-muted">
             By submitting, you agree to be contacted regarding your registration.
