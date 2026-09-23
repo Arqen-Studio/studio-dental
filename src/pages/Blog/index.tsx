@@ -93,7 +93,7 @@ export default function Blog() {
             <article
               key={post.id}
               className={[
-                "flex flex-col overflow-hidden rounded-2xl shadow-sm",
+                "flex h-full flex-col overflow-hidden rounded-2xl shadow-sm",
                 i % 4 === 1 || i % 4 === 2 ? "bg-skyBrand/10" : "bg-white",
               ].join(" ")}
               style={{
@@ -101,7 +101,7 @@ export default function Blog() {
               }}
             >
               {/* Image */}
-              <div className="aspect-[3/2] overflow-hidden">
+              <div className="aspect-[3/2] flex-none overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -111,12 +111,12 @@ export default function Blog() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col px-6 py-5 md:px-8 md:py-6">
+              <div className="flex flex-1 flex-col px-6 py-5 md:px-8 md:py-6">
                 <p className="text-[0.78rem] font-semibold text-skyBrand/80">{post.date}</p>
                 <h2 className="mt-2 text-[1rem] font-bold leading-snug text-ink md:text-[1.1rem]">
                   {post.title}
                 </h2>
-                <div className="mt-4 flex justify-end">
+                <div className="mt-auto flex justify-end pt-4">
                   <Link
                     to={`/blog/${post.id}`}
                     className="inline-flex items-center justify-center rounded-full bg-skyBrand px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 hover:bg-skyBrand/80"

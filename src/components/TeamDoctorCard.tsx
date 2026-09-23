@@ -13,10 +13,10 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
   return (
     <Link
       to={`/doctors/${slug}`}
-      className="block overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skyBrand"
+      className="block h-full overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skyBrand"
     >
-    <article className="overflow-hidden">
-      <div className="aspect-[4/3] bg-[#c7c3c7]">
+    <article className="flex h-full flex-col overflow-hidden">
+      <div className="aspect-[4/3] flex-none bg-[#c7c3c7]">
         <img
           src={image}
           alt={name}
@@ -24,13 +24,15 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
           className="h-full w-full object-cover object-center"
         />
       </div>
-      <div className="p-4">
+      <div className="flex flex-1 flex-col p-4">
         <h3 className="text-[1.35rem] font-semibold leading-tight text-[#83BFE3]">{name}</h3>
         <p className="mt-1 text-[0.82rem] leading-snug text-muted">{creds}</p>
         <p className="mt-1 text-[0.82rem] leading-snug text-muted">{role}</p>
-        <span className="mt-4 inline-flex rounded-sm bg-[#87CEFA] px-3 py-1 text-[0.72rem] font-medium text-ink">
-          {clinic}
-        </span>
+        <div className="mt-auto pt-4">
+          <span className="inline-flex rounded-sm bg-[#87CEFA] px-3 py-1 text-[0.72rem] font-medium text-ink">
+            {clinic}
+          </span>
+        </div>
       </div>
     </article>
     </Link>
