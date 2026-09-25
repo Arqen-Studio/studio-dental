@@ -66,7 +66,7 @@ export default function MissionCampaign() {
       </section>
 
       <section className="reveal bg-creamBrand py-16 md:py-20">
-        <div className="mx-auto max-w-[860px] px-5 text-center md:px-8">
+        <div className="mx-auto max-w-[43rem] px-5 text-center md:px-8">
           <p className="font-heading text-[clamp(1.3rem,2.6vw,1.9rem)] font-bold leading-snug tracking-tight text-ink">
             &ldquo;Our goal is not simply to treat dental problems, but to
             create healthy, confident smiles that last.&rdquo;

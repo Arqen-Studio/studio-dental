@@ -41,7 +41,7 @@ const LINK_COLOR: Record<string, string> = {
 function VideoBlock({ src, poster }: { src: string; poster: string }) {
   const videoRef = useAutoplayVideo();
   return (
-    <div className="relative mx-auto max-w-[920px] 2xl:page-shell overflow-hidden rounded-2xl">
+    <div className="relative mx-auto max-w-[46rem] 2xl:page-shell overflow-hidden rounded-2xl">
       <video
         ref={videoRef}
         autoPlay
@@ -74,7 +74,7 @@ export default function About() {
 
         {/* Right, blue panel */}
         <div className="flex flex-col justify-center bg-brand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
-          <div className="w-full max-w-[620px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+          <div className="w-full max-w-[31rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               About us
             </h1>
@@ -104,7 +104,7 @@ export default function About() {
 
       {/* ── 2. Text block ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[920px] 2xl:page-shell px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work,
             are professionals in our field, and always take care of you. We want
@@ -142,7 +142,7 @@ export default function About() {
 
       {/* ── 5. Text block ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[920px] 2xl:page-shell px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions, which often
             come in handy in our daily clinical work and in connecting with
@@ -154,7 +154,7 @@ export default function About() {
 
       {/* ── 6. Seamless 3-col team cards ── */}
       <section className="reveal">
-        <div className="mx-auto grid max-w-[1800px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-[90rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM_CARDS.map((card) => (
             <div
               key={card.name}

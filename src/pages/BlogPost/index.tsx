@@ -39,7 +39,7 @@ export default function BlogPost() {
       {/* ── Article ── */}
       <article className="bg-white">
         <div
-          className="mx-auto w-full max-w-[780px] px-5 py-14 md:px-8 md:py-20 [animation:sd-hero-text-in_0.8s_cubic-bezier(0.25,0.46,0.45,0.94)_0.2s_both]"
+          className="mx-auto w-full max-w-[39rem] px-5 py-14 md:px-8 md:py-20 [animation:sd-hero-text-in_0.8s_cubic-bezier(0.25,0.46,0.45,0.94)_0.2s_both]"
         >
           <p className="text-[0.82rem] font-semibold text-brand/80">{post.date}</p>
           <h1 className="mt-3 text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-tight tracking-tight text-ink">

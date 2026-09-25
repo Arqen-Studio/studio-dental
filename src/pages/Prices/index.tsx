@@ -110,7 +110,7 @@ export default function Prices() {
 
       {/* ── Info text, hidden once a clinic is selected ── */}
       <section className={`reveal bg-white py-14 md:py-20 ${selectedClinic ? "hidden" : ""}`}>
-        <div className="mx-auto w-full max-w-[780px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <h2 className="text-[1.2rem] font-bold text-ink">
             Transparent pricing at Studio Dental
           </h2>

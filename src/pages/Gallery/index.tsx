@@ -13,7 +13,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="bg-white py-10 md:py-16">
       <div className="mx-auto w-full page-shell px-5 md:px-8">
-        <div className="mb-6 flex max-w-[760px] flex-col gap-3 md:mb-9">
+        <div className="mb-6 flex max-w-[38rem] flex-col gap-3 md:mb-9">
           <Link
             to="/gallery"
             className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2 transition hover:border-brand/70 hover:bg-brand/25 hover:text-ink"

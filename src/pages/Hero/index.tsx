@@ -106,7 +106,7 @@ export default function Hero() {
 
           <div
             ref={heroStatsRef}
-            className="flex max-w-[640px] flex-wrap items-center gap-5 rounded-lg border border-white/20 bg-white/10 px-5 py-4 backdrop-blur"
+            className="flex max-w-[32rem] flex-wrap items-center gap-5 rounded-lg border border-white/20 bg-white/10 px-5 py-4 backdrop-blur"
           >
             <div className="flex flex-col gap-1">
               <strong className="text-[1.15rem] font-bold text-creamBrand">

@@ -42,7 +42,7 @@ export default function Services() {
             }}
             aria-hidden="true"
           />
-          <div className="relative z-[1] w-full max-w-[580px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+          <div className="relative z-[1] w-full max-w-[29rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               Services
             </h1>

@@ -21,7 +21,7 @@ export default function ContactFormSection() {
 
       {/* Right, form */}
       <div className="flex flex-col justify-center bg-[#F4F7F2] px-8 py-16 md:px-12 lg:px-16">
-        <div className="w-full max-w-[580px]">
+        <div className="w-full max-w-[29rem]">
           <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">
             Let's get in touch
           </h2>

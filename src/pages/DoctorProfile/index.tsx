@@ -83,7 +83,7 @@ export default function DoctorProfile() {
 
       {/* Practice areas, full viewport width */}
       <section className="w-full bg-[#F4F7F2] py-12 md:py-16">
-        <div className="mx-auto w-full max-w-[900px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[45rem] px-5 md:px-8">
           <ProfileSection title="Practice areas:" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
               <ul className="list-disc space-y-2.5 pl-5 text-[0.95rem] leading-relaxed text-ink2 marker:text-brand">
@@ -101,7 +101,7 @@ export default function DoctorProfile() {
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-[900px] px-5 py-12 md:px-8 md:py-16">
+      <div className="mx-auto w-full max-w-[45rem] px-5 py-12 md:px-8 md:py-16">
         <ProfileSection title="Biography:" items={doctor.biography}>
           <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.biography.map((para) => (
