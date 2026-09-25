@@ -42,7 +42,7 @@ export default function Prices() {
               <h1 className="text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold leading-[1] tracking-tight text-ink">
                 Service prices
               </h1>
-              <p className="mt-3 text-[0.85rem] text-ink/60">
+              <p className="mt-3 text-[1rem] text-ink/60">
                 Select which clinic's price list to view:
               </p>
 
@@ -60,8 +60,8 @@ export default function Prices() {
                         : "bg-white/30 hover:bg-white/50",
                     ].join(" ")}
                   >
-                    <p className="text-[0.95rem] font-bold text-ink">{c.name}</p>
-                    <p className="mt-0.5 text-[0.73rem] text-ink/55">{c.address}</p>
+                    <p className="text-[1.05rem] font-bold text-ink">{c.name}</p>
+                    <p className="mt-0.5 text-[0.85rem] text-ink/55">{c.address}</p>
                   </button>
                 ))}
               </div>
@@ -76,7 +76,7 @@ export default function Prices() {
                     <li key={cat.id}>
                       <a
                         href={`#${cat.id}`}
-                        className="flex items-center justify-between border-b border-ink/10 py-2.5 text-[0.95rem] font-medium text-ink/80 transition duration-150 hover:text-ink"
+                        className="flex items-center justify-between border-b border-ink/10 py-2.5 text-[1.05rem] font-medium text-ink/80 transition duration-150 hover:text-ink"
                       >
                         {cat.label}
                       </a>
@@ -86,7 +86,7 @@ export default function Prices() {
               )}
 
               <p className={[
-                "max-w-[50ch] text-[0.75rem] leading-relaxed text-ink/45",
+                "max-w-[50ch] text-[0.9rem] leading-relaxed text-ink/70",
                 selectedClinic ? "mt-6" : "mt-8",
               ].join(" ")}>
                 The exact treatment cost is determined after a doctor's examination,
@@ -156,8 +156,8 @@ export default function Prices() {
                     key={i}
                     className="flex items-center justify-between gap-4 px-4 py-3 odd:bg-black/[0.025]"
                   >
-                    <span className="text-[0.92rem] text-ink">{item.name}</span>
-                    <span className="flex-shrink-0 text-[0.92rem] font-semibold text-ink">
+                    <span className="text-[1rem] text-ink">{item.name}</span>
+                    <span className="flex-shrink-0 text-[1rem] font-semibold text-ink">
                       {formatPrice(item[selectedClinic])}
                     </span>
                   </div>
