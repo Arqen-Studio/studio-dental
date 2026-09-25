@@ -35,7 +35,7 @@ export default function TeamPage() {
             />
           </div>
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-skyBrand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
             <div
               className="pointer-events-none absolute inset-0"
               style={{ background: 'radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.35) 0%, transparent 55%)' }}
@@ -65,7 +65,7 @@ export default function TeamPage() {
         {/* Row 2: text left · photo right, F-7 Markaz */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-[#5aadde] px-6 py-14 md:px-12 lg:px-16">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-[#3F6F4B] px-6 py-14 md:px-12 lg:px-16">
             <div
               className="pointer-events-none absolute inset-0"
               style={{ background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.28) 0%, transparent 55%)' }}
@@ -102,7 +102,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section id="doctors" className="bg-[#f9f9f9] py-16 md:py-24">
+      <section id="doctors" className="bg-[#F4F7F2] py-16 md:py-24">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
           <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
 
@@ -115,7 +115,7 @@ export default function TeamPage() {
                 id="service-filter"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full appearance-none border-b-2 border-[#74afa9] bg-transparent pb-2.5 pr-9 text-[0.95rem] text-ink2 outline-none"
+                className="w-full appearance-none border-b-2 border-[#3F6F4B] bg-transparent pb-2.5 pr-9 text-[0.95rem] text-ink2 outline-none"
               >
                 {serviceOptions.map((service) => (
                   <option key={service} value={service}>

@@ -64,7 +64,7 @@ function ClockIcon() {
 function IconCircle({ children }: { children: ReactNode }) {
   return (
     <span
-      className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-skyBrand text-skyBrand"
+      className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-brand text-brand"
       aria-hidden="true"
     >
       {children}
@@ -88,7 +88,7 @@ function ClinicCard({
   hours: string[];
 }) {
   return (
-    <article className="rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(15,27,36,0.08)] md:p-9">
+    <article className="rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(28,59,37,0.08)] md:p-9">
       <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">
         {city}
       </h3>
@@ -104,7 +104,7 @@ function ClinicCard({
               href={mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-[0.88rem] font-medium text-skyBrand underline-offset-2 transition hover:underline"
+              className="mt-2 inline-block text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
             >
               Location on the map
             </a>
@@ -123,7 +123,7 @@ function ClinicCard({
             </p>
             <a
               href={`tel:${phone.replace(/\s/g, "")}`}
-              className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-skyBrand"
+              className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-brand"
             >
               {phone}
             </a>
@@ -132,13 +132,13 @@ function ClinicCard({
             </p>
             <a
               href={`mailto:${email}`}
-              className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-skyBrand"
+              className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-brand"
             >
               {email}
             </a>
             <Link
               to="/contact-us"
-              className="mt-3 inline-block text-[0.88rem] font-semibold text-skyBrand underline-offset-2 transition hover:underline"
+              className="mt-3 inline-block text-[0.88rem] font-semibold text-brand underline-offset-2 transition hover:underline"
             >
               Contact
             </Link>
@@ -201,7 +201,7 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-[#f9f9f9] pb-10 pt-14 text-ink md:pb-14 md:pt-16">
+    <footer className="bg-[#F4F7F2] pb-10 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="mx-auto w-full max-w-5xl px-5 md:px-8">
         <h2 className="mb-8 text-[clamp(1.75rem,3.2vw,2.35rem)] font-bold tracking-tight text-ink md:mb-10">
           Contacts
@@ -231,7 +231,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-skyBrand shadow-[0_1px_3px_rgba(15,27,36,0.12)] ring-1 ring-ink/10 transition duration-200 hover:bg-skyBrand/90 hover:shadow-md sm:h-12 sm:w-12"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand shadow-[0_1px_3px_rgba(28,59,37,0.12)] ring-1 ring-ink/10 transition duration-200 hover:bg-brand/90 hover:shadow-md sm:h-12 sm:w-12"
                 >
                   <img
                     src={s.src}
@@ -242,7 +242,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-skyBrand md:text-[0.875rem]">
+            <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-brand md:text-[0.875rem]">
               Report potential ethical, corruption, violence or
               harassment-related violations and other concerns.
             </p>

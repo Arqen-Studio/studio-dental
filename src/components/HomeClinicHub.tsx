@@ -59,7 +59,7 @@ const hoverEase = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12"
+      className="bg-[#F4F7F2] px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full max-w-[1240px]">
@@ -85,7 +85,7 @@ export default function HomeClinicHub() {
             <Link
               key={card.title}
               to={card.to}
-              className={`group relative aspect-[4/3] min-h-[200px] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-white transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-skyBrand`}
+              className={`group relative aspect-[4/3] min-h-[200px] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-white transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-brand`}
             >
               <img
                 src={card.image}
@@ -102,7 +102,7 @@ export default function HomeClinicHub() {
 
               {/* Primary tint slides up from bottom; photo stays visible through semi-transparent fill */}
               <div
-                className={`pointer-events-none absolute inset-x-0 bottom-0 top-0 z-[2] translate-y-full bg-skyBrand/[0.74] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:translate-y-0`}
+                className={`pointer-events-none absolute inset-x-0 bottom-0 top-0 z-[2] translate-y-full bg-brand/[0.74] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:translate-y-0`}
                 aria-hidden="true"
               />
 

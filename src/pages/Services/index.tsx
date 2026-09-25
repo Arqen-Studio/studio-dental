@@ -27,18 +27,18 @@ export default function Services() {
   return (
     <>
       {/* ── 1. Split hero (primary gradient panel, matches Team / Mission campaign) ── */}
-      <section className="no-reveal grid min-h-screen border-t border-skyBrand/25 pt-[78px] lg:grid-cols-2 lg:pt-0">
+      <section className="no-reveal grid min-h-screen border-t border-brand/25 pt-[78px] lg:grid-cols-2 lg:pt-0">
         {/* Left, primary gradient + accordion */}
-        <div className="relative flex flex-col justify-center overflow-hidden border-b border-skyBrand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-skyBrand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
+        <div className="relative flex flex-col justify-center overflow-hidden border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#5aadde] via-skyBrand to-[#c9ebfc]"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF]"
             aria-hidden="true"
           />
           <div
             className="pointer-events-none absolute inset-0 opacity-90"
             style={{
               background:
-                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(15, 27, 36, 0.08) 0%, transparent 50%)",
+                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(28, 59, 37, 0.08) 0%, transparent 50%)",
             }}
             aria-hidden="true"
           />

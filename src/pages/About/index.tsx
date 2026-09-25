@@ -18,10 +18,10 @@ const TEAM_CARDS = TEAM_DOCTORS.filter((doctor) => doctor.bio).map((doctor, i) =
 });
 
 const BG: Record<string, string> = {
-  blue: "bg-skyBrand",
+  blue: "bg-brand",
   white: "bg-white",
   gray: "bg-neutral-100",
-  lightblue: "bg-skyBrand/15",
+  lightblue: "bg-brand/15",
 };
 
 const TEXT: Record<string, string> = {
@@ -33,9 +33,9 @@ const TEXT: Record<string, string> = {
 
 const LINK_COLOR: Record<string, string> = {
   blue: "text-ink/70 hover:text-ink",
-  white: "text-skyBrand hover:text-skyBrand/80",
-  gray: "text-skyBrand hover:text-skyBrand/80",
-  lightblue: "text-skyBrand hover:text-skyBrand/80",
+  white: "text-brand hover:text-brand/80",
+  gray: "text-brand hover:text-brand/80",
+  lightblue: "text-brand hover:text-brand/80",
 };
 
 function VideoBlock({ src, poster }: { src: string; poster: string }) {
@@ -73,7 +73,7 @@ export default function About() {
         </div>
 
         {/* Right, blue panel */}
-        <div className="flex flex-col justify-center bg-skyBrand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
+        <div className="flex flex-col justify-center bg-brand px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[620px] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               About us
@@ -103,7 +103,7 @@ export default function About() {
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="reveal bg-[#f9f9f9] py-16 md:py-20">
+      <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work,
@@ -121,7 +121,7 @@ export default function About() {
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="reveal bg-[#f9f9f9] px-5 pb-16 md:px-8 md:pb-20">
+      <section className="reveal bg-[#F4F7F2] px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock src="/videos/clinic-team-720.mp4" poster="/videos/clinic-team-poster.jpg" />
       </section>
 
@@ -141,7 +141,7 @@ export default function About() {
       </section>
 
       {/* ── 5. Text block ── */}
-      <section className="reveal bg-[#f9f9f9] py-16 md:py-20">
+      <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions, which often
@@ -169,7 +169,7 @@ export default function About() {
                     className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
                   />
                   <div
-                    className="absolute inset-0 bg-skyBrand/60"
+                    className="absolute inset-0 bg-brand/60"
                     aria-hidden="true"
                   />
                 </>
@@ -198,7 +198,7 @@ export default function About() {
       </section>
 
       {/* ── 7. Second video ── */}
-      <section className="reveal bg-[#f9f9f9] px-5 py-16 md:px-8 md:py-20">
+      <section className="reveal bg-[#F4F7F2] px-5 py-16 md:px-8 md:py-20">
         <VideoBlock src="/videos/clinic-detail-720.mp4" poster="/videos/clinic-detail-poster.jpg" />
       </section>
     </>

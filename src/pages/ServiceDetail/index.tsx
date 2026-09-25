@@ -65,7 +65,7 @@ export default function ServiceDetail() {
           </div>
 
           {/* Text, right */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-skyBrand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
             <div
               className="pointer-events-none absolute inset-0"
               style={{
@@ -120,7 +120,7 @@ export default function ServiceDetail() {
                   .querySelector<HTMLButtonElement>('[aria-label="Open online registration"]')
                   ?.click()
               }
-              className="inline-flex items-center justify-center rounded-full bg-skyBrand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-skyBrand/80"
+              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
             >
               Register for a consultation
             </button>
@@ -141,7 +141,7 @@ export default function ServiceDetail() {
             {i % 2 === 0 ? (
               <>
                 {/* Text left */}
-                <div className="flex flex-col justify-center bg-skyBrand/10 px-6 py-12 md:px-12 lg:px-16">
+                <div className="flex flex-col justify-center bg-brand/10 px-6 py-12 md:px-12 lg:px-16">
                   <h3 className="text-[clamp(1.4rem,2.5vw,2rem)] font-bold leading-tight text-ink">
                     {scenario.title}
                   </h3>
@@ -171,7 +171,7 @@ export default function ServiceDetail() {
                   />
                 </div>
                 {/* Text right */}
-                <div className="order-first flex flex-col justify-center bg-skyBrand px-6 py-12 md:px-12 lg:order-last lg:px-16">
+                <div className="order-first flex flex-col justify-center bg-brand px-6 py-12 md:px-12 lg:order-last lg:px-16">
                   <h3 className="text-[clamp(1.4rem,2.5vw,2rem)] font-bold leading-tight text-ink">
                     {scenario.title}
                   </h3>
@@ -217,7 +217,7 @@ export default function ServiceDetail() {
           ))}
 
           {/* Disclaimer */}
-          <div className="mt-6 rounded-xl bg-skyBrand/10 px-5 py-4">
+          <div className="mt-6 rounded-xl bg-brand/10 px-5 py-4">
             <p className="text-[0.82rem] leading-relaxed text-ink/60">
               ! The exact price of treatment is determined after a doctor's examination, assessing
               the patient's condition and discussing the individual treatment plan and possible
@@ -249,7 +249,7 @@ export default function ServiceDetail() {
                     <p className="mt-1 text-[0.8rem] text-white/65">{c.address}</p>
                   </div>
                   <div>
-                    <span className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 group-hover:bg-skyBrand">
+                    <span className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 group-hover:bg-brand">
                       View prices
                     </span>
                   </div>
@@ -262,7 +262,7 @@ export default function ServiceDetail() {
 
       {/* ── Specialists ── */}
       {specialists.length > 0 && (
-        <section className="reveal bg-[#f9f9f9] py-16 md:py-20">
+        <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
           <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
             <h2 className="text-center text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">
               Specialists
@@ -283,7 +283,7 @@ export default function ServiceDetail() {
             <div className="mt-10 flex justify-center">
               <Link
                 to="/doctors"
-                className="inline-flex items-center justify-center rounded-full bg-skyBrand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-skyBrand/80"
+                className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
               >
                 More specialists
               </Link>
@@ -301,7 +301,7 @@ export default function ServiceDetail() {
           <ul className="mt-6 flex flex-col gap-4">
             {service.steps.map((step, i) => (
               <li key={i} className="flex gap-4">
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-skyBrand text-[0.72rem] font-bold text-ink">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand text-[0.72rem] font-bold text-ink">
                   {i + 1}
                 </span>
                 <p className="text-[0.95rem] leading-relaxed text-muted">{step}</p>
@@ -314,8 +314,8 @@ export default function ServiceDetail() {
       {/* ── Other services ── */}
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
-          {/* Text left, skyBrand bg */}
-          <div className="relative flex flex-col justify-center bg-skyBrand px-6 py-16 md:px-12 lg:min-h-[520px] lg:px-16">
+          {/* Text left, brand bg */}
+          <div className="relative flex flex-col justify-center bg-brand px-6 py-16 md:px-12 lg:min-h-[520px] lg:px-16">
             <div
               className="pointer-events-none absolute inset-0"
               style={{ background: "radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.32) 0%, transparent 55%)" }}

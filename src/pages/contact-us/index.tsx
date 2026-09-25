@@ -12,9 +12,9 @@ export default function Contact() {
     <section id="contact" className="bg-white py-10 md:py-16">
       <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-12">
         <div>
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span
-              className="h-1.5 w-1.5 rounded-full bg-skyBrand"
+              className="h-1.5 w-1.5 rounded-full bg-brand"
               aria-hidden="true"
             />
             Contacts
@@ -28,7 +28,7 @@ export default function Contact() {
           <ul className="mt-8 grid gap-5">
             <li className="flex items-start gap-4">
               <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand"
+                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
                 aria-hidden="true"
               >
                 <MapPin size={18} strokeWidth={2} aria-hidden />
@@ -43,7 +43,7 @@ export default function Contact() {
             </li>
             <li className="flex items-start gap-4">
               <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand"
+                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
                 aria-hidden="true"
               >
                 <MapPin size={18} strokeWidth={2} aria-hidden />
@@ -57,7 +57,7 @@ export default function Contact() {
             </li>
             <li className="flex items-start gap-4">
               <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-skyBrand/15 text-skyBrand"
+                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
                 aria-hidden="true"
               >
                 <Mail size={18} strokeWidth={2} aria-hidden />
@@ -113,7 +113,7 @@ export default function Contact() {
               name="name"
                 placeholder="Your full name"
               required
-              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
+              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
@@ -130,7 +130,7 @@ export default function Contact() {
               name="email"
                 placeholder="you@example.com"
               required
-              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
+              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
@@ -146,7 +146,7 @@ export default function Contact() {
                 id="service"
                 name="service"
                 defaultValue={SERVICES_DATA[0]?.title}
-                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
+                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
               >
                 {SERVICES_DATA.map((service) => (
                   <option key={service.id}>{service.title}</option>
@@ -164,7 +164,7 @@ export default function Contact() {
                 id="date"
                 type="date"
                 name="date"
-                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
+                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
               />
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function Contact() {
               name="message"
               rows={4}
               placeholder="Any additional details for your consultation?"
-              className="min-h-[110px] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-skyBrand focus:bg-white focus:ring-4 focus:ring-skyBrand/25"
+              className="min-h-[110px] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
@@ -190,7 +190,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending" || status === "sent"}
-            className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-skyBrand px-7 py-4 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky disabled:opacity-95 disabled:hover:translate-y-0"
+            className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-brand px-7 py-4 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-brand disabled:opacity-95 disabled:hover:translate-y-0"
           >
             {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send request"}
             <span
@@ -202,7 +202,7 @@ export default function Contact() {
           </button>
 
           {status === "sent" && (
-            <p role="status" className="mt-5 rounded-xl bg-skyBrand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
+            <p role="status" className="mt-5 rounded-xl bg-brand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
               Thank you. Your enquiry has reached the clinic and we will be in
               touch shortly. If it is urgent, please call{" "}
               <a href="tel:03299961999" className="font-semibold underline underline-offset-2">

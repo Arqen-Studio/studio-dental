@@ -21,7 +21,7 @@ function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
 }
 
 const navBtnBase =
-  'absolute z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-transparent bg-skyBrand text-ink shadow-soft-md transition hover:bg-skyBrand/90 hover:shadow-sky disabled:pointer-events-none disabled:opacity-30'
+  'absolute z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-transparent bg-brand text-ink shadow-soft-md transition hover:bg-brand/90 hover:shadow-brand disabled:pointer-events-none disabled:opacity-30'
 
 export default function HomeDoctorsCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -67,7 +67,7 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-[#f9f9f9] px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
+    <section className="bg-[#F4F7F2] px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full max-w-[1240px]">
         <h2
           id="home-doctors-heading"
@@ -86,7 +86,7 @@ export default function HomeDoctorsCarousel() {
                 key={doctor.name}
                 to={`/doctors/${doctor.slug}`}
                 data-doctor-slide
-                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(15,27,36,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(15,27,36,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skyBrand sm:w-[260px] md:w-[280px]"
+                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(28,59,37,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(28,59,37,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-[260px] md:w-[280px]"
               >
               <article className="flex h-full flex-col">
                 <div className="aspect-[4/5] flex-none bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
@@ -100,12 +100,12 @@ export default function HomeDoctorsCarousel() {
                   )}
                 </div>
                 <div className="flex flex-1 flex-col bg-white px-3 pb-3 pt-2.5">
-                  <h3 className="text-[0.84rem] font-bold leading-tight text-skyBrand sm:text-[0.88rem]">{doctor.name}</h3>
+                  <h3 className="text-[0.84rem] font-bold leading-tight text-brand sm:text-[0.88rem]">{doctor.name}</h3>
                   {doctor.role && <p className="mt-1.5 text-[0.64rem] leading-snug text-muted sm:text-[0.66rem]">{doctor.role}</p>}
                   {doctor.creds && <p className="mt-1 line-clamp-2 text-[0.58rem] leading-snug text-muted sm:text-[0.6rem]">{doctor.creds}</p>}
                   {doctor.clinic && (
                     <div className="mt-auto pt-3">
-                      <span className="inline-flex w-fit max-w-full rounded-md bg-skyBrand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-skyBrand sm:text-[0.6rem]">
+                      <span className="inline-flex w-fit max-w-full rounded-md bg-brand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-brand sm:text-[0.6rem]">
                         {doctor.clinic}
                       </span>
                     </div>
@@ -140,7 +140,7 @@ export default function HomeDoctorsCarousel() {
         <div className="mt-8 flex justify-center md:mt-10">
           <Link
             to="/doctors"
-            className="inline-flex items-center justify-center rounded-full border border-transparent bg-skyBrand px-9 py-3 text-[0.88rem] font-semibold text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky"
+            className="inline-flex items-center justify-center rounded-full border border-transparent bg-brand px-9 py-3 text-[0.88rem] font-semibold text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-brand"
           >
             All doctors
           </Link>

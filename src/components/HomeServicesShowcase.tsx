@@ -69,13 +69,13 @@ function ServicePriceLine({ price, light }: { price: string; light?: boolean }) 
   const amtCls = light
     ? isQuote
       ? 'text-[0.95rem] font-bold text-creamBrand md:text-[1.02rem]'
-      : 'text-[1.05rem] font-extrabold text-[#83BFE3] md:text-[1.15rem]'
+      : 'text-[1.05rem] font-extrabold text-[#3F6F4B] md:text-[1.15rem]'
     : isQuote
       ? 'text-[0.88rem] font-bold text-ink md:text-[0.92rem]'
-      : 'text-[0.92rem] font-extrabold text-[#83BFE3] md:text-[0.98rem]'
+      : 'text-[0.92rem] font-extrabold text-[#3F6F4B] md:text-[0.98rem]'
 
   return (
-    <div className={['mt-auto border-t pt-3.5', light ? 'border-white/25' : 'border-[#83BFE3]/22'].join(' ')}>
+    <div className={['mt-auto border-t pt-3.5', light ? 'border-white/25' : 'border-[#3F6F4B]/22'].join(' ')}>
       {qualifier ? (
         <span
           className={[
@@ -99,7 +99,7 @@ function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }
         'inline-flex shrink-0 items-center justify-center rounded-2xl border shadow-soft-sm',
         featured
           ? 'h-12 w-12 border-white/35 bg-white/15 text-white backdrop-blur-sm'
-          : 'h-11 w-11 border-[#83BFE3]/25 bg-[#83BFE3]/10 text-[#2a6a8a]',
+          : 'h-11 w-11 border-[#3F6F4B]/25 bg-[#3F6F4B]/10 text-[#3F6F4B]',
       ].join(' ')}
       aria-hidden="true"
     >
@@ -118,15 +118,15 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-[#f9f9f9] py-10 md:py-16"
+      className="relative overflow-hidden bg-[#F4F7F2] py-10 md:py-16"
       aria-labelledby="home-services-heading"
     >
       <div
-        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#83BFE3]/20 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#3F6F4B]/20 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -left-24 bottom-16 h-64 w-64 rounded-full bg-skyBrand/15 blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-16 h-64 w-64 rounded-full bg-brand/15 blur-3xl"
         aria-hidden="true"
       />
 
@@ -140,8 +140,8 @@ export default function HomeServicesShowcase({
 
         <div className="mt-7 mb-7 flex flex-col gap-5 md:mt-8 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[42rem]">
-            {/* <span className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#83BFE3]" aria-hidden="true" />
+            {/* <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3F6F4B]" aria-hidden="true" />
               Our services
             </span> */}
             <p className="mt-4 font-heading text-[clamp(1.55rem,2.6vw,2.35rem)] font-extrabold leading-[1.05] tracking-tight text-ink">
@@ -155,10 +155,10 @@ export default function HomeServicesShowcase({
 
           <Link
             to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-skyBrand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
           >
             Full price list & services
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#83BFE3]/20 text-ink transition group-hover:bg-[#83BFE3]/35">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F6F4B]/20 text-ink transition group-hover:bg-[#3F6F4B]/35">
               <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
           </Link>
@@ -204,12 +204,12 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.serviceId}
-              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#83BFE3]/28 hover:shadow-soft-md sm:min-h-0"
+              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/28 hover:shadow-soft-md sm:min-h-0"
             >
               <div className="flex items-start gap-3">
                 <IconBubble Icon={item.Icon} />
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-[1.02rem] font-extrabold leading-snug text-[#83BFE3]">{item.title}</h3>
+                  <h3 className="text-[1.02rem] font-extrabold leading-snug text-[#3F6F4B]">{item.title}</h3>
                   <p className="mt-2 text-[0.82rem] leading-relaxed text-muted">{item.desc}</p>
                 </div>
               </div>

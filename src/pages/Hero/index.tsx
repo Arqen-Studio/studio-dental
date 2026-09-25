@@ -48,7 +48,7 @@ export default function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(15, 27, 36, 0.55) 0%, rgba(15, 27, 36, 0.35) 45%, rgba(15, 27, 36, 0.75) 100%), linear-gradient(120deg, rgba(47, 131, 184, 0.35) 0%, rgba(135, 206, 250, 0.05) 60%)",
+                "linear-gradient(180deg, rgba(28, 59, 37, 0.55) 0%, rgba(28, 59, 37, 0.35) 45%, rgba(28, 59, 37, 0.75) 100%), linear-gradient(120deg, rgba(63, 111, 75, 0.35) 0%, rgba(143, 180, 138, 0.05) 60%)",
             }}
           />
         </div>
@@ -58,8 +58,8 @@ export default function Hero() {
             <div className="inline-flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
                 <span
-                  className="h-2 w-2 rounded-full bg-skyBrand"
-                  style={{ boxShadow: "0 0 0 4px rgba(135, 206, 250, 0.3)" }}
+                  className="h-2 w-2 rounded-full bg-brand"
+                  style={{ boxShadow: "0 0 0 4px rgba(143, 180, 138, 0.3)" }}
                   aria-hidden="true"
                 />
                 Mission for life
@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="mb-10 flex flex-wrap items-center gap-3">
             <Link
               to="/contact-us"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-skyBrand px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-skyBrand/90 hover:shadow-sky"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-brand px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-brand"
             >
               Online registration
               <span
@@ -101,7 +101,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-[#f9f9f9] px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-[#F4F7F2] px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md"
             >
               View all services
             </Link>
@@ -151,12 +151,12 @@ export default function Hero() {
           className="absolute bottom-7 left-1/2 z-10 hidden h-[42px] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
           aria-label="Go to services"
         >
-          <span className="h-2 w-[3px] rounded bg-[#f9f9f9] animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
+          <span className="h-2 w-[3px] rounded bg-[#F4F7F2] animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
         </Link>
       </section>
 
       <section
-        className="bg-[#f9f9f9] px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5"
+        className="bg-[#F4F7F2] px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5"
         aria-label="Featured campaign"
       >
         <div className="mx-auto max-w-[1240px]">

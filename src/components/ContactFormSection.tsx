@@ -21,7 +21,7 @@ export default function ContactFormSection() {
       </div>
 
       {/* Right, form */}
-      <div className="flex flex-col justify-center bg-[#f9f9f9] px-8 py-16 md:px-12 lg:px-16">
+      <div className="flex flex-col justify-center bg-[#F4F7F2] px-8 py-16 md:px-12 lg:px-16">
         <div className="w-full max-w-[580px]">
           <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">
             Let's get in touch
@@ -62,7 +62,7 @@ export default function ContactFormSection() {
                   id="cf-clinic"
                   name="clinic"
                   defaultValue=""
-                  className="w-full appearance-none rounded-sm border border-black/15 bg-[#f9f9f9] px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                  className="w-full appearance-none rounded-sm border border-black/15 bg-[#F4F7F2] px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
                 >
                   <option value="" disabled />
                   {CLINICS.map((c) => (
@@ -89,7 +89,7 @@ export default function ContactFormSection() {
                   id="cf-name"
                   type="text"
                   name="name"
-                  className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                  className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
                 />
               </div>
               <div className="flex flex-col gap-1.5">
@@ -100,7 +100,7 @@ export default function ContactFormSection() {
                   id="cf-phone"
                   type="tel"
                   name="phone"
-                  className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                  className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
                 />
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function ContactFormSection() {
                 id="cf-email"
                 type="email"
                 name="email"
-                className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                className="rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
               />
             </div>
 
@@ -127,7 +127,7 @@ export default function ContactFormSection() {
                 id="cf-message"
                 name="message"
                 rows={4}
-                className="min-h-[110px] resize-y rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-skyBrand focus:ring-4 focus:ring-skyBrand/25"
+                className="min-h-[110px] resize-y rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
               />
             </div>
 
@@ -161,13 +161,13 @@ export default function ContactFormSection() {
             <button
               type="submit"
               disabled={status === "sending" || status === "sent"}
-              className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-skyBrand px-8 py-4 text-[0.95rem] font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-skyBrand/85 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+              className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-brand px-8 py-4 text-[0.95rem] font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-brand/85 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
             >
               {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send"}
             </button>
 
             {status === "sent" && (
-              <p role="status" className="rounded-xl bg-skyBrand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
+              <p role="status" className="rounded-xl bg-brand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
                 Thank you. Your enquiry has reached the clinic and we will be in
                 touch shortly. If it is urgent, please call{" "}
                 <a href="tel:03299961999" className="font-semibold underline underline-offset-2">

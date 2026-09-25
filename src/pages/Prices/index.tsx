@@ -32,7 +32,7 @@ export default function Prices() {
       <section className="no-reveal lg:min-h-screen">
         <div className="grid lg:grid-cols-2">
           {/* Left panel */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-skyBrand px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
             <div
               className="pointer-events-none absolute inset-0"
               style={{ background: "radial-gradient(ellipse 80% 60% at 0% 0%, rgba(255,255,255,0.38) 0%, transparent 55%)" }}
@@ -140,11 +140,11 @@ export default function Prices() {
       {selectedClinic && categories.map((cat) => (
         <section key={cat.id} id={cat.id} className="scroll-mt-[78px]">
           {/* Category heading band */}
-          <div className="bg-[#ddf0f8] py-10 text-center">
-            <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-skyBrand">
+          <div className="bg-[#D6E2CF] py-10 text-center">
+            <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-brand">
               {cat.label}
             </h2>
-            <div className="mx-auto mt-3 h-0.5 w-12 bg-skyBrand/50" />
+            <div className="mx-auto mt-3 h-0.5 w-12 bg-brand/50" />
           </div>
 
           {/* Price rows */}

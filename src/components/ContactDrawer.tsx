@@ -30,7 +30,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
   if (typeof document === "undefined") return null;
 
   const fieldClass =
-    "w-full rounded-[8px] border border-neutral-300 bg-white px-3 py-2 text-[13px] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-skyBrand focus:ring-2 focus:ring-skyBrand/25";
+    "w-full rounded-[8px] border border-neutral-300 bg-white px-3 py-2 text-[13px] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-brand focus:ring-2 focus:ring-brand/25";
 
   const inset = "px-10 sm:px-12";
 
@@ -60,7 +60,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,520px)] flex-col bg-white font-sans text-[13px] leading-normal text-ink shadow-[-4px_0_28px_rgba(15,27,36,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,520px)]",
+          "relative flex h-full w-[min(100%,520px)] flex-col bg-white font-sans text-[13px] leading-normal text-ink shadow-[-4px_0_28px_rgba(28,59,37,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,520px)]",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >
@@ -76,7 +76,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
           <button
             type="button"
             onClick={onClose}
-            className="-mr-1 -mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink transition hover:text-skyBrand"
+            className="-mr-1 -mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink transition hover:text-brand"
             aria-label="Close"
           >
             <svg
@@ -187,13 +187,13 @@ export default function ContactDrawer({ open, onClose }: Props) {
                   type="checkbox"
                   name="privacy"
                   required
-                  className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-skyBrand"
+                  className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
                 />
                 <span>
                   I have read and agree to the{" "}
                   <Link
                     to="/contact-us"
-                    className="font-medium text-skyBrand underline decoration-skyBrand/50 underline-offset-[2px] hover:text-ink hover:decoration-ink/40"
+                    className="font-medium text-brand underline decoration-brand/50 underline-offset-[2px] hover:text-ink hover:decoration-ink/40"
                     onClick={onClose}
                   >
                     privacy policy of Studio Dental Clinic
@@ -205,7 +205,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
                 <input
                   type="checkbox"
                   name="marketing"
-                  className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-skyBrand"
+                  className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
                 />
                 <span>
                   I agree that my data will be used for marketing purposes.
@@ -215,7 +215,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
 
             <button
               type="submit"
-              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-skyBrand px-5 text-[12px] font-semibold text-ink shadow-none transition hover:bg-skyBrand/90 hover:shadow-sky active:scale-[0.99]"
+              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 text-[12px] font-semibold text-ink shadow-none transition hover:bg-brand/90 hover:shadow-brand active:scale-[0.99]"
             >
               Send
             </button>

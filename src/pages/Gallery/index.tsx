@@ -16,9 +16,9 @@ export default function Gallery() {
         <div className="mb-6 flex max-w-[760px] flex-col gap-3 md:mb-9">
           <Link
             to="/gallery"
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-skyBrand/30 bg-skyBrand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2 transition hover:border-skyBrand/70 hover:bg-skyBrand/25 hover:text-ink"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2 transition hover:border-brand/70 hover:bg-brand/25 hover:text-ink"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-skyBrand" aria-hidden="true" />
+            <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
             Clinics
           </Link>
           <h2>A closer look at our modern clinic spaces.</h2>
