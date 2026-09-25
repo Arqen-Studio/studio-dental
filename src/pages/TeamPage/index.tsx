@@ -2,19 +2,25 @@ import { useMemo, useState } from 'react'
 import { TeamDoctorCard } from '../../components/TeamDoctorCard'
 import { TEAM_DOCTORS } from '../../data/teamDoctors'
 import ContactFormSection from '../../components/ContactFormSection'
+import { useAutoplayVideo } from '../../hooks/useAutoplayVideo'
 
 const ALL_SERVICES = 'Select a service'
 /**
- * Stills from our own clinic footage. They are deliberately interiors rather
- * than team portraits: we have no team photograph from the clinic yet, and
- * which of the two branches each clip was shot at is not confirmed, so the
- * alt text claims neither a branch nor the people in it.
+ * Our own clinic footage, with a still from the same clip as the poster so the
+ * panel is never empty while the video loads or if autoplay is refused.
+ *
+ * Which of the two branches each clip was shot at is not confirmed, so neither
+ * the labels nor the poster alt text claims a branch or the people in shot.
  */
-const TEAM_HERO_IMAGE = '/images/clinic/interior-a.jpg'
-const TEAM_HERO_IMAGE_F7 = '/images/clinic/interior-b.jpg'
+const TEAM_HERO_VIDEO = '/videos/clinic-team-720.mp4'
+const TEAM_HERO_POSTER = '/videos/clinic-team-poster.jpg'
+const TEAM_HERO_VIDEO_F7 = '/videos/treatment-room-720.mp4'
+const TEAM_HERO_POSTER_F7 = '/videos/treatment-room-poster.jpg'
 
 export default function TeamPage() {
   const [selectedService, setSelectedService] = useState(ALL_SERVICES)
+  const dhaVideoRef = useAutoplayVideo()
+  const f7VideoRef = useAutoplayVideo()
 
   const serviceOptions = useMemo(() => {
     const all = TEAM_DOCTORS.flatMap((doctor) => doctor.services)
@@ -34,12 +40,19 @@ export default function TeamPage() {
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Photo */}
           <div className="relative min-h-[52vw] overflow-hidden lg:min-h-[50vh]">
-            <img
-              src={TEAM_HERO_IMAGE}
-              alt="Inside a Studio Dental clinic"
-              loading="lazy"
+            <video
+              ref={dhaVideoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={TEAM_HERO_POSTER}
+              aria-label="Studio Dental clinicians at work"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
-            />
+            >
+              <source src={TEAM_HERO_VIDEO} type="video/mp4" />
+            </video>
           </div>
           {/* Text */}
           <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
@@ -99,12 +112,19 @@ export default function TeamPage() {
           </div>
           {/* Photo */}
           <div className="relative order-first min-h-[52vw] overflow-hidden lg:order-last lg:min-h-[50vh]">
-            <img
-              src={TEAM_HERO_IMAGE_F7}
-              alt="A treatment room at Studio Dental"
-              loading="lazy"
+            <video
+              ref={f7VideoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={TEAM_HERO_POSTER_F7}
+              aria-label="A treatment room at Studio Dental"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]"
-            />
+            >
+              <source src={TEAM_HERO_VIDEO_F7} type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
