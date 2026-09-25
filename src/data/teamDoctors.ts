@@ -28,6 +28,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     bio:
       'His view is that exceptional dentistry goes beyond treating individual teeth. As he puts it: our goal is not simply to treat dental problems, but to create healthy, confident smiles that last.',
     services: [
+      'Prosthetics: Teeth & Implants',
       'Dental Fillings',
       'Aesthetic Dental Fillings',
       'Root Canal Treatment',

@@ -1,6 +1,5 @@
 import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
-import { Link } from "react-router-dom";
 
 type Props = {
   open: boolean;
@@ -190,15 +189,10 @@ export default function ContactDrawer({ open, onClose }: Props) {
                   className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
                 />
                 <span>
-                  I have read and agree to the{" "}
-                  <Link
-                    to="/contact-us"
-                    className="font-medium text-brand underline decoration-brand/50 underline-offset-[2px] hover:text-ink hover:decoration-ink/40"
-                    onClick={onClose}
-                  >
-                    privacy policy of Studio Dental Clinic
-                  </Link>
-                  .
+                  {/* Unlinked until the clinic supplies a privacy policy:
+                      this used to point at /contact-us, which is not one. */}
+                  I have read and agree to the privacy policy of Studio Dental
+                  Clinic.
                 </span>
               </label>
               <label className="flex cursor-pointer items-start gap-2 text-[12px] leading-snug text-neutral-500">

@@ -68,21 +68,44 @@ only those. The mapping used was:
 | General Dentistry | nothing, see question 21 |
 | Facial Aesthetics | nothing, see question 22 |
 
-20. **Please confirm the mapping above**, and confirm each doctor's treatments
+### Where each doctor's tags actually came from
+
+Checked against the source documents, not assumed. Only four of the eight are
+supported by something the doctor supplied.
+
+| Doctor | Source | Confidence |
+| --- | --- | --- |
+| Dr. Arfa Rehman | Typed her answer to question 7 | Confirmed |
+| Dr. Zainab Qureshi | Underlined nine of the ten labels in question 7 | Confirmed |
+| Dr. Yousaf Kamal | His own "Areas of Expertise" list | Confirmed |
+| Dr. Aqsa Malik | Her own biography, which names restorative, aesthetic and preventive work | Confirmed |
+| Dr. Amna Hassan | Question 7 blank. Tags inferred from her question 8 answer, which names wisdom and complex extractions and oral surgical procedures | Partly supported |
+| Dr. Rabia | A handwritten note saying aligners | Single tag, from the clinic |
+| Dr. Nayab Farooq | **Question 7 is blank.** The underlining in her form is the template's own styling and covers the instructions too, so it marks nothing | **Not supported** |
+| Dr. Syeda Alizeh Hassan | **Question 7 is blank.** Nothing is marked or written | **Not supported** |
+
+20. **Dr. Nayab Farooq and Dr. Syeda Alizeh Hassan have treatments listed on
+    the site that neither of them supplied.** They need to answer question 7,
+    or their tags should come off. This is the most important item on this
+    page: it is a claim about what a named clinician does.
+21. **Dr. Amna Hassan's tags are inferred from her question 8 answer**, not
+    from question 7. Please confirm them.
+22. **Please confirm the mapping above**, and confirm each doctor's treatments
     against the nine services rather than the old ten labels.
-21. **"General Dentistry" was treated as an umbrella and dropped.** Seven of the
+23. **"General Dentistry" was treated as an umbrella and dropped.** Seven of the
     eight doctors who ticked it also ticked Restorative or Preventive Care, so
     nothing was lost. The exception is **Dr. Amna Hassan**: she ticked General
     Dentistry and Preventive Care but not Restorative, so she is not currently
     listed for fillings. Does she do fillings?
-22. **"Facial Aesthetics" was ticked by Dr. Amna, Dr. Nayab and Dr. Zainab but
+24. **"Facial Aesthetics" was ticked by Dr. Amna, Dr. Nayab and Dr. Zainab but
     is not priced at either branch.** Is it offered? If so it needs a price and
     a page. If not, it should come off the form.
-23. **No doctor is tagged for Children's Dentistry**, although it is priced at
+25. **No doctor is tagged for Children's Dentistry**, although it is priced at
     both branches and has its own page. Who performs it?
-24. **No doctor is tagged for Prosthetics (crowns, veneers, bridges)**, which is
-    also priced at both branches. Who performs it?
-25. **Six doctors have no treatments recorded at all** (Umair, Rida, Maria,
+26. **Prosthetics (crowns, veneers, bridges) has only one doctor**, Dr. Yousaf
+    Kamal, whose own expertise list names crowns, bridges and prosthodontic
+    rehabilitation. It is priced at both branches, so who else performs it?
+27. **Six doctors have no treatments recorded at all** (Umair, Rida, Maria,
     Mashal, Abeera, Shayzmin), so they disappear the moment a visitor uses the
     filter. This resolves itself once their forms come back.
 
@@ -95,6 +118,15 @@ only those. The mapping used was:
 18. **The clinic hub cards all read "CLINICS"** above Services, Prices, Doctors,
     About us, News and Contacts. It fits none of them. What should it say, or
     should it come out?
+
+## Legal
+
+28. **There is no privacy policy.** Both consent checkboxes asked visitors to
+    agree to "the privacy policy of Studio Dental" and linked to the contact
+    page, which is not one. The forms collect a name, an email address, a phone
+    number and free text about a dental problem, so a policy is needed before
+    launch. The text is unlinked until the clinic supplies one. We cannot write
+    it: it is a legal document about how the clinic handles patient data.
 
 ## Not a client question, but blocking
 

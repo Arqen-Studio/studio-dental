@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { CLINICS } from "../data/clinics";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -136,10 +135,9 @@ export default function ContactFormSection() {
               <label className="flex cursor-pointer items-start gap-3 text-[0.82rem] text-ink2">
                 <input type="checkbox" name="privacy" className="mt-0.5 h-4 w-4 flex-shrink-0 accent-ink" />
                 <span>
-                  I have read and agree to{" "}
-                  <Link to="/contact-us" className="text-ink underline hover:opacity-80">
-                    the privacy policy of Studio Dental
-                  </Link>
+                  {/* Unlinked until the clinic supplies a privacy policy:
+                      this used to point at /contact-us, which is not one. */}
+                  I have read and agree to the privacy policy of Studio Dental
                 </span>
               </label>
               <label className="flex cursor-pointer items-start gap-3 text-[0.82rem] text-ink2">
