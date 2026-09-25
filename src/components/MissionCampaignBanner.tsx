@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 
-/** Healthcare portrait, Unsplash (royalty-free). Replace with `public/` asset when ready. */
-const CAMPAIGN_IMG =
-  'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80'
+const CAMPAIGN_IMG = '/images/doctors/dr-yousuf.jpg'
 
 export default function MissionCampaignBanner() {
   return (
@@ -34,8 +32,8 @@ export default function MissionCampaignBanner() {
         <div className="relative h-52 w-full shrink-0 md:h-auto md:w-[min(46%,420px)] md:min-h-[300px]">
           <img
             src={CAMPAIGN_IMG}
-            alt=""
-            className="h-full w-full object-cover object-[center_22%]"
+            alt="Dr. Yousaf Kamal"
+            className="h-full w-full object-cover object-[center_18%]"
             loading="lazy"
             decoding="async"
           />

@@ -48,13 +48,13 @@ export default function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(28, 59, 37, 0.55) 0%, rgba(28, 59, 37, 0.35) 45%, rgba(28, 59, 37, 0.75) 100%), linear-gradient(120deg, rgba(63, 111, 75, 0.35) 0%, rgba(143, 180, 138, 0.05) 60%)",
+                "linear-gradient(180deg, rgba(28, 59, 37, 0.42) 0%, rgba(28, 59, 37, 0.22) 45%, rgba(28, 59, 37, 0.62) 100%)",
             }}
           />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
-          <div className="mb-8 flex h-[220px] items-start md:h-[260px]">
+          <div className="mb-7 flex items-start">
             <div className="inline-flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
                 <span
@@ -64,29 +64,26 @@ export default function Hero() {
                 />
                 Mission for life
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.8rem] font-semibold tracking-[0.04em] text-creamBrand backdrop-blur">
-                <img
-                  src="/favicon.svg"
-                  alt=""
-                  className="h-4 w-4 object-contain"
-                />
-                Studio Dental
-              </span>
+              
             </div>
           </div>
 
-          {/*
-          Previous hero text (kept as requested):
-          "Gentle, modern dental care designed around you."
-          "Studio Dental blends advanced technology with a warm, aesthetic experience, so every visit feels calm, clear, and genuinely good."
-        */}
+          <div className="mb-10 max-w-[19ch]">
+            <h1 className="font-heading text-[clamp(2.4rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-creamBrand">
+              Dentistry you can trust, in the heart of Islamabad
+            </h1>
+            <p className="mt-5 max-w-[46ch] text-[1rem] leading-relaxed text-creamBrand/85 md:text-[1.08rem]">
+              Two clinics, DHA Phase II and F-7 Markaz. From routine check-ups
+              to implants and orthodontics.
+            </p>
+          </div>
 
           <div className="mb-10 flex flex-wrap items-center gap-3">
             <Link
               to="/contact-us"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-brand px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-brand"
             >
-              Online registration
+              Book a consultation
               <span
                 className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10"
                 aria-hidden="true"
