@@ -41,7 +41,7 @@ const LINK_COLOR: Record<string, string> = {
 function VideoBlock({ src, poster }: { src: string; poster: string }) {
   const videoRef = useAutoplayVideo();
   return (
-    <div className="relative mx-auto max-w-[920px] 2xl:max-w-[1240px] overflow-hidden rounded-2xl">
+    <div className="relative mx-auto max-w-[920px] 2xl:max-w-[62rem] overflow-hidden rounded-2xl">
       <video
         ref={videoRef}
         autoPlay
@@ -104,7 +104,7 @@ export default function About() {
 
       {/* ── 2. Text block ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[62rem] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work,
             are professionals in our field, and always take care of you. We want
@@ -142,7 +142,7 @@ export default function About() {
 
       {/* ── 5. Text block ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[920px] 2xl:max-w-[62rem] px-5 md:px-8">
           <p className="text-[0.875rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions, which often
             come in handy in our daily clinical work and in connecting with

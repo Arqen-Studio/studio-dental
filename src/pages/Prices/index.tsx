@@ -149,7 +149,7 @@ export default function Prices() {
 
           {/* Price rows */}
           <div className="bg-white py-10">
-            <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8">
+            <div className="mx-auto w-full max-w-[55rem] px-5 md:px-8">
               <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
                 {cat.items.map((item, i) => (
                   <div

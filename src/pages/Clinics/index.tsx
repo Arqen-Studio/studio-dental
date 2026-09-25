@@ -99,7 +99,7 @@ export default function Clinics() {
     <>
       {/* ── Hero ── */}
       <section className="no-reveal bg-brand pb-12 pt-[calc(78px+2rem)]">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
+        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <h1 className="text-[clamp(2.6rem,5vw,4rem)] font-bold leading-none text-ink">
             Contacts
           </h1>
@@ -108,7 +108,7 @@ export default function Clinics() {
 
       {/* ── Clinic photo cards ── */}
       <section className="bg-[#EDF1E9] py-12 md:py-16">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
           {/* The five row bands are declared on this grid and adopted by each
               card, so the longer DHA address cannot push that card's hours and
               buttons out of step with the F-7 card's. */}
@@ -225,7 +225,7 @@ export default function Clinics() {
 
       {/* ── "You will be welcomed." staff grid ── */}
       <section className="bg-[#EDF1E9] pb-16 md:pb-24">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
           <h2 className="mb-10 text-center text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
             You will be welcomed.
           </h2>

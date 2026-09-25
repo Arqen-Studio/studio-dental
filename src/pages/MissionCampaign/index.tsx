@@ -32,7 +32,7 @@ export default function MissionCampaign() {
   return (
     <>
       <section className="no-reveal bg-gradient-to-b from-brand via-[#E8EFE3] to-white pb-16 pt-[calc(78px+2rem)] md:pb-20 md:pt-[calc(78px+2.5rem)]">
-        <div className="mx-auto max-w-[1240px] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
+        <div className="mx-auto max-w-[62rem] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
             Our mission
@@ -49,7 +49,7 @@ export default function MissionCampaign() {
       </section>
 
       <section className="reveal bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto max-w-[62rem] px-5 md:px-8">
           <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
             {PRINCIPLES.map((p) => (
               <div key={p.title}>

@@ -53,7 +53,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+        <div className="relative z-10 mx-auto w-full max-w-[62rem] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <div className="mb-7 flex items-start">
             <div className="inline-flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
@@ -156,7 +156,7 @@ export default function Hero() {
         className="bg-[#F4F7F2] px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5"
         aria-label="Featured campaign"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-[62rem]">
           <MissionCampaignBanner />
         </div>
       </section>

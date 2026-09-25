@@ -138,7 +138,7 @@ export default function TeamPage() {
       </section>
 
       <section id="doctors" className="bg-[#F4F7F2] py-16 md:py-24">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
           <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
 
           <div className="mt-6 max-w-[340px]">

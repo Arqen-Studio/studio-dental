@@ -130,7 +130,7 @@ export default function ServiceDetail() {
 
       {/* ── When necessary, alternating split rows ── */}
       <section className="reveal bg-white">
-        <div className="mx-auto w-full max-w-[1240px] px-5 pb-4 pt-0 text-center md:px-8">
+        <div className="mx-auto w-full max-w-[62rem] px-5 pb-4 pt-0 text-center md:px-8">
           <h2 className="text-[clamp(1.6rem,3.5vw,2.4rem)] font-bold text-ink">
             {service.whenHeading}
           </h2>
@@ -187,7 +187,7 @@ export default function ServiceDetail() {
 
       {/* ── Prices ── */}
       <section className="reveal bg-white py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[1100px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[55rem] px-5 md:px-8">
           <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">Prices</h2>
           <div className="mb-8 mt-3 h-px bg-ink/15" />
 
@@ -263,7 +263,7 @@ export default function ServiceDetail() {
       {/* ── Specialists ── */}
       {specialists.length > 0 && (
         <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
-          <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+          <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
             <h2 className="text-center text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">
               Specialists
             </h2>

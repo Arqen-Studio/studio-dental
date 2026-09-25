@@ -37,7 +37,7 @@ const CLINIC_LINKS = [
 export default function Testimonials() {
   return (
     <section className="bg-white py-10 md:py-16">
-      <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+      <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
         <div className="mx-auto mb-6 flex max-w-[720px] flex-col items-center gap-3 text-center md:mb-9">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />

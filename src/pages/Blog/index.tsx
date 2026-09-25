@@ -53,7 +53,7 @@ export default function Blog() {
     <>
       {/* ── Hero ── */}
       <section className="no-reveal bg-brand pb-10 pt-[calc(78px+2.5rem)]">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
+        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <div className="flex flex-col items-center text-center">
             <h1 className="text-[clamp(2.8rem,5vw,4.2rem)] font-extrabold leading-none tracking-tight text-ink">
               News
@@ -84,7 +84,7 @@ export default function Blog() {
 
       {/* ── Cards grid ── */}
       <section className="bg-[#F4F7F2] py-0">
-        <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
+        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
         <div
           key={gridKey}
           className="grid grid-cols-1 md:grid-cols-2 gap-5 py-10"
