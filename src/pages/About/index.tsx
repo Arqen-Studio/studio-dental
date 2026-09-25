@@ -66,8 +66,8 @@ export default function About() {
         {/* Left, photo */}
         <div className="relative min-h-[50vw] overflow-hidden lg:min-h-screen">
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75"
-            alt="Studio Dental team"
+            src="/images/clinic/interior-portrait-b.jpg"
+            alt="Inside a Studio Dental clinic"
             className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
           />
         </div>
@@ -78,26 +78,26 @@ export default function About() {
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               About us
             </h1>
-            <p className="mt-6 text-[0.875rem] leading-relaxed text-ink/80">
+            <p className="mt-6 text-[1rem] leading-relaxed text-ink/80">
               Studio Dental brings world-class dentistry to Islamabad. Our two
               specialized clinics combine experience and leadership ,
               integrating advanced treatment with exceptional patient service.
             </p>
-            <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
+            <p className="mt-4 text-[1rem] leading-relaxed text-ink/80">
               In our clinics at DHA Phase II and F-7 Markaz, a large team of
               specialists takes care of patients, including implantologists,
               orthodontists, and oral surgeons who share their knowledge at
               international conferences.
             </p>
-            <p className="mt-4 text-[0.875rem] leading-relaxed text-ink/80">
+            <p className="mt-4 text-[1rem] leading-relaxed text-ink/80">
               Patients can receive all necessary dental services under one roof:
               from modern diagnostics and X-ray to implantation, orthodontics,
               restorative dentistry, and pediatric dental care.
             </p>
-            <p className="mt-6 text-[0.75rem] font-normal uppercase tracking-widest text-ink/50">
+            <p className="mt-6 text-[0.85rem] font-normal uppercase tracking-widest text-ink/60">
               Experience. Quality. Excellence.
             </p>
-            <p className="mt-3 text-[0.95rem] text-ink/60">At Studio Dental</p>
+            <p className="mt-3 text-[1.05rem] text-ink/60">At Studio Dental</p>
           </div>
         </div>
       </section>
@@ -105,13 +105,13 @@ export default function About() {
       {/* ── 2. Text block ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
-          <p className="text-[0.875rem] leading-relaxed text-ink/80">
+          <p className="text-[1rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work,
             are professionals in our field, and always take care of you. We want
             to tell you about ourselves from a slightly different angle, one we
             think you'll find interesting.
           </p>
-          <p className="mt-5 text-[0.875rem] leading-relaxed text-ink/80">
+          <p className="mt-5 text-[1rem] leading-relaxed text-ink/80">
             Behind the clinic doors, we are just like you: young and driven,
             parents rushing home to family, people who love to exercise, eat
             well, and travel. We love, dream, laugh, and we know that great
@@ -128,8 +128,8 @@ export default function About() {
       {/* ── 4. Full-bleed image with overlay text ── */}
       <section className="reveal relative min-h-[27rem] md:min-h-[34rem]">
         <img
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=70"
-          alt="Studio Dental team"
+          src="/images/clinic/lounge-wide.jpg"
+          alt="The waiting lounge at Studio Dental"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/40" aria-hidden="true" />
@@ -143,7 +143,7 @@ export default function About() {
       {/* ── 5. Text block ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
-          <p className="text-[0.875rem] leading-relaxed text-ink/80">
+          <p className="text-[1rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions, which often
             come in handy in our daily clinical work and in connecting with
             patients. Our interests range from marathon running to mountain
@@ -181,13 +181,13 @@ export default function About() {
                   {card.name}
                 </h3>
                 <p
-                  className={`mt-3 text-[0.82rem] leading-relaxed ${TEXT[card.bg]} opacity-80`}
+                  className={`mt-3 text-[0.92rem] leading-relaxed ${TEXT[card.bg]} opacity-80`}
                 >
                   {card.blurb}
                 </p>
                 <Link
                   to="/doctors"
-                  className={`mt-4 block text-[0.78rem] font-normal transition ${LINK_COLOR[card.bg]}`}
+                  className={`mt-4 block text-[0.88rem] font-normal transition ${LINK_COLOR[card.bg]}`}
                 >
                   In detail
                 </Link>

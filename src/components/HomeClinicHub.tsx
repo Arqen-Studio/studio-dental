@@ -68,7 +68,7 @@ export default function HomeClinicHub() {
           >
             Dental and implantology clinics, Studio Dental
           </h2>
-          <p className="mx-auto mt-4 max-w-[52ch] text-[0.875rem] leading-relaxed text-muted md:text-[0.92rem]">
+          <p className="mx-auto mt-4 max-w-[52ch] text-left text-[0.875rem] leading-relaxed text-muted md:text-[0.92rem]">
             With over 17 years of experience, Studio Dental brings specialized
             care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics
             and imaging to implants, orthodontics, restorative dentistry, and

@@ -93,7 +93,7 @@ export default function ServiceDetail() {
 
       {/* ── Intro paragraph ── */}
       <section className="reveal bg-white py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[39rem] px-5 text-center md:px-8">
+        <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <p className="text-[1rem] leading-relaxed text-muted md:text-[1.05rem]">
             {service.intro}
           </p>
