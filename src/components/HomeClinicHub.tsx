@@ -7,48 +7,46 @@ type HubCard = {
   imageAlt: string;
 };
 
+/**
+ * Stills are frames taken from our own clinic footage in `public/videos`, so
+ * every card shows the actual practice rather than a stock interior.
+ */
 const HUB_CARDS: HubCard[] = [
   {
     to: "/services",
     title: "Services",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=75",
-    imageAlt: "Dental instruments and clinical setup in a modern practice",
+    image: "/images/hub/services.jpg",
+    imageAlt: "A Studio Dental treatment room, with the chair beside the window",
   },
   {
-    to: "/services",
+    to: "/prices",
     title: "Prices",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=75",
-    imageAlt: "Consultation notes and planning documents",
+    image: "/images/hub/prices.jpg",
+    imageAlt: "Instruments laid out on a Studio Dental treatment unit",
   },
   {
     to: "/doctors",
     title: "Doctors",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=75",
-    imageAlt: "Dental specialists reviewing patient care together",
+    image: "/images/hub/doctors.jpg",
+    imageAlt: "Studio Dental clinicians treating a patient",
   },
   {
     to: "/about",
     title: "About us",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=75",
-    imageAlt: "Welcoming clinic reception area",
+    image: "/images/hub/about.jpg",
+    imageAlt: "The waiting lounge at Studio Dental",
   },
   {
     to: "/blog",
     title: "News",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=75",
-    imageAlt: "Reading updates on a smartphone",
+    image: "/images/hub/news.jpg",
+    imageAlt: "The Studio Dental name etched into the glass entrance door",
   },
   {
     to: "/contact-us",
     title: "Contacts",
-    image:
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=75",
-    imageAlt: "Bright modern dental clinic interior",
+    image: "/images/hub/contacts.jpg",
+    imageAlt: "The reception desk at Studio Dental",
   },
 ];
 
@@ -91,6 +89,9 @@ export default function HomeClinicHub() {
                 src={card.image}
                 alt={card.imageAlt}
                 loading="lazy"
+                decoding="async"
+                width={1000}
+                height={750}
                 className={`absolute inset-0 z-0 h-full w-full object-cover transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:scale-[1.03]`}
               />
 
