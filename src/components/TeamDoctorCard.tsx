@@ -30,11 +30,13 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
         <h3 className="text-[1.35rem] font-semibold leading-tight text-[#83BFE3]">{name}</h3>
         <p className="mt-1 text-[0.82rem] leading-snug text-muted">{creds}</p>
         <p className="mt-1 text-[0.82rem] leading-snug text-muted">{role}</p>
-        <div className="mt-auto pt-4">
-          <span className="inline-flex rounded-sm bg-[#87CEFA] px-3 py-1 text-[0.72rem] font-medium text-ink">
-            {clinic}
-          </span>
-        </div>
+        {clinic && (
+          <div className="mt-auto pt-4">
+            <span className="inline-flex rounded-sm bg-[#87CEFA] px-3 py-1 text-[0.72rem] font-medium text-ink">
+              {clinic}
+            </span>
+          </div>
+        )}
       </div>
     </article>
     </Link>

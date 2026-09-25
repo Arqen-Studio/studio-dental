@@ -66,10 +66,12 @@ export default function DoctorProfile() {
                 <p className="mt-5 max-w-[44ch] text-[0.92rem] font-medium leading-relaxed text-ink2 md:text-[1rem]">
                   {doctor.licenseLine}
                 </p>
-                <p className="mt-2 text-[0.92rem] text-muted md:text-[1rem]">{doctor.locationLine}</p>
+                {doctor.locationLine && <p className="mt-2 text-[0.92rem] text-muted md:text-[1rem]">{doctor.locationLine}</p>}
               </>
             ) : (
-              <p className="mt-3 text-[0.92rem] text-muted md:text-[1rem]">{doctor.locationLine}</p>
+              doctor.locationLine && (
+                <p className="mt-3 text-[0.92rem] text-muted md:text-[1rem]">{doctor.locationLine}</p>
+              )
             )}
           </div>
         </div>

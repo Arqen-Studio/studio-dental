@@ -562,6 +562,24 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Continuing professional development in tooth whitening and minimally invasive aesthetic procedures',
     ],
   },
+  {
+    slug: 'rabia',
+    name: 'Dr. Rabia',
+    creds: 'BDS, MDS (Orthodontics), M.Orth (RCS England)',
+    role: 'Consultant orthodontist',
+    image: '',
+    clinic: '',
+    bio: '',
+    services: ['Aligners'],
+    heroTitleLines: ['BDS, MDS (Ortho)', 'M.Orth (RCS England)', 'Consultant orthodontist'],
+    licenseLine: 'PMDC 17421-D',
+    locationLine: '',
+    practiceAreas: [],
+    biography: [],
+    education: [],
+    membership: [],
+    professionalTraining: [],
+  },
 ]
 
 export function getDoctorBySlug(slug: string): TeamDoctor | undefined {

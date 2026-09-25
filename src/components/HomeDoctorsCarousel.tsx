@@ -103,11 +103,13 @@ export default function HomeDoctorsCarousel() {
                   <h3 className="text-[0.84rem] font-bold leading-tight text-skyBrand sm:text-[0.88rem]">{doctor.name}</h3>
                   <p className="mt-1.5 text-[0.64rem] leading-snug text-muted sm:text-[0.66rem]">{doctor.role}</p>
                   <p className="mt-1 line-clamp-2 text-[0.58rem] leading-snug text-muted sm:text-[0.6rem]">{doctor.creds}</p>
-                  <div className="mt-auto pt-3">
-                    <span className="inline-flex w-fit max-w-full rounded-md bg-skyBrand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-skyBrand sm:text-[0.6rem]">
-                      {doctor.clinic}
-                    </span>
-                  </div>
+                  {doctor.clinic && (
+                    <div className="mt-auto pt-3">
+                      <span className="inline-flex w-fit max-w-full rounded-md bg-skyBrand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-skyBrand sm:text-[0.6rem]">
+                        {doctor.clinic}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </article>
               </Link>
