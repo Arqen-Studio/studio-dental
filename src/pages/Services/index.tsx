@@ -52,7 +52,7 @@ export default function Services() {
                 <li key={svc.id}>
                   <Link
                     to={`/services/${svc.id}`}
-                    className="flex items-center justify-between gap-3 py-3.5 text-[0.95rem] text-ink/85 transition hover:text-ink"
+                    className="flex items-center justify-between gap-3 py-3.5 text-[1.1rem] text-ink/85 transition hover:text-ink"
                   >
                     {svc.title}
                     <ChevronRight size={14} strokeWidth={2} className="flex-shrink-0 text-ink/30" />
