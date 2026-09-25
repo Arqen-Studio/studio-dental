@@ -19,6 +19,28 @@
     }
   }
 
+  /* The ladder used to stop at 900px, so on a large monitor every rem sized
+     thing stayed at 20px while the vw based headings kept growing, leaving the
+     body copy and navigation looking tiny beside them. Sizes below 1600px are
+     unchanged. */
+  @media (min-width: 1600px) {
+    html {
+      font-size: 21px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      font-size: 22.5px;
+    }
+  }
+
+  @media (min-width: 2400px) {
+    html {
+      font-size: 25px;
+    }
+  }
+
   #root {
     min-height: 100dvh;
     background: #ffffff;

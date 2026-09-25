@@ -29,7 +29,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
   if (typeof document === "undefined") return null;
 
   const fieldClass =
-    "w-full rounded-[8px] border border-neutral-300 bg-white px-3 py-2 text-[13px] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-brand focus:ring-2 focus:ring-brand/25";
+    "w-full rounded-[8px] border border-neutral-300 bg-white px-3 py-2 text-[0.72rem] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-brand focus:ring-2 focus:ring-brand/25";
 
   const inset = "px-10 sm:px-12";
 
@@ -59,7 +59,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,520px)] flex-col bg-white font-sans text-[13px] leading-normal text-ink shadow-[-4px_0_28px_rgba(28,59,37,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,520px)]",
+          "relative flex h-full w-[min(100%,520px)] flex-col bg-white font-sans text-[0.72rem] leading-normal text-ink shadow-[-4px_0_28px_rgba(28,59,37,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,520px)]",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >
@@ -68,7 +68,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         >
           <h2
             id={titleId}
-            className="max-w-[calc(100%-3.25rem)] pt-0.5 font-sans text-[20px] font-bold leading-snug tracking-tight text-neutral-900 sm:text-[21px]"
+            className="max-w-[calc(100%-3.25rem)] pt-0.5 font-sans text-[1.05rem] font-bold leading-snug tracking-tight text-neutral-900 sm:text-[1.1rem]"
           >
             Let&apos;s get in touch
           </h2>
@@ -109,7 +109,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-clinic"
-                className="text-[12px] font-normal text-neutral-500"
+                className="text-[0.7rem] font-normal text-neutral-500"
               >
                 Choose a clinic
               </label>
@@ -133,7 +133,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-name"
-                className="text-[12px] font-normal text-neutral-500"
+                className="text-[0.7rem] font-normal text-neutral-500"
               >
                 Your name
               </label>
@@ -150,7 +150,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-email"
-                className="text-[12px] font-normal text-neutral-500"
+                className="text-[0.7rem] font-normal text-neutral-500"
               >
                 Your email
               </label>
@@ -167,7 +167,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-message"
-                className="text-[12px] font-normal text-neutral-500"
+                className="text-[0.7rem] font-normal text-neutral-500"
               >
                 Message
               </label>
@@ -181,7 +181,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             </div>
 
             <div className="flex flex-col gap-2.5 pt-1">
-              <label className="flex cursor-pointer items-start gap-2 text-[12px] leading-snug text-neutral-500">
+              <label className="flex cursor-pointer items-start gap-2 text-[0.7rem] leading-snug text-neutral-500">
                 <input
                   type="checkbox"
                   name="privacy"
@@ -195,7 +195,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
                   Clinic.
                 </span>
               </label>
-              <label className="flex cursor-pointer items-start gap-2 text-[12px] leading-snug text-neutral-500">
+              <label className="flex cursor-pointer items-start gap-2 text-[0.7rem] leading-snug text-neutral-500">
                 <input
                   type="checkbox"
                   name="marketing"
@@ -209,7 +209,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
 
             <button
               type="submit"
-              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 text-[12px] font-semibold text-ink shadow-none transition hover:bg-brand/90 hover:shadow-brand active:scale-[0.99]"
+              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 text-[0.7rem] font-semibold text-ink shadow-none transition hover:bg-brand/90 hover:shadow-brand active:scale-[0.99]"
             >
               Send
             </button>
