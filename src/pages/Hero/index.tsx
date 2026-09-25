@@ -68,8 +68,8 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mb-10 max-w-[19ch]">
-            <h1 className="font-heading text-[clamp(2.4rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-creamBrand">
+          <div className="mb-10 max-w-[46rem]">
+            <h1 className="max-w-[19ch] font-heading text-[clamp(2.4rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-creamBrand">
               Dentistry you can trust, in the heart of Islamabad
             </h1>
             <p className="mt-5 max-w-[46ch] text-[1rem] leading-relaxed text-creamBrand/85 md:text-[1.08rem]">

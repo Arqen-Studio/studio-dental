@@ -3,6 +3,7 @@ import { Anchor, ArrowRight, Baby, BarChart3, Rows3, Star, Zap } from 'lucide-re
 import { Link } from 'react-router-dom'
 import type { ServiceData } from '../data/services'
 import { SERVICES_DATA } from '../data/services'
+import { useAutoplayVideo } from '../hooks/useAutoplayVideo'
 
 /** Same slot count as the legacy home showcase (1 featured + 5 tiles). IDs must exist in SERVICES_DATA. */
 const HOME_SHOWCASE_SERVICE_IDS = [
@@ -28,8 +29,6 @@ type ShowcaseItem = {
   desc: string
   Icon: LucideIcon
   featured?: boolean
-  image?: string
-  imageAlt?: string
 }
 
 const SHOWCASE_ICONS: LucideIcon[] = [BarChart3, Rows3, Anchor, Star, Zap, Baby]
@@ -40,8 +39,6 @@ const SHOWCASE: ShowcaseItem[] = servicesForHomeShowcase().map((s, i) => ({
   desc: s.subtitle,
   Icon: SHOWCASE_ICONS[i % SHOWCASE_ICONS.length] ?? BarChart3,
   featured: i === 0,
-  image: i === 0 ? s.heroImage : undefined,
-  imageAlt: s.title,
 }))
 
 function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }) {
@@ -66,6 +63,7 @@ export default function HomeServicesShowcase({
 }: {
   omitAnchorId?: boolean
 } = {}) {
+  const featuredVideoRef = useAutoplayVideo()
   const [featured, ...rest] = SHOWCASE
 
   return (
@@ -101,8 +99,9 @@ export default function HomeServicesShowcase({
               Everything your smile needs, in one place.
             </p>
             <p className="mt-3 max-w-[52ch] text-[0.95rem] leading-relaxed text-muted">
-              From checkups and hygiene to implants, aligners, and emergencies, browse a few highlights below, then see
-              the full fee guide and catalog on our services page.
+              From check-ups and hygiene to fillings, crowns, implants, aligners and
+              dental care for children. A few are below, and every treatment we offer is
+              listed on the services page with prices for both clinics.
             </p>
           </div>
 
@@ -110,7 +109,7 @@ export default function HomeServicesShowcase({
             to="/services"
             className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
           >
-            Full price list & services
+            All services & prices
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F6F4B]/20 text-ink transition group-hover:bg-[#3F6F4B]/35">
               <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
@@ -121,16 +120,20 @@ export default function HomeServicesShowcase({
           <article
             className="group relative flex min-h-[280px] flex-col overflow-hidden rounded-2xl border border-black/10 shadow-soft-md sm:col-span-2 sm:min-h-[300px] lg:col-span-2 lg:row-span-2 lg:min-h-[420px]"
           >
-            {featured.image ? (
-              <img
-                src={featured.image}
-                alt={featured.imageAlt ?? ''}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
-              />
-            ) : null}
+            <video
+              ref={featuredVideoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/videos/clinic-room-poster.jpg"
+              className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+            >
+              <source src="/videos/clinic-room-720.mp4" type="video/mp4" />
+            </video>
             <div
-              className="absolute inset-0 bg-gradient-to-t from-ink/88 via-ink/45 to-ink/20"
+              className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10"
               aria-hidden="true"
             />
             <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
