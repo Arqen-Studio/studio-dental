@@ -125,7 +125,7 @@ export default function Hero() {
                 Top doctors
               </strong>
               <span className="text-[0.82rem] text-creamBrand/70">
-                from surgeons to prosthodontists
+                from oral surgeons to orthodontists
               </span>
             </div>
             <div
