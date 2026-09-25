@@ -181,7 +181,7 @@ export default function Contact() {
               name="message"
               rows={4}
               placeholder="Any additional details for your consultation?"
-              className="min-h-[110px] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
+              className="min-h-[5.5rem] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
@@ -194,7 +194,7 @@ export default function Contact() {
           >
             {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send request"}
             <span
-              className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10"
+              className="inline-flex h-[1.1rem] w-[22px] items-center justify-center rounded-full bg-black/10"
               aria-hidden="true"
             >
               <ArrowRight size={11} strokeWidth={2.5} className="text-ink" aria-hidden />

@@ -235,7 +235,7 @@ export default function Footer() {
                   <img
                     src={s.src}
                     alt=""
-                    className="h-[22px] w-[22px] object-contain sm:h-[26px] sm:w-[26px]"
+                    className="h-[1.1rem] w-[22px] object-contain sm:h-[1.3rem] sm:w-[26px]"
                   />
                 </a>
               ))}

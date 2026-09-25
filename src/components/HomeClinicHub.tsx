@@ -83,7 +83,7 @@ export default function HomeClinicHub() {
             <Link
               key={card.title}
               to={card.to}
-              className={`group relative aspect-[4/3] min-h-[200px] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-white transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-brand`}
+              className={`group relative aspect-[4/3] min-h-[10rem] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-white transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-brand`}
             >
               <img
                 src={card.image}

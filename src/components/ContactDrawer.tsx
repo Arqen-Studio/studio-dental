@@ -176,7 +176,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
                 name="message"
                 rows={4}
                 required
-                className={`${fieldClass} min-h-[96px] resize-y`}
+                className={`${fieldClass} min-h-[4.8rem] resize-y`}
               />
             </div>
 
@@ -186,7 +186,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
                   type="checkbox"
                   name="privacy"
                   required
-                  className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
+                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
                 />
                 <span>
                   {/* Unlinked until the clinic supplies a privacy policy:
@@ -199,7 +199,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
                 <input
                   type="checkbox"
                   name="marketing"
-                  className="mt-0.5 h-[15px] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
+                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
                 />
                 <span>
                   I agree that my data will be used for marketing purposes.

@@ -85,7 +85,7 @@ export default function Hero() {
             >
               Book a consultation
               <span
-                className="inline-flex h-[22px] w-[22px] items-center justify-center rounded-full bg-black/10"
+                className="inline-flex h-[1.1rem] w-[22px] items-center justify-center rounded-full bg-black/10"
                 aria-hidden="true"
               >
                 <ArrowRight
@@ -145,7 +145,7 @@ export default function Hero() {
 
         <Link
           to="/services"
-          className="absolute bottom-7 left-1/2 z-10 hidden h-[42px] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
+          className="absolute bottom-7 left-1/2 z-10 hidden h-[2.1rem] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
           aria-label="Go to services"
         >
           <span className="h-2 w-[3px] rounded bg-[#F4F7F2] animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />

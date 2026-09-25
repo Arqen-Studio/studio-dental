@@ -64,7 +64,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
     <>
     <header
       className={[
-        "fixed inset-x-0 top-0 z-[100] h-[78px] transition duration-300 ease-out",
+        "fixed inset-x-0 top-0 z-[100] h-[3.9rem] transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
           : "border-b border-ink/10 bg-brand text-ink shadow-[0_2px_14px_rgba(28,59,37,0.08)]",

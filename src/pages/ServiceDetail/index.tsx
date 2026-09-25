@@ -234,7 +234,7 @@ export default function ServiceDetail() {
               <Link
                 key={c.id}
                 to="/prices"
-                className="group relative min-h-[200px] overflow-hidden rounded-2xl"
+                className="group relative min-h-[10rem] overflow-hidden rounded-2xl"
               >
                 <img
                   src={c.image}
@@ -315,7 +315,7 @@ export default function ServiceDetail() {
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
           {/* Text left, brand bg */}
-          <div className="relative flex flex-col justify-center bg-brand px-6 py-16 md:px-12 lg:min-h-[520px] lg:px-16">
+          <div className="relative flex flex-col justify-center bg-brand px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
             <div
               className="pointer-events-none absolute inset-0"
               style={{ background: "radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.32) 0%, transparent 55%)" }}
@@ -349,7 +349,7 @@ export default function ServiceDetail() {
           </div>
 
           {/* Photo right */}
-          <div className="relative hidden min-h-[420px] overflow-hidden lg:block">
+          <div className="relative hidden min-h-[21rem] overflow-hidden lg:block">
             <img
               src={DENTIST_PHOTO}
               alt="Studio Dental specialists"

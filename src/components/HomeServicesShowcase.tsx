@@ -118,7 +118,7 @@ export default function HomeServicesShowcase({
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-5">
           <article
-            className="group relative flex min-h-[280px] flex-col overflow-hidden rounded-2xl border border-black/10 shadow-soft-md sm:col-span-2 sm:min-h-[300px] lg:col-span-2 lg:row-span-2 lg:min-h-[420px]"
+            className="group relative flex min-h-[14rem] flex-col overflow-hidden rounded-2xl border border-black/10 shadow-soft-md sm:col-span-2 sm:min-h-[15rem] lg:col-span-2 lg:row-span-2 lg:min-h-[21rem]"
           >
             <video
               ref={featuredVideoRef}
@@ -164,7 +164,7 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.serviceId}
-              className="reveal flex min-h-[200px] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/28 hover:shadow-soft-md sm:min-h-0"
+              className="reveal flex min-h-[10rem] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/28 hover:shadow-soft-md sm:min-h-0"
             >
               <div className="flex items-start gap-3">
                 <IconBubble Icon={item.Icon} />

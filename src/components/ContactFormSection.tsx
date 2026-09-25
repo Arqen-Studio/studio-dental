@@ -10,7 +10,7 @@ export default function ContactFormSection() {
   return (
     <section className="reveal grid lg:grid-cols-2">
       {/* Left, clinic interior photo */}
-      <div className="relative min-h-[380px] lg:min-h-full">
+      <div className="relative min-h-[19rem] lg:min-h-full">
         <img
           src="/images/clinic/interior-c.jpg"
           alt="The reception area at Studio Dental"
@@ -126,7 +126,7 @@ export default function ContactFormSection() {
                 id="cf-message"
                 name="message"
                 rows={4}
-                className="min-h-[110px] resize-y rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
+                className="min-h-[5.5rem] resize-y rounded-sm border border-black/15 px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
               />
             </div>
 

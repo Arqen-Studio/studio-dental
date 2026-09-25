@@ -126,14 +126,14 @@ export default function About() {
       </section>
 
       {/* ── 4. Full-bleed image with overlay text ── */}
-      <section className="reveal relative min-h-[540px] md:min-h-[680px]">
+      <section className="reveal relative min-h-[27rem] md:min-h-[34rem]">
         <img
           src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=70"
           alt="Studio Dental team"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/40" aria-hidden="true" />
-        <div className="relative flex h-full min-h-[540px] items-center justify-center md:min-h-[680px]">
+        <div className="relative flex h-full min-h-[27rem] items-center justify-center md:min-h-[34rem]">
           <h2 className="text-center text-[clamp(1.8rem,4vw,3rem)] font-light text-white">
             Get to know us better :)
           </h2>
@@ -158,7 +158,7 @@ export default function About() {
           {TEAM_CARDS.map((card) => (
             <div
               key={card.name}
-              className={`relative min-h-[320px] p-8 md:min-h-[380px] md:p-10 ${BG[card.bg]}`}
+              className={`relative min-h-[16rem] p-8 md:min-h-[19rem] md:p-10 ${BG[card.bg]}`}
             >
               {card.image && (
                 <>

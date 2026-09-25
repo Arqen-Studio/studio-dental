@@ -16,7 +16,7 @@ export function DoctorFlipCard({
   animationIndex = 0,
 }: DoctorFlipCardProps) {
   return (
-    <div className="relative h-[480px] [transform-style:preserve-3d] transition duration-700 ease-out group-hover:[transform:rotateY(180deg)]">
+    <div className="relative h-[24rem] [transform-style:preserve-3d] transition duration-700 ease-out group-hover:[transform:rotateY(180deg)]">
       <div className="absolute inset-0 overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm [backface-visibility:hidden]">
         <div className="relative h-56 w-full overflow-hidden bg-black/[0.04]" aria-hidden="true">
           <img
@@ -28,7 +28,7 @@ export function DoctorFlipCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent" />
         </div>
-        <div className="flex h-[256px] flex-col p-5">
+        <div className="flex h-[12.8rem] flex-col p-5">
           <h3 className="min-h-[2.6rem] text-[1.1rem] leading-tight text-[#3F6F4B] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">
             {name}
           </h3>
