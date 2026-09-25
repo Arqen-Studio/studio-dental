@@ -255,7 +255,7 @@ export const SERVICES_DATA: ServiceData[] = [
         image: IMG_FDENTIST,
       },
     ],
-    priceCategories: ["consultation"],
+    priceCategories: ["hygiene"],
     steps: [
       "Your teeth and gums are examined, and any areas of concern are noted.",
       "Deposits are removed from the tooth surfaces and from just below the gumline.",

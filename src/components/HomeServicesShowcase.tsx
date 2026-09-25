@@ -12,6 +12,7 @@ const HOME_SHOWCASE_SERVICE_IDS = [
   'dental-implantation',
   'tooth-extraction',
   'dental-fillings',
+  'childrens-dentistry',
 ] as const
 
 function servicesForHomeShowcase(): ServiceData[] {
@@ -69,7 +70,7 @@ function ServicePriceLine({ price, light }: { price: string; light?: boolean }) 
   const amtCls = light
     ? isQuote
       ? 'text-[0.95rem] font-bold text-creamBrand md:text-[1.02rem]'
-      : 'text-[1.05rem] font-extrabold text-[#3F6F4B] md:text-[1.15rem]'
+      : 'text-[1.05rem] font-extrabold text-creamBrand md:text-[1.15rem]'
     : isQuote
       ? 'text-[0.88rem] font-bold text-ink md:text-[0.92rem]'
       : 'text-[0.92rem] font-extrabold text-[#3F6F4B] md:text-[0.98rem]'

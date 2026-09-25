@@ -32,9 +32,15 @@ export const PRICE_CLINICS: { id: ClinicId; name: string; address: string }[] = 
 export const PRICE_CATEGORIES: PriceCategory[] = [
   {
     id: "consultation",
-    label: "Consultation & Hygiene",
+    label: "Consultation",
     items: [
       { name: "Dental consultation",   dha: 1000,  f7: 2000  },
+    ],
+  },
+  {
+    id: "hygiene",
+    label: "Hygiene & Whitening",
+    items: [
       { name: "Scaling & polishing",   dha: 10000, f7: 20000 },
       { name: "Teeth whitening",       dha: 50000, f7: 50000 },
       { name: "Fluoride varnish",      dha: 6000,  f7: null  },
