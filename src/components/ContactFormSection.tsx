@@ -13,8 +13,8 @@ export default function ContactFormSection() {
       {/* Left, clinic interior photo */}
       <div className="relative min-h-[380px] lg:min-h-full">
         <img
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=75"
-          alt="Studio Dental clinic interior"
+          src="/images/clinic/interior-c.jpg"
+          alt="The reception area at Studio Dental"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />

@@ -4,7 +4,14 @@ import { TEAM_DOCTORS } from '../../data/teamDoctors'
 import ContactFormSection from '../../components/ContactFormSection'
 
 const ALL_SERVICES = 'Select a service'
-const TEAM_HERO_IMAGE = '/images/team-hero.png'
+/**
+ * Stills from our own clinic footage. They are deliberately interiors rather
+ * than team portraits: we have no team photograph from the clinic yet, and
+ * which of the two branches each clip was shot at is not confirmed, so the
+ * alt text claims neither a branch nor the people in it.
+ */
+const TEAM_HERO_IMAGE = '/images/clinic/interior-a.jpg'
+const TEAM_HERO_IMAGE_F7 = '/images/clinic/interior-b.jpg'
 
 export default function TeamPage() {
   const [selectedService, setSelectedService] = useState(ALL_SERVICES)
@@ -29,7 +36,7 @@ export default function TeamPage() {
           <div className="relative min-h-[52vw] overflow-hidden lg:min-h-[50vh]">
             <img
               src={TEAM_HERO_IMAGE}
-              alt="Studio Dental DHA Phase II team"
+              alt="Inside a Studio Dental clinic"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
             />
@@ -93,8 +100,8 @@ export default function TeamPage() {
           {/* Photo */}
           <div className="relative order-first min-h-[52vw] overflow-hidden lg:order-last lg:min-h-[50vh]">
             <img
-              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=75"
-              alt="Studio Dental F-7 Markaz team"
+              src={TEAM_HERO_IMAGE_F7}
+              alt="A treatment room at Studio Dental"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]"
             />
