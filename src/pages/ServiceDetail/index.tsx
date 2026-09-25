@@ -3,27 +3,12 @@ import { SERVICES_DATA } from "../../data/services";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 import { TeamDoctorCard } from "../../components/TeamDoctorCard";
 import { PRICE_CATEGORIES, formatPrice } from "../../data/prices";
+import { CLINICS } from "../../data/clinics";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 
-const DENTIST_PHOTO =
-  "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=75";
+const DENTIST_PHOTO = "/images/clinic/interior-portrait.jpg";
 
-const CLINIC_CARDS = [
-  {
-    id: "dha",
-    name: "DHA Phase II",
-    address: "1st Floor, Plaza No. 26, Main Iqbal Boulevard",
-    image:
-      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=70",
-  },
-  {
-    id: "f7",
-    name: "F-7 Markaz",
-    address: "Jinnah Super, F-7 Markaz",
-    image:
-      "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=70",
-  },
-];
+
 
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
@@ -230,15 +215,15 @@ export default function ServiceDetail() {
             Select the clinic price list you want to see:
           </p>
           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
-            {CLINIC_CARDS.map((c) => (
+            {CLINICS.map((c) => (
               <Link
                 key={c.id}
                 to="/prices"
                 className="group relative min-h-[10rem] overflow-hidden rounded-2xl"
               >
                 <img
-                  src={c.image}
-                  alt={c.name}
+                  src={c.photo}
+                  alt={`Studio Dental ${c.name}`}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -352,7 +337,7 @@ export default function ServiceDetail() {
           <div className="relative hidden min-h-[21rem] overflow-hidden lg:block">
             <img
               src={DENTIST_PHOTO}
-              alt="Studio Dental specialists"
+              alt="A treatment room at Studio Dental"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
