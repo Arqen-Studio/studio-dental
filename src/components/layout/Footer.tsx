@@ -201,7 +201,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#F4F7F2] pb-10 pt-14 text-ink md:pb-14 md:pt-16">
-      <div className="mx-auto w-full max-w-5xl px-5 md:px-8">
+      <div className="page-shell mx-auto w-full px-5 md:px-8">
         <h2 className="mb-8 text-[clamp(1.75rem,3.2vw,2.35rem)] font-bold tracking-tight text-ink md:mb-10">
           Contacts
         </h2>
