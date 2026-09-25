@@ -246,9 +246,11 @@ export default function Clinics() {
                   <p className="text-[0.9rem] font-semibold leading-snug text-skyBrand sm:text-[1.05rem]">
                     {person.name}
                   </p>
-                  <p className="mt-0.5 text-[0.78rem] text-muted sm:text-[0.88rem]">
-                    {person.role}
-                  </p>
+                  {person.role && (
+                    <p className="mt-0.5 text-[0.78rem] text-muted sm:text-[0.88rem]">
+                      {person.role}
+                    </p>
+                  )}
                   <div className="mt-auto pt-2 sm:pt-3">
                     <span className="inline-block rounded-sm bg-skyBrand/15 px-2 py-0.5 text-[0.68rem] font-medium text-skyBrand sm:px-3 sm:py-1 sm:text-[0.75rem]">
                       {person.clinic}

@@ -28,8 +28,8 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
       </div>
       <div className="flex flex-1 flex-col p-4">
         <h3 className="text-[1.35rem] font-semibold leading-tight text-[#83BFE3]">{name}</h3>
-        <p className="mt-1 text-[0.82rem] leading-snug text-muted">{creds}</p>
-        <p className="mt-1 text-[0.82rem] leading-snug text-muted">{role}</p>
+        {creds && <p className="mt-1 text-[0.82rem] leading-snug text-muted">{creds}</p>}
+        {role && <p className="mt-1 text-[0.82rem] leading-snug text-muted">{role}</p>}
         {clinic && (
           <div className="mt-auto pt-4">
             <span className="inline-flex rounded-sm bg-[#87CEFA] px-3 py-1 text-[0.72rem] font-medium text-ink">

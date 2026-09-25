@@ -56,16 +56,20 @@ export default function DoctorProfile() {
                 <h1 className="font-heading text-[clamp(1.85rem,3.6vw,2.75rem)] font-extrabold leading-tight tracking-tight text-ink">
                   {doctor.name}
                 </h1>
-                <p className="mt-4 max-w-[42ch] text-[0.95rem] font-medium leading-relaxed text-ink2 md:text-[1.05rem]">
-                  {doctor.licenseLine}
-                </p>
+                {doctor.licenseLine && (
+                  <p className="mt-4 max-w-[42ch] text-[0.95rem] font-medium leading-relaxed text-ink2 md:text-[1.05rem]">
+                    {doctor.licenseLine}
+                  </p>
+                )}
               </>
             )}
             {doctor.heroTitleLines && doctor.heroTitleLines.length > 0 ? (
               <>
-                <p className="mt-5 max-w-[44ch] text-[0.92rem] font-medium leading-relaxed text-ink2 md:text-[1rem]">
-                  {doctor.licenseLine}
-                </p>
+                {doctor.licenseLine && (
+                  <p className="mt-5 max-w-[44ch] text-[0.92rem] font-medium leading-relaxed text-ink2 md:text-[1rem]">
+                    {doctor.licenseLine}
+                  </p>
+                )}
                 {doctor.locationLine && <p className="mt-2 text-[0.92rem] text-muted md:text-[1rem]">{doctor.locationLine}</p>}
               </>
             ) : (
