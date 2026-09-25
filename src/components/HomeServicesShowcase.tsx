@@ -81,7 +81,7 @@ export default function HomeServicesShowcase({
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[62rem] px-5 md:px-8">
+      <div className="relative z-10 mx-auto w-full page-shell px-5 md:px-8">
         <h2
           id="home-services-heading"
           className="text-center text-[clamp(1.45rem,2.6vw,2.1rem)] font-semibold tracking-tight text-ink"

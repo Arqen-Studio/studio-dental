@@ -23,7 +23,7 @@ export default function BlogPost() {
     <>
       {/* ── Thin hero band ── */}
       <section className="no-reveal bg-brand pt-[78px]">
-        <div className="mx-auto w-full max-w-[62rem] px-5 pb-8 pt-8 md:px-8 [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]">
+        <div className="mx-auto w-full page-shell px-5 pb-8 pt-8 md:px-8 [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]">
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-[0.85rem] font-semibold text-ink/70 transition hover:text-ink"
@@ -94,7 +94,7 @@ export default function BlogPost() {
 
       {/* ── Other news ── */}
       <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[62rem] px-5 md:px-8">
+        <div className="mx-auto w-full page-shell px-5 md:px-8">
           <h2 className="text-center text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-ink">
             Other news
           </h2>

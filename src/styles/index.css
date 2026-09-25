@@ -1,6 +1,25 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.cjs';
 
+/* The site's page column. It widens in two steps on large screens so the
+   content does not end up marooned in the middle of a wide monitor, and every
+   section uses it so they all share one left edge. */
+.page-shell {
+  max-width: 62rem;
+}
+
+@media (min-width: 1920px) {
+  .page-shell {
+    max-width: 68rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  .page-shell {
+    max-width: 76rem;
+  }
+}
+
 @layer base {
   :root {
     --nav-h: 78px;

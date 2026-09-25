@@ -60,7 +60,7 @@ export default function HomeClinicHub() {
       className="bg-[#F4F7F2] px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
-      <div className="mx-auto w-full max-w-[62rem]">
+      <div className="mx-auto w-full page-shell">
         <header className="mx-auto max-w-[56rem] text-center">
           <h2
             id="home-clinic-hub-heading"
