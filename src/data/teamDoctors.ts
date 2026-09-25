@@ -28,7 +28,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     bio:
       'His view is that exceptional dentistry goes beyond treating individual teeth. As he puts it: our goal is not simply to treat dental problems, but to create healthy, confident smiles that last.',
     services: [
-      'Implants',
       'Cosmetic Dentistry',
       'Smile Design',
       'Restorative Dentistry',
@@ -70,14 +69,13 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
   {
     slug: 'aqsa-malik',
     name: 'Dr. Aqsa Malik',
-    creds: 'BDS, Clearpath Certified, IADSR Certified',
+    creds: 'BDS',
     role: 'Clinical director',
     image: '/images/doctors/dr-aqsa.jpg',
     clinic: 'DHA Phase II, Islamabad',
     bio:
       'Known for a meticulous approach and a real commitment to patient comfort, combining seventeen years of clinical experience with modern technique.',
     services: [
-      'Aligners',
       'General Dentistry',
       'Restorative Dentistry',
       'Cosmetic Dentistry',
@@ -90,9 +88,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Comprehensive treatment planning',
       'Restorative dentistry',
       'Aesthetic dentistry',
-      'Long-term oral health and maintenance',
-      'Clear aligner treatment',
-      'Preventive care',
+      'Long-term oral health',
     ],
     biography: [
       'An experienced dental surgeon and Clinical Director at Studio Dental, with over seventeen years of clinical experience.',
