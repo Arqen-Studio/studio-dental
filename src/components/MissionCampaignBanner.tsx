@@ -11,7 +11,7 @@ export default function MissionCampaignBanner() {
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
         {/* Left: primary gradient panel */}
-        <div className="relative flex flex-1 flex-col justify-end border border-brand/25 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF] px-8 pb-12 pt-10 md:border-r md:px-12 md:pb-14 md:pr-12 md:pt-14">
+        <div className="relative flex flex-1 flex-col justify-center border border-brand/25 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF] px-8 py-12 md:h-[340px] md:border-r md:px-12 md:py-14">
           <div
             className="pointer-events-none absolute inset-0 opacity-90"
             style={{
@@ -24,16 +24,16 @@ export default function MissionCampaignBanner() {
             A mission for life
           </h2>
           <p className="relative z-[1] mt-2 text-[0.95rem] font-medium text-ink/72 md:text-[1.05rem]">
-            New image campaign
+            What we stand for
           </p>
         </div>
 
         {/* Right: photo + blend + circular CTA (brand) */}
-        <div className="relative h-52 w-full shrink-0 md:h-auto md:w-[min(46%,420px)] md:min-h-[300px]">
+        <div className="relative h-52 w-full shrink-0 md:h-[340px] md:w-[min(46%,420px)]">
           <img
             src={CAMPAIGN_IMG}
             alt="Dr. Yousaf Kamal"
-            className="h-full w-full object-cover object-[center_18%]"
+            className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
             loading="lazy"
             decoding="async"
           />
