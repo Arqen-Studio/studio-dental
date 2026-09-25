@@ -109,11 +109,14 @@ export default function Clinics() {
       {/* ── Clinic photo cards ── */}
       <section className="bg-[#EDF1E9] py-12 md:py-16">
         <div className="mx-auto w-full max-w-[1240px] px-5 md:px-8">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {/* The five row bands are declared on this grid and adopted by each
+              card, so the longer DHA address cannot push that card's hours and
+              buttons out of step with the F-7 card's. */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-[auto_auto_auto_auto_auto] md:gap-y-0">
             {CLINICS.map((clinic) => (
               <div
                 key={clinic.id}
-                className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm"
+                className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
               >
                 {/* Photo */}
                 <div className="aspect-[8/3] overflow-hidden bg-[#C9D2C4]">
@@ -126,7 +129,7 @@ export default function Clinics() {
                 </div>
 
                 {/* Info rows with dividers */}
-                <div className="divide-y divide-black/8 px-5 py-2 md:px-7">
+                <div className="divide-y divide-black/8 px-5 py-2 md:row-span-4 md:grid md:grid-rows-subgrid md:px-7 md:py-0">
                   {/* Address */}
                   <div className="flex items-start gap-4 py-5">
                     <span className="mt-0.5 flex-shrink-0 text-brand">
@@ -230,7 +233,7 @@ export default function Clinics() {
             {STAFF.map((person) => (
               <div
                 key={person.name}
-                className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm"
+                className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
               >
                 <div className="aspect-[3/4] flex-none overflow-hidden bg-[#C9D2C4]">
                   {person.image && (

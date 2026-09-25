@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { TeamDoctorCard } from '../../components/TeamDoctorCard'
 import { TEAM_DOCTORS } from '../../data/teamDoctors'
 import ContactFormSection from '../../components/ContactFormSection'
+import { SERVICES_DATA } from '../../data/services'
 import { useAutoplayVideo } from '../../hooks/useAutoplayVideo'
 
 const ALL_SERVICES = 'Select a service'
@@ -22,9 +23,16 @@ export default function TeamPage() {
   const dhaVideoRef = useAutoplayVideo()
   const f7VideoRef = useAutoplayVideo()
 
+  /**
+   * Driven by the services we actually offer, in the order they appear on the
+   * services page, rather than by whatever labels happen to be on a doctor.
+   * A service nobody is tagged with is left out so the filter can never return
+   * an empty list; docs/client-questions.md tracks which those are and why.
+   */
   const serviceOptions = useMemo(() => {
-    const all = TEAM_DOCTORS.flatMap((doctor) => doctor.services)
-    return [ALL_SERVICES, ...Array.from(new Set(all))]
+    const tagged = new Set(TEAM_DOCTORS.flatMap((doctor) => doctor.services))
+    const offered = SERVICES_DATA.map((s) => s.title).filter((t) => tagged.has(t))
+    return [ALL_SERVICES, ...offered]
   }, [])
 
   const filteredDoctors =
@@ -92,7 +100,7 @@ export default function TeamPage() {
               aria-hidden="true"
             />
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.7s_both]">
-              <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
+              <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-creamBrand">
                 F-7 Markaz
               </h2>
               <ul className="mt-7 flex flex-col gap-0.5">
@@ -100,9 +108,9 @@ export default function TeamPage() {
                   <li key={label}>
                     <a
                       href="#doctors"
-                      className="group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold text-ink/75 transition duration-200 hover:text-ink"
+                      className="group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold text-creamBrand/90 transition duration-200 hover:text-creamBrand"
                     >
-                      <span className="h-px w-5 bg-ink/30 transition-all duration-300 group-hover:w-9 group-hover:bg-ink" />
+                      <span className="h-px w-5 bg-creamBrand/60 transition-all duration-300 group-hover:w-9 group-hover:bg-creamBrand" />
                       {label}
                     </a>
                   </li>

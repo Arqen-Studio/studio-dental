@@ -47,6 +47,45 @@ Last updated 26 September 2026.
     service page was written by us from the price lists. A dentist should read
     it before launch.
 
+## Doctor to treatment tagging
+
+The doctors page filter used the ten labels from question 7 of the profile
+form. That list was written before the price lists settled what we offer, and
+four of its labels (Cosmetic Dentistry, Smile Design, Facial Aesthetics,
+General Dentistry) are not services either branch prices. The eight returned
+forms have been remapped onto the nine real services, and the filter now offers
+only those. The mapping used was:
+
+| Form answer | Mapped to |
+| --- | --- |
+| Implants | Dental Implantation |
+| Aligners | Teeth Straightening |
+| Root Canal | Root Canal Treatment |
+| Oral Surgery | Tooth Extraction |
+| Preventive Care | Oral Hygiene & Whitening |
+| Restorative Dentistry | Dental Fillings |
+| Cosmetic Dentistry, Smile Design | Aesthetic Dental Fillings |
+| General Dentistry | nothing, see question 21 |
+| Facial Aesthetics | nothing, see question 22 |
+
+20. **Please confirm the mapping above**, and confirm each doctor's treatments
+    against the nine services rather than the old ten labels.
+21. **"General Dentistry" was treated as an umbrella and dropped.** Seven of the
+    eight doctors who ticked it also ticked Restorative or Preventive Care, so
+    nothing was lost. The exception is **Dr. Amna Hassan**: she ticked General
+    Dentistry and Preventive Care but not Restorative, so she is not currently
+    listed for fillings. Does she do fillings?
+22. **"Facial Aesthetics" was ticked by Dr. Amna, Dr. Nayab and Dr. Zainab but
+    is not priced at either branch.** Is it offered? If so it needs a price and
+    a page. If not, it should come off the form.
+23. **No doctor is tagged for Children's Dentistry**, although it is priced at
+    both branches and has its own page. Who performs it?
+24. **No doctor is tagged for Prosthetics (crowns, veneers, bridges)**, which is
+    also priced at both branches. Who performs it?
+25. **Six doctors have no treatments recorded at all** (Umair, Rida, Maria,
+    Mashal, Abeera, Shayzmin), so they disappear the moment a visitor uses the
+    filter. This resolves itself once their forms come back.
+
 ## Copy
 
 16. **What does "17+ years" refer to?** The clinic, Dr. Yousaf's career, or
