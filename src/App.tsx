@@ -31,6 +31,7 @@ function Layout() {
   const nodeRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef(location);
   const revealObserverRef = useRef<IntersectionObserver | null>(null);
+  const revealFallbackRef = useRef<number | null>(null);
 
   useEffect(() => {
     locationRef.current = location;
@@ -64,14 +65,29 @@ function Layout() {
             }
           });
         },
-        { threshold: 0.08 },
+        // A section taller than about twelve screens can never show 8 per cent
+        // of itself at once, so it would have stayed hidden for good. Trigger
+        // on any sliver, and start slightly before the element reaches the
+        // fold so nothing pops in late.
+        { threshold: 0.01, rootMargin: '0px 0px 15% 0px' },
       );
       revealObserverRef.current = io;
       els.forEach((el) => io.observe(el));
+
+      // Content must never depend on the observer firing. If anything is still
+      // hidden shortly after, show it: a missed animation is a small cost, a
+      // section of the page that never appears is not.
+      revealFallbackRef.current = window.setTimeout(() => {
+        document
+          .querySelectorAll('.page-transition-root .reveal:not(.is-visible)')
+          .forEach((el) => el.classList.add('is-visible'));
+      }, 2500);
     }, 550);
 
     return () => {
       clearTimeout(timer);
+      if (revealFallbackRef.current) clearTimeout(revealFallbackRef.current);
+      revealFallbackRef.current = null;
       revealObserverRef.current?.disconnect();
       revealObserverRef.current = null;
     };

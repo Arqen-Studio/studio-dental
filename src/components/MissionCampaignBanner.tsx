@@ -6,12 +6,12 @@ export default function MissionCampaignBanner() {
   return (
     <Link
       to="/mission-campaign"
-      className="group relative block min-h-[13rem] overflow-hidden rounded-[24px] shadow-soft-md outline-none ring-offset-2 ring-offset-white transition hover:shadow-soft-lg focus-visible:ring-2 focus-visible:ring-brand md:min-h-[15rem] md:rounded-[28px]"
+      className="group relative block min-h-[15rem] overflow-hidden rounded-[24px] shadow-soft-md outline-none ring-offset-2 ring-offset-white transition hover:shadow-soft-lg focus-visible:ring-2 focus-visible:ring-brand md:min-h-[19rem] md:rounded-[28px]"
       aria-label="A mission for life. New image campaign. Open campaign page."
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
         {/* Left: primary gradient panel */}
-        <div className="relative flex flex-1 flex-col justify-center border border-brand/25 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF] px-8 py-12 md:h-[17rem] md:border-r md:px-12 md:py-14">
+        <div className="relative flex flex-1 flex-col justify-center border border-brand/25 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF] px-8 py-12 md:h-[21rem] md:border-r md:px-12 md:py-14">
           <div
             className="pointer-events-none absolute inset-0 opacity-90"
             style={{
@@ -29,7 +29,7 @@ export default function MissionCampaignBanner() {
         </div>
 
         {/* Right: photo + blend + circular CTA (brand) */}
-        <div className="relative h-52 w-full shrink-0 md:h-[17rem] md:w-[min(46%,420px)]">
+        <div className="relative h-52 w-full shrink-0 md:h-[21rem] md:w-[min(46%,420px)]">
           <img
             src={CAMPAIGN_IMG}
             alt="Dr. Yousaf Kamal"
