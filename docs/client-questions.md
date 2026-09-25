@@ -25,16 +25,22 @@ Last updated 26 September 2026.
 ## Doctors
 
 5. **Dr. Rabia**: full name, branch, and a completed profile form.
-6. **Profile forms for six doctors**: Dr. Umair, Dr. Rida, Dr. Maria,
+6. **Dr. Umair's surname.** The site showed "Dr. Umair Usman". The only thing
+   the clinic has ever sent for him is the photograph `Dr. Umair.png`: no
+   document, message or form gives a surname. "Usman" was ours, not theirs, and
+   has been removed. Note that the profile form already sent out lists him as
+   "Dr. Umair Usman" with "full name on record", so if it comes back confirmed
+   that confirms nothing. Please ask for his name directly.
+7. **Profile forms for six doctors**: Dr. Umair, Dr. Rida, Dr. Maria,
    Dr. Mashal, Dr. Abeera, Dr. Shayzmin. Their cards currently carry a name and
    photograph only. Five of the six also need a surname.
-7. **Does Dr. Hassan Ali work at the clinic?** He was on an early list but has
+8. **Does Dr. Hassan Ali work at the clinic?** He was on an early list but has
    no form and no photograph. Dr. Nayab Farooq was nearly dropped for the same
    reason and turned out to have been there since the beginning.
-8. **Dr. Zainab Qureshi**: confirm which treatments to list against her.
-9. **Dr. Nayab Farooq**: should she appear on the children's dentistry page?
-10. **Dr. Yousaf Kamal**: memberships and training to list.
-11. **Dr. Aqsa Malik**: a personal line for her profile, if she wants one.
+9. **Dr. Zainab Qureshi**: confirm which treatments to list against her.
+10. **Dr. Nayab Farooq**: should she appear on the children's dentistry page?
+11. **Dr. Yousaf Kamal**: memberships and training to list.
+12. **Dr. Aqsa Malik**: a personal line for her profile, if she wants one.
 
 ## Prices and services
 

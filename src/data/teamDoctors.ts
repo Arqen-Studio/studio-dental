@@ -146,8 +146,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     ],
   },
   {
-    slug: 'umair-usman',
-    name: 'Dr. Umair Usman',
+    slug: 'umair',
+    name: 'Dr. Umair',
     creds: '',
     role: '',
     image: '/images/doctors/dr-umair.jpg',
