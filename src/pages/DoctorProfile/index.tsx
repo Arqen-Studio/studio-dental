@@ -20,11 +20,13 @@ export default function DoctorProfile() {
       {/* Hero, photo left · primary panel right */}
       <section className="grid min-h-[min(100dvh,920px)] lg:grid-cols-2">
         <div className="relative min-h-[52vw] bg-[#c8c8c8] lg:min-h-0">
-          <img
-            src={doctor.image}
-            alt={doctor.name}
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
+          {doctor.image && (
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+          )}
         </div>
         <div className="relative flex flex-col justify-center bg-skyBrand px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
           <div
@@ -76,7 +78,7 @@ export default function DoctorProfile() {
       {/* Practice areas, full viewport width */}
       <section className="w-full bg-[#f4f4f4] py-12 md:py-16">
         <div className="mx-auto w-full max-w-[900px] px-5 md:px-8">
-          <ProfileSection title="Practice areas:">
+          <ProfileSection title="Practice areas:" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
               <ul className="list-disc space-y-2.5 pl-5 text-[0.95rem] leading-relaxed text-ink2 marker:text-skyBrand">
                 {practiceLeft.map((item) => (
@@ -94,7 +96,7 @@ export default function DoctorProfile() {
       </section>
 
       <div className="mx-auto w-full max-w-[900px] px-5 py-12 md:px-8 md:py-16">
-        <ProfileSection title="Biography:">
+        <ProfileSection title="Biography:" items={doctor.biography}>
           <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.biography.map((para) => (
               <p key={para}>{para}</p>
@@ -102,7 +104,7 @@ export default function DoctorProfile() {
           </div>
         </ProfileSection>
 
-        <ProfileSection title="Education:">
+        <ProfileSection title="Education:" items={doctor.education}>
           <div className="space-y-4 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.education.map((para) => (
               <p key={para}>{para}</p>
@@ -110,7 +112,7 @@ export default function DoctorProfile() {
           </div>
         </ProfileSection>
 
-        <ProfileSection title="Membership:">
+        <ProfileSection title="Membership:" items={doctor.membership}>
           <ul className="list-none space-y-2.5 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.membership.map((item) => (
               <li key={item}>{item}</li>
@@ -118,7 +120,7 @@ export default function DoctorProfile() {
           </ul>
         </ProfileSection>
 
-        <ProfileSection title="Professional training:">
+        <ProfileSection title="Professional training:" items={doctor.professionalTraining}>
           <ul className="space-y-3 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.professionalTraining.map((item) => (
               <li key={item} className="flex gap-2.5">
@@ -133,7 +135,8 @@ export default function DoctorProfile() {
   )
 }
 
-function ProfileSection({ title, children }: { title: string; children: ReactNode }) {
+function ProfileSection({ title, items, children }: { title: string; items?: unknown[]; children: ReactNode }) {
+  if (items && items.length === 0) return null
   return (
     <section className="pb-12 md:pb-14">
       <h2 className="font-heading text-[1.35rem] font-extrabold tracking-tight text-ink md:text-[1.5rem]">{title}</h2>

@@ -90,12 +90,14 @@ export default function HomeDoctorsCarousel() {
               >
               <article className="flex h-full flex-col">
                 <div className="aspect-[4/5] flex-none bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
-                  <img
-                    src={doctor.image}
-                    alt={doctor.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-center"
-                  />
+                  {doctor.image && (
+                    <img
+                      src={doctor.image}
+                      alt={doctor.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-center"
+                    />
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col bg-white px-3 pb-3 pt-2.5">
                   <h3 className="text-[0.84rem] font-bold leading-tight text-skyBrand sm:text-[0.88rem]">{doctor.name}</h3>

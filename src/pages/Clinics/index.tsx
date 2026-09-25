@@ -233,12 +233,14 @@ export default function Clinics() {
                 className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm"
               >
                 <div className="aspect-[3/4] flex-none overflow-hidden bg-[#d4d0d4]">
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-top"
-                  />
+                  {person.image && (
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top"
+                    />
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-3 sm:p-5">
                   <p className="text-[0.9rem] font-semibold leading-snug text-skyBrand sm:text-[1.05rem]">
