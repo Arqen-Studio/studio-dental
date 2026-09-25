@@ -4,7 +4,10 @@ import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
 const CARD_BG = ["blue", "white", "gray", "lightblue"] as const;
 
-const TEAM_CARDS = TEAM_DOCTORS.map((doctor, i) => {
+// These cards exist to show the people rather than the credentials, so a
+// doctor with no personal line yet would be an empty card. They appear here
+// as soon as one is supplied.
+const TEAM_CARDS = TEAM_DOCTORS.filter((doctor) => doctor.bio).map((doctor, i) => {
   const bg = CARD_BG[i % CARD_BG.length];
   return {
     name: doctor.name,
