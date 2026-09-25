@@ -87,80 +87,79 @@ function ClinicCard({
   email: string;
   hours: string[];
 }) {
+  // The card is a six-row grid that adopts the parent grid's row bands on
+  // large screens, so a two-line address in one clinic does not push its
+  // dividers and rows out of step with the other clinic's.
   return (
-    <article className="rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(28,59,37,0.08)] md:p-9">
+    <article className="grid content-start gap-8 rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(28,59,37,0.08)] md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
       <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">
         {city}
       </h3>
 
-      <div className="mt-8 space-y-8">
-        <div className="flex gap-4">
-          <IconCircle>
-            <PinIcon />
-          </IconCircle>
-          <div className="min-w-0 flex-1 pt-0.5">
-            <p className="text-[0.9rem] leading-relaxed text-ink">{address}</p>
-            <a
-              href={mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-block text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
-            >
-              Location on the map
-            </a>
-          </div>
+      <div className="flex gap-4">
+        <IconCircle>
+          <PinIcon />
+        </IconCircle>
+        <div className="min-w-0 flex-1 pt-0.5">
+          <p className="text-[0.9rem] leading-relaxed text-ink">{address}</p>
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-block text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
+          >
+            Location on the map
+          </a>
         </div>
+      </div>
 
-        <div className="h-px w-full bg-black/10" aria-hidden="true" />
+      <div className="h-px w-full self-center bg-black/10" aria-hidden="true" />
 
-        <div className="flex gap-4">
-          <IconCircle>
-            <PhoneIcon />
-          </IconCircle>
-          <div className="min-w-0 flex-1 pt-0.5">
-            <p className="text-[0.78rem] font-medium text-muted">
-              Tel. for registration:
-            </p>
-            <a
-              href={`tel:${phone.replace(/\s/g, "")}`}
-              className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-brand"
-            >
-              {phone}
-            </a>
-            <p className="mt-3 text-[0.78rem] font-medium text-muted">
-              E-mail:
-            </p>
-            <a
-              href={`mailto:${email}`}
-              className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-brand"
-            >
-              {email}
-            </a>
-            <Link
-              to="/contact-us"
-              className="mt-3 inline-block text-[0.88rem] font-semibold text-brand underline-offset-2 transition hover:underline"
-            >
-              Contact
-            </Link>
-          </div>
+      <div className="flex gap-4">
+        <IconCircle>
+          <PhoneIcon />
+        </IconCircle>
+        <div className="min-w-0 flex-1 pt-0.5">
+          <p className="text-[0.78rem] font-medium text-muted">
+            Tel. for registration:
+          </p>
+          <a
+            href={`tel:${phone.replace(/\s/g, "")}`}
+            className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-brand"
+          >
+            {phone}
+          </a>
+          <p className="mt-3 text-[0.78rem] font-medium text-muted">E-mail:</p>
+          <a
+            href={`mailto:${email}`}
+            className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-brand"
+          >
+            {email}
+          </a>
+          <Link
+            to="/contact-us"
+            className="mt-3 inline-block text-[0.88rem] font-semibold text-brand underline-offset-2 transition hover:underline"
+          >
+            Contact
+          </Link>
         </div>
+      </div>
 
-        <div className="h-px w-full bg-black/10" aria-hidden="true" />
+      <div className="h-px w-full self-center bg-black/10" aria-hidden="true" />
 
-        <div className="flex gap-4">
-          <IconCircle>
-            <ClockIcon />
-          </IconCircle>
-          <div className="min-w-0 flex-1 pt-0.5">
-            <p className="text-[0.78rem] font-medium text-muted">
-              Working hours:
+      <div className="flex gap-4">
+        <IconCircle>
+          <ClockIcon />
+        </IconCircle>
+        <div className="min-w-0 flex-1 pt-0.5">
+          <p className="text-[0.78rem] font-medium text-muted">
+            Working hours:
+          </p>
+          {hours.map((h) => (
+            <p key={h} className="mt-1 text-[0.88rem] leading-snug text-ink">
+              {h}
             </p>
-            {hours.map((h) => (
-              <p key={h} className="mt-1 text-[0.88rem] leading-snug text-ink">
-                {h}
-              </p>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </article>
@@ -207,7 +206,7 @@ export default function Footer() {
           Contacts
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto_auto_auto_auto] lg:gap-8">
           {CLINICS.map((clinic) => (
             <ClinicCard
               key={clinic.id}
