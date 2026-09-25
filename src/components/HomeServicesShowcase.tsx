@@ -3,7 +3,6 @@ import { Anchor, ArrowRight, Baby, BarChart3, Rows3, Star, Zap } from 'lucide-re
 import { Link } from 'react-router-dom'
 import type { ServiceData } from '../data/services'
 import { SERVICES_DATA } from '../data/services'
-import { PRICE_CATEGORIES, formatPrice } from '../data/prices'
 
 /** Same slot count as the legacy home showcase (1 featured + 5 tiles). IDs must exist in SERVICES_DATA. */
 const HOME_SHOWCASE_SERVICE_IDS = [
@@ -24,11 +23,9 @@ function servicesForHomeShowcase(): ServiceData[] {
 }
 
 type ShowcaseItem = {
-  branch?: string
   serviceId: string
   title: string
   desc: string
-  price: string
   Icon: LucideIcon
   featured?: boolean
   image?: string
@@ -37,75 +34,15 @@ type ShowcaseItem = {
 
 const SHOWCASE_ICONS: LucideIcon[] = [BarChart3, Rows3, Anchor, Star, Zap, Baby]
 
-/** The two branches price differently, so a bare "from" figure would quote one
- *  branch's rate to a patient heading for the other. Name the branch it is. */
-function priceLineFromService(service: ServiceData): { price: string; branch?: string } {
-  const items = PRICE_CATEGORIES
-    .filter((c) => service.priceCategories.includes(c.id))
-    .flatMap((c) => c.items.filter((i) => !i.partCost))
-  const priced: { value: number; branch: string }[] = []
-  items.forEach((i) => {
-    if (typeof i.dha === 'number') priced.push({ value: i.dha, branch: 'DHA Phase II' })
-    if (typeof i.f7 === 'number') priced.push({ value: i.f7, branch: 'F-7 Markaz' })
-  })
-  if (!priced.length) return { price: 'Custom quote' }
-  const lowest = priced.reduce((a, b) => (b.value < a.value ? b : a))
-  const otherBranch = priced.filter((p) => p.branch !== lowest.branch)
-  // Only worth naming when the branches actually differ on this treatment.
-  const differs = otherBranch.length > 0 && Math.min(...otherBranch.map((p) => p.value)) !== lowest.value
-  return { price: `From ${formatPrice(lowest.value)}`, branch: differs ? lowest.branch : undefined }
-}
-
 const SHOWCASE: ShowcaseItem[] = servicesForHomeShowcase().map((s, i) => ({
   serviceId: s.id,
   title: s.title,
   desc: s.subtitle,
-  ...priceLineFromService(s),
   Icon: SHOWCASE_ICONS[i % SHOWCASE_ICONS.length] ?? BarChart3,
   featured: i === 0,
   image: i === 0 ? s.heroImage : undefined,
   imageAlt: s.title,
 }))
-
-function splitPriceLine(price: string): { qualifier?: string; amount: string } {
-  const t = price.trim()
-  const m = t.match(/^(From|Starts at)\s+(.+)$/i)
-  if (m) return { qualifier: m[1], amount: m[2] }
-  return { amount: t }
-}
-
-function ServicePriceLine({ price, branch, light }: { price: string; branch?: string; light?: boolean }) {
-  const { qualifier, amount } = splitPriceLine(price)
-  const isQuote = /^custom quote$/i.test(amount)
-  const amtCls = light
-    ? isQuote
-      ? 'text-[0.95rem] font-bold text-creamBrand md:text-[1.02rem]'
-      : 'text-[1.05rem] font-extrabold text-creamBrand md:text-[1.15rem]'
-    : isQuote
-      ? 'text-[0.88rem] font-bold text-ink md:text-[0.92rem]'
-      : 'text-[0.92rem] font-extrabold text-[#3F6F4B] md:text-[0.98rem]'
-
-  return (
-    <div className={['mt-auto border-t pt-3.5', light ? 'border-white/25' : 'border-[#3F6F4B]/22'].join(' ')}>
-      {qualifier ? (
-        <span
-          className={[
-            'mb-0.5 block text-[0.58rem] font-semibold uppercase tracking-[0.12em]',
-            light ? 'text-white/65' : 'text-muted',
-          ].join(' ')}
-        >
-          {qualifier}
-        </span>
-      ) : null}
-      <p className={['leading-tight tracking-tight [overflow-wrap:anywhere]', amtCls].join(' ')}>{amount}</p>
-      {branch ? (
-        <span className={['mt-1 block text-[0.62rem] font-medium', light ? 'text-white/70' : 'text-muted'].join(' ')}>
-          at {branch}
-        </span>
-      ) : null}
-    </div>
-  )
-}
 
 function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }) {
   const size = featured ? 26 : 22
@@ -204,12 +141,16 @@ export default function HomeServicesShowcase({
               <p className="mt-3 max-w-[40ch] text-[0.88rem] leading-relaxed text-white/90 sm:text-[0.92rem]">
                 {featured.desc}
               </p>
-              <div className="mt-auto">
-                <ServicePriceLine price={featured.price} branch={featured.branch} light />
-              </div>
+              <Link
+                to={`/services/${featured.serviceId}`}
+                className="mt-auto inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-white underline-offset-4 transition hover:text-white hover:underline"
+              >
+                Read about this treatment
+                <ArrowRight size={12} strokeWidth={2.25} className="text-white opacity-90" aria-hidden />
+              </Link>
               <Link
                 to="/services"
-                className="mt-5 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-white underline-offset-4 transition hover:text-white hover:underline"
+                className="mt-3 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-white/80 underline-offset-4 transition hover:text-white hover:underline"
               >
                 Explore all treatments
                 <ArrowRight size={12} strokeWidth={2.25} className="text-white opacity-90" aria-hidden />
@@ -229,7 +170,13 @@ export default function HomeServicesShowcase({
                   <p className="mt-2 text-[0.82rem] leading-relaxed text-muted">{item.desc}</p>
                 </div>
               </div>
-              <ServicePriceLine price={item.price} branch={item.branch} />
+              <Link
+                to={`/services/${item.serviceId}`}
+                className="mt-auto flex items-center gap-1.5 border-t border-[#3F6F4B]/18 pt-3.5 text-[0.8rem] font-semibold text-[#3F6F4B] underline-offset-4 transition hover:underline"
+              >
+                Read more
+                <ArrowRight size={12} strokeWidth={2.25} aria-hidden />
+              </Link>
             </article>
           ))}
         </div>
