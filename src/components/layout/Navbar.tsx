@@ -99,7 +99,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
 
         <div className="ml-6 flex flex-1 items-center justify-end gap-2 lg:gap-4">
           <nav
-            className="hidden items-center gap-5 text-[0.78rem] font-semibold xl:flex"
+            className="hidden items-center gap-5 text-[0.82rem] font-semibold xl:flex"
             aria-label="Primary navigation"
           >
             {NAV_ITEMS.map((item) => (
@@ -213,7 +213,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
               key={item.label}
               to={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center border-b border-white/10 py-4 text-[0.78rem] font-semibold text-creamBrand transition hover:text-brand"
+              className="flex items-center border-b border-white/10 py-4 text-[0.82rem] font-semibold text-creamBrand transition hover:text-brand"
             >
               {item.label}
             </Link>
@@ -223,7 +223,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
         <div className="mt-6 flex flex-col gap-3">
           <a
             href="tel:03299961999"
-            className="inline-flex items-center gap-3 text-[0.78rem] text-creamBrand/75 transition hover:text-brand"
+            className="inline-flex items-center gap-3 text-[0.82rem] text-creamBrand/75 transition hover:text-brand"
           >
             <Phone
               size={17}
@@ -236,7 +236,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
           <button
             type="button"
             onClick={openContactDrawer}
-            className="inline-flex items-center gap-3 text-left text-[0.78rem] text-creamBrand/75 transition hover:text-brand"
+            className="inline-flex items-center gap-3 text-left text-[0.82rem] text-creamBrand/75 transition hover:text-brand"
           >
             <Mail
               size={17}

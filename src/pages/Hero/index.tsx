@@ -53,7 +53,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-[62rem] px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+        <div className="relative z-10 mx-auto w-full max-w-[62rem] px-5 pb-10 min-[1920px]:max-w-[68rem] min-[2400px]:max-w-[76rem] pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <div className="mb-7 flex items-start">
             <div className="inline-flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
