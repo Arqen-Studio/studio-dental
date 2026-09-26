@@ -12,12 +12,16 @@ holds a URL, and the spreadsheet stays in the clinic's own Google account.
 
 ## Setting it up
 
-**1. Make the spreadsheet.**
+**1. The spreadsheet already exists.**
 
-Create a new Google Sheet. Name the first tab `Enquiries`. Put these headings
-in row 1, one per column:
+"Studio Dental website enquiries", in the tech@arqen.studio Drive:
 
-    Received    Name    Phone    Email    Clinic    Treatment    Preferred date    Message
+    https://docs.google.com/spreadsheets/d/1eRWTVtP7EVI-IXK7dIYizfEUs7uvYsedMk1bbnfYoAs/edit
+
+Row 1 already carries the headings. If you would rather build your own, any
+sheet will do: the script below writes to whichever tab is named `Enquiries`,
+or to the first tab if there is no such name, and adds the heading row itself
+if the sheet is empty.
 
 **2. Add the script.**
 
@@ -25,11 +29,17 @@ In the sheet, go to **Extensions**, then **Apps Script**. Delete whatever is in
 the editor and paste this:
 
 ```javascript
+var HEADINGS = ['Received', 'Name', 'Phone', 'Email', 'Clinic',
+                'Treatment', 'Preferred date', 'Message'];
+
 function doPost(e) {
   var lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Enquiries');
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('Enquiries') || ss.getSheets()[0];
+    if (sheet.getLastRow() === 0) sheet.appendRow(HEADINGS);
+
     var d = JSON.parse(e.postData.contents);
     sheet.appendRow([
       d.receivedAt ? new Date(d.receivedAt) : new Date(),
@@ -50,8 +60,9 @@ function doPost(e) {
 }
 ```
 
-The lock matters: two people submitting at the same moment would otherwise be
-able to write to the same row.
+Two details worth knowing. The lock matters: without it, two people submitting
+at the same moment could write over the same row. And the tab name is not
+load bearing, so renaming the sheet later will not quietly break it.
 
 **3. Publish it.**
 
