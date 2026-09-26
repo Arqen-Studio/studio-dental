@@ -160,6 +160,12 @@ export default async function handler(request: Request): Promise<Response> {
   });
 
   if (!response.ok) {
+    // The patient gets a plain message; the reason goes to the Vercel logs.
+    // Without this, a rejected send is a 502 with nothing to diagnose from.
+    const detail = await response.text().catch(() => "");
+    console.error(
+      `Resend rejected the enquiry: ${response.status} ${response.statusText} ${detail}`,
+    );
     return json({ error: "The enquiry could not be sent." }, 502);
   }
 
