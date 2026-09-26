@@ -10,6 +10,9 @@
  *   ENQUIRY_TO       optional, defaults to the clinic address below
  *   ENQUIRY_FROM     optional, must be an address on a domain verified with
  *                    the provider; defaults to Resend's shared sending address
+ *   ENQUIRY_SHEET_URL optional, a Google Apps Script web app that appends the
+ *                    enquiry to a spreadsheet. See docs/enquiry-spreadsheet.md.
+ *                    Without it, email is the only record.
  */
 
 export const config = { runtime: "edge" };
@@ -75,6 +78,32 @@ export default async function handler(request: Request): Promise<Response> {
   if (!apiKey) {
     // Fail loudly rather than pretending the enquiry was sent.
     return json({ error: "The enquiry service is not configured yet." }, 503);
+  }
+
+  // Record it in the spreadsheet before emailing, so an enquiry still leaves a
+  // trace if the mail provider is down or someone deletes the email. Best
+  // effort on purpose: a spreadsheet that is unreachable must never stop a
+  // patient's enquiry reaching the clinic.
+  const sheetUrl = process.env.ENQUIRY_SHEET_URL;
+  if (sheetUrl) {
+    try {
+      await fetch(sheetUrl, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          receivedAt: new Date().toISOString(),
+          name,
+          phone,
+          email,
+          clinic,
+          service,
+          date,
+          message,
+        }),
+      });
+    } catch {
+      // Swallowed deliberately. The email below is the channel that matters.
+    }
   }
 
   const rows: [string, string][] = [
