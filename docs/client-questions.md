@@ -49,7 +49,18 @@ Last updated 26 September 2026.
 13. **Kids cleaning does not appear on the DHA list at all.** Offered or not?
 14. **Confirm branch coverage.** The lists imply F-7 does not do braces. Is that
     right, or is the list incomplete?
-15. **Clinical review of the procedure steps.** The step by step text on each
+15. **"Aesthetic dental fillings" has no price line of its own.** It is one of
+    the nine services on the site, but neither price list contains the word
+    aesthetic. The page draws its prices from the fillings and crowns
+    categories, which already belong to "Dental fillings" and "Prosthetics", so
+    it re-presents treatments rather than adding any. Either it is a real
+    service that needs its own lines on the price list, or it should be folded
+    into the other two. Every other service maps to price lines that exist.
+16. **Dental consultation is priced but appears on no service page.** It is
+    Rs 1,000 at DHA and Rs 2,000 at F-7 and shows on the price list, but no
+    treatment page references it. Should it have its own page, or is the price
+    list the right place for it?
+17. **Clinical review of the procedure steps.** The step by step text on each
     service page was written by us from the price lists. A dentist should read
     it before launch.
 
@@ -117,11 +128,11 @@ supported by something the doctor supplied.
 
 ## Copy
 
-16. **What does "17+ years" refer to?** The clinic, Dr. Yousaf's career, or
+18. **What does "17+ years" refer to?** The clinic, Dr. Yousaf's career, or
     something else. It appears on the homepage and the clinic hub.
-17. **Homepage headline approval**: "Dentistry you can trust, in the heart of
+19. **Homepage headline approval**: "Dentistry you can trust, in the heart of
     Islamabad".
-18. **The clinic hub cards all read "CLINICS"** above Services, Prices, Doctors,
+20. **The clinic hub cards all read "CLINICS"** above Services, Prices, Doctors,
     About us, News and Contacts. It fits none of them. What should it say, or
     should it come out?
 
