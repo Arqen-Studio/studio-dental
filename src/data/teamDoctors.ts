@@ -119,10 +119,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     practiceAreas: [
       'Third molar and wisdom tooth extraction',
       'Complex and surgical extractions',
-      'Surgical and restorative dental implants',
-      'Full-arch fixed and removable implant prosthetics',
-      'Bone grafting and ridge augmentation',
-      'Digital planning for predictable implant placement',
+      'Oral surgical procedures',
     ],
     biography: [
       'She provides comprehensive oral surgical care at Studio Dental, DHA Phase II, with expertise in routine and complex dental extractions, including wisdom tooth removal.',
@@ -441,7 +438,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     ],
     membership: ['Pakistan Dental Association'],
     professionalTraining: [
-      'Hands-on modules in implant surgery and prosthetics',
       'Hands-on modules in endodontics and restorative dentistry',
       'International Academy of Dermatology, Aesthetic, Anti-Aging and Plastic Surgery',
     ],

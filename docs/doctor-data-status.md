@@ -19,8 +19,10 @@ Running list as forms come in. Updated as we go.
 - Education is thin: her form answered question 10 with "same as above", so the
   entries are derived from her qualifications and the BDS institution is
   unknown.
-- Her practice-area implant lines may also be from the example, though they are
-  true of her since she is an implantologist. Worth her confirming the six.
+- Confirmed by comparing against our blank form: four of her six practice-area
+  lines were our example text, now removed. She is left with her genuine answer,
+  which covered only extractions and oral surgery. She should fill in her
+  practice areas properly, since as an implantologist there is more to list.
 - She selected "Facial Aesthetics" in question 7, which is not priced at either
   branch, so it maps to no page (see Q16 in client-questions).
 
@@ -31,6 +33,22 @@ Running list as forms come in. Updated as we go.
   practice areas list crowns, bridges, dentures and paediatric dentistry. Both
   are now added. This makes her the answer to "who performs children's
   dentistry" and one of the answers to "who else performs prosthetics".
+
+**Dr. Zainab Qureshi** — one line of our example text removed.
+- Her professional training carried our example's first line ("Hands-on modules
+  in implant surgery and prosthetics") verbatim. Removed; her own two entries
+  stay. Otherwise her profile was already in from her form.
+
+## A note on the example text
+
+Several doctors pasted our blank form's example text into their answers without
+replacing it. Comparing each record against the blank form (Studio Dental -
+Doctor Profile Form.docx) catches the verbatim cases: it turned up four lines in
+Dr. Amna's practice areas, two in her biography and all of her professional
+training, and one line in Dr. Zainab's professional training. All removed. This
+only catches word-for-word copies; a doctor who lightly reworded an example
+would not show up, so the earlier profiles built from pasted text (Yousaf, Aqsa,
+Alizeh, Rabia) are worth a second read against their own forms.
 
 ## Still name and photo only, awaiting forms
 
