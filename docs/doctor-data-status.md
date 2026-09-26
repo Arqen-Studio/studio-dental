@@ -37,10 +37,30 @@ Running list as forms come in. Updated as we go.
   are now added. This makes her the answer to "who performs children's
   dentistry" and one of the answers to "who else performs prosthetics".
 
-**Dr. Zainab Qureshi** — one line of our example text removed.
-- Her professional training carried our example's first line ("Hands-on modules
-  in implant surgery and prosthetics") verbatim. Removed; her own two entries
-  stay. Otherwise her profile was already in from her form.
+**Dr. Zainab Qureshi** — reviewed against her form, complete.
+- Her form was later supplied in full. Prosthetics was missing from her tags
+  even though her practice areas list crowns, bridges and veneers; added, so she
+  now joins prosthetics. The implant-modules training line, which had been
+  removed as example residue, is restored: it is in her own form and she holds a
+  C-Implantology certification, so it is genuinely hers.
+
+**Dr. Syeda Alizeh Hassan** — reviewed against her form, complete.
+- Her form is in, so her tags are now hers rather than ours. She is a paediatric
+  dentist but was not tagged for children's dentistry; added, along with
+  aesthetic fillings from her composite-bonding practice area. Missing:
+  photograph is in; no memberships given.
+
+**Dr. Aqsa Malik** — reviewed against her supplied text, complete.
+- Her services (restorative, aesthetic, preventive) match the text sent. Her
+  text states over 17 years of clinical experience, which is the likely source
+  of the homepage's "17+ years" (see Q18). No memberships or professional
+  training supplied.
+
+**Dr. Yousaf Kamal** — reviewed against his supplied text, complete.
+- His services match his areas of expertise, including prosthetics from crowns,
+  bridges and prosthodontic rehabilitation, and correctly no surgical implant
+  placement. His text says 16 years of clinical experience, not 17, which bears
+  on the "17+ years" wording question.
 
 ## The principle applied
 
@@ -67,12 +87,6 @@ Alizeh, Rabia) are worth a second read against their own forms.
 
 Dr. Umair (also needs a surname), Dr. Rida, Dr. Maria, Dr. Mashal, Dr. Abeera,
 Dr. Shayzmin. Each of the last five also needs a surname.
-
-## Full profiles already in, not yet re-checked against a paper form
-
-Dr. Yousaf Kamal, Dr. Aqsa Malik, Dr. Zainab Qureshi, Dr. Syeda Alizeh Hassan.
-Alizeh's treatment tags are still ours rather than from her form (her question 7
-was blank).
 
 **Dr. Rabia** — qualifications, role and registration confirmed, profile still
 thin.

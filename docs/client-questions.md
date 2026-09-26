@@ -133,12 +133,9 @@ list, but no treatment page mentions it.
 
 ## About who does what
 
-**Q9. Dr. Syeda Alizeh Hassan has treatments listed against her that she did
-not supply.**
-Her question 7 is blank, so those tags are ours. This is a public claim about
-what a named clinician does, so it needs either her answer (N8) or the tags
-removed. (Dr. Nayab Farooq's form has since come in and her tags are now hers,
-so she is no longer part of this.)
+**Q9. Resolved.**
+Both Dr. Nayab Farooq's and Dr. Syeda Alizeh Hassan's forms have since come in,
+so their treatment tags are now their own rather than ours. Nothing outstanding.
 
 **Q10. Please confirm Dr. Amna Hassan's treatments.**
 She left question 7 blank too. Her tags are inferred from her question 8
@@ -150,16 +147,15 @@ She ticked "general dentistry" and "preventive care" but not "restorative
 dentistry", so she is currently not listed for fillings. She is the only doctor
 affected by how we read "general dentistry".
 
-**Q12. Who performs children's dentistry? (partly answered)**
-Dr. Nayab Farooq's returned form lists paediatric dentistry, so she is now
-tagged for it and the page is no longer empty. Dr. Syeda Alizeh Hassan's role
-on record is also paediatric dentist, but her question 7 is blank, so confirm
-whether she should be added too.
+**Q12. Answered.**
+Dr. Nayab Farooq and Dr. Syeda Alizeh Hassan both perform children's dentistry
+and are tagged for it; Dr. Alizeh is a paediatric dentist. Her form confirmed
+it.
 
-**Q13. Who else performs prosthetics? (partly answered)**
-Dr. Nayab Farooq's form lists crowns, bridges, dentures and post-and-core
-build-ups, so she is now tagged alongside Dr. Yousaf Kamal. Confirm whether any
-other doctor does prosthetic work.
+**Q13. Largely answered.**
+Prosthetics (crowns, bridges, veneers) is now tagged to Dr. Yousaf Kamal,
+Dr. Nayab Farooq and Dr. Zainab Qureshi, each supported by their own form or
+expertise list. Confirm whether anyone else should be added.
 
 **Q14. Please confirm Dr. Zainab Qureshi's treatments.**
 She underlined nine of the ten labels on the old form. Worth a second look

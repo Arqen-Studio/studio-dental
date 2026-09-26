@@ -372,7 +372,9 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'When she is not in scrubs, you will probably find her baking something sweet, practising her German, creating content, or exploring new places with her family.',
     services: [
       'Dental Fillings',
+      'Aesthetic Dental Fillings',
       'Oral Hygiene & Whitening',
+      "Children's Dentistry",
     ],
     heroTitleLines: ['BDS, MFD Ireland', 'Special interest in paediatric dentistry'],
     licenseLine: 'PMDC-registered',
@@ -410,6 +412,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'An executive member of the Islamabad Winter Sports Association. She skis, travels and seeks out experiences that break the routine and bring a fresh perspective on everyday life.',
     services: [
       'Dental Implantation',
+      'Prosthetics: Teeth & Implants',
       'Dental Fillings',
       'Teeth Straightening',
       'Aesthetic Dental Fillings',
@@ -440,6 +443,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     ],
     membership: ['Pakistan Dental Association'],
     professionalTraining: [
+      'Hands-on modules in implant surgery and prosthetics',
       'Hands-on modules in endodontics and restorative dentistry',
       'International Academy of Dermatology, Aesthetic, Anti-Aging and Plastic Surgery',
     ],
