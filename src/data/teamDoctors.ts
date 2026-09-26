@@ -139,11 +139,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Pakistan Dental Association',
       'Royal College of Surgeons in Ireland (RCSI)',
     ],
-    professionalTraining: [
-      'Hands-on modules in implant surgery and prosthetics',
-      'Clinical audits and case presentations with peer review',
-      'Lectures on digital workflows in implant dentistry',
-    ],
+    professionalTraining: [],
   },
   {
     slug: 'umair',

@@ -7,14 +7,20 @@ Running list as forms come in. Updated as we go.
 **Dr. Arfa Rehman** — complete.
 - Missing: photograph (image is empty).
 
-**Dr. Amna Hassan** — mostly complete, a few things to confirm.
-- Missing: photograph is in.
-- Confirm branch. Her form left the branch options unmarked; her biography says
-  DHA Phase II, so that is what is set. If she also works at F-7, say so.
-- Education is thin. Her form answered question 10 with "same as above", so the
-  entries are derived from her qualifications; the BDS institution is unknown.
-- Professional-training lines may be the blank form's example text rather than
-  her own. Worth a glance to confirm.
+**Dr. Amna Hassan** — in, with example text stripped out. Two things to note.
+- Photograph is in. Branch set to DHA Phase II, from her biography ("Studio
+  Dental, DHA Phase II"); the form's branch field was left on the example
+  options. If she also works at F-7, say so.
+- Her form blended the blank form's example text with her answers. Two blocks
+  were the example and have been removed: a biography line about mentoring
+  associates, and the whole professional-training section (generic, no
+  institution or year, still tagged EXAMPLE where a real answer would have
+  replaced it). She now has no professional training on record.
+- Education is thin: her form answered question 10 with "same as above", so the
+  entries are derived from her qualifications and the BDS institution is
+  unknown.
+- Her practice-area implant lines may also be from the example, though they are
+  true of her since she is an implantologist. Worth her confirming the six.
 - She selected "Facial Aesthetics" in question 7, which is not priced at either
   branch, so it maps to no page (see Q16 in client-questions).
 
