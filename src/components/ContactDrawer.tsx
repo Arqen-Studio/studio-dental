@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 type Props = {
@@ -6,11 +6,17 @@ type Props = {
   onClose: () => void;
 };
 
+type Status = "idle" | "sending" | "sent" | "invalid" | "error";
+
+const CLINIC_PHONE = "0329 9961999";
+
 /** Px-based sizing so the drawer stays compact vs global rem scale. */
 
 export default function ContactDrawer({ open, onClose }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -24,6 +30,8 @@ export default function ContactDrawer({ open, onClose }: Props) {
   useEffect(() => {
     if (!open) return;
     panelRef.current?.focus();
+    setStatus("idle");
+    setError("");
   }, [open]);
 
   if (typeof document === "undefined") return null;
@@ -101,9 +109,53 @@ export default function ContactDrawer({ open, onClose }: Props) {
           <form
             className="flex max-w-full flex-col gap-3.5"
             noValidate
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              onClose();
+              const form = e.currentTarget;
+              const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+
+              // The form carries noValidate so the browser does not interrupt
+              // with its own bubbles, which means these are checked here.
+              if (!String(data.name || "").trim()) {
+                setError("Please tell us your name.");
+                setStatus("invalid");
+                return;
+              }
+              if (!String(data.email || "").trim()) {
+                setError("Please give an email address so we can reply.");
+                setStatus("invalid");
+                return;
+              }
+              if (!data.privacy) {
+                setError("Please agree to the privacy policy before sending.");
+                setStatus("invalid");
+                return;
+              }
+
+              setStatus("sending");
+              setError("");
+              try {
+                const res = await fetch("/api/enquiry", {
+                  method: "POST",
+                  headers: { "content-type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+                if (!res.ok) {
+                  const body = await res.json().catch(() => ({}));
+                  throw new Error(body.error || "The enquiry could not be sent.");
+                }
+                form.reset();
+                setStatus("sent");
+              } catch (err) {
+                // Covers a failed request and a network drop alike: either way
+                // the enquiry did not arrive, and saying so is the point.
+                setError(
+                  err instanceof Error && err.message
+                    ? err.message
+                    : "The enquiry could not be sent.",
+                );
+                setStatus("error");
+              }
             }}
           >
             <div className="flex flex-col gap-1">
@@ -207,12 +259,60 @@ export default function ContactDrawer({ open, onClose }: Props) {
               </label>
             </div>
 
+            {/* Hidden from people, filled in by bots. The endpoint accepts and
+                discards anything that carries it. */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
+
             <button
               type="submit"
-              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 text-[0.7rem] font-semibold text-ink shadow-none transition hover:bg-brand/90 hover:shadow-brand active:scale-[0.99]"
+              disabled={status === "sending" || status === "sent"}
+              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 text-[0.7rem] font-semibold text-ink shadow-none transition hover:bg-brand/90 hover:shadow-brand active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-brand"
             >
-              Send
+              {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send"}
             </button>
+
+            {status === "sent" && (
+              <p
+                role="status"
+                className="rounded-[8px] bg-brand/15 px-3 py-2.5 text-[0.7rem] leading-snug text-ink"
+              >
+                Thank you. Your enquiry has reached the clinic and we will be in
+                touch shortly. If it is urgent, please call{" "}
+                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
+                  {CLINIC_PHONE}
+                </a>
+                .
+              </p>
+            )}
+
+            {status === "invalid" && (
+              <p
+                role="alert"
+                className="rounded-[8px] bg-[#FBEBD9] px-3 py-2.5 text-[0.7rem] leading-snug text-[#8A3D0B]"
+              >
+                {error}
+              </p>
+            )}
+
+            {status === "error" && (
+              <p
+                role="alert"
+                className="rounded-[8px] bg-[#FBEBD9] px-3 py-2.5 text-[0.7rem] leading-snug text-[#8A3D0B]"
+              >
+                {error} Please call us on{" "}
+                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
+                  {CLINIC_PHONE}
+                </a>{" "}
+                if it is urgent.
+              </p>
+            )}
           </form>
         </div>
       </div>

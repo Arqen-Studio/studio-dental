@@ -121,7 +121,7 @@ export default async function handler(request: Request): Promise<Response> {
   });
 
   if (!response.ok) {
-    return json({ error: "The enquiry could not be sent. Please call us instead." }, 502);
+    return json({ error: "The enquiry could not be sent." }, 502);
   }
 
   return json({ ok: true }, 200);
