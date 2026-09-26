@@ -53,7 +53,7 @@ export default function Navbar() {
     /^\/doctors\/.+/.test(pathname) ||
     pathname === "/about";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
-const navHeadingColor = "rgb(18, 52, 32)";
+const navHeadingColor = "rgb(238, 246, 236)";
 
   const openContactDrawer = () => {
     setOpen(false);
@@ -67,7 +67,7 @@ const navHeadingColor = "rgb(18, 52, 32)";
         "fixed inset-x-0 top-0 z-[100] h-[3.9rem] transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
-          : "border-b border-ink/10 bg-brand text-ink shadow-[0_2px_14px_rgba(18,52,32,0.08)]",
+          : "border-b border-white/10 bg-brandDeep text-creamBrand shadow-[0_2px_14px_rgba(18,52,32,0.18)]",
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -89,7 +89,7 @@ const navHeadingColor = "rgb(18, 52, 32)";
             <span
               className={[
                 "mt-[3px] text-[0.68rem] font-medium uppercase tracking-[0.14em]",
-                isTransparent ? "text-white/78" : "text-ink/70",
+                isTransparent ? "text-white/78" : "text-creamBrand/70",
               ].join(" ")}
             >
               Clinic
@@ -110,7 +110,7 @@ const navHeadingColor = "rgb(18, 52, 32)";
                   "whitespace-nowrap transition duration-200 focus:outline-none",
                   isTransparent
                     ? ["text-[#ffffff] hover:text-white", TRANSPARENT_LINK_SHADOW].join(" ")
-                    : "text-ink/90 hover:text-ink",
+                    : "text-creamBrand/90 hover:text-creamBrand",
                 ].join(" ")}
                 style={!isTransparent ? { color: navHeadingColor } : undefined}
               >
@@ -126,7 +126,7 @@ const navHeadingColor = "rgb(18, 52, 32)";
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
                 isTransparent
                   ? ["text-white hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(" ")
-                  : "text-ink hover:bg-white/35 hover:text-ink",
+                  : "text-creamBrand hover:bg-white/15 hover:text-white",
               ].join(" ")}
               aria-label="Call us"
             >
@@ -145,7 +145,7 @@ const navHeadingColor = "rgb(18, 52, 32)";
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
                 isTransparent
                   ? ["text-white hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(" ")
-                  : "text-ink hover:bg-white/35 hover:text-ink",
+                  : "text-creamBrand hover:bg-white/15 hover:text-white",
               ].join(" ")}
               aria-label="Open contact form"
               aria-haspopup="dialog"
@@ -168,7 +168,7 @@ const navHeadingColor = "rgb(18, 52, 32)";
                     "border-white/25 bg-white/10 text-white shadow-soft-sm hover:bg-white/15",
                     TRANSPARENT_ICON_SHADOW,
                   ].join(" ")
-                : "border-ink/15 bg-white/45 text-ink shadow-soft-sm hover:bg-white/65",
+                : "border-white/25 bg-white/10 text-creamBrand shadow-soft-sm hover:bg-white/20",
             ].join(" ")}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}

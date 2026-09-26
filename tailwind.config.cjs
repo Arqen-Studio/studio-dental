@@ -8,6 +8,7 @@ module.exports = {
         brand: '#5FB979',
         brandDeep: '#256B3C',
         brandPale: '#C6E6C4',
+        brandBright: '#CFF3D3',
         creamBrand: '#EEF6EC',
         ink: '#123420',
         ink2: '#255138',
