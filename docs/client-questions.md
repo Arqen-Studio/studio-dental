@@ -204,10 +204,28 @@ News and Contacts. It fits none of them. Replace it, or remove it?
 
 # Part 3: On our side, not the clinic's
 
-**`RESEND_API_KEY` is not set in Vercel.** Until it is, every contact form on
-the site accepts a submission and sends nothing. This is the single item that
-would cause real harm at launch, because a patient would believe they had got
-in touch.
+The contact form is wired, tested and working. What remains here is getting
+enquiries to the clinic's own inbox, which is gated on the sending domain.
+
+**The email currently reaches tech@arqen.studio, not the clinic.** The form
+sends through Resend, and while Resend is in its sandbox it will only deliver to
+the account holder's own confirmed address, which is tech@arqen. Pointing it
+straight at the clinic's Gmail does not send it to spam, it fails the send
+outright, so nobody gets it. This is why ENQUIRY_TO in Vercel stays on tech@arqen
+for now.
+
+**Interim, so the clinic gets enquiries before the domain is sorted:** set a
+Gmail auto-forward on the tech@arqen.studio inbox to
+thestudiodentalclinic@gmail.com (Settings, Forwarding and POP/IMAP, add a
+forwarding address; the clinic approves a one-time code; then a filter forwards
+anything with subject "Website enquiry from"). Resend delivers to tech@arqen,
+Gmail carries it the rest of the way. Nothing about the site changes.
+
+**Permanent fix:** verify a sending domain in Resend (needs the clinic's DNS
+access, N12 above). Once done, set ENQUIRY_FROM to an address on that domain,
+remove the ENQUIRY_TO override so it falls back to the clinic's Gmail, and drop
+the forward. Delivery also stops looking like spam, since it is no longer coming
+from Resend's shared address.
 
 ---
 
