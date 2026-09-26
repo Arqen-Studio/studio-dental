@@ -1,77 +1,170 @@
-# Open questions for the client
+# Studio Dental website: what we need, and what we need answered
 
-Everything the website still needs from Studio Dental, grouped by who can
-answer it. Nothing on this list is invented content waiting for approval: it is
-all either missing, ambiguous, or unverified.
+Two lists. The first is things the clinic has to send us. The second is
+questions that only need an answer, not a file.
+
+Nothing here is us waiting on approval for something we invented. Every item is
+either missing, ambiguous, or something we could not verify against what the
+clinic has already supplied.
 
 Last updated 26 September 2026.
 
-## Photography and video
+---
 
-1. **A team photograph for each branch.** The doctors page is split into a DHA
-   Phase II panel and an F-7 Markaz panel, so one group shot will not cover
-   both. Landscape, whole team, shot wide enough to crop: the panels run at
-   roughly 1.8:1. Until these arrive both panels show clinic interiors.
-2. **Which branch is each video clip?** The bulk upload was not labelled by
-   branch, and the walkaround was described only as "that walk around entrance
-   shot of the clinic". Knowing which clips are DHA and which are F-7 unblocks
-   branch specific stills across the whole site.
-3. **Photographs for Dr. Nayab Farooq, Dr. Arfa Rehman and Dr. Rabia.** Their
-   cards currently have no portrait.
-4. **Around twenty remaining stock photographs.** The gallery, news, about,
-   service detail, prices and clinics pages still use bought stock. None of it
-   is Studio Dental. Either more footage or a photo shoot would clear it.
+# Part 1: What we need
 
-## Doctors
+## Photography
 
-5. **Dr. Rabia**: full name, branch, and a completed profile form.
-6. **Dr. Umair's surname.** The site showed "Dr. Umair Usman". The only thing
-   the clinic has ever sent for him is the photograph `Dr. Umair.png`: no
-   document, message or form gives a surname. "Usman" was ours, not theirs, and
-   has been removed. Note that the profile form already sent out lists him as
-   "Dr. Umair Usman" with "full name on record", so if it comes back confirmed
-   that confirms nothing. Please ask for his name directly.
-7. **Profile forms for six doctors**: Dr. Umair, Dr. Rida, Dr. Maria,
-   Dr. Mashal, Dr. Abeera, Dr. Shayzmin. Their cards currently carry a name and
-   photograph only. Five of the six also need a surname.
-8. **Does Dr. Hassan Ali work at the clinic?** He was on an early list but has
-   no form and no photograph. Dr. Nayab Farooq was nearly dropped for the same
-   reason and turned out to have been there since the beginning.
-9. **Dr. Zainab Qureshi**: confirm which treatments to list against her.
-10. **Dr. Nayab Farooq**: should she appear on the children's dentistry page?
-11. **Dr. Yousaf Kamal**: memberships and training to list.
-12. **Dr. Aqsa Malik**: a personal line for her profile, if she wants one.
+**N1. A team photograph for each branch.**
+The doctors page is split into a DHA Phase II panel and an F-7 Markaz panel, so
+one group shot cannot serve both. Landscape, the whole team, shot wide enough
+to crop: the panels run at roughly 1.8 to 1. Both panels currently show clinic
+interiors instead.
 
-## Prices and services
+**N2. Portraits for Dr. Nayab Farooq, Dr. Arfa Rehman and Dr. Rabia.**
+These three have no photograph at all. Same framing as the existing eleven.
 
-12. **Two blank F-7 rates**: fluoride varnish and kids cleaning have no price on
-    the F-7 list. Are they not offered there, or was the price omitted?
-13. **Kids cleaning does not appear on the DHA list at all.** Offered or not?
-14. **Confirm branch coverage.** The lists imply F-7 does not do braces. Is that
-    right, or is the list incomplete?
-15. **"Aesthetic dental fillings" has no price line of its own.** It is one of
-    the nine services on the site, but neither price list contains the word
-    aesthetic. The page draws its prices from the fillings and crowns
-    categories, which already belong to "Dental fillings" and "Prosthetics", so
-    it re-presents treatments rather than adding any. Either it is a real
-    service that needs its own lines on the price list, or it should be folded
-    into the other two. Every other service maps to price lines that exist.
-16. **Dental consultation is priced but appears on no service page.** It is
-    Rs 1,000 at DHA and Rs 2,000 at F-7 and shows on the price list, but no
-    treatment page references it. Should it have its own page, or is the price
-    list the right place for it?
-17. **Clinical review of the procedure steps.** The step by step text on each
-    service page was written by us from the price lists. A dentist should read
-    it before launch.
+**N3. Replacement photography for the remaining stock images.**
+About twenty images across the gallery, news, about, prices and clinics pages
+are still bought stock and show other people's clinics. The service pages, the
+doctors page, the homepage and the about page have already been cleared using
+stills from the clinic's own video. More footage would finish the job, but a
+photo shoot would be better, particularly for the gallery.
 
-## Doctor to treatment tagging
+## Doctor information
 
-The doctors page filter used the ten labels from question 7 of the profile
-form. That list was written before the price lists settled what we offer, and
-four of its labels (Cosmetic Dentistry, Smile Design, Facial Aesthetics,
-General Dentistry) are not services either branch prices. The eight returned
-forms have been remapped onto the nine real services, and the filter now offers
-only those. The mapping used was:
+**N4. Completed profile forms for seven doctors.**
+Dr. Umair, Dr. Rida, Dr. Maria, Dr. Mashal, Dr. Abeera, Dr. Shayzmin and
+Dr. Rabia. Their cards currently carry a name and a photograph and nothing
+else, and their individual pages are nearly empty as a result.
+
+**N5. Dr. Umair's surname, asked directly.**
+The only thing ever supplied for him is the photograph `Dr. Umair.png`. The
+site briefly showed "Dr. Umair Usman"; that surname was ours, not the clinic's,
+and has been removed. Important: the profile form already sent out still lists
+him as "Dr. Umair Usman" and asks only that the spelling be confirmed, so if it
+comes back ticked it confirms nothing. Please ask for his name separately.
+
+**N6. Surnames for five more doctors.**
+Dr. Rida, Dr. Maria, Dr. Mashal, Dr. Abeera and Dr. Shayzmin. We only have
+first names, which is all the photograph filenames gave us.
+
+**N7. Dr. Rabia's full name and branch.**
+
+**N8. Question 7 answers from Dr. Nayab Farooq and Dr. Syeda Alizeh Hassan.**
+Both returned forms but left the treatments question blank. See Q9, which is
+the most important question on this page.
+
+**N9. Dr. Yousaf Kamal's memberships and professional training.**
+His profile has sections for both and nothing to put in them.
+
+**N10. A personal line for Dr. Aqsa Malik, if she wants one.**
+Optional. Every other doctor with a completed form has one, so hers is the only
+gap on the about page among the seven shown there.
+
+## Documents and sign-off
+
+**N11. A privacy policy.**
+Both consent checkboxes ask visitors to agree to "the privacy policy of Studio
+Dental". There is no such page. The forms collect a name, an email address, a
+phone number and free text about a dental problem, so this is needed before
+launch. The text is unlinked until it exists. We cannot write it: it is a legal
+document about how the clinic handles patient data.
+
+**N12. A dentist to read the procedure steps.**
+The step by step text on each of the nine service pages was written by us from
+the price lists. It should be checked by a clinician before launch.
+
+---
+
+# Part 2: Questions
+
+## About the footage
+
+**Q1. Which branch is each video clip?**
+The bulk upload was not labelled, and the walkaround was described only as
+"that walk around entrance shot of the clinic". Every interior still on the
+site is currently captioned without naming a branch, because we cannot tell.
+Answering this unblocks branch specific imagery across the whole site.
+
+## About the team
+
+**Q2. Does Dr. Hassan Ali work at the clinic?**
+He appeared on an early list but has no form and no photograph. Worth asking
+rather than assuming: Dr. Nayab Farooq was nearly dropped for the same reason
+and turned out to have been there since the beginning.
+
+## About the price lists
+
+**Q3. Fluoride varnish has no price on the F-7 list.** Not offered there, or
+was the price left off?
+
+**Q4. Kids cleaning has no price on the F-7 list.** Same question.
+
+**Q5. Kids cleaning does not appear on the DHA list at all.** Is it offered at
+DHA?
+
+**Q6. Is the branch coverage right?**
+Taken literally, the lists say F-7 does not do braces or veneers, and DHA does
+not do zirconia crowns or the premium digital scan crown. Is that correct, or
+is one of the lists incomplete?
+
+## About the services
+
+**Q7. Is "aesthetic dental fillings" a real, separate service?**
+It is one of the nine services on the site, but neither price list contains the
+word aesthetic. The page borrows its prices from the fillings and crowns
+categories, which already belong to "Dental fillings" and "Prosthetics", so it
+re-presents treatments rather than adding any. Either it needs its own lines on
+the price list, or it should be folded into the other two. Every other service
+maps to price lines that genuinely exist.
+
+**Q8. Should dental consultation have its own page?**
+It is priced at Rs 1,000 at DHA and Rs 2,000 at F-7 and appears on the price
+list, but no treatment page mentions it.
+
+## About who does what
+
+**Q9. Dr. Nayab Farooq and Dr. Syeda Alizeh Hassan have treatments listed
+against them that neither of them supplied.**
+Both left question 7 blank, so those tags are ours. This is a public claim
+about what a named clinician does, so it needs either their answers (N8) or
+our tags removed. Tell us which.
+
+**Q10. Please confirm Dr. Amna Hassan's treatments.**
+She left question 7 blank too. Her tags are inferred from her question 8
+answer, which names wisdom and complex extractions and oral surgical
+procedures.
+
+**Q11. Does Dr. Amna Hassan do fillings?**
+She ticked "general dentistry" and "preventive care" but not "restorative
+dentistry", so she is currently not listed for fillings. She is the only doctor
+affected by how we read "general dentistry".
+
+**Q12. Who performs children's dentistry?**
+It is priced at both branches and has its own page, but no doctor is tagged for
+it. Dr. Syeda Alizeh Hassan's role on record is paediatric dentist, which
+suggests the answer, but her question 7 is blank so we have not assumed it.
+
+**Q13. Who else performs prosthetics?**
+Crowns, veneers and bridges are priced at both branches, but only Dr. Yousaf
+Kamal is tagged, and only because his own expertise list names crowns, bridges
+and prosthodontic rehabilitation.
+
+**Q14. Please confirm Dr. Zainab Qureshi's treatments.**
+She underlined nine of the ten labels on the old form. Worth a second look
+against the real service list.
+
+**Q15. Should Dr. Nayab Farooq appear on the children's dentistry page?**
+
+**Q16. Is "facial aesthetics" offered?**
+Dr. Amna, Dr. Nayab and Dr. Zainab all ticked it, but it is not priced at
+either branch. If it is offered it needs a price and a page. If not, it should
+come off the form.
+
+**Q17. Please confirm the mapping we used.**
+The old form offered ten labels, four of which are not services either branch
+prices. We remapped the returned forms onto the nine real services like this:
 
 | Form answer | Mapped to |
 | --- | --- |
@@ -82,13 +175,38 @@ only those. The mapping used was:
 | Preventive Care | Oral Hygiene & Whitening |
 | Restorative Dentistry | Dental Fillings |
 | Cosmetic Dentistry, Smile Design | Aesthetic Dental Fillings |
-| General Dentistry | nothing, see question 21 |
-| Facial Aesthetics | nothing, see question 22 |
+| General Dentistry | nothing, see Q11 |
+| Facial Aesthetics | nothing, see Q16 |
 
-### Where each doctor's tags actually came from
+## About the wording
 
-Checked against the source documents, not assumed. Only four of the eight are
-supported by something the doctor supplied.
+**Q18. What does "17+ years" refer to?**
+The clinic's age, Dr. Yousaf's career, Dr. Aqsa's career, or something else. It
+appears on the homepage and on the clinic hub. Dr. Aqsa's own text says "over
+17 years" and Dr. Yousaf's says 16, so as a clinic statistic it is ambiguous.
+
+**Q19. Is this homepage headline approved?**
+"Dentistry you can trust, in the heart of Islamabad."
+
+**Q20. What should the label on the homepage cards say?**
+All six currently read "CLINICS", above Services, Prices, Doctors, About us,
+News and Contacts. It fits none of them. Replace it, or remove it?
+
+---
+
+# Part 3: On our side, not the clinic's
+
+**`RESEND_API_KEY` is not set in Vercel.** Until it is, every contact form on
+the site accepts a submission and sends nothing. This is the single item that
+would cause real harm at launch, because a patient would believe they had got
+in touch.
+
+---
+
+# Reference: where each doctor's treatment tags came from
+
+Checked against the source documents rather than assumed. Four of the eight are
+supported by something the doctor themselves supplied.
 
 | Doctor | Source | Confidence |
 | --- | --- | --- |
@@ -96,56 +214,11 @@ supported by something the doctor supplied.
 | Dr. Zainab Qureshi | Underlined nine of the ten labels in question 7 | Confirmed |
 | Dr. Yousaf Kamal | His own "Areas of Expertise" list | Confirmed |
 | Dr. Aqsa Malik | Her own biography, which names restorative, aesthetic and preventive work | Confirmed |
-| Dr. Amna Hassan | Question 7 blank. Tags inferred from her question 8 answer, which names wisdom and complex extractions and oral surgical procedures | Partly supported |
+| Dr. Amna Hassan | Question 7 blank. Inferred from her question 8 answer | Partly supported |
 | Dr. Rabia | A handwritten note saying aligners | Single tag, from the clinic |
-| Dr. Nayab Farooq | **Question 7 is blank.** The underlining in her form is the template's own styling and covers the instructions too, so it marks nothing | **Not supported** |
-| Dr. Syeda Alizeh Hassan | **Question 7 is blank.** Nothing is marked or written | **Not supported** |
+| Dr. Nayab Farooq | Question 7 blank. The underlining in her form is the template's own styling and covers the instructions too, so it marks nothing | **Not supported** |
+| Dr. Syeda Alizeh Hassan | Question 7 blank. Nothing marked or written | **Not supported** |
 
-20. **Dr. Nayab Farooq and Dr. Syeda Alizeh Hassan have treatments listed on
-    the site that neither of them supplied.** They need to answer question 7,
-    or their tags should come off. This is the most important item on this
-    page: it is a claim about what a named clinician does.
-21. **Dr. Amna Hassan's tags are inferred from her question 8 answer**, not
-    from question 7. Please confirm them.
-22. **Please confirm the mapping above**, and confirm each doctor's treatments
-    against the nine services rather than the old ten labels.
-23. **"General Dentistry" was treated as an umbrella and dropped.** Seven of the
-    eight doctors who ticked it also ticked Restorative or Preventive Care, so
-    nothing was lost. The exception is **Dr. Amna Hassan**: she ticked General
-    Dentistry and Preventive Care but not Restorative, so she is not currently
-    listed for fillings. Does she do fillings?
-24. **"Facial Aesthetics" was ticked by Dr. Amna, Dr. Nayab and Dr. Zainab but
-    is not priced at either branch.** Is it offered? If so it needs a price and
-    a page. If not, it should come off the form.
-25. **No doctor is tagged for Children's Dentistry**, although it is priced at
-    both branches and has its own page. Who performs it?
-26. **Prosthetics (crowns, veneers, bridges) has only one doctor**, Dr. Yousaf
-    Kamal, whose own expertise list names crowns, bridges and prosthodontic
-    rehabilitation. It is priced at both branches, so who else performs it?
-27. **Six doctors have no treatments recorded at all** (Umair, Rida, Maria,
-    Mashal, Abeera, Shayzmin), so they disappear the moment a visitor uses the
-    filter. This resolves itself once their forms come back.
-
-## Copy
-
-18. **What does "17+ years" refer to?** The clinic, Dr. Yousaf's career, or
-    something else. It appears on the homepage and the clinic hub.
-19. **Homepage headline approval**: "Dentistry you can trust, in the heart of
-    Islamabad".
-20. **The clinic hub cards all read "CLINICS"** above Services, Prices, Doctors,
-    About us, News and Contacts. It fits none of them. What should it say, or
-    should it come out?
-
-## Legal
-
-28. **There is no privacy policy.** Both consent checkboxes asked visitors to
-    agree to "the privacy policy of Studio Dental" and linked to the contact
-    page, which is not one. The forms collect a name, an email address, a phone
-    number and free text about a dental problem, so a policy is needed before
-    launch. The text is unlinked until the clinic supplies one. We cannot write
-    it: it is a legal document about how the clinic handles patient data.
-
-## Not a client question, but blocking
-
-19. **`RESEND_API_KEY` is not set in Vercel.** Until it is, every contact form on
-    the site accepts a submission and sends nothing.
+The remaining six doctors have no treatments recorded at all, so they disappear
+the moment a visitor uses the filter on the doctors page. That resolves itself
+when their forms come back (N4).
