@@ -24,7 +24,7 @@ export default function DoctorProfile() {
             <img
               src={doctor.image}
               alt={doctor.name}
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="absolute inset-0 h-full w-full object-cover object-top"
             />
           )}
         </div>
