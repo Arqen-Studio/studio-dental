@@ -21,7 +21,7 @@ module.exports = {
         'soft-sm': '0 1px 2px rgba(18, 52, 32, 0.06)',
         'soft-md': '0 10px 30px -12px rgba(18, 52, 32, 0.18)',
         'soft-lg': '0 30px 60px -20px rgba(18, 52, 32, 0.25)',
-        brand: '0 20px 40px -18px rgba(63, 111, 75, 0.55)',
+        brand: '0 20px 40px -18px rgba(37, 107, 60, 0.55)',
       },
       borderRadius: { sm: '10px', md: '16px', lg: '24px', xl: '32px' },
     },
