@@ -26,7 +26,7 @@ if the sheet is empty.
 **2. Add the script.**
 
 In the sheet, go to **Extensions**, then **Apps Script**. Delete whatever is in
-the editor and paste this:
+the editor and paste this whole thing:
 
 ```javascript
 var HEADINGS = ['Received', 'Name', 'Phone', 'Email', 'Clinic',
@@ -51,6 +51,7 @@ function doPost(e) {
       d.date || '',
       d.message || ''
     ]);
+
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -58,20 +59,16 @@ function doPost(e) {
     lock.releaseLock();
   }
 }
-```
 
-Two details worth knowing. The lock matters: without it, two people submitting
-at the same moment could write over the same row. And the tab name is not
-load bearing, so renaming the sheet later will not quietly break it.
-
-**3. Check it works before publishing.**
-
-Paste this below `doPost` as well:
-
-```javascript
+/**
+ * Run this one, not doPost. Confirms the script is attached to the
+ * spreadsheet, then writes a row the same way a real enquiry would.
+ */
 function testWrite() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  if (!ss) throw new Error('Not bound to a spreadsheet. Open the sheet and use Extensions, then Apps Script.');
+  if (!ss) {
+    throw new Error('Not bound to a spreadsheet. Open the sheet and use Extensions, then Apps Script.');
+  }
   Logger.log('Bound to: ' + ss.getName());
 
   doPost({ postData: { contents: JSON.stringify({
@@ -89,17 +86,29 @@ function testWrite() {
 }
 ```
 
-Select `testWrite` in the function dropdown and press Run, approving the
-permission prompt. A row should appear in the sheet.
+Two details worth knowing. The lock matters: without it, two people submitting
+at the same moment could write over the same row. And the tab name is not load
+bearing, so renaming the sheet later will not quietly break it.
+
+**3. Check it works before publishing.**
+
+Save, select `testWrite` in the function dropdown, and press Run, approving the
+permission prompt. The log should read:
+
+    Bound to: Studio Dental website enquiries
+    Row appended. Check the sheet.
+
+Delete the test row afterwards.
 
 Do not press Run on `doPost` itself. Google calls it with the posted request,
 so running it by hand passes nothing and it fails on `e.postData`. That error
 means the script was run the wrong way, not that it is broken.
 
-The other thing this catches is a script created through "New project" rather
-than from the sheet's own Extensions menu. A standalone script has no active
-spreadsheet, deploys perfectly happily, and then fails on the first real
-enquiry. If `testWrite` throws the "not bound" error, that is what happened.
+The other thing `testWrite` catches is a script created through "New project"
+rather than from the sheet's own Extensions menu. A standalone script has no
+active spreadsheet, deploys perfectly happily, and then fails on the first real
+enquiry while the email still sends, so nothing announces the problem. If it
+throws the "not bound" error, that is what happened.
 
 **4. Publish it.**
 
