@@ -307,15 +307,15 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     image: '',
     clinic: 'F-7 Markaz, Islamabad',
     bio:
-      'Enjoys hiking in her spare time. The focus, patience and attention to detail it demands complement the calm, methodical approach she brings to clinical dentistry.',
+      'She enjoys hiking in her spare time. The focus, patience and attention to detail developed through hiking complement the calm and methodical approach she brings to clinical dentistry.',
     services: [
       'Dental Fillings',
       'Aesthetic Dental Fillings',
       'Root Canal Treatment',
       'Oral Hygiene & Whitening',
     ],
-    heroTitleLines: ['BDS, FCPS', 'Operative dentistry & endodontics', 'Restorative dentistry'],
-    licenseLine: 'PMDC 18325-D; FCPS Operative Dentistry and Endodontics',
+    heroTitleLines: ['BDS, FCPS', 'Operative Dentistry & Endodontics', 'Restorative Dentistry'],
+    licenseLine: 'PMDC: 18325-D; FCPS Operative Dentistry and Endodontics',
     locationLine: 'Islamabad / F-7 Markaz clinic',
     practiceAreas: [
       'Direct composite restorations and aesthetic bonding',
@@ -331,9 +331,9 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'She also has a strong interest in teaching and clinical education, with experience delivering hands-on workshops and lectures in restorative dentistry, endodontics and aesthetic dental procedures.',
     ],
     education: [
-      'Bachelor of Dental Surgery (BDS), Khyber College of Dentistry, Peshawar.',
+      'Bachelor of Dental Surgery (BDS), Khyber College of Dentistry, Peshawar, Pakistan.',
       'FCPS in Operative Dentistry and Endodontics, College of Physicians and Surgeons Pakistan (CPSP).',
-      'Ongoing professional development through clinical workshops, teaching and hands-on training in restorative, endodontic and aesthetic dentistry.',
+      'Ongoing professional development through clinical workshops, teaching activities and hands-on training in restorative, endodontic and aesthetic dentistry.',
     ],
     membership: [
       'Pakistan Academy of Operative Dentistry and Endodontics (PAODE)',
@@ -341,7 +341,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     professionalTraining: [
       'Hands-on teaching and workshops in restorative and aesthetic dentistry',
       'Lectures and clinical teaching in operative dentistry and endodontics',
-      'Continuing professional development in tooth whitening and minimally invasive aesthetic procedures',
+      'Clinical training and continuing professional development in tooth whitening and minimally invasive aesthetic procedures',
     ],
   },
   {
