@@ -1,5 +1,11 @@
 # Recording website enquiries in a spreadsheet
 
+> Status, 26 September 2026: the full flow is verified in production. A test
+> enquiry returned 200, wrote a row to the sheet, and delivered the email.
+> RESEND_API_KEY, ENQUIRY_TO and ENQUIRY_SHEET_URL are all set in Vercel. The
+> one remaining launch task is verifying a sending domain in Resend (see
+> N12 in client-questions.md), after which ENQUIRY_TO can point at the clinic.
+
 Every enquiry is emailed to the clinic. That is the channel people act on, but
 an email can be deleted or lost, and there is then no record that the enquiry
 ever happened. This adds a spreadsheet alongside it.
