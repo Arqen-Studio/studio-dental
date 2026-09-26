@@ -17,6 +17,16 @@
 
 export const config = { runtime: "edge" };
 
+/**
+ * The edge runtime provides process.env, but this file is compiled without the
+ * Node type definitions, so reaching for a bare `process` does not type check.
+ * Read it off globalThis instead: no @types/node, and no ambient declaration
+ * that would clash if those types are ever present.
+ */
+const env = (
+  globalThis as { process?: { env?: Record<string, string | undefined> } }
+).process?.env ?? {};
+
 const TO_DEFAULT = "thestudiodentalclinic@gmail.com";
 const FROM_DEFAULT = "Studio Dental Website <onboarding@resend.dev>";
 
@@ -74,7 +84,7 @@ export default async function handler(request: Request): Promise<Response> {
     return json({ error: "Please give a name and either a phone number or an email address." }, 400);
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = env.RESEND_API_KEY;
   if (!apiKey) {
     // Fail loudly rather than pretending the enquiry was sent.
     return json({ error: "The enquiry service is not configured yet." }, 503);
@@ -84,7 +94,7 @@ export default async function handler(request: Request): Promise<Response> {
   // trace if the mail provider is down or someone deletes the email. Best
   // effort on purpose: a spreadsheet that is unreachable must never stop a
   // patient's enquiry reaching the clinic.
-  const sheetUrl = process.env.ENQUIRY_SHEET_URL;
+  const sheetUrl = env.ENQUIRY_SHEET_URL;
   if (sheetUrl) {
     try {
       await fetch(sheetUrl, {
@@ -140,8 +150,8 @@ export default async function handler(request: Request): Promise<Response> {
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      from: process.env.ENQUIRY_FROM || FROM_DEFAULT,
-      to: [process.env.ENQUIRY_TO || TO_DEFAULT],
+      from: env.ENQUIRY_FROM || FROM_DEFAULT,
+      to: [env.ENQUIRY_TO || TO_DEFAULT],
       subject: `Website enquiry from ${name}`,
       html,
       // So a reply from the inbox goes straight back to the patient.
