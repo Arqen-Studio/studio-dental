@@ -19,10 +19,13 @@ Running list as forms come in. Updated as we go.
 - Education is thin: her form answered question 10 with "same as above", so the
   entries are derived from her qualifications and the BDS institution is
   unknown.
-- Confirmed by comparing against our blank form: four of her six practice-area
-  lines were our example text, now removed. She is left with her genuine answer,
-  which covered only extractions and oral surgery. She should fill in her
-  practice areas properly, since as an implantologist there is more to list.
+- Confirmed against our blank form: four of her six practice-area lines were our
+  example text verbatim. The template wording is gone, but implant work does
+  describe her, and her own biography states it ("implant-based tooth
+  replacement, immediate and conventional implant placement"). So her practice
+  areas now list implant placement and implant-based tooth replacement in that
+  grounded form, alongside her own extraction answer. Her professional training,
+  which was entirely our example, stays out until she supplies her own.
 - She selected "Facial Aesthetics" in question 7, which is not priced at either
   branch, so it maps to no page (see Q16 in client-questions).
 
@@ -38,6 +41,16 @@ Running list as forms come in. Updated as we go.
 - Her professional training carried our example's first line ("Hands-on modules
   in implant surgery and prosthetics") verbatim. Removed; her own two entries
   stay. Otherwise her profile was already in from her form.
+
+## The principle applied
+
+When a doctor left our example text in place, the question is not only whether
+it is ours but whether it is true of them. A description of clinical work
+(implant placement, for an implantologist) can be kept if it is grounded in
+what they themselves wrote elsewhere, reworded so it is not our boilerplate. A
+specific activity or credential claim (a named course, a lecture given, a body
+they are registered with) is only ever taken from their own answer, never
+assumed from an example, because it is a fact we cannot stand behind.
 
 ## A note on the example text
 

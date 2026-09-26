@@ -120,6 +120,8 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Third molar and wisdom tooth extraction',
       'Complex and surgical extractions',
       'Oral surgical procedures',
+      'Dental implant placement, both immediate and conventional',
+      'Implant-based tooth replacement',
     ],
     biography: [
       'She provides comprehensive oral surgical care at Studio Dental, DHA Phase II, with expertise in routine and complex dental extractions, including wisdom tooth removal.',
