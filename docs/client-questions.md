@@ -133,11 +133,12 @@ list, but no treatment page mentions it.
 
 ## About who does what
 
-**Q9. Dr. Nayab Farooq and Dr. Syeda Alizeh Hassan have treatments listed
-against them that neither of them supplied.**
-Both left question 7 blank, so those tags are ours. This is a public claim
-about what a named clinician does, so it needs either their answers (N8) or
-our tags removed. Tell us which.
+**Q9. Dr. Syeda Alizeh Hassan has treatments listed against her that she did
+not supply.**
+Her question 7 is blank, so those tags are ours. This is a public claim about
+what a named clinician does, so it needs either her answer (N8) or the tags
+removed. (Dr. Nayab Farooq's form has since come in and her tags are now hers,
+so she is no longer part of this.)
 
 **Q10. Please confirm Dr. Amna Hassan's treatments.**
 She left question 7 blank too. Her tags are inferred from her question 8
@@ -149,15 +150,16 @@ She ticked "general dentistry" and "preventive care" but not "restorative
 dentistry", so she is currently not listed for fillings. She is the only doctor
 affected by how we read "general dentistry".
 
-**Q12. Who performs children's dentistry?**
-It is priced at both branches and has its own page, but no doctor is tagged for
-it. Dr. Syeda Alizeh Hassan's role on record is paediatric dentist, which
-suggests the answer, but her question 7 is blank so we have not assumed it.
+**Q12. Who performs children's dentistry? (partly answered)**
+Dr. Nayab Farooq's returned form lists paediatric dentistry, so she is now
+tagged for it and the page is no longer empty. Dr. Syeda Alizeh Hassan's role
+on record is also paediatric dentist, but her question 7 is blank, so confirm
+whether she should be added too.
 
-**Q13. Who else performs prosthetics?**
-Crowns, veneers and bridges are priced at both branches, but only Dr. Yousaf
-Kamal is tagged, and only because his own expertise list names crowns, bridges
-and prosthodontic rehabilitation.
+**Q13. Who else performs prosthetics? (partly answered)**
+Dr. Nayab Farooq's form lists crowns, bridges, dentures and post-and-core
+build-ups, so she is now tagged alongside Dr. Yousaf Kamal. Confirm whether any
+other doctor does prosthetic work.
 
 **Q14. Please confirm Dr. Zainab Qureshi's treatments.**
 She underlined nine of the ten labels on the old form. Worth a second look

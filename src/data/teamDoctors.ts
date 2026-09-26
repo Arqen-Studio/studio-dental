@@ -103,7 +103,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     slug: 'amna-hassan',
     name: 'Dr. Amna Hassan',
     creds: 'BDS, FCPS (OMFS), MFDRCSI',
-    role: 'Oral and maxillofacial surgeon, implantologist and aesthetic physician',
+    role: 'Oral and maxillofacial surgeon, implantologist and aesthetic physician (AACME)',
     image: '/images/doctors/dr-amna.jpg',
     clinic: 'DHA Phase II, Islamabad',
     bio:
@@ -113,7 +113,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Oral Hygiene & Whitening',
       'Tooth Extraction',
     ],
-    heroTitleLines: ['BDS, FCPS, MFDRCSI', 'Oral and maxillofacial surgeon', 'Implantologist and aesthetic physician'],
+    heroTitleLines: ['BDS, FCPS, MFDRCSI', 'Oral and maxillofacial surgeon, implantologist', 'Aesthetic physician'],
     licenseLine: 'PMDC-registered; CPSP Fellow, FCPS (OMFS)',
     locationLine: 'Islamabad / DHA Phase II clinic',
     practiceAreas: [
@@ -125,9 +125,9 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Digital planning for predictable implant placement',
     ],
     biography: [
-      'Associate oral and maxillofacial surgeon, providing comprehensive oral surgical care at Studio Dental DHA Phase II, with expertise in routine and complex dental extractions including wisdom tooth removal.',
-      'She also provides implant-based tooth replacement, both immediate and conventional, with treatment plans tailored to each patient rather than a standard approach. Her focus is on safe, precise surgical care and outcomes that are comfortable, functional and predictable.',
-      'She regularly mentors associates on occlusion, prosthetic workflows and preventing complications.',
+      'She provides comprehensive oral surgical care at Studio Dental, DHA Phase II, with expertise in routine and complex dental extractions, including wisdom tooth removal.',
+      'She also provides implant-based tooth replacement, both immediate and conventional, with treatment plans tailored to each patient rather than a standard approach.',
+      'Her approach focuses on safe, precise surgical care and personalised treatment planning, to achieve outcomes that are comfortable, functional and predictable.',
     ],
     education: [
       'Bachelor of Dental Surgery (BDS).',
@@ -257,12 +257,14 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     bio:
       'Well organised, with a natural eye for detail and aesthetics. Whether it is creating beautiful spaces at home or crafting the perfect smile, that precision shows in her approach to restorative and cosmetic dentistry.',
     services: [
+      'Prosthetics: Teeth & Implants',
       'Dental Fillings',
       'Teeth Straightening',
       'Aesthetic Dental Fillings',
       'Root Canal Treatment',
       'Oral Hygiene & Whitening',
       'Tooth Extraction',
+      "Children's Dentistry",
     ],
     heroTitleLines: ['BDS, C-Endo, CHPE', 'Restorative & cosmetic dentist', 'Aesthetic physician (CPD UK)'],
     licenseLine: 'PMDC-registered dental surgeon',
