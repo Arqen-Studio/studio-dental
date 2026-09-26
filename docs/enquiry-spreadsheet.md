@@ -64,7 +64,44 @@ Two details worth knowing. The lock matters: without it, two people submitting
 at the same moment could write over the same row. And the tab name is not
 load bearing, so renaming the sheet later will not quietly break it.
 
-**3. Publish it.**
+**3. Check it works before publishing.**
+
+Paste this below `doPost` as well:
+
+```javascript
+function testWrite() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) throw new Error('Not bound to a spreadsheet. Open the sheet and use Extensions, then Apps Script.');
+  Logger.log('Bound to: ' + ss.getName());
+
+  doPost({ postData: { contents: JSON.stringify({
+    receivedAt: new Date().toISOString(),
+    name: 'Test row',
+    phone: '0300 0000000',
+    email: 'test@example.com',
+    clinic: 'DHA Phase II',
+    service: 'Dental consultation',
+    date: '',
+    message: 'Written from the Apps Script editor.'
+  })}});
+
+  Logger.log('Row appended. Check the sheet.');
+}
+```
+
+Select `testWrite` in the function dropdown and press Run, approving the
+permission prompt. A row should appear in the sheet.
+
+Do not press Run on `doPost` itself. Google calls it with the posted request,
+so running it by hand passes nothing and it fails on `e.postData`. That error
+means the script was run the wrong way, not that it is broken.
+
+The other thing this catches is a script created through "New project" rather
+than from the sheet's own Extensions menu. A standalone script has no active
+spreadsheet, deploys perfectly happily, and then fails on the first real
+enquiry. If `testWrite` throws the "not bound" error, that is what happened.
+
+**4. Publish it.**
 
 Press **Deploy**, then **New deployment**. Choose type **Web app**. Set
 "Execute as" to **Me**, and "Who has access" to **Anyone**. Deploy, approve the
@@ -77,12 +114,12 @@ Google login, which is what the website needs. The URL is long and random, so
 treat it like a password: anyone who has it can add rows. It cannot be used to
 read the sheet or to reach anything else in the account.
 
-**4. Tell the website about it.**
+**5. Tell the website about it.**
 
 In Vercel, under the project's **Settings**, then **Environment Variables**,
 add `ENQUIRY_SHEET_URL` with that URL. Tick all three environments. Redeploy.
 
-**5. Check it.**
+**6. Check it end to end.**
 
 Submit an enquiry on the site. A row should appear within a second or two, and
 the email should arrive as usual.
