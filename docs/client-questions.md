@@ -71,7 +71,15 @@ phone number and free text about a dental problem, so this is needed before
 launch. The text is unlinked until it exists. We cannot write it: it is a legal
 document about how the clinic handles patient data.
 
-**N12. A dentist to read the procedure steps.**
+**N12. DNS access for thestudiodental.com, or someone who has it.**
+This one blocks launch. The contact forms send through Resend, and until the
+domain is verified there, Resend refuses to deliver to anyone but the account
+holder: every patient enquiry would fail. Verifying means adding a few DNS
+records at whoever hosts the domain. Once done, mail is sent from an address on
+the clinic's own domain, which is also far less likely to be treated as spam
+than the shared sending address we are on now.
+
+**N13. A dentist to read the procedure steps.**
 The step by step text on each of the nine service pages was written by us from
 the price lists. It should be checked by a clinician before launch.
 
