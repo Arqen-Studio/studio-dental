@@ -70,6 +70,15 @@ Dr. Shayzmin. Each of the last five also needs a surname.
 
 ## Full profiles already in, not yet re-checked against a paper form
 
-Dr. Yousaf Kamal, Dr. Aqsa Malik, Dr. Zainab Qureshi, Dr. Syeda Alizeh Hassan,
-Dr. Rabia. Alizeh's treatment tags are still ours rather than from her form
-(her question 7 was blank); Rabia has only a single tag from a handwritten note.
+Dr. Yousaf Kamal, Dr. Aqsa Malik, Dr. Zainab Qureshi, Dr. Syeda Alizeh Hassan.
+Alizeh's treatment tags are still ours rather than from her form (her question 7
+was blank).
+
+**Dr. Rabia** — qualifications, role and registration confirmed, profile still
+thin.
+- In and confirmed: BDS, MDS (Orthodontics), M.Orth (RCS England); consultant
+  orthodontist; PMDC 17421-D; tagged for teeth straightening.
+- Missing: surname (still "Dr. Rabia"); branch; photograph; and all of the
+  profile-page content, meaning the biography, practice areas, education,
+  memberships and the personal line. She has given the header of her profile
+  but not the body.

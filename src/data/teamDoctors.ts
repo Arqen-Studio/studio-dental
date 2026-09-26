@@ -353,7 +353,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Teeth Straightening',
     ],
     heroTitleLines: ['BDS, MDS (Ortho)', 'M.Orth (RCS England)', 'Consultant orthodontist'],
-    licenseLine: 'PMDC 17421-D',
+    licenseLine: 'PMDC: 17421-D',
     locationLine: '',
     practiceAreas: [],
     biography: [],
