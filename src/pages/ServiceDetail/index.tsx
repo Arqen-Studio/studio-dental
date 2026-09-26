@@ -247,7 +247,7 @@ export default function ServiceDetail() {
 
       {/* ── Specialists ── */}
       {specialists.length > 0 && (
-        <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
+        <section className="reveal bg-[#EEF6EC] py-16 md:py-20">
           <div className="mx-auto w-full page-shell px-5 md:px-8">
             <h2 className="text-center text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">
               Specialists

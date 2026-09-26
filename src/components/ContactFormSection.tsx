@@ -20,7 +20,7 @@ export default function ContactFormSection() {
       </div>
 
       {/* Right, form */}
-      <div className="flex flex-col justify-center bg-[#F4F7F2] px-8 py-16 md:px-12 lg:px-16">
+      <div className="flex flex-col justify-center bg-[#EEF6EC] px-8 py-16 md:px-12 lg:px-16">
         <div className="w-full max-w-[29rem]">
           <h2 className="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold leading-tight text-ink">
             Let's get in touch
@@ -61,7 +61,7 @@ export default function ContactFormSection() {
                   id="cf-clinic"
                   name="clinic"
                   defaultValue=""
-                  className="w-full appearance-none rounded-sm border border-black/15 bg-[#F4F7F2] px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
+                  className="w-full appearance-none rounded-sm border border-black/15 bg-[#EEF6EC] px-4 py-3 text-[0.95rem] text-ink outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
                 >
                   <option value="" disabled />
                   {CLINICS.map((c) => (

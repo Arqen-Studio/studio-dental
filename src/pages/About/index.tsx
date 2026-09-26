@@ -103,7 +103,7 @@ export default function About() {
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
+      <section className="reveal bg-[#EEF6EC] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="text-[1rem] leading-relaxed text-ink/80">
             We are sure you know that all of us at Studio Dental love our work,
@@ -121,7 +121,7 @@ export default function About() {
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="reveal bg-[#F4F7F2] px-5 pb-16 md:px-8 md:pb-20">
+      <section className="reveal bg-[#EEF6EC] px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock src="/videos/clinic-team-720.mp4" poster="/videos/clinic-team-poster.jpg" />
       </section>
 
@@ -141,7 +141,7 @@ export default function About() {
       </section>
 
       {/* ── 5. Text block ── */}
-      <section className="reveal bg-[#F4F7F2] py-16 md:py-20">
+      <section className="reveal bg-[#EEF6EC] py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="text-[1rem] leading-relaxed text-ink/80">
             We are all dentists with our own hobbies and passions, which often
@@ -198,7 +198,7 @@ export default function About() {
       </section>
 
       {/* ── 7. Second video ── */}
-      <section className="reveal bg-[#F4F7F2] px-5 py-16 md:px-8 md:py-20">
+      <section className="reveal bg-[#EEF6EC] px-5 py-16 md:px-8 md:py-20">
         <VideoBlock src="/videos/clinic-detail-720.mp4" poster="/videos/clinic-detail-poster.jpg" />
       </section>
     </>

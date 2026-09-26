@@ -140,7 +140,7 @@ export default function Prices() {
       {selectedClinic && categories.map((cat) => (
         <section key={cat.id} id={cat.id} className="scroll-mt-[78px]">
           {/* Category heading band */}
-          <div className="bg-[#D6E2CF] py-10 text-center">
+          <div className="bg-[#C6E6C4] py-10 text-center">
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-brand">
               {cat.label}
             </h2>

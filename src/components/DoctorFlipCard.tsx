@@ -29,7 +29,7 @@ export function DoctorFlipCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent" />
         </div>
         <div className="flex h-[12.8rem] flex-col p-5">
-          <h3 className="min-h-[2.6rem] text-[1.1rem] leading-tight text-[#3F6F4B] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">
+          <h3 className="min-h-[2.6rem] text-[1.1rem] leading-tight text-[#256B3C] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">
             {name}
           </h3>
           <p className="mt-2 min-h-[4.4rem] text-[0.7rem] font-semibold uppercase tracking-[0.06em] text-brand [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:5] overflow-hidden">
@@ -51,7 +51,7 @@ export function DoctorFlipCard({
         <div className="relative z-10 flex h-full flex-col p-5">
           <div className="flex items-start">
             <div>
-              <h3 className="text-[1.1rem] font-semibold text-[#3F6F4B]">{name}</h3>
+              <h3 className="text-[1.1rem] font-semibold text-[#256B3C]">{name}</h3>
               <p className="mt-1 text-[0.66rem] font-semibold uppercase tracking-[0.07em] text-brand [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
                 {creds}
               </p>

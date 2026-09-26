@@ -67,7 +67,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,26rem)] flex-col bg-white font-sans text-[0.72rem] leading-normal text-ink shadow-[-4px_0_28px_rgba(28,59,37,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
+          "relative flex h-full w-[min(100%,26rem)] flex-col bg-white font-sans text-[0.72rem] leading-normal text-ink shadow-[-4px_0_28px_rgba(18,52,32,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >

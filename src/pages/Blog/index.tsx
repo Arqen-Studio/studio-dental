@@ -83,7 +83,7 @@ export default function Blog() {
       </section>
 
       {/* ── Cards grid ── */}
-      <section className="bg-[#F4F7F2] py-0">
+      <section className="bg-[#EEF6EC] py-0">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
         <div
           key={gridKey}

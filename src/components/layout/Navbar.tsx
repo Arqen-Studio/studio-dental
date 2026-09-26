@@ -14,9 +14,9 @@ const NAV_ITEMS = [
 
 /** Improves contrast on hero imagery when the header is transparent */
 const TRANSPARENT_LINK_SHADOW =
-  "[text-shadow:0_1px_4px_rgba(28,59,37,0.95),0_0_18px_rgba(28,59,37,0.45)]";
+  "[text-shadow:0_1px_4px_rgba(18,52,32,0.95),0_0_18px_rgba(18,52,32,0.45)]";
 const TRANSPARENT_ICON_SHADOW =
-  "drop-shadow-[0_1px_3px_rgba(28,59,37,0.95)] drop-shadow-[0_0_12px_rgba(28,59,37,0.35)]";
+  "drop-shadow-[0_1px_3px_rgba(18,52,32,0.95)] drop-shadow-[0_0_12px_rgba(18,52,32,0.35)]";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -53,7 +53,7 @@ export default function Navbar() {
     /^\/doctors\/.+/.test(pathname) ||
     pathname === "/about";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
-const navHeadingColor = "rgb(28, 59, 37)";
+const navHeadingColor = "rgb(18, 52, 32)";
 
   const openContactDrawer = () => {
     setOpen(false);
@@ -67,7 +67,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
         "fixed inset-x-0 top-0 z-[100] h-[3.9rem] transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
-          : "border-b border-ink/10 bg-brand text-ink shadow-[0_2px_14px_rgba(28,59,37,0.08)]",
+          : "border-b border-ink/10 bg-brand text-ink shadow-[0_2px_14px_rgba(18,52,32,0.08)]",
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -198,7 +198,7 @@ const navHeadingColor = "rgb(28, 59, 37)";
 
       <div
         className={[
-          "fixed left-0 right-0 top-[78px] border-t border-white/10 bg-ink px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(28,59,37,0.25)] transition-all duration-300 ease-out xl:hidden",
+          "fixed left-0 right-0 top-[78px] border-t border-white/10 bg-ink px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(18,52,32,0.25)] transition-all duration-300 ease-out xl:hidden",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",

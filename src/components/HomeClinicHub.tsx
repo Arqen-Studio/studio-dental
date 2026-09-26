@@ -57,7 +57,7 @@ const hoverEase = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-[#F4F7F2] px-5 py-9 md:px-8 md:py-12"
+      className="bg-[#EEF6EC] px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full page-shell">

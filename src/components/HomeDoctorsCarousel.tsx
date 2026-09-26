@@ -67,7 +67,7 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-[#F4F7F2] px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
+    <section className="bg-[#EEF6EC] px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full page-shell">
         <h2
           id="home-doctors-heading"
@@ -86,7 +86,7 @@ export default function HomeDoctorsCarousel() {
                 key={doctor.name}
                 to={`/doctors/${doctor.slug}`}
                 data-doctor-slide
-                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(28,59,37,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(28,59,37,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-[260px] md:w-[280px]"
+                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(18,52,32,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(18,52,32,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-[260px] md:w-[280px]"
               >
               <article className="flex h-full flex-col">
                 <div className="aspect-[4/5] flex-none bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">

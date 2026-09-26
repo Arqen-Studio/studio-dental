@@ -11,12 +11,12 @@ export default function MissionCampaignBanner() {
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
         {/* Left: primary gradient panel */}
-        <div className="relative flex flex-1 flex-col justify-center border border-brand/25 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF] px-8 py-12 md:h-[21rem] md:border-r md:px-12 md:py-14">
+        <div className="relative flex flex-1 flex-col justify-center border border-brand/25 bg-gradient-to-br from-[#256B3C] via-brand to-[#C6E6C4] px-8 py-12 md:h-[21rem] md:border-r md:px-12 md:py-14">
           <div
             className="pointer-events-none absolute inset-0 opacity-90"
             style={{
               background:
-                'radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(28, 59, 37, 0.08) 0%, transparent 50%)',
+                'radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(18, 52, 32, 0.08) 0%, transparent 50%)',
             }}
             aria-hidden="true"
           />
@@ -38,7 +38,7 @@ export default function MissionCampaignBanner() {
             decoding="async"
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/10 to-transparent md:bg-gradient-to-r md:from-[#3F6F4B]/25 md:via-ink/15 md:to-transparent"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 via-ink/10 to-transparent md:bg-gradient-to-r md:from-[#256B3C]/25 md:via-ink/15 md:to-transparent"
             aria-hidden="true"
           />
 

@@ -16,10 +16,10 @@ export default function DoctorProfile() {
   const practiceRight = doctor.practiceAreas.slice(mid)
 
   return (
-    <div className="no-reveal bg-[#F4F7F2]">
+    <div className="no-reveal bg-[#EEF6EC]">
       {/* Hero, photo left · primary panel right */}
       <section className="grid min-h-[min(100dvh,920px)] lg:grid-cols-2">
-        <div className="relative min-h-[52vw] bg-[#C9D2C4] lg:min-h-0">
+        <div className="relative min-h-[52vw] bg-[#B9D6B4] lg:min-h-0">
           {doctor.image && (
             <img
               src={doctor.image}
@@ -82,7 +82,7 @@ export default function DoctorProfile() {
       </section>
 
       {/* Practice areas, full viewport width */}
-      <section className="w-full bg-[#F4F7F2] py-12 md:py-16">
+      <section className="w-full bg-[#EEF6EC] py-12 md:py-16">
         <div className="mx-auto w-full max-w-[45rem] px-5 md:px-8">
           <ProfileSection title="Practice areas:" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">

@@ -49,7 +49,7 @@ function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }
         'inline-flex shrink-0 items-center justify-center rounded-2xl border shadow-soft-sm',
         featured
           ? 'h-12 w-12 border-white/35 bg-white/15 text-white backdrop-blur-sm'
-          : 'h-11 w-11 border-[#3F6F4B]/25 bg-[#3F6F4B]/10 text-[#3F6F4B]',
+          : 'h-11 w-11 border-[#256B3C]/25 bg-[#256B3C]/10 text-[#256B3C]',
       ].join(' ')}
       aria-hidden="true"
     >
@@ -69,11 +69,11 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-[#F4F7F2] py-10 md:py-16"
+      className="relative overflow-hidden bg-[#EEF6EC] py-10 md:py-16"
       aria-labelledby="home-services-heading"
     >
       <div
-        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#3F6F4B]/20 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#256B3C]/20 blur-3xl"
         aria-hidden="true"
       />
       <div
@@ -92,7 +92,7 @@ export default function HomeServicesShowcase({
         <div className="mt-7 mb-7 flex flex-col gap-5 md:mt-8 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[42rem]">
             {/* <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#3F6F4B]" aria-hidden="true" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#256B3C]" aria-hidden="true" />
               Our services
             </span> */}
             <p className="mt-4 font-heading text-[clamp(1.55rem,2.6vw,2.35rem)] font-extrabold leading-[1.05] tracking-tight text-ink">
@@ -107,10 +107,10 @@ export default function HomeServicesShowcase({
 
           <Link
             to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#256B3C]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
           >
             All services & prices
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F6F4B]/20 text-ink transition group-hover:bg-[#3F6F4B]/35">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#256B3C]/20 text-ink transition group-hover:bg-[#256B3C]/35">
               <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
           </Link>
@@ -164,18 +164,18 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.serviceId}
-              className="reveal flex min-h-[10rem] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#3F6F4B]/28 hover:shadow-soft-md sm:min-h-0"
+              className="reveal flex min-h-[10rem] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#256B3C]/28 hover:shadow-soft-md sm:min-h-0"
             >
               <div className="flex items-start gap-3">
                 <IconBubble Icon={item.Icon} />
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-[1.02rem] font-extrabold leading-snug text-[#3F6F4B]">{item.title}</h3>
+                  <h3 className="text-[1.02rem] font-extrabold leading-snug text-[#256B3C]">{item.title}</h3>
                   <p className="mt-2 text-[0.82rem] leading-relaxed text-muted">{item.desc}</p>
                 </div>
               </div>
               <Link
                 to={`/services/${item.serviceId}`}
-                className="mt-auto flex items-center gap-1.5 border-t border-[#3F6F4B]/18 pt-3.5 text-[0.8rem] font-semibold text-[#3F6F4B] underline-offset-4 transition hover:underline"
+                className="mt-auto flex items-center gap-1.5 border-t border-[#256B3C]/18 pt-3.5 text-[0.8rem] font-semibold text-[#256B3C] underline-offset-4 transition hover:underline"
               >
                 Read more
                 <ArrowRight size={12} strokeWidth={2.25} aria-hidden />

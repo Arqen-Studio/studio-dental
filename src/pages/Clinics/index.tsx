@@ -107,7 +107,7 @@ export default function Clinics() {
       </section>
 
       {/* ── Clinic photo cards ── */}
-      <section className="bg-[#EDF1E9] py-12 md:py-16">
+      <section className="bg-[#E9F4E5] py-12 md:py-16">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           {/* The five row bands are declared on this grid and adopted by each
               card, so the longer DHA address cannot push that card's hours and
@@ -119,7 +119,7 @@ export default function Clinics() {
                 className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
               >
                 {/* Photo */}
-                <div className="aspect-[8/3] overflow-hidden bg-[#C9D2C4]">
+                <div className="aspect-[8/3] overflow-hidden bg-[#B9D6B4]">
                   <img
                     src={clinic.photo}
                     alt={`Studio Dental ${clinic.name} interior`}
@@ -224,7 +224,7 @@ export default function Clinics() {
       </section>
 
       {/* ── "You will be welcomed." staff grid ── */}
-      <section className="bg-[#EDF1E9] pb-16 md:pb-24">
+      <section className="bg-[#E9F4E5] pb-16 md:pb-24">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           <h2 className="mb-10 text-center text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
             You will be welcomed.
@@ -235,7 +235,7 @@ export default function Clinics() {
                 key={person.name}
                 className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
               >
-                <div className="aspect-[3/4] flex-none overflow-hidden bg-[#C9D2C4]">
+                <div className="aspect-[3/4] flex-none overflow-hidden bg-[#B9D6B4]">
                   {person.image && (
                     <img
                       src={person.image}

@@ -31,14 +31,14 @@ export default function Services() {
         {/* Left, primary gradient + accordion */}
         <div className="relative flex flex-col justify-center overflow-hidden border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#3F6F4B] via-brand to-[#D6E2CF]"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#256B3C] via-brand to-[#C6E6C4]"
             aria-hidden="true"
           />
           <div
             className="pointer-events-none absolute inset-0 opacity-90"
             style={{
               background:
-                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(28, 59, 37, 0.08) 0%, transparent 50%)",
+                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(18, 52, 32, 0.08) 0%, transparent 50%)",
             }}
             aria-hidden="true"
           />

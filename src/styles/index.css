@@ -23,7 +23,7 @@
 @layer base {
   :root {
     --nav-h: 78px;
-    --page-transition-curtain: #3F6F4B;
+    --page-transition-curtain: #256B3C;
   }
 
   html {
@@ -67,7 +67,7 @@
 
   body {
     background: #ffffff;
-    color: #55685A;
+    color: #4F6557;
     font-family: 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
     font-weight: 500;
     line-height: 25px;
@@ -78,8 +78,8 @@
   }
 
   ::selection {
-    background: #8FB48A;
-    color: #1C3B25;
+    background: #5FB979;
+    color: #123420;
   }
 
   h1,
@@ -90,7 +90,7 @@
   h6 {
     font-family: 'Bricolage Grotesque', 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
     font-weight: 800;
-    color: rgb(28, 59, 37);
+    color: rgb(18, 52, 32);
     letter-spacing: -0.02em;
   }
 

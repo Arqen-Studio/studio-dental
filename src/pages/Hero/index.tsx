@@ -48,7 +48,7 @@ export default function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(28, 59, 37, 0.42) 0%, rgba(28, 59, 37, 0.22) 45%, rgba(28, 59, 37, 0.62) 100%)",
+                "linear-gradient(180deg, rgba(18, 52, 32, 0.42) 0%, rgba(18, 52, 32, 0.22) 45%, rgba(18, 52, 32, 0.62) 100%)",
             }}
           />
         </div>
@@ -59,7 +59,7 @@ export default function Hero() {
               <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
                 <span
                   className="h-2 w-2 rounded-full bg-brand"
-                  style={{ boxShadow: "0 0 0 4px rgba(143, 180, 138, 0.3)" }}
+                  style={{ boxShadow: "0 0 0 4px rgba(95,185,121, 0.3)" }}
                   aria-hidden="true"
                 />
                 Mission for life
@@ -98,7 +98,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-[#F4F7F2] px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-[#EEF6EC] px-6 py-3 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft-md"
             >
               View all services
             </Link>
@@ -148,12 +148,12 @@ export default function Hero() {
           className="absolute bottom-7 left-1/2 z-10 hidden h-[2.1rem] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
           aria-label="Go to services"
         >
-          <span className="h-2 w-[3px] rounded bg-[#F4F7F2] animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
+          <span className="h-2 w-[3px] rounded bg-[#EEF6EC] animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
         </Link>
       </section>
 
       <section
-        className="bg-[#F4F7F2] px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5"
+        className="bg-[#EEF6EC] px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5"
         aria-label="Featured campaign"
       >
         <div className="mx-auto page-shell">
