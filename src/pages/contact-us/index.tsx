@@ -10,7 +10,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-white pb-10 pt-[calc(78px+2rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
-      <div className="mx-auto grid w-full page-shell grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-12">
+      <div className="mx-auto grid w-full max-w-[max(62rem,min(2200px,86vw))] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span
@@ -134,7 +134,7 @@ export default function Contact() {
             />
           </div>
 
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-4">
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="service"
