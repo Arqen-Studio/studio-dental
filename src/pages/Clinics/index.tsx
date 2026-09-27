@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
 const CLINICS = [
   {
@@ -28,12 +27,6 @@ const CLINICS = [
   },
 ];
 
-const STAFF = TEAM_DOCTORS.map((doctor) => ({
-  name: doctor.name,
-  role: doctor.role,
-  clinic: doctor.clinic.split(",")[0],
-  image: doctor.image,
-}));
 
 function PinIcon() {
   return (
@@ -223,46 +216,23 @@ export default function Clinics() {
         </div>
       </section>
 
-      {/* ── "You will be welcomed." staff grid ── */}
-      <section className="bg-[#E9F4E5] pb-16 md:pb-24">
-        <div className="mx-auto w-full page-shell px-5 md:px-8">
-          <h2 className="mb-10 text-center text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
+      {/* ── "You will be welcomed." — teaser to the team page ── */}
+      <section className="bg-[#E9F4E5] py-16 md:py-24">
+        <div className="mx-auto w-full max-w-[46rem] px-5 text-center md:px-8">
+          <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
             You will be welcomed.
           </h2>
-          <div className="grid grid-cols-1 gap-4 min-[460px]:grid-cols-2 lg:grid-cols-3">
-            {STAFF.map((person) => (
-              <div
-                key={person.name}
-                className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
-              >
-                <div className="aspect-[3/4] flex-none overflow-hidden bg-[#B9D6B4]">
-                  {person.image && (
-                    <img
-                      src={person.image}
-                      alt={person.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover object-top"
-                    />
-                  )}
-                </div>
-                <div className="flex flex-1 flex-col p-3 sm:p-5">
-                  <p className="text-[0.9rem] font-semibold leading-snug text-brand sm:text-[1.05rem]">
-                    {person.name}
-                  </p>
-                  {person.role && (
-                    <p className="mt-0.5 text-[0.78rem] text-muted sm:text-[0.88rem]">
-                      {person.role}
-                    </p>
-                  )}
-                  <div className="mt-auto pt-2 sm:pt-3">
-                    <span className="inline-block rounded-sm bg-brand/15 px-2 py-0.5 text-[0.68rem] font-medium text-brand sm:px-3 sm:py-1 sm:text-[0.75rem]">
-                      {person.clinic}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="mx-auto mt-4 max-w-[42ch] text-[0.97rem] leading-relaxed text-muted">
+            The same team looks after patients at both branches, from routine
+            check-ups to implants and orthodontics. Get to know the people who
+            will be treating you.
+          </p>
+          <Link
+            to="/doctors"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-brandDeep px-7 py-3.5 text-[0.9rem] font-semibold text-creamBrand transition duration-200 hover:bg-brandDeep/90"
+          >
+            Meet the team
+          </Link>
         </div>
       </section>
 
