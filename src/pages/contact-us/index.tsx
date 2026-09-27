@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { SERVICES_DATA } from "../../data/services";
+import { CLINICS } from "../../data/clinics";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -10,7 +11,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-white pb-10 pt-[calc(78px+2rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
-      <div className="mx-auto grid w-full max-w-[max(62rem,min(2200px,86vw))] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid w-full max-w-[max(62rem,min(2500px,86vw))] min-[1900px]:max-w-[min(2500px,92vw)] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
             <span
@@ -26,35 +27,22 @@ export default function Contact() {
           </p>
 
           <ul className="mt-8 grid gap-5">
-            <li className="flex items-start gap-4">
-              <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
-                aria-hidden="true"
-              >
-                <MapPin size={18} strokeWidth={2} aria-hidden />
-              </span>
-              <div>
-                <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
-                <p className="mt-0.5 text-[0.92rem] text-muted">
-                  1st Floor, Plaza No. 26, Main Iqbal Boulevard, Street 2, Sector A
-                  DHA Phase II, Islamabad
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
-                aria-hidden="true"
-              >
-                <MapPin size={18} strokeWidth={2} aria-hidden />
-              </span>
-              <div>
-                <strong className="block text-[0.98rem] font-semibold text-ink">Address</strong>
-                <p className="mt-0.5 text-[0.92rem] text-muted">
-                  Office #:7, 2nd Floor, Jinnah Super, F-7 Markaz, Islamabad
-                </p>
-              </div>
-            </li>
+            {CLINICS.map((clinic) => (
+              <li key={clinic.id} className="flex items-start gap-4">
+                <span
+                  className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
+                  aria-hidden="true"
+                >
+                  <MapPin size={18} strokeWidth={2} aria-hidden />
+                </span>
+                <div>
+                  <strong className="block text-[0.98rem] font-semibold text-ink">
+                    {clinic.city}
+                  </strong>
+                  <p className="mt-0.5 text-[0.92rem] text-muted">{clinic.address}</p>
+                </div>
+              </li>
+            ))}
             <li className="flex items-start gap-4">
               <span
                 className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
@@ -65,10 +53,10 @@ export default function Contact() {
               <div>
                 <strong className="block text-[0.98rem] font-semibold text-ink">Contact</strong>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  0329 9961999 | 032935199999
+                  {CLINICS.map((clinic) => clinic.phone).join("  |  ")}
                 </p>
                 <p className="mt-0.5 text-[0.92rem] text-muted">
-                  thestudiodentalclinic@gmail.com
+                  {CLINICS[0].email}
                 </p>
               </div>
             </li>
@@ -205,8 +193,8 @@ export default function Contact() {
             <p role="status" className="mt-5 rounded-xl bg-brand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
               Thank you. Your enquiry has reached the clinic and we will be in
               touch shortly. If it is urgent, please call{" "}
-              <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
-                0329 9961999
+              <a href={`tel:${CLINICS[0].phone.replace(/\s/g, "")}`} className="font-semibold underline underline-offset-2">
+                {CLINICS[0].phone}
               </a>.
             </p>
           )}
@@ -214,8 +202,8 @@ export default function Contact() {
           {status === "error" && (
             <p role="alert" className="mt-5 rounded-xl bg-[#FBEBD9] px-5 py-4 text-[0.9rem] leading-relaxed text-[#8A3D0B]">
               {error} Please call us on{" "}
-              <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
-                0329 9961999
+              <a href={`tel:${CLINICS[0].phone.replace(/\s/g, "")}`} className="font-semibold underline underline-offset-2">
+                {CLINICS[0].phone}
               </a>{" "}
               and we will book you in.
             </p>
