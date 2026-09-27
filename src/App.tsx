@@ -100,14 +100,14 @@ function Layout() {
       <button
         type="button"
         onClick={() => setRegOpen(true)}
-        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3.5 text-[0.85rem] font-semibold text-ink shadow-[0_4px_20px_rgba(143,180,138,0.55)] transition duration-300 hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-[0_6px_24px_rgba(143,180,138,0.65)]"
+        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3.5 small font-semibold text-on-brand shadow-2 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-3"
         aria-label="Open online registration"
       >
         <Mail size={16} strokeWidth={2.2} aria-hidden />
         Online registration
       </button>
       <ContactDrawer open={regOpen} onClose={() => setRegOpen(false)} />
-      <main className="flex min-h-0 flex-1 flex-col bg-white">
+      <main className="flex min-h-0 flex-1 flex-col bg-surface">
         <SwitchTransition mode="out-in">
           <CSSTransition
             nodeRef={nodeRef}

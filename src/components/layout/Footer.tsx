@@ -91,8 +91,8 @@ function ClinicCard({
   // large screens, so a two-line address in one clinic does not push its
   // dividers and rows out of step with the other clinic's.
   return (
-    <article className="grid content-start gap-8 rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(18,52,32,0.08)] md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
-      <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">
+    <article className="grid content-start gap-8 rounded-md border border-line bg-surface-raised p-7 shadow-2 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
+      <h3 className="h4 text-ink">
         {city}
       </h3>
 
@@ -101,62 +101,62 @@ function ClinicCard({
           <PinIcon />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="text-[0.9rem] leading-relaxed text-ink">{address}</p>
+          <p className="body text-ink">{address}</p>
           <a
             href={mapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-block text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
+            className="mt-2 inline-block body font-medium text-brand underline-offset-2 transition hover:underline"
           >
             Location on the map
           </a>
         </div>
       </div>
 
-      <div className="h-px w-full self-center bg-black/10" aria-hidden="true" />
+      <div className="h-px w-full self-center bg-line" aria-hidden="true" />
 
       <div className="flex gap-4">
         <IconCircle>
           <PhoneIcon />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="text-[0.78rem] font-medium text-muted">
+          <p className="small font-medium text-ink-muted">
             Tel. for registration:
           </p>
           <a
             href={`tel:${phone.replace(/\s/g, "")}`}
-            className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-brand"
+            className="mt-0.5 block body text-ink transition hover:text-brand"
           >
             {phone}
           </a>
-          <p className="mt-3 text-[0.78rem] font-medium text-muted">E-mail:</p>
+          <p className="mt-3 small font-medium text-ink-muted">E-mail:</p>
           <a
             href={`mailto:${email}`}
-            className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-brand"
+            className="mt-0.5 block break-all body text-ink transition hover:text-brand"
           >
             {email}
           </a>
           <Link
             to="/contact-us"
-            className="mt-3 inline-block text-[0.88rem] font-semibold text-brand underline-offset-2 transition hover:underline"
+            className="mt-3 inline-block label text-brand underline-offset-2 transition hover:underline"
           >
             Contact
           </Link>
         </div>
       </div>
 
-      <div className="h-px w-full self-center bg-black/10" aria-hidden="true" />
+      <div className="h-px w-full self-center bg-line" aria-hidden="true" />
 
       <div className="flex gap-4">
         <IconCircle>
           <ClockIcon />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="text-[0.78rem] font-medium text-muted">
+          <p className="small font-medium text-ink-muted">
             Working hours:
           </p>
           {hours.map((h) => (
-            <p key={h} className="mt-1 text-[0.88rem] leading-snug text-ink">
+            <p key={h} className="mt-1 body text-ink">
               {h}
             </p>
           ))}
@@ -200,9 +200,9 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-[#EEF6EC] pb-10 pt-14 text-ink md:pb-14 md:pt-16">
+    <footer className="bg-surface-sunken pb-10 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="page-shell mx-auto w-full px-5 md:px-8">
-        <h2 className="mb-8 text-[clamp(1.75rem,3.2vw,2.35rem)] font-bold tracking-tight text-ink md:mb-10">
+        <h2 className="mb-8 h2 text-ink md:mb-10">
           Contacts
         </h2>
 
@@ -220,7 +220,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-5   pt-10 ">
+        <div className="mt-5   pt-10">
           <div className="flex flex-col items-start text-left">
             <div className="flex flex-wrap gap-2">
               {socialLinks.map((s) => (
@@ -230,7 +230,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand shadow-[0_1px_3px_rgba(18,52,32,0.12)] ring-1 ring-ink/10 transition duration-200 hover:bg-brand/90 hover:shadow-md sm:h-12 sm:w-12"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand shadow-1 ring-1 ring-line transition duration-200 hover:bg-brand-hover hover:shadow-2 sm:h-12 sm:w-12"
                 >
                   <img
                     src={s.src}
@@ -241,31 +241,31 @@ export default function Footer() {
               ))}
             </div>
 
-            <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-brand md:text-[0.875rem]">
+            <p className="mt-3 max-w-[52rem] font-sans small text-brand">
               Report potential ethical, corruption, violence or
               harassment-related violations and other concerns.
             </p>
 
-            <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-muted">
+            <p className="mt-3 max-w-[52rem] font-sans small text-ink-muted">
               &copy; {new Date().getFullYear()} Studio Dental, clinics at DHA
               Phase II and F-7 Markaz, Islamabad. All rights reserved.{" "}
               <a
                 href="https://thestudiodental.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted underline underline-offset-2 transition hover:text-ink"
+                className="text-ink-muted underline underline-offset-2 transition hover:text-ink"
               >
                 Studio Dental
               </a>
             </p>
 
-            <p className="mt-2 font-sans text-[0.8125rem] leading-relaxed text-muted">
+            <p className="mt-2 font-sans small text-ink-muted">
               Touched by{" "}
               <a
                 href="https://digitouch.lt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted underline underline-offset-2 transition hover:text-ink"
+                className="text-ink-muted underline underline-offset-2 transition hover:text-ink"
               >
                 digitouch!
               </a>

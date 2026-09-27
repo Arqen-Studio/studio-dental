@@ -1,0 +1,100 @@
+/* Studio Dental design tokens v1.0. Generated from tokens.json. Light is the default; apply data-theme="dark" to Ink bands (hero, footer, feature sections). */
+:root, [data-theme="light"] {
+  --surface: #F4F6F5;
+  --surface-raised: #FFFFFF;
+  --surface-sunken: #E8ECEA;
+  --line: #DDE3E0;
+  --line-strong: #7D8C85;
+  --ink: #0E1F1A;
+  --ink-muted: #55655E;
+  --brand: #17654B;
+  --brand-hover: #10513B;
+  --on-brand: #FFFFFF;
+  --brand-500: #2A7A5B;
+  --brand-soft: #D8ECE0;
+  --accent: #7A6A4A;
+  --accent-fill: #C8B89A;
+  --success: #2A7A5B;
+  --warning: #8A5A00;
+  --warning-soft: #F6EDDA;
+  --error: #B3261E;
+  --error-soft: #F8E7E5;
+  --info: #2F5D7C;
+  --info-soft: #E3EDF4;
+  --focus: #17654B;
+  --scrim: rgba(14,31,26,0.55);
+  --raw-ink: #0E1F1A;
+  --raw-evergreen: #17654B;
+  --raw-sage: #9FD0B5;
+  --raw-mist: #D8ECE0;
+  --raw-porcelain: #F4F6F5;
+  --raw-champagne: #C8B89A;
+  --shadow-1: 0 1px 2px rgba(14,31,26,0.06);
+  --shadow-2: 0 12px 32px -12px rgba(14,31,26,0.18);
+  --shadow-3: 0 24px 64px -24px rgba(14,31,26,0.28);
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #0E1F1A;
+  --surface-raised: #16302A;
+  --surface-sunken: #0A1713;
+  --line: #2A443C;
+  --line-strong: #5E7A70;
+  --ink: #F4F6F5;
+  --ink-muted: #A9BDB3;
+  --brand: #9FD0B5;
+  --brand-hover: #B8DEC9;
+  --on-brand: #0E1F1A;
+  --brand-500: #6FB592;
+  --brand-soft: #1A4435;
+  --accent: #C8B89A;
+  --success: #8CC0A5;
+  --warning: #E0B25C;
+  --warning-soft: #3A2C0F;
+  --error: #F2A39C;
+  --error-soft: #3D1714;
+  --info: #9CC3DE;
+  --info-soft: #14293A;
+  --focus: #C8B89A;
+  --scrim: rgba(14,31,26,0.65);
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-2: 0 12px 32px -12px rgba(0,0,0,0.6);
+  --shadow-3: 0 24px 64px -24px rgba(0,0,0,0.7);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --container-text: 720px;
+  --container: 1200px;
+  --container-wide: 1360px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --tap-target: 44px;
+  --font-display: "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
+  --font-sans: "Archivo", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+}
+.display { font-family: var(--font-display); font-size: 64px; line-height: 68px; font-weight: 600; letter-spacing: -0.03em; }
+.h1 { font-family: var(--font-display); font-size: 48px; line-height: 54px; font-weight: 600; letter-spacing: -0.025em; }
+.h2 { font-family: var(--font-display); font-size: 36px; line-height: 42px; font-weight: 600; letter-spacing: -0.02em; }
+.h3 { font-family: var(--font-display); font-size: 28px; line-height: 34px; font-weight: 600; letter-spacing: -0.015em; }
+.h4 { font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 500; letter-spacing: -0.01em; }
+.lead { font-family: var(--font-sans); font-size: 20px; line-height: 32px; font-weight: 400; letter-spacing: 0em; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 400; letter-spacing: 0em; }
+.body-strong { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 600; letter-spacing: 0em; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; letter-spacing: 0em; }
+.label { font-family: var(--font-sans); font-size: 16px; line-height: 20px; font-weight: 600; letter-spacing: 0em; }
+.eyebrow { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.numeric { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0em; font-variant-numeric: tabular-nums; }

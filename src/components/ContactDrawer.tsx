@@ -27,17 +27,24 @@ export default function ContactDrawer({ open, onClose }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  // Reset the form state each time the drawer opens (during render, not in an effect).
+  const [wasOpen, setWasOpen] = useState(open);
+  if (open !== wasOpen) {
+    setWasOpen(open);
+    if (open) {
+      setStatus("idle");
+      setError("");
+    }
+  }
+
   useEffect(() => {
-    if (!open) return;
-    panelRef.current?.focus();
-    setStatus("idle");
-    setError("");
+    if (open) panelRef.current?.focus();
   }, [open]);
 
   if (typeof document === "undefined") return null;
 
   const fieldClass =
-    "w-full rounded-[8px] border border-neutral-300 bg-white px-3 py-2 text-[0.72rem] leading-normal text-ink outline-none transition placeholder:text-neutral-400 focus:border-brand focus:ring-2 focus:ring-brand/25";
+    "w-full rounded-sm border border-line-strong bg-surface-raised px-3 py-2 small text-ink outline-none transition placeholder:text-ink-muted focus:border-brand focus:ring-2 focus:ring-brand/25";
 
   const inset = "px-10 sm:px-12";
 
@@ -52,7 +59,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
       <button
         type="button"
         className={[
-          "absolute inset-0 bg-black/40 backdrop-blur-[2px] transition-opacity duration-300 ease-out",
+          "absolute inset-0 bg-scrim backdrop-blur-[2px] transition-opacity duration-300 ease-out",
           open ? "opacity-100" : "opacity-0",
         ].join(" ")}
         aria-label="Close contact form"
@@ -67,7 +74,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,26rem)] flex-col bg-white font-sans text-[0.72rem] leading-normal text-ink shadow-[-4px_0_28px_rgba(18,52,32,0.08)] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
+          "relative flex h-full w-[min(100%,26rem)] flex-col bg-surface-raised font-sans small text-ink shadow-3 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >
@@ -76,7 +83,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
         >
           <h2
             id={titleId}
-            className="max-w-[calc(100%-3.25rem)] pt-0.5 font-sans text-[1.05rem] font-bold leading-snug tracking-tight text-neutral-900 sm:text-[1.1rem]"
+            className="max-w-[calc(100%-3.25rem)] pt-0.5 h4 text-ink"
           >
             Let&apos;s get in touch
           </h2>
@@ -161,7 +168,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-clinic"
-                className="text-[0.7rem] font-normal text-neutral-500"
+                className="small font-normal text-ink-muted"
               >
                 Choose a clinic
               </label>
@@ -185,7 +192,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-name"
-                className="text-[0.7rem] font-normal text-neutral-500"
+                className="small font-normal text-ink-muted"
               >
                 Your name
               </label>
@@ -202,7 +209,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-email"
-                className="text-[0.7rem] font-normal text-neutral-500"
+                className="small font-normal text-ink-muted"
               >
                 Your email
               </label>
@@ -219,7 +226,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <div className="flex flex-col gap-1">
               <label
                 htmlFor="drawer-message"
-                className="text-[0.7rem] font-normal text-neutral-500"
+                className="small font-normal text-ink-muted"
               >
                 Message
               </label>
@@ -233,12 +240,12 @@ export default function ContactDrawer({ open, onClose }: Props) {
             </div>
 
             <div className="flex flex-col gap-2.5 pt-1">
-              <label className="flex cursor-pointer items-start gap-2 text-[0.7rem] leading-snug text-neutral-500">
+              <label className="flex cursor-pointer items-start gap-2 small text-ink-muted">
                 <input
                   type="checkbox"
                   name="privacy"
                   required
-                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
+                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded-sm border-line-strong accent-brand"
                 />
                 <span>
                   {/* Unlinked until the clinic supplies a privacy policy:
@@ -247,11 +254,11 @@ export default function ContactDrawer({ open, onClose }: Props) {
                   Clinic.
                 </span>
               </label>
-              <label className="flex cursor-pointer items-start gap-2 text-[0.7rem] leading-snug text-neutral-500">
+              <label className="flex cursor-pointer items-start gap-2 small text-ink-muted">
                 <input
                   type="checkbox"
                   name="marketing"
-                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded border-neutral-300 accent-brand"
+                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded-sm border-line-strong accent-brand"
                 />
                 <span>
                   I agree that my data will be used for marketing purposes.
@@ -273,7 +280,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <button
               type="submit"
               disabled={status === "sending" || status === "sent"}
-              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 text-[0.7rem] font-semibold text-ink shadow-none transition hover:bg-brand/90 hover:shadow-brand active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-brand"
+              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 small font-semibold text-on-brand shadow-none transition hover:bg-brand-hover hover:shadow-2 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-brand"
             >
               {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send"}
             </button>
@@ -281,7 +288,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             {status === "sent" && (
               <p
                 role="status"
-                className="rounded-[8px] bg-brand/15 px-3 py-2.5 text-[0.7rem] leading-snug text-ink"
+                className="rounded-sm bg-brand-soft px-3 py-2.5 small text-ink"
               >
                 Thank you. Your enquiry has reached the clinic and we will be in
                 touch shortly. If it is urgent, please call{" "}
@@ -295,7 +302,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             {status === "invalid" && (
               <p
                 role="alert"
-                className="rounded-[8px] bg-[#FBEBD9] px-3 py-2.5 text-[0.7rem] leading-snug text-[#8A3D0B]"
+                className="rounded-sm bg-warning-soft px-3 py-2.5 small text-warning"
               >
                 {error}
               </p>
@@ -304,7 +311,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
             {status === "error" && (
               <p
                 role="alert"
-                className="rounded-[8px] bg-[#FBEBD9] px-3 py-2.5 text-[0.7rem] leading-snug text-[#8A3D0B]"
+                className="rounded-sm bg-warning-soft px-3 py-2.5 small text-warning"
               >
                 {error} Please call us on{" "}
                 <a href="tel:03299961999" className="font-semibold underline underline-offset-2">

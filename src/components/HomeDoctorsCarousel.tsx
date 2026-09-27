@@ -21,7 +21,7 @@ function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
 }
 
 const navBtnBase =
-  'absolute z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-transparent bg-brand text-ink shadow-soft-md transition hover:bg-brand/90 hover:shadow-brand disabled:pointer-events-none disabled:opacity-30'
+  'absolute z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-transparent bg-brand text-ink shadow-2 transition hover:bg-brand-hover hover:shadow-2 disabled:pointer-events-none disabled:opacity-30'
 
 export default function HomeDoctorsCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -67,11 +67,11 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-[#EEF6EC] px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
+    <section className="bg-surface-sunken px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full page-shell">
         <h2
           id="home-doctors-heading"
-          className="text-center text-[clamp(1.45rem,2.6vw,2.1rem)] font-semibold tracking-tight text-ink"
+          className="text-center h3 text-ink"
         >
           Doctors
         </h2>
@@ -86,10 +86,10 @@ export default function HomeDoctorsCarousel() {
                 key={doctor.name}
                 to={`/doctors/${doctor.slug}`}
                 data-doctor-slide
-                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_12px_rgba(18,52,32,0.08)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(18,52,32,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-[260px] md:w-[280px]"
+                className="w-[min(240px,calc(100vw-2rem))] shrink-0 snap-start overflow-hidden rounded-lg border border-line bg-surface-raised shadow-1 transition-shadow duration-300 hover:shadow-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-[260px] md:w-[280px]"
               >
               <article className="flex h-full flex-col">
-                <div className="aspect-[4/5] flex-none bg-gradient-to-b from-neutral-300 via-neutral-200 to-neutral-300">
+                <div className="aspect-[4/5] flex-none bg-surface-sunken">
                   {doctor.image && (
                     <img
                       src={doctor.image}
@@ -99,13 +99,13 @@ export default function HomeDoctorsCarousel() {
                     />
                   )}
                 </div>
-                <div className="flex flex-1 flex-col bg-white px-3 pb-3 pt-2.5">
-                  <h3 className="text-[0.84rem] font-bold leading-tight text-brand sm:text-[0.88rem]">{doctor.name}</h3>
-                  {doctor.role && <p className="mt-1.5 text-[0.64rem] leading-snug text-muted sm:text-[0.66rem]">{doctor.role}</p>}
-                  {doctor.creds && <p className="mt-1 line-clamp-2 text-[0.58rem] leading-snug text-muted sm:text-[0.6rem]">{doctor.creds}</p>}
+                <div className="flex flex-1 flex-col bg-surface-raised px-3 pb-3 pt-2.5">
+                  <h3 className="h4 text-brand">{doctor.name}</h3>
+                  {doctor.role && <p className="mt-1.5 small text-ink-muted">{doctor.role}</p>}
+                  {doctor.creds && <p className="mt-1 line-clamp-2 small text-ink-muted">{doctor.creds}</p>}
                   {doctor.clinic && (
                     <div className="mt-auto pt-3">
-                      <span className="inline-flex w-fit max-w-full rounded-md bg-brand/15 px-2 py-1 text-[0.58rem] font-medium leading-snug text-brand sm:text-[0.6rem]">
+                      <span className="inline-flex w-fit max-w-full rounded-md bg-brand-soft px-2 py-1 small font-medium text-brand">
                         {doctor.clinic}
                       </span>
                     </div>
@@ -140,7 +140,7 @@ export default function HomeDoctorsCarousel() {
         <div className="mt-8 flex justify-center md:mt-10">
           <Link
             to="/doctors"
-            className="inline-flex items-center justify-center rounded-full border border-transparent bg-brand px-9 py-3 text-[0.88rem] font-semibold text-ink shadow-soft-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-brand"
+            className="inline-flex items-center justify-center rounded-full border border-transparent bg-brand px-9 py-3 label text-on-brand shadow-1 transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-2"
           >
             All doctors
           </Link>

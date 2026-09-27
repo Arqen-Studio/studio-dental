@@ -12,12 +12,6 @@ const NAV_ITEMS = [
   { href: "/clinics", label: "Clinics" },
 ];
 
-/** Improves contrast on hero imagery when the header is transparent */
-const TRANSPARENT_LINK_SHADOW =
-  "[text-shadow:0_1px_4px_rgba(18,52,32,0.95),0_0_18px_rgba(18,52,32,0.45)]";
-const TRANSPARENT_ICON_SHADOW =
-  "drop-shadow-[0_1px_3px_rgba(18,52,32,0.95)] drop-shadow-[0_0_12px_rgba(18,52,32,0.35)]";
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
@@ -46,14 +40,10 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const hasHeroHeader =
-    pathname === "/" ||
-    pathname === "/services" ||
-    pathname === "/doctors" ||
-    /^\/doctors\/.+/.test(pathname) ||
-    pathname === "/about";
+  // Only the home hero sits fully under a scrim. The split heroes on other
+  // pages put a bright photo under half the bar, so they get the solid bar.
+  const hasHeroHeader = pathname === "/";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
-const navHeadingColor = "rgb(238, 246, 236)";
 
   const openContactDrawer = () => {
     setOpen(false);
@@ -62,12 +52,15 @@ const navHeadingColor = "rgb(238, 246, 236)";
 
   return (
     <>
+    {/* The header is always an Ink bar: transparent only over the home
+        hero, solid everywhere else. */}
     <header
+      data-theme="dark"
       className={[
-        "fixed inset-x-0 top-0 z-[100] h-[3.9rem] transition duration-300 ease-out",
+        "fixed inset-x-0 top-0 z-[100] h-[var(--nav-h)] text-ink transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
-          : "border-b border-white/10 bg-brandDeep text-creamBrand shadow-[0_2px_14px_rgba(18,52,32,0.18)]",
+          : "border-b border-line bg-surface shadow-2",
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -77,42 +70,21 @@ const navHeadingColor = "rgb(238, 246, 236)";
           aria-label="Studio Dental home"
         >
           <span className="flex flex-col leading-none">
-            <span
-              className={[
-                "text-[1rem] font-extrabold tracking-tight",
-                isTransparent ? "text-white" : "",
-              ].join(" ")}
-              style={isTransparent ? undefined : { color: navHeadingColor }}
-            >
-              Studio Dental
-            </span>
-            <span
-              className={[
-                "mt-[3px] text-[0.68rem] font-medium uppercase tracking-[0.14em]",
-                isTransparent ? "text-white/78" : "text-creamBrand/70",
-              ].join(" ")}
-            >
-              Clinic
-            </span>
+            <span className="label">Studio Dental</span>
+            <span className="eyebrow mt-[3px]">Clinic</span>
           </span>
         </Link>
 
         <div className="ml-6 flex flex-1 items-center justify-end gap-2 lg:gap-4">
           <nav
-            className="hidden items-center gap-5 text-[0.82rem] font-semibold xl:flex"
+            className="label hidden items-center gap-5 xl:flex"
             aria-label="Primary navigation"
           >
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
-                className={[
-                  "whitespace-nowrap transition duration-200 focus:outline-none",
-                  isTransparent
-                    ? ["text-[#ffffff] hover:text-white", TRANSPARENT_LINK_SHADOW].join(" ")
-                    : "text-creamBrand/90 hover:text-creamBrand",
-                ].join(" ")}
-                style={!isTransparent ? { color: navHeadingColor } : undefined}
+                className="whitespace-nowrap text-ink transition duration-200 hover:text-brand"
               >
                 {item.label}
               </Link>
@@ -124,9 +96,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
               href="tel:03299961999"
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
-                isTransparent
-                  ? ["text-white hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(" ")
-                  : "text-creamBrand hover:bg-white/15 hover:text-white",
+                "text-ink hover:bg-ink/10",
               ].join(" ")}
               aria-label="Call us"
             >
@@ -143,9 +113,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
               onClick={openContactDrawer}
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
-                isTransparent
-                  ? ["text-white hover:bg-white/10 hover:text-white", TRANSPARENT_ICON_SHADOW].join(" ")
-                  : "text-creamBrand hover:bg-white/15 hover:text-white",
+                "text-ink hover:bg-ink/10",
               ].join(" ")}
               aria-label="Open contact form"
               aria-haspopup="dialog"
@@ -163,12 +131,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
           <button
             className={[
               "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border transition xl:hidden",
-              isTransparent
-                ? [
-                    "border-white/25 bg-white/10 text-white shadow-soft-sm hover:bg-white/15",
-                    TRANSPARENT_ICON_SHADOW,
-                  ].join(" ")
-                : "border-white/25 bg-white/10 text-creamBrand shadow-soft-sm hover:bg-white/20",
+              "border-line bg-ink/10 text-ink hover:bg-ink/15",
             ].join(" ")}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -176,19 +139,19 @@ const navHeadingColor = "rgb(238, 246, 236)";
           >
             <span
               className={[
-                "h-[2px] w-5 rounded bg-current transition duration-300 ease-out",
+                "h-[2px] w-5 rounded-sm bg-current transition duration-300 ease-out",
                 open ? "translate-y-[7px] rotate-45" : "",
               ].join(" ")}
             />
             <span
               className={[
-                "h-[2px] w-5 rounded bg-current transition duration-300 ease-out",
+                "h-[2px] w-5 rounded-sm bg-current transition duration-300 ease-out",
                 open ? "opacity-0" : "",
               ].join(" ")}
             />
             <span
               className={[
-                "h-[2px] w-5 rounded bg-current transition duration-300 ease-out",
+                "h-[2px] w-5 rounded-sm bg-current transition duration-300 ease-out",
                 open ? "-translate-y-[7px] -rotate-45" : "",
               ].join(" ")}
             />
@@ -198,7 +161,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
 
       <div
         className={[
-          "fixed left-0 right-0 top-[78px] border-t border-white/10 bg-ink px-5 pb-10 pt-4 shadow-[0_8px_30px_rgba(18,52,32,0.25)] transition-all duration-300 ease-out xl:hidden",
+          "fixed left-0 right-0 top-[var(--nav-h)] border-t border-line bg-surface px-5 pb-10 pt-4 shadow-3 transition-all duration-300 ease-out xl:hidden",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
@@ -213,7 +176,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
               key={item.label}
               to={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center border-b border-white/10 py-4 text-[0.82rem] font-semibold text-creamBrand transition hover:text-brand"
+              className="flex items-center label border-b border-line py-4 text-ink transition hover:text-brand"
             >
               {item.label}
             </Link>
@@ -223,7 +186,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
         <div className="mt-6 flex flex-col gap-3">
           <a
             href="tel:03299961999"
-            className="inline-flex items-center gap-3 text-[0.82rem] text-creamBrand/75 transition hover:text-brand"
+            className="inline-flex items-center gap-3 body text-ink-muted transition hover:text-brand"
           >
             <Phone
               size={17}
@@ -236,7 +199,7 @@ const navHeadingColor = "rgb(238, 246, 236)";
           <button
             type="button"
             onClick={openContactDrawer}
-            className="inline-flex items-center gap-3 text-left text-[0.82rem] text-creamBrand/75 transition hover:text-brand"
+            className="inline-flex items-center gap-3 text-left body text-ink-muted transition hover:text-brand"
           >
             <Mail
               size={17}

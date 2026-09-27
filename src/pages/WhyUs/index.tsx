@@ -25,55 +25,56 @@ export default function WhyUs() {
   return (
     <section
       id="why"
-      className="no-reveal mx-4 overflow-hidden rounded-xl border border-white/10 bg-ink py-10 text-creamBrand md:mx-8 md:py-16"
+      data-theme="dark"
+      className="no-reveal mx-4 overflow-hidden rounded-lg border border-line bg-surface py-10 text-ink md:mx-8 md:py-16"
     >
       <div className="mx-auto w-full page-shell px-5 py-10 md:px-8 md:py-14 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
         <div className="mb-8 max-w-[36rem] md:mb-10">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-brand">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 bg-brand-soft px-4 py-1.5 eyebrow text-brand">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
             Why Studio Dental
           </span>
-          <h2 className="mt-4 text-balance text-creamBrand">Experienced specialists and modern dentistry.</h2>
+          <h2 className="mt-4 h2 text-balance text-ink">Experienced specialists and modern dentistry.</h2>
         </div>
 
         <div
           ref={statsRef}
-          className="mb-8 grid grid-cols-2 gap-6 border-y border-white/15 py-8 md:mb-10 md:grid-cols-4"
+          className="mb-8 grid grid-cols-2 gap-6 border-y border-line py-8 md:mb-10 md:grid-cols-4"
         >
           <div>
-            <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
+            <div className="h1 text-brand">
               {yearsCount}+
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/65">Years of experience</div>
+            <div className="mt-2 body text-ink-muted">Years of experience</div>
           </div>
           <div>
-            <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
+            <div className="h1 text-brand">
               {clinicsCount}
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/65">Specialized clinics</div>
+            <div className="mt-2 body text-ink-muted">Specialized clinics</div>
           </div>
           <div>
-            <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
+            <div className="h1 text-brand">
               {specialistsCount}+
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/65">Top specialists</div>
+            <div className="mt-2 body text-ink-muted">Top specialists</div>
           </div>
           <div>
-            <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
+            <div className="h1 text-brand">
               {clientsCount}+
             </div>
-            <div className="mt-2 text-[0.9rem] text-creamBrand/65">Happy clients treated</div>
+            <div className="mt-2 body text-ink-muted">Happy clients treated</div>
           </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
-            <div key={f.title} className="border-t border-white/15 py-6">
-              <div className="mb-4 text-[0.85rem] font-semibold tracking-[0.18em] text-brand">
+            <div key={f.title} className="border-t border-line py-6">
+              <div className="mb-4 small font-semibold text-brand">
                 {String(i + 1).padStart(2, '0')}
               </div>
-              <h3 className="text-[1.3rem] font-semibold text-creamBrand">{f.title}</h3>
-              <p className="mt-2 text-[0.98rem] leading-relaxed text-creamBrand/75">{f.desc}</p>
+              <h3 className="h4 text-ink">{f.title}</h3>
+              <p className="mt-2 body text-ink-muted">{f.desc}</p>
             </div>
           ))}
         </div>

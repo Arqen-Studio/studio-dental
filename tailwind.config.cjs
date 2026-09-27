@@ -1,30 +1,29 @@
 /** @type {import('tailwindcss').Config} */
+// Colours, radii and shadows point at the design tokens in src/styles/tokens.css.
+// brand is Evergreen and carries on-brand (white) text; see docs/brand/.
+const tokens = [
+  'surface', 'surface-raised', 'surface-sunken', 'line', 'line-strong',
+  'ink', 'ink-muted', 'brand', 'brand-hover', 'on-brand', 'brand-500', 'brand-soft',
+  'accent', 'accent-fill', 'success', 'warning', 'warning-soft', 'error', 'error-soft',
+  'info', 'info-soft', 'focus', 'scrim',
+  'raw-ink', 'raw-evergreen', 'raw-sage', 'raw-mist', 'raw-porcelain', 'raw-champagne',
+]
+
 module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      colors: {
-        // Medical green. brand carries dark text; brandDeep carries light text.
-        brand: '#5FB979',
-        brandDeep: '#256B3C',
-        brandPale: '#C6E6C4',
-        brandBright: '#CFF3D3',
-        creamBrand: '#EEF6EC',
-        ink: '#123420',
-        ink2: '#255138',
-        muted: '#4F6557',
-      },
+      colors: Object.fromEntries(tokens.map((name) => [name, `var(--${name})`])),
       fontFamily: {
-        sans: ['Archivo', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
-        heading: ['Bricolage Grotesque', 'Archivo', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: 'var(--font-sans)',
+        heading: 'var(--font-display)',
       },
       boxShadow: {
-        'soft-sm': '0 1px 2px rgba(18, 52, 32, 0.06)',
-        'soft-md': '0 10px 30px -12px rgba(18, 52, 32, 0.18)',
-        'soft-lg': '0 30px 60px -20px rgba(18, 52, 32, 0.25)',
-        brand: '0 20px 40px -18px rgba(37, 107, 60, 0.55)',
+        1: 'var(--shadow-1)',
+        2: 'var(--shadow-2)',
+        3: 'var(--shadow-3)',
       },
-      borderRadius: { sm: '10px', md: '16px', lg: '24px', xl: '32px' },
+      borderRadius: { sm: 'var(--radius-sm)', md: 'var(--radius-md)', lg: 'var(--radius-lg)', full: 'var(--radius-pill)' },
     },
   },
   plugins: [],

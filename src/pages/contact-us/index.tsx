@@ -10,18 +10,18 @@ export default function Contact() {
   const [error, setError] = useState("");
 
   return (
-    <section id="contact" className="bg-white pb-10 pt-[calc(78px+2rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
+    <section id="contact" className="bg-surface-raised pb-10 pt-[calc(78px+2rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
       <div className="mx-auto grid w-full max-w-[max(62rem,min(2500px,86vw))] min-[1900px]:max-w-[min(2500px,92vw)] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-1.5 eyebrow text-ink">
             <span
               className="h-1.5 w-1.5 rounded-full bg-brand"
               aria-hidden="true"
             />
             Contacts
           </span>
-          <h2 className="mt-3 text-balance">Visit Studio Dental in Islamabad.</h2>
-          <p className="mt-4 max-w-[60ch] text-[1.05rem] text-muted">
+          <h2 className="mt-3 h2 text-balance">Visit Studio Dental in Islamabad.</h2>
+          <p className="mt-4 max-w-[60ch] body text-ink-muted">
             Studio Dental provides expert dental care with a focus on comfort,
             advanced technology, and affordable treatment.
           </p>
@@ -30,32 +30,32 @@ export default function Contact() {
             {CLINICS.map((clinic) => (
               <li key={clinic.id} className="flex items-start gap-4">
                 <span
-                  className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
+                  className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand"
                   aria-hidden="true"
                 >
                   <MapPin size={18} strokeWidth={2} aria-hidden />
                 </span>
                 <div>
-                  <strong className="block text-[0.98rem] font-semibold text-ink">
+                  <strong className="block label text-ink">
                     {clinic.city}
                   </strong>
-                  <p className="mt-0.5 text-[0.92rem] text-muted">{clinic.address}</p>
+                  <p className="mt-0.5 body text-ink-muted">{clinic.address}</p>
                 </div>
               </li>
             ))}
             <li className="flex items-start gap-4">
               <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand"
+                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand"
                 aria-hidden="true"
               >
                 <Mail size={18} strokeWidth={2} aria-hidden />
               </span>
               <div>
-                <strong className="block text-[0.98rem] font-semibold text-ink">Contact</strong>
-                <p className="mt-0.5 text-[0.92rem] text-muted">
+                <strong className="block label text-ink">Contact</strong>
+                <p className="mt-0.5 body text-ink-muted">
                   {CLINICS.map((clinic) => clinic.phone).join("  |  ")}
                 </p>
-                <p className="mt-0.5 text-[0.92rem] text-muted">
+                <p className="mt-0.5 body text-ink-muted">
                   {CLINICS[0].email}
                 </p>
               </div>
@@ -64,7 +64,7 @@ export default function Contact() {
         </div>
 
         <form
-          className="rounded-lg border border-black/10 bg-white p-6 shadow-soft-md md:p-9"
+          className="rounded-lg border border-line bg-surface-raised p-6 shadow-2 md:p-9"
           noValidate
           onSubmit={async (e) => {
             e.preventDefault();
@@ -91,7 +91,7 @@ export default function Contact() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="name"
-              className="text-[0.82rem] font-semibold tracking-wide text-ink2"
+              className="small font-semibold text-ink"
             >
                 Full name
             </label>
@@ -101,14 +101,14 @@ export default function Contact() {
               name="name"
                 placeholder="Your full name"
               required
-              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
+              className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
           <div className="mt-4 flex flex-col gap-2">
             <label
               htmlFor="email"
-              className="text-[0.82rem] font-semibold tracking-wide text-ink2"
+              className="small font-semibold text-ink"
             >
               Email
             </label>
@@ -118,7 +118,7 @@ export default function Contact() {
               name="email"
                 placeholder="you@example.com"
               required
-              className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
+              className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="service"
-                className="text-[0.82rem] font-semibold tracking-wide text-ink2"
+                className="small font-semibold text-ink"
               >
                 Service
               </label>
@@ -134,7 +134,7 @@ export default function Contact() {
                 id="service"
                 name="service"
                 defaultValue={SERVICES_DATA[0]?.title}
-                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
+                className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
               >
                 {SERVICES_DATA.map((service) => (
                   <option key={service.id}>{service.title}</option>
@@ -144,7 +144,7 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="date"
-                className="text-[0.82rem] font-semibold tracking-wide text-ink2"
+                className="small font-semibold text-ink"
               >
                 Preferred date
               </label>
@@ -152,7 +152,7 @@ export default function Contact() {
                 id="date"
                 type="date"
                 name="date"
-                className="w-full rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
+                className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
               />
             </div>
           </div>
@@ -160,7 +160,7 @@ export default function Contact() {
           <div className="mt-4 flex flex-col gap-2">
             <label
               htmlFor="message"
-              className="text-[0.82rem] font-semibold tracking-wide text-ink2"
+              className="small font-semibold text-ink"
             >
               Tell us more (optional)
             </label>
@@ -169,7 +169,7 @@ export default function Contact() {
               name="message"
               rows={4}
               placeholder="Any additional details for your consultation?"
-              className="min-h-[5.5rem] w-full resize-y rounded-sm border border-transparent bg-black/[0.04] px-4 py-3 text-[0.95rem] outline-none transition placeholder:text-black/40 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/25"
+              className="min-h-[5.5rem] w-full resize-y rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition placeholder:text-ink-muted focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
             />
           </div>
 
@@ -178,11 +178,11 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending" || status === "sent"}
-            className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-brand px-7 py-4 text-[0.95rem] font-semibold text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand/90 hover:shadow-brand disabled:opacity-95 disabled:hover:translate-y-0"
+            className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-brand px-7 py-4 label text-on-brand transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-2 disabled:opacity-95 disabled:hover:translate-y-0"
           >
             {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send request"}
             <span
-              className="inline-flex h-[1.1rem] w-[22px] items-center justify-center rounded-full bg-black/10"
+              className="inline-flex h-[1.1rem] w-[22px] items-center justify-center rounded-full bg-on-brand/10"
               aria-hidden="true"
             >
               <ArrowRight size={11} strokeWidth={2.5} className="text-ink" aria-hidden />
@@ -190,7 +190,7 @@ export default function Contact() {
           </button>
 
           {status === "sent" && (
-            <p role="status" className="mt-5 rounded-xl bg-brand/15 px-5 py-4 text-[0.9rem] leading-relaxed text-ink">
+            <p role="status" className="mt-5 rounded-lg bg-brand-soft px-5 py-4 body text-ink">
               Thank you. Your enquiry has reached the clinic and we will be in
               touch shortly. If it is urgent, please call{" "}
               <a href={`tel:${CLINICS[0].phone.replace(/\s/g, "")}`} className="font-semibold underline underline-offset-2">
@@ -200,7 +200,7 @@ export default function Contact() {
           )}
 
           {status === "error" && (
-            <p role="alert" className="mt-5 rounded-xl bg-[#FBEBD9] px-5 py-4 text-[0.9rem] leading-relaxed text-[#8A3D0B]">
+            <p role="alert" className="mt-5 rounded-lg bg-warning-soft px-5 py-4 body text-warning">
               {error} Please call us on{" "}
               <a href={`tel:${CLINICS[0].phone.replace(/\s/g, "")}`} className="font-semibold underline underline-offset-2">
                 {CLINICS[0].phone}
@@ -209,7 +209,7 @@ export default function Contact() {
             </p>
           )}
 
-          <p className="mt-3 text-[0.78rem] text-muted">
+          <p className="mt-3 small text-ink-muted">
             By submitting, you agree to be contacted regarding your registration.
             We never share your data.
           </p>

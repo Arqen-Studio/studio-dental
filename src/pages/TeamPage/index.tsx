@@ -20,8 +20,7 @@ const TEAM_HERO_VIDEO_F7 = '/videos/treatment-room-720.mp4'
 const TEAM_HERO_POSTER_F7 = '/videos/treatment-room-poster.jpg'
 
 /** Each branch panel links to the doctors grid, the services page and the
- *  contact form. Two tones: dark text on the light DHA panel, light text on
- *  the dark F-7 panel. */
+*  contact form. Both panels are Ink bands. */
 const PANEL_LINKS = [
   { label: 'Doctors', href: '#doctors' },
   { label: 'Services', href: '/services' },
@@ -39,16 +38,14 @@ function scrollToHash(e: React.MouseEvent, href: string) {
   history.replaceState(null, '', href)
 }
 
-function PanelLinks({ tone }: { tone: 'dark' | 'light' }) {
-  const text = tone === 'dark' ? 'text-ink/75 hover:text-ink' : 'text-creamBrand/90 hover:text-creamBrand'
-  const dash = tone === 'dark' ? 'bg-ink/30 group-hover:bg-ink' : 'bg-creamBrand/60 group-hover:bg-creamBrand'
-  const cls = `group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold ${text} transition duration-200`
+function PanelLinks() {
+  const cls = 'group inline-flex items-center gap-3 py-2 label text-ink-muted transition duration-200 hover:text-ink'
   return (
     <ul className="mt-7 flex flex-col gap-0.5">
       {PANEL_LINKS.map(({ label, href }) => {
         const inner = (
           <>
-            <span className={`h-px w-5 ${dash} transition-all duration-300 group-hover:w-9`} />
+            <span className="h-px w-5 bg-ink/30 transition-all duration-300 group-hover:w-9 group-hover:bg-ink" />
             {label}
           </>
         )
@@ -111,17 +108,12 @@ export default function TeamPage() {
             </video>
           </div>
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: 'radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.35) 0%, transparent 55%)' }}
-              aria-hidden="true"
-            />
+          <div data-theme="dark" className="relative flex flex-col justify-center overflow-hidden bg-surface px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
-              <h1 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
+              <h1 className="h1 text-ink">
                 DHA Phase II
               </h1>
-              <PanelLinks tone="dark" />
+              <PanelLinks />
             </div>
           </div>
         </div>
@@ -129,17 +121,12 @@ export default function TeamPage() {
         {/* Row 2: text left · photo right, F-7 Markaz */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-[#256B3C] px-6 py-14 md:px-12 lg:px-16">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.28) 0%, transparent 55%)' }}
-              aria-hidden="true"
-            />
+          <div data-theme="dark" className="relative flex flex-col justify-center overflow-hidden bg-surface-raised px-6 py-14 md:px-12 lg:px-16">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.7s_both]">
-              <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-creamBrand">
+              <h2 className="h1 text-ink">
                 F-7 Markaz
               </h2>
-              <PanelLinks tone="light" />
+              <PanelLinks />
             </div>
           </div>
           {/* Photo */}
@@ -161,9 +148,9 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section id="doctors" className="bg-[#EEF6EC] py-16 md:py-24">
+      <section id="doctors" className="bg-surface-sunken py-16 md:py-24">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
-          <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
+          <h2 className="text-center h3 text-ink">Doctors</h2>
 
           <div className="mt-6 max-w-[340px]">
             <label htmlFor="service-filter" className="sr-only">
@@ -174,7 +161,7 @@ export default function TeamPage() {
                 id="service-filter"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full appearance-none border-b-2 border-[#256B3C] bg-transparent pb-2.5 pr-9 text-[0.95rem] text-ink2 outline-none"
+                className="w-full appearance-none border-b-2 border-brand bg-transparent pb-2.5 pr-9 body text-ink outline-none"
               >
                 {serviceOptions.map((service) => (
                   <option key={service} value={service}>
@@ -183,7 +170,7 @@ export default function TeamPage() {
                 ))}
               </select>
               <svg
-                className="pointer-events-none absolute right-1 top-1/2 h-4 w-4 -translate-y-1/2 text-ink2"
+                className="pointer-events-none absolute right-1 top-1/2 h-4 w-4 -translate-y-1/2 text-ink"
                 viewBox="0 0 20 20"
                 fill="none"
                 aria-hidden="true"

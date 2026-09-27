@@ -1,3 +1,5 @@
+> **Superseded (September 2026).** The palette and the "inversion" direction below are retired. The new brand and design system live in `docs/brand/` and the rules are in `CLAUDE.md`. Keep this file only for history; do not follow it.
+
 # Studio Dental: branding handover
 
 Scoped to the brand revamp you are taking on. How the colour system works, the

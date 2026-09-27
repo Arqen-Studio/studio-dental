@@ -1,85 +1,85 @@
 @import 'tailwindcss';
+/* Design tokens, copied from docs/brand/tokens.css. Imported into the
+   components layer so utilities such as font-medium still win over the type
+   classes (.h2, .body, .small, ...). */
+@import './tokens.css' layer(components);
 @config '../../tailwind.config.cjs';
 
-/* The site's page column. It widens in two steps on large screens so the
-   content does not end up marooned in the middle of a wide monitor, and every
-   section uses it so they all share one left edge. */
+/* The site's page column. It widens once on very large screens so the content
+   does not end up marooned in the middle of a wide monitor, and every section
+   uses it so they all share one left edge. */
 .page-shell {
-  max-width: 62rem;
+  max-width: var(--container);
 }
 
 @media (min-width: 1920px) {
   .page-shell {
-    max-width: 66rem;
+    max-width: var(--container-wide);
   }
 }
 
-@media (min-width: 2400px) {
-  .page-shell {
-    max-width: 72rem;
+@layer components {
+  /* Mobile sizes for the type scale (design system, section 04). */
+  @media (max-width: 767px) {
+    .display { font-size: 42px; line-height: 46px; }
+    .h1 { font-size: 34px; line-height: 40px; }
+    .h2 { font-size: 28px; line-height: 34px; }
+    .h3 { font-size: 24px; line-height: 30px; }
+    .h4 { font-size: 20px; line-height: 26px; }
+    .lead { font-size: 18px; line-height: 28px; }
+  }
+
+  /* The design system draws the eyebrow at 12px in the accent colour;
+     CLAUDE.md sets a 13px floor for all text, so it is raised to 13px. */
+  .eyebrow {
+    font-size: 13px;
+    color: var(--accent);
   }
 }
 
 @layer base {
   :root {
     --nav-h: 78px;
-    --page-transition-curtain: #256B3C;
+    --page-transition-curtain: var(--raw-ink);
   }
 
   html {
     scroll-behavior: smooth;
-    font-size: 18px; /* mobile base */
-    background: #ffffff;
-  }
-
-  @media (min-width: 900px) {
-    html {
-      font-size: 20px; /* desktop base */
-    }
-  }
-
-  /* The ladder used to stop at 900px, so on a large monitor every rem sized
-     thing stayed at 20px while the vw based headings kept growing, leaving the
-     body copy and navigation looking tiny beside them. Sizes below 1600px are
-     unchanged. */
-  @media (min-width: 1600px) {
-    html {
-      font-size: 21px;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    html {
-      font-size: 22.5px;
-    }
-  }
-
-  @media (min-width: 2400px) {
-    html {
-      font-size: 27px;
-    }
+    font-size: 16px;
+    background: var(--surface);
   }
 
   #root {
     min-height: 100dvh;
-    background: #ffffff;
+    background: var(--surface);
   }
 
   body {
-    background: #ffffff;
-    color: #4F6557;
-    font-family: 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 500;
-    line-height: 25px;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
 
+  /* Ink bands re-declare the tokens; make their own text follow. */
+  [data-theme='dark'] {
+    color: var(--ink);
+  }
+
   ::selection {
-    background: #5FB979;
-    color: #123420;
+    background: var(--brand-soft);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
   }
 
   h1,
@@ -88,15 +88,9 @@
   h4,
   h5,
   h6 {
-    font-family: 'Bricolage Grotesque', 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 800;
-    color: rgb(18, 52, 32);
-    letter-spacing: -0.02em;
-  }
-
-  h2 {
-    font-size: clamp(2rem, 1.5rem + 2.2vw, 3.1rem);
-    line-height: 1.08;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink);
   }
 }
 

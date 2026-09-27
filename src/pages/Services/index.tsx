@@ -26,36 +26,24 @@ export default function Services() {
 
   return (
     <>
-      {/* ── 1. Split hero (primary gradient panel, matches Team / Mission campaign) ── */}
-      <section className="no-reveal grid min-h-screen border-t border-brand/25 lg:grid-cols-2">
-        {/* Left, primary gradient + accordion */}
-        <div className="relative flex flex-col justify-center overflow-hidden border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#256B3C] via-brand to-[#C6E6C4]"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute inset-0 opacity-90"
-            style={{
-              background:
-                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(18, 52, 32, 0.08) 0%, transparent 50%)",
-            }}
-            aria-hidden="true"
-          />
+      {/* ── 1. Split hero (Ink panel, matches Team) ── */}
+      <section className="no-reveal grid min-h-screen lg:grid-cols-2">
+        {/* Left, Ink panel + service list */}
+        <div data-theme="dark" className="relative flex flex-col justify-center overflow-hidden bg-surface px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="relative z-[1] w-full max-w-[29rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
-            <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
+            <h1 className="h1 text-ink">
               Services
             </h1>
 
-            <ul className="mt-8 divide-y divide-ink/10">
+            <ul className="mt-8 divide-y divide-line">
               {SERVICES.map((svc) => (
                 <li key={svc.id}>
                   <Link
                     to={`/services/${svc.id}`}
-                    className="flex items-center justify-between gap-3 py-3.5 text-[1.1rem] text-ink/85 transition hover:text-ink"
+                    className="flex items-center justify-between gap-3 py-3.5 lead text-ink-muted transition hover:text-ink"
                   >
                     {svc.title}
-                    <ChevronRight size={14} strokeWidth={2} className="flex-shrink-0 text-ink/30" />
+                    <ChevronRight size={14} strokeWidth={2} className="flex-shrink-0 text-ink-muted" />
                   </Link>
                 </li>
               ))}

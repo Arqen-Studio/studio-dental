@@ -46,10 +46,10 @@ function IconBubble({ Icon, featured }: { Icon: LucideIcon; featured?: boolean }
   return (
     <span
       className={[
-        'inline-flex shrink-0 items-center justify-center rounded-2xl border shadow-soft-sm',
+        'inline-flex shrink-0 items-center justify-center rounded-md border shadow-1',
         featured
-          ? 'h-12 w-12 border-white/35 bg-white/15 text-white backdrop-blur-sm'
-          : 'h-11 w-11 border-[#256B3C]/25 bg-[#256B3C]/10 text-[#256B3C]',
+          ? 'h-12 w-12 border-line bg-ink/15 text-ink backdrop-blur-sm'
+          : 'h-11 w-11 border-brand/25 bg-brand/10 text-brand',
       ].join(' ')}
       aria-hidden="true"
     >
@@ -69,36 +69,23 @@ export default function HomeServicesShowcase({
   return (
     <section
       {...(!omitAnchorId ? { id: 'services' } : {})}
-      className="relative overflow-hidden bg-[#EEF6EC] py-10 md:py-16"
+      className="relative overflow-hidden bg-surface-sunken py-10 md:py-16"
       aria-labelledby="home-services-heading"
     >
-      <div
-        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#256B3C]/20 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -left-24 bottom-16 h-64 w-64 rounded-full bg-brand/15 blur-3xl"
-        aria-hidden="true"
-      />
-
       <div className="relative z-10 mx-auto w-full page-shell px-5 md:px-8">
         <h2
           id="home-services-heading"
-          className="text-center text-[clamp(1.45rem,2.6vw,2.1rem)] font-semibold tracking-tight text-ink"
+          className="text-center h3 text-ink"
         >
           Services
         </h2>
 
         <div className="mt-7 mb-7 flex flex-col gap-5 md:mt-8 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-[42rem]">
-            {/* <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-white/80 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-ink2 shadow-soft-sm backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#256B3C]" aria-hidden="true" />
-              Our services
-            </span> */}
-            <p className="mt-4 font-heading text-[clamp(1.55rem,2.6vw,2.35rem)] font-extrabold leading-[1.05] tracking-tight text-ink">
+            <p className="mt-4 h2 text-ink">
               Everything your smile needs, in one place.
             </p>
-            <p className="mt-3 max-w-[52ch] text-[0.95rem] leading-relaxed text-muted">
+            <p className="mt-3 max-w-[52ch] body text-ink-muted">
               From check-ups and hygiene to fillings, crowns, implants, aligners and
               dental care for children. A few are below, and every treatment we offer is
               listed on the services page with prices for both clinics.
@@ -107,10 +94,10 @@ export default function HomeServicesShowcase({
 
           <Link
             to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-white px-5 text-[0.8rem] font-semibold text-ink2 shadow-soft-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#256B3C]/80 hover:text-ink hover:shadow-soft-md lg:self-auto"
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-surface-raised px-5 small font-semibold text-ink shadow-1 transition duration-300 hover:-translate-y-0.5 hover:border-brand/80 hover:text-ink hover:shadow-2 lg:self-auto"
           >
             All services & prices
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#256B3C]/20 text-ink transition group-hover:bg-[#256B3C]/35">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand/20 text-ink transition group-hover:bg-brand/35">
               <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
           </Link>
@@ -118,7 +105,8 @@ export default function HomeServicesShowcase({
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-5">
           <article
-            className="group relative flex min-h-[14rem] flex-col overflow-hidden rounded-2xl border border-black/10 shadow-soft-md sm:col-span-2 sm:min-h-[15rem] lg:col-span-2 lg:row-span-2 lg:min-h-[21rem]"
+            data-theme="dark"
+            className="group relative flex min-h-[14rem] flex-col overflow-hidden rounded-md border border-line shadow-2 sm:col-span-2 sm:min-h-[15rem] lg:col-span-2 lg:row-span-2 lg:min-h-[21rem]"
           >
             <video
               ref={featuredVideoRef}
@@ -133,30 +121,30 @@ export default function HomeServicesShowcase({
               <source src="/videos/clinic-room-720.mp4" type="video/mp4" />
             </video>
             <div
-              className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10"
+              className="absolute inset-0 bg-scrim"
               aria-hidden="true"
             />
             <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
               <IconBubble Icon={featured.Icon} featured />
-              <h3 className="mt-5 text-[1.35rem] font-extrabold leading-tight text-white sm:text-[1.5rem]">
+              <h3 className="mt-5 h4 text-ink">
                 {featured.title}
               </h3>
-              <p className="mt-3 max-w-[40ch] text-[0.88rem] leading-relaxed text-white/90 sm:text-[0.92rem]">
+              <p className="mt-3 max-w-[40ch] body text-ink">
                 {featured.desc}
               </p>
               <Link
                 to={`/services/${featured.serviceId}`}
-                className="mt-auto inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-white underline-offset-4 transition hover:text-white hover:underline"
+                className="mt-auto inline-flex w-fit items-center gap-2 small font-semibold text-ink underline-offset-4 transition hover:underline"
               >
                 Read about this treatment
-                <ArrowRight size={12} strokeWidth={2.25} className="text-white opacity-90" aria-hidden />
+                <ArrowRight size={12} strokeWidth={2.25} className="opacity-90" aria-hidden />
               </Link>
               <Link
                 to="/services"
-                className="mt-3 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-white/80 underline-offset-4 transition hover:text-white hover:underline"
+                className="mt-3 inline-flex w-fit items-center gap-2 small font-semibold text-ink-muted underline-offset-4 transition hover:text-ink hover:underline"
               >
                 Explore all treatments
-                <ArrowRight size={12} strokeWidth={2.25} className="text-white opacity-90" aria-hidden />
+                <ArrowRight size={12} strokeWidth={2.25} className="opacity-90" aria-hidden />
               </Link>
             </div>
           </article>
@@ -164,18 +152,18 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.serviceId}
-              className="reveal flex min-h-[10rem] flex-col rounded-2xl border border-black/8 bg-white/95 p-5 shadow-soft-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#256B3C]/28 hover:shadow-soft-md sm:min-h-0"
+              className="reveal flex min-h-[10rem] flex-col rounded-md border border-line bg-surface-raised p-5 shadow-1 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-brand/28 hover:shadow-2 sm:min-h-0"
             >
               <div className="flex items-start gap-3">
                 <IconBubble Icon={item.Icon} />
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-[1.02rem] font-extrabold leading-snug text-[#256B3C]">{item.title}</h3>
-                  <p className="mt-2 text-[0.82rem] leading-relaxed text-muted">{item.desc}</p>
+                  <h3 className="h4 text-brand">{item.title}</h3>
+                  <p className="mt-2 small text-ink-muted">{item.desc}</p>
                 </div>
               </div>
               <Link
                 to={`/services/${item.serviceId}`}
-                className="mt-auto flex items-center gap-1.5 border-t border-[#256B3C]/18 pt-3.5 text-[0.8rem] font-semibold text-[#256B3C] underline-offset-4 transition hover:underline"
+                className="mt-auto flex items-center gap-1.5 border-t border-brand/18 pt-3.5 small font-semibold text-brand underline-offset-4 transition hover:underline"
               >
                 Read more
                 <ArrowRight size={12} strokeWidth={2.25} aria-hidden />
