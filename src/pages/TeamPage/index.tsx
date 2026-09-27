@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { TeamDoctorCard } from '../../components/TeamDoctorCard'
 import { TEAM_DOCTORS } from '../../data/teamDoctors'
 import ContactFormSection from '../../components/ContactFormSection'
@@ -17,6 +18,42 @@ const TEAM_HERO_VIDEO = '/videos/clinic-team-720.mp4'
 const TEAM_HERO_POSTER = '/videos/clinic-team-poster.jpg'
 const TEAM_HERO_VIDEO_F7 = '/videos/treatment-room-720.mp4'
 const TEAM_HERO_POSTER_F7 = '/videos/treatment-room-poster.jpg'
+
+/** Each branch panel links to the doctors grid, the services page and the
+ *  contact form. Two tones: dark text on the light DHA panel, light text on
+ *  the dark F-7 panel. */
+const PANEL_LINKS = [
+  { label: 'Doctors', href: '#doctors' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '#contact' },
+] as const
+
+function PanelLinks({ tone }: { tone: 'dark' | 'light' }) {
+  const text = tone === 'dark' ? 'text-ink/75 hover:text-ink' : 'text-creamBrand/90 hover:text-creamBrand'
+  const dash = tone === 'dark' ? 'bg-ink/30 group-hover:bg-ink' : 'bg-creamBrand/60 group-hover:bg-creamBrand'
+  const cls = `group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold ${text} transition duration-200`
+  return (
+    <ul className="mt-7 flex flex-col gap-0.5">
+      {PANEL_LINKS.map(({ label, href }) => {
+        const inner = (
+          <>
+            <span className={`h-px w-5 ${dash} transition-all duration-300 group-hover:w-9`} />
+            {label}
+          </>
+        )
+        return (
+          <li key={label}>
+            {href.startsWith('#') ? (
+              <a href={href} className={cls}>{inner}</a>
+            ) : (
+              <Link to={href} className={cls}>{inner}</Link>
+            )}
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
 
 export default function TeamPage() {
   const [selectedService, setSelectedService] = useState(ALL_SERVICES)
@@ -73,19 +110,7 @@ export default function TeamPage() {
               <h1 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
                 DHA Phase II
               </h1>
-              <ul className="mt-7 flex flex-col gap-0.5">
-                {['Doctors', 'Services', 'Contact'].map((label) => (
-                  <li key={label}>
-                    <a
-                      href="#doctors"
-                      className="group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold text-ink/75 transition duration-200 hover:text-ink"
-                    >
-                      <span className="h-px w-5 bg-ink/30 transition-all duration-300 group-hover:w-9 group-hover:bg-ink" />
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <PanelLinks tone="dark" />
             </div>
           </div>
         </div>
@@ -103,19 +128,7 @@ export default function TeamPage() {
               <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-creamBrand">
                 F-7 Markaz
               </h2>
-              <ul className="mt-7 flex flex-col gap-0.5">
-                {['Doctors', 'Services', 'Contact'].map((label) => (
-                  <li key={label}>
-                    <a
-                      href="#doctors"
-                      className="group inline-flex items-center gap-3 py-2 text-[1rem] font-semibold text-creamBrand/90 transition duration-200 hover:text-creamBrand"
-                    >
-                      <span className="h-px w-5 bg-creamBrand/60 transition-all duration-300 group-hover:w-9 group-hover:bg-creamBrand" />
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <PanelLinks tone="light" />
             </div>
           </div>
           {/* Photo */}
@@ -185,7 +198,9 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <ContactFormSection />
+      <div id="contact" className="scroll-mt-24">
+        <ContactFormSection />
+      </div>
     </>
   )
 }
