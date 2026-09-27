@@ -25,8 +25,19 @@ const TEAM_HERO_POSTER_F7 = '/videos/treatment-room-poster.jpg'
 const PANEL_LINKS = [
   { label: 'Doctors', href: '#doctors' },
   { label: 'Services', href: '/services' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact-us' },
 ] as const
+
+function scrollToHash(e: React.MouseEvent, href: string) {
+  const el = document.querySelector(href)
+  if (!el) return
+  e.preventDefault()
+  const header = document.querySelector('header')
+  const offset = (header?.getBoundingClientRect().height ?? 0) + 8
+  const y = el.getBoundingClientRect().top + window.scrollY - offset
+  window.scrollTo({ top: y, behavior: 'auto' })
+  history.replaceState(null, '', href)
+}
 
 function PanelLinks({ tone }: { tone: 'dark' | 'light' }) {
   const text = tone === 'dark' ? 'text-ink/75 hover:text-ink' : 'text-creamBrand/90 hover:text-creamBrand'
@@ -44,7 +55,7 @@ function PanelLinks({ tone }: { tone: 'dark' | 'light' }) {
         return (
           <li key={label}>
             {href.startsWith('#') ? (
-              <a href={href} className={cls}>{inner}</a>
+              <a href={href} onClick={(e) => scrollToHash(e, href)} className={cls}>{inner}</a>
             ) : (
               <Link to={href} className={cls}>{inner}</Link>
             )}
@@ -198,9 +209,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <div id="contact" className="scroll-mt-24">
-        <ContactFormSection />
-      </div>
+      <ContactFormSection />
     </>
   )
 }
