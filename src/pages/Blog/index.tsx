@@ -11,8 +11,8 @@ type Post = {
 };
 
 // Two known-working images rotated across cards
-const IMG_A = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=70";
-const IMG_B = "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=70";
+const IMG_A = "/images/gallery/g2.jpg";
+const IMG_B = "/images/gallery/g6.jpg";
 
 const POSTS: Post[] = [
   { id: "1", date: "2026-03-15", title: "How often should you visit the dentist?",                            image: IMG_A, clinic: "both" },

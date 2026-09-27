@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 
 const GALLERY = [
-  'https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=1400&q=70',
-  'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=70',
-  'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1400&q=70',
-  'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=70',
-  'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1400&q=70',
-  'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=70',
+  '/images/gallery/g1.jpg',
+  '/images/gallery/g2.jpg',
+  '/images/gallery/g3.jpg',
+  '/images/gallery/g4.jpg',
+  '/images/gallery/g5.jpg',
+  '/images/gallery/g6.jpg',
 ]
 
 export default function Gallery() {

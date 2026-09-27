@@ -99,7 +99,7 @@ export default function Prices() {
           {/* Right panel, photo */}
           <div className="relative hidden overflow-hidden lg:block lg:min-h-screen">
             <img
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=75"
+              src="/images/clinic/interior-c.jpg"
               alt="Patient reviewing treatment plan"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
