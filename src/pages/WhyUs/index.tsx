@@ -1,5 +1,3 @@
-import { useCountUp, useInView } from "../../hooks/useCountUp";
-
 const FEATURES = [
   {
     title: 'Modern diagnostics',
@@ -16,16 +14,11 @@ const FEATURES = [
 ]
 
 export default function WhyUs() {
-  const { ref: statsRef, inView: statsInView } = useInView<HTMLDivElement>(0.35);
-  const yearsCount = useCountUp(17, statsInView);
-  const clinicsCount = useCountUp(2, statsInView);
-  const specialistsCount = useCountUp(10, statsInView);
-  const clientsCount = useCountUp(5000, statsInView);
-
   return (
     <section
       id="why"
-      className="no-reveal mx-4 overflow-hidden rounded-xl border border-white/10 bg-ink py-10 text-creamBrand md:mx-8 md:py-16"
+      data-theme="dark"
+      className="no-reveal mx-4 overflow-hidden rounded-xl border border-line bg-surface py-10 text-creamBrand md:mx-8 md:py-16"
     >
       <div className="mx-auto w-full page-shell px-5 py-10 md:px-8 md:py-14 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
         <div className="mb-8 max-w-[36rem] md:mb-10">
@@ -33,34 +26,33 @@ export default function WhyUs() {
             <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
             Why Studio Dental
           </span>
-          <h2 className="mt-4 text-balance text-creamBrand">Experienced specialists and modern dentistry.</h2>
+          <h1 className="mt-4 text-balance text-creamBrand text-[clamp(2rem,1.5rem+2.2vw,3.1rem)] leading-[1.08]">Experienced specialists and modern dentistry.</h1>
         </div>
 
         <div
-          ref={statsRef}
-          className="mb-8 grid grid-cols-2 gap-6 border-y border-white/15 py-8 md:mb-10 md:grid-cols-4"
+          className="mb-8 grid grid-cols-2 gap-6 border-y border-line py-8 md:mb-10 md:grid-cols-4"
         >
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
-              {yearsCount}+
+              17+
             </div>
             <div className="mt-2 text-[0.9rem] text-creamBrand/65">Years of experience</div>
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
-              {clinicsCount}
+              2
             </div>
             <div className="mt-2 text-[0.9rem] text-creamBrand/65">Specialized clinics</div>
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
-              {specialistsCount}+
+              10+
             </div>
             <div className="mt-2 text-[0.9rem] text-creamBrand/65">Top specialists</div>
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
-              {clientsCount}+
+              5000+
             </div>
             <div className="mt-2 text-[0.9rem] text-creamBrand/65">Happy clients treated</div>
           </div>
@@ -68,7 +60,7 @@ export default function WhyUs() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
-            <div key={f.title} className="border-t border-white/15 py-6">
+            <div key={f.title} className="border-t border-line py-6">
               <div className="mb-4 text-[0.85rem] font-semibold tracking-[0.18em] text-brand">
                 {String(i + 1).padStart(2, '0')}
               </div>

@@ -111,12 +111,7 @@ export default function TeamPage() {
             </video>
           </div>
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: 'radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.35) 0%, transparent 55%)' }}
-              aria-hidden="true"
-            />
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
               <h1 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
                 DHA Phase II
@@ -129,17 +124,12 @@ export default function TeamPage() {
         {/* Row 2: text left · photo right, F-7 Markaz */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-[#256B3C] px-6 py-14 md:px-12 lg:px-16">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: 'radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.28) 0%, transparent 55%)' }}
-              aria-hidden="true"
-            />
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 md:px-12 lg:px-16">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.7s_both]">
-              <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-creamBrand">
+              <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
                 F-7 Markaz
               </h2>
-              <PanelLinks tone="light" />
+              <PanelLinks tone="dark" />
             </div>
           </div>
           {/* Photo */}
@@ -161,7 +151,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section id="doctors" className="bg-[#EEF6EC] py-16 md:py-24">
+      <section id="doctors" className="bg-surface-sunken py-16 md:py-24">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           <h2 className="text-center text-[2rem] leading-none text-ink md:text-[2.25rem]">Doctors</h2>
 
@@ -174,7 +164,7 @@ export default function TeamPage() {
                 id="service-filter"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full appearance-none border-b-2 border-[#256B3C] bg-transparent pb-2.5 pr-9 text-[0.95rem] text-ink2 outline-none"
+                className="w-full min-h-11 appearance-none border-b-2 border-brand bg-transparent pb-2.5 pr-9 text-[0.95rem] text-ink2"
               >
                 {serviceOptions.map((service) => (
                   <option key={service} value={service}>

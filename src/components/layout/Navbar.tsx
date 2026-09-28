@@ -41,12 +41,8 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const hasHeroHeader =
-    pathname === "/" ||
-    pathname === "/services" ||
-    pathname === "/doctors" ||
-    /^\/doctors\/.+/.test(pathname) ||
-    pathname === "/about";
+  // Transparent only over the home page video; every other page starts on a light panel.
+  const hasHeroHeader = pathname === "/";
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 
   const openContactDrawer = () => {
@@ -67,7 +63,7 @@ export default function Navbar() {
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
         <Link
           to="/"
-          className="inline-flex shrink-0 items-center"
+          className="inline-flex min-h-11 shrink-0 items-center"
           aria-label="Studio Dental home"
         >
           <Logo size={30} tone={isTransparent ? "inverse" : "brand"} />

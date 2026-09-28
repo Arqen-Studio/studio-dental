@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../lib/formatDate";
 import ContactFormSection from "../../components/ContactFormSection";
 
 type Post = {
@@ -52,7 +53,7 @@ export default function Blog() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="no-reveal bg-brand pb-10 pt-[calc(78px+2.5rem)]">
+      <section className="no-reveal bg-brand-soft pb-10 pt-[calc(78px+2.5rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <div className="flex flex-col items-center text-center">
             <h1 className="text-[clamp(2.8rem,5vw,4.2rem)] font-extrabold leading-none tracking-tight text-ink">
@@ -71,7 +72,7 @@ export default function Blog() {
                     "rounded-full px-6 py-2.5 text-[0.9rem] font-semibold transition duration-200",
                     activeClinic === c.id
                       ? "bg-ink text-creamBrand"
-                      : "bg-white/30 text-ink hover:bg-white/55",
+                      : "bg-surface-raised/30 text-ink hover:bg-surface-raised/55",
                   ].join(" ")}
                 >
                   {c.label}
@@ -83,7 +84,7 @@ export default function Blog() {
       </section>
 
       {/* ── Cards grid ── */}
-      <section className="bg-[#EEF6EC] py-0">
+      <section className="bg-surface-sunken py-0">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
         <div
           key={gridKey}
@@ -94,7 +95,7 @@ export default function Blog() {
               key={post.id}
               className={[
                 "flex h-full flex-col overflow-hidden rounded-2xl shadow-sm",
-                i % 4 === 1 || i % 4 === 2 ? "bg-brand/10" : "bg-white",
+                i % 4 === 1 || i % 4 === 2 ? "bg-brand/10" : "bg-surface-raised",
               ].join(" ")}
               style={{
                 animation: `sd-hero-text-in 0.55s cubic-bezier(0.25,0.46,0.45,0.94) ${i * 80}ms both`,
@@ -112,14 +113,14 @@ export default function Blog() {
 
               {/* Content */}
               <div className="flex flex-1 flex-col px-6 py-5 md:px-8 md:py-6">
-                <p className="text-[0.78rem] font-semibold text-brand/80">{post.date}</p>
+                <p className="text-[0.78rem] font-semibold text-brand">{formatDate(post.date)}</p>
                 <h2 className="mt-2 text-[1rem] font-bold leading-snug text-ink md:text-[1.1rem]">
                   {post.title}
                 </h2>
                 <div className="mt-auto flex justify-end pt-4">
                   <Link
                     to={`/blog/${post.id}`}
-                    className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
+                    className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-[0.85rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
                   >
                     More
                   </Link>
@@ -135,7 +136,7 @@ export default function Blog() {
             <button
               type="button"
               onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
+              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
             >
               More
             </button>

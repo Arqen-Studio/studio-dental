@@ -128,7 +128,7 @@ function ClinicCard({
             href={mapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-block text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
+            className="inline-flex min-h-11 items-center text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
           >
             Get directions
           </a>
@@ -145,20 +145,20 @@ function ClinicCard({
           <p className="text-[0.78rem] font-medium text-muted">Phone</p>
           <a
             href={`tel:${phone.replace(/\s/g, "")}`}
-            className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-brand"
+            className="flex min-h-11 items-center text-[0.88rem] text-ink transition hover:text-brand"
           >
             {phone}
           </a>
           <p className="mt-3 text-[0.78rem] font-medium text-muted">Email</p>
           <a
             href={`mailto:${email}`}
-            className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-brand"
+            className="flex min-h-11 items-center break-all text-[0.88rem] text-ink transition hover:text-brand"
           >
             {email}
           </a>
           <Link
             to="/contact-us"
-            className="mt-3 inline-block text-[0.88rem] font-semibold text-brand underline-offset-2 transition hover:underline"
+            className="inline-flex min-h-11 items-center text-[0.88rem] font-semibold text-brand underline-offset-2 transition hover:underline"
           >
             Contact
           </Link>

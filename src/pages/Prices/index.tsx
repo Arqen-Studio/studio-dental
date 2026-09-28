@@ -32,17 +32,12 @@ export default function Prices() {
       <section className="no-reveal lg:min-h-screen">
         <div className="grid lg:grid-cols-2">
           {/* Left panel */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: "radial-gradient(ellipse 80% 60% at 0% 0%, rgba(255,255,255,0.38) 0%, transparent 55%)" }}
-              aria-hidden="true"
-            />
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
               <h1 className="text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold leading-[1] tracking-tight text-ink">
                 Service prices
               </h1>
-              <p className="mt-3 text-[1rem] text-ink/60">
+              <p className="mt-3 text-[1rem] text-ink-muted">
                 Select which clinic's price list to view:
               </p>
 
@@ -56,12 +51,12 @@ export default function Prices() {
                     className={[
                       "rounded-xl px-4 py-3.5 text-left backdrop-blur-sm transition duration-200",
                       selectedClinic === c.id
-                        ? "bg-white/65 shadow-soft-sm"
-                        : "bg-white/30 hover:bg-white/50",
+                        ? "bg-surface-raised/65 shadow-soft-sm"
+                        : "bg-surface-raised/30 hover:bg-surface-raised/50",
                     ].join(" ")}
                   >
                     <p className="text-[1.05rem] font-bold text-ink">{c.name}</p>
-                    <p className="mt-0.5 text-[0.85rem] text-ink/55">{c.address}</p>
+                    <p className="mt-0.5 text-[0.85rem] text-ink-muted">{c.address}</p>
                   </button>
                 ))}
               </div>
@@ -109,7 +104,7 @@ export default function Prices() {
       </section>
 
       {/* ── Info text, hidden once a clinic is selected ── */}
-      <section className={`reveal bg-white py-14 md:py-20 ${selectedClinic ? "hidden" : ""}`}>
+      <section className={`reveal bg-surface-raised py-14 md:py-20 ${selectedClinic ? "hidden" : ""}`}>
         <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <h2 className="text-[1.2rem] font-bold text-ink">
             Transparent pricing at Studio Dental
@@ -140,7 +135,7 @@ export default function Prices() {
       {selectedClinic && categories.map((cat) => (
         <section key={cat.id} id={cat.id} className="scroll-mt-[78px]">
           {/* Category heading band */}
-          <div className="bg-[#C6E6C4] py-10 text-center">
+          <div className="bg-brand-soft py-10 text-center">
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-brand">
               {cat.label}
             </h2>
@@ -148,13 +143,13 @@ export default function Prices() {
           </div>
 
           {/* Price rows */}
-          <div className="bg-white py-10">
+          <div className="bg-surface-raised py-10">
             <div className="mx-auto w-full max-w-[55rem] px-5 md:px-8">
               <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
                 {cat.items.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between gap-4 px-4 py-3 odd:bg-black/[0.025]"
+                    className="flex items-center justify-between gap-4 px-4 py-3 odd:bg-surface-sunken"
                   >
                     <span className="text-[1rem] text-ink">{item.name}</span>
                     <span className="flex-shrink-0 text-[1rem] font-semibold text-ink">

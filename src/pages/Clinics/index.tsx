@@ -91,7 +91,7 @@ export default function Clinics() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="no-reveal bg-brand pb-12 pt-[calc(78px+2rem)]">
+      <section className="no-reveal bg-brand-soft pb-12 pt-[calc(78px+2rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <h1 className="text-[clamp(2.6rem,5vw,4rem)] font-bold leading-none text-ink">
             Contacts
@@ -100,7 +100,7 @@ export default function Clinics() {
       </section>
 
       {/* ── Clinic photo cards ── */}
-      <section className="bg-[#E9F4E5] py-12 md:py-16">
+      <section className="bg-surface-sunken py-12 md:py-16">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           {/* The five row bands are declared on this grid and adopted by each
               card, so the longer DHA address cannot push that card's hours and
@@ -109,10 +109,10 @@ export default function Clinics() {
             {CLINICS.map((clinic) => (
               <div
                 key={clinic.id}
-                className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
+                className="flex h-full flex-col overflow-hidden rounded-xl bg-surface-raised shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
               >
                 {/* Photo */}
-                <div className="aspect-[8/3] overflow-hidden bg-[#B9D6B4]">
+                <div className="aspect-[8/3] overflow-hidden bg-surface-sunken">
                   <img
                     src={clinic.photo}
                     alt={`Studio Dental ${clinic.name} interior`}
@@ -122,7 +122,7 @@ export default function Clinics() {
                 </div>
 
                 {/* Info rows with dividers */}
-                <div className="divide-y divide-black/8 px-5 py-2 md:row-span-4 md:grid md:grid-rows-subgrid md:px-7 md:py-0">
+                <div className="divide-y divide-line px-5 py-2 md:row-span-4 md:grid md:grid-rows-subgrid md:px-7 md:py-0">
                   {/* Address */}
                   <div className="flex items-start gap-4 py-5">
                     <span className="mt-0.5 flex-shrink-0 text-brand">
@@ -139,9 +139,9 @@ export default function Clinics() {
                         href={clinic.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 block text-[0.85rem] font-medium text-brand transition hover:underline"
+                        className="flex min-h-11 items-center text-[0.85rem] font-medium text-brand transition hover:underline"
                       >
-                        Location on the map
+                        Get directions
                       </a>
                     </div>
                   </div>
@@ -157,16 +157,16 @@ export default function Clinics() {
                       </p>
                       <a
                         href={`tel:${clinic.phone.replace(/\s/g, "")}`}
-                        className="mt-1 block text-[0.9rem] font-medium text-brand transition hover:underline"
+                        className="flex min-h-11 items-center text-[0.9rem] font-medium text-brand transition hover:underline"
                       >
                         {clinic.phone}
                       </a>
                       <p className="mt-1 text-[0.78rem] font-semibold uppercase tracking-wide text-ink2">
-                        E-mail
+                        Email
                       </p>
                       <a
                         href={`mailto:${clinic.email}`}
-                        className="mt-0.5 block break-all text-[0.9rem] font-medium text-brand transition hover:underline"
+                        className="flex min-h-11 items-center break-all text-[0.9rem] font-medium text-brand transition hover:underline"
                       >
                         {clinic.email}
                       </a>
@@ -196,7 +196,7 @@ export default function Clinics() {
                   <div className="flex gap-3 py-5">
                     <Link
                       to="/contact-us"
-                      className="flex-1 rounded-full bg-brand py-3 text-center text-[0.9rem] font-semibold text-ink transition hover:bg-brand/85"
+                      className="flex-1 rounded-full bg-brand py-3 text-center text-[0.9rem] font-semibold text-on-brand transition hover:bg-brand-hover"
                     >
                       Contact
                     </Link>
@@ -217,7 +217,7 @@ export default function Clinics() {
       </section>
 
       {/* ── "You will be welcomed." — teaser to the team page ── */}
-      <section className="bg-[#E9F4E5] py-16 md:py-24">
+      <section className="bg-surface-sunken py-16 md:py-24">
         <div className="mx-auto w-full max-w-[46rem] px-5 text-center md:px-8">
           <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
             You will be welcomed.

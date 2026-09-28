@@ -26,22 +26,10 @@ export default function Services() {
 
   return (
     <>
-      {/* ── 1. Split hero (primary gradient panel, matches Team / Mission campaign) ── */}
+      {/* ── 1. Split hero (Mist panel, matches Team / Mission campaign) ── */}
       <section className="no-reveal grid min-h-screen border-t border-brand/25 lg:grid-cols-2">
-        {/* Left, primary gradient + accordion */}
-        <div className="relative flex flex-col justify-center overflow-hidden border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#256B3C] via-brand to-[#C6E6C4]"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute inset-0 opacity-90"
-            style={{
-              background:
-                "radial-gradient(ellipse 85% 65% at 100% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 52%), radial-gradient(ellipse 70% 55% at 0% 100%, rgba(18, 52, 32, 0.08) 0%, transparent 50%)",
-            }}
-            aria-hidden="true"
-          />
+        {/* Left, Mist panel + accordion */}
+        <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="relative z-[1] w-full max-w-[29rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               Services

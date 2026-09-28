@@ -16,10 +16,10 @@ export default function DoctorProfile() {
   const practiceRight = doctor.practiceAreas.slice(mid)
 
   return (
-    <div className="no-reveal bg-[#EEF6EC]">
+    <div className="no-reveal bg-surface-sunken">
       {/* Hero, photo left · primary panel right */}
       <section className="grid min-h-[min(100dvh,920px)] lg:grid-cols-2">
-        <div className="relative min-h-[52vw] bg-[#B9D6B4] lg:min-h-0">
+        <div className="relative min-h-[52vw] bg-surface-sunken lg:min-h-0">
           {doctor.image && (
             <img
               src={doctor.image}
@@ -28,15 +28,7 @@ export default function DoctorProfile() {
             />
           )}
         </div>
-        <div className="relative flex flex-col justify-center bg-brand px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.14]"
-            style={{
-              background:
-                'radial-gradient(ellipse 85% 55% at 100% 0%, rgba(255,255,255,0.85) 0%, transparent 58%)',
-            }}
-            aria-hidden
-          />
+        <div className="relative flex flex-col justify-center bg-brand-soft px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
           <div className="relative z-[1] text-ink">
             {doctor.heroTitleLines && doctor.heroTitleLines.length > 0 ? (
               <>
@@ -82,7 +74,7 @@ export default function DoctorProfile() {
       </section>
 
       {/* Practice areas, full viewport width */}
-      <section className="w-full bg-[#EEF6EC] py-12 md:py-16">
+      <section className="w-full bg-surface-sunken py-12 md:py-16">
         <div className="mx-auto w-full max-w-[45rem] px-5 md:px-8">
           <ProfileSection title="Practice areas:" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">

@@ -20,9 +20,7 @@ export default function ServiceDetail() {
 
   if (!service) return <Navigate to="/services" replace />;
 
-  const specialists = TEAM_DOCTORS.filter((d) =>
-    d.services.some((s) => service.specialistTags.includes(s))
-  );
+  const specialists = TEAM_DOCTORS.filter((d) => d.services.includes(service.title));
 
   const otherServices = SERVICES_DATA.filter((s) => s.id !== service.id).slice(0, 6);
 
@@ -50,19 +48,11 @@ export default function ServiceDetail() {
           </div>
 
           {/* Text, right */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255,255,255,0.35) 0%, transparent 55%)",
-              }}
-              aria-hidden="true"
-            />
+          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
               <Link
                 to="/services"
-                className="mb-6 inline-flex items-center gap-2 text-[0.8rem] font-semibold text-ink/60 transition hover:text-ink"
+                className="mb-6 inline-flex min-h-11 items-center gap-2 text-[0.8rem] font-semibold text-ink-muted transition hover:text-ink"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -82,7 +72,7 @@ export default function ServiceDetail() {
                     .querySelector<HTMLButtonElement>('[aria-label="Open online registration"]')
                     ?.click()
                 }
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 text-[0.9rem] font-semibold text-creamBrand transition duration-200 hover:bg-ink/85"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 text-[0.9rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
               >
                 Register for a consultation
               </button>
@@ -92,7 +82,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── Intro paragraph ── */}
-      <section className="reveal bg-white py-16 md:py-20">
+      <section className="reveal bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <p className="text-[1rem] leading-relaxed text-muted md:text-[1.05rem]">
             {service.intro}
@@ -105,7 +95,7 @@ export default function ServiceDetail() {
                   .querySelector<HTMLButtonElement>('[aria-label="Open online registration"]')
                   ?.click()
               }
-              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
+              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
             >
               Register for a consultation
             </button>
@@ -114,7 +104,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── When necessary, alternating split rows ── */}
-      <section className="reveal bg-white">
+      <section className="reveal bg-surface-raised">
         <div className="mx-auto w-full page-shell px-5 pb-4 pt-0 text-center md:px-8">
           <h2 className="text-[clamp(1.6rem,3.5vw,2.4rem)] font-bold text-ink">
             {service.whenHeading}
@@ -156,7 +146,7 @@ export default function ServiceDetail() {
                   />
                 </div>
                 {/* Text right */}
-                <div className="order-first flex flex-col justify-center bg-brand px-6 py-12 md:px-12 lg:order-last lg:px-16">
+                <div className="order-first flex flex-col justify-center bg-brand-soft px-6 py-12 md:px-12 lg:order-last lg:px-16">
                   <h3 className="text-[clamp(1.4rem,2.5vw,2rem)] font-bold leading-tight text-ink">
                     {scenario.title}
                   </h3>
@@ -171,7 +161,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── Prices ── */}
-      <section className="reveal bg-white py-16 md:py-20">
+      <section className="reveal bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[55rem] px-5 md:px-8">
           <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">Prices</h2>
           <div className="mb-8 mt-3 h-px bg-ink/15" />
@@ -179,7 +169,7 @@ export default function ServiceDetail() {
           {/* Price rows, the two branches price most treatments differently */}
           {priceCategories.map((cat) => (
             <div key={cat.id} className="mb-8 last:mb-0">
-              <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 border-b border-ink/15 pb-2 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-ink/45 sm:gap-x-10">
+              <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 border-b border-ink/15 pb-2 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-ink-muted sm:gap-x-10">
                 <span>{cat.label}</span>
                 <span className="text-right">DHA Phase II</span>
                 <span className="text-right">F-7 Markaz</span>
@@ -187,14 +177,14 @@ export default function ServiceDetail() {
               {cat.items.map((item, i) => (
                 <div
                   key={i}
-                  className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 px-1 py-3 text-[0.92rem] odd:bg-black/[0.03] sm:gap-x-10 sm:px-3"
+                  className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 px-1 py-3 text-[0.92rem] odd:bg-surface-sunken sm:gap-x-10 sm:px-3"
                 >
                   <span className="text-ink">{item.name}</span>
                   <span className="text-right font-semibold tabular-nums text-ink">
-                    {"dha" in item ? formatPrice(item.dha) : <span className="text-[0.78rem] font-normal text-ink/35">Not offered</span>}
+                    {"dha" in item ? formatPrice(item.dha) : <span className="text-[0.78rem] font-normal text-ink-muted">Not offered</span>}
                   </span>
                   <span className="text-right font-semibold tabular-nums text-ink">
-                    {"f7" in item ? formatPrice(item.f7) : <span className="text-[0.78rem] font-normal text-ink/35">Not offered</span>}
+                    {"f7" in item ? formatPrice(item.f7) : <span className="text-[0.78rem] font-normal text-ink-muted">Not offered</span>}
                   </span>
                 </div>
               ))}
@@ -203,7 +193,7 @@ export default function ServiceDetail() {
 
           {/* Disclaimer */}
           <div className="mt-6 rounded-xl bg-brand/10 px-5 py-4">
-            <p className="text-[0.82rem] leading-relaxed text-ink/60">
+            <p className="text-[0.82rem] leading-relaxed text-ink-muted">
               ! The exact price of treatment is determined after a doctor's examination, assessing
               the patient's condition and discussing the individual treatment plan and possible
               additional procedures. Prices may be updated at registration.
@@ -211,7 +201,7 @@ export default function ServiceDetail() {
           </div>
 
           {/* Clinic selector cards */}
-          <p className="mt-10 text-center text-[0.88rem] text-ink/55">
+          <p className="mt-10 text-center text-[0.88rem] text-ink-muted">
             Select the clinic price list you want to see:
           </p>
           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -227,14 +217,14 @@ export default function ServiceDetail() {
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-ink/50" />
+                <div className="absolute inset-0 bg-scrim" />
                 <div className="relative flex h-full flex-col justify-between p-8">
                   <div>
-                    <p className="text-[1.3rem] font-bold text-white">{c.name}</p>
-                    <p className="mt-1 text-[0.8rem] text-white/65">{c.address}</p>
+                    <p className="text-[1.3rem] font-bold text-raw-porcelain">{c.name}</p>
+                    <p className="mt-1 text-[0.8rem] text-raw-porcelain/80">{c.address}</p>
                   </div>
                   <div>
-                    <span className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 group-hover:bg-brand">
+                    <span className="inline-flex items-center justify-center rounded-full bg-surface-raised px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 group-hover:bg-brand group-hover:text-on-brand">
                       View prices
                     </span>
                   </div>
@@ -247,7 +237,7 @@ export default function ServiceDetail() {
 
       {/* ── Specialists ── */}
       {specialists.length > 0 && (
-        <section className="reveal bg-[#EEF6EC] py-16 md:py-20">
+        <section className="reveal bg-surface-sunken py-16 md:py-20">
           <div className="mx-auto w-full page-shell px-5 md:px-8">
             <h2 className="text-center text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">
               Specialists
@@ -268,7 +258,7 @@ export default function ServiceDetail() {
             <div className="mt-10 flex justify-center">
               <Link
                 to="/doctors"
-                className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
+                className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 text-[0.9rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
               >
                 More specialists
               </Link>
@@ -278,7 +268,7 @@ export default function ServiceDetail() {
       )}
 
       {/* ── Operation progress ── */}
-      <section className="reveal bg-white py-16 md:py-20">
+      <section className="reveal bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold text-ink">
             Operation progress:
@@ -286,7 +276,7 @@ export default function ServiceDetail() {
           <ul className="mt-6 flex flex-col gap-4">
             {service.steps.map((step, i) => (
               <li key={i} className="flex gap-4">
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand text-[0.72rem] font-bold text-ink">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand text-[0.72rem] font-bold text-on-brand">
                   {i + 1}
                 </span>
                 <p className="text-[0.95rem] leading-relaxed text-muted">{step}</p>
@@ -300,12 +290,7 @@ export default function ServiceDetail() {
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
           {/* Text left, brand bg */}
-          <div className="relative flex flex-col justify-center bg-brand px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: "radial-gradient(ellipse 80% 60% at 0% 100%, rgba(255,255,255,0.32) 0%, transparent 55%)" }}
-              aria-hidden="true"
-            />
+          <div className="relative flex flex-col justify-center bg-brand-soft px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
             <div className="relative z-[1]">
               <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
                 Other services
@@ -325,7 +310,7 @@ export default function ServiceDetail() {
               <div className="mt-8">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3 text-[0.88rem] font-semibold text-creamBrand transition duration-200 hover:bg-ink/80"
+                  className="inline-flex items-center justify-center rounded-full bg-brand px-7 py-3 text-[0.88rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
                 >
                   All services
                 </Link>

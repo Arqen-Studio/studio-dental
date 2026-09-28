@@ -13,10 +13,10 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
   return (
     <Link
       to={`/doctors/${slug}`}
-      className="block h-full overflow-hidden rounded-lg border border-black/10 bg-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      className="block h-full overflow-hidden rounded-lg border border-line bg-surface-raised shadow-soft-sm transition-shadow duration-300 hover:shadow-soft-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
     >
     <article className="flex h-full flex-col overflow-hidden">
-      <div className="aspect-[4/3] flex-none bg-[#B9D6B4]">
+      <div className="aspect-[4/3] flex-none bg-surface-sunken">
         {image && (
           <img
             src={image}
@@ -27,12 +27,12 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
         )}
       </div>
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-[1.35rem] font-semibold leading-tight text-[#256B3C]">{name}</h3>
+        <h3 className="text-[1.35rem] font-semibold leading-tight text-brand">{name}</h3>
         {creds && <p className="mt-1 text-[0.82rem] leading-snug text-muted">{creds}</p>}
         {role && <p className="mt-1 text-[0.82rem] leading-snug text-muted">{role}</p>}
         {clinic && (
           <div className="mt-auto pt-4">
-            <span className="inline-flex rounded-sm bg-[#5FB979] px-3 py-1 text-[0.72rem] font-medium text-ink">
+            <span className="inline-flex rounded-sm bg-brand-soft px-3 py-1 text-[0.72rem] font-medium text-ink">
               {clinic}
             </span>
           </div>

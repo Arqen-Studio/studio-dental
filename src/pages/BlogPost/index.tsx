@@ -1,4 +1,6 @@
 import { Link, useParams } from "react-router-dom";
+import { formatDate } from "../../lib/formatDate";
+import { CLINICS } from "../../data/clinics";
 
 const IMG_A = "/images/gallery/g1.jpg";
 const IMG_B = "/images/gallery/g3.jpg";
@@ -22,11 +24,11 @@ export default function BlogPost() {
   return (
     <>
       {/* ── Thin hero band ── */}
-      <section className="no-reveal bg-brand pt-[78px]">
+      <section className="no-reveal bg-brand-soft pt-[78px]">
         <div className="mx-auto w-full page-shell px-5 pb-8 pt-8 md:px-8 [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-[0.85rem] font-semibold text-ink/70 transition hover:text-ink"
+            className="inline-flex min-h-11 items-center gap-2 text-[0.85rem] font-semibold text-ink/70 transition hover:text-ink"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -37,11 +39,11 @@ export default function BlogPost() {
       </section>
 
       {/* ── Article ── */}
-      <article className="bg-white">
+      <article className="bg-surface-raised">
         <div
           className="mx-auto w-full max-w-[39rem] px-5 py-14 md:px-8 md:py-20 [animation:sd-hero-text-in_0.8s_cubic-bezier(0.25,0.46,0.45,0.94)_0.2s_both]"
         >
-          <p className="text-[0.82rem] font-semibold text-brand/80">{post.date}</p>
+          <p className="text-[0.82rem] font-semibold text-brand">{formatDate(post.date)}</p>
           <h1 className="mt-3 text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-tight tracking-tight text-ink">
             {post.title}
           </h1>
@@ -85,15 +87,18 @@ export default function BlogPost() {
           </p>
 
           <div className="mt-10 border-t border-ink/10 pt-8">
-            <p className="text-[0.85rem] font-semibold text-ink/50">Registration and information:</p>
-            <p className="mt-2 text-[0.9rem] text-ink/70">📍 Plaza No. 26, Main Iqbal Boulevard, DHA Phase II | 0329 9961999</p>
-            <p className="mt-1 text-[0.9rem] text-ink/70">📍 Jinnah Super, F-7 Markaz, F-7 Markaz | 0329 9961999</p>
+            <p className="text-[0.85rem] font-semibold text-ink-muted">Registration and information:</p>
+            {CLINICS.map((c, i) => (
+              <p key={c.id} className={`${i === 0 ? "mt-2" : "mt-1"} text-[0.9rem] text-ink/70`}>
+                {c.address} | {c.phone}
+              </p>
+            ))}
           </div>
         </div>
       </article>
 
       {/* ── Other news ── */}
-      <section className="reveal bg-[#EEF6EC] py-16 md:py-20">
+      <section className="reveal bg-surface-sunken py-16 md:py-20">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           <h2 className="text-center text-[clamp(1.6rem,3vw,2.2rem)] font-bold text-ink">
             Other news
@@ -104,7 +109,7 @@ export default function BlogPost() {
                 key={p.id}
                 className={[
                   "flex h-full flex-col overflow-hidden rounded-2xl shadow-sm",
-                  i === 1 ? "bg-brand/10" : "bg-white",
+                  i === 1 ? "bg-brand/10" : "bg-surface-raised",
                 ].join(" ")}
                 style={{
                   animation: `sd-hero-text-in 0.55s cubic-bezier(0.25,0.46,0.45,0.94) ${i * 100}ms both`,
@@ -119,14 +124,14 @@ export default function BlogPost() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col px-6 py-5 md:px-8 md:py-6">
-                  <p className="text-[0.78rem] font-semibold text-brand/80">{p.date}</p>
+                  <p className="text-[0.78rem] font-semibold text-brand">{formatDate(p.date)}</p>
                   <h3 className="mt-2 text-[1rem] font-bold leading-snug text-ink md:text-[1.1rem]">
                     {p.title}
                   </h3>
                   <div className="mt-auto flex justify-end pt-4">
                     <Link
                       to={`/blog/${p.id}`}
-                      className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-[0.85rem] font-semibold text-ink transition duration-200 hover:bg-brand/80"
+                      className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-[0.85rem] font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
                     >
                       More
                     </Link>

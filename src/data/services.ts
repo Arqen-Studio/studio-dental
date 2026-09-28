@@ -15,7 +15,6 @@ export type ServiceData = {
   /** ids from PRICE_CATEGORIES in data/prices.ts */
   priceCategories: string[];
   steps: string[];
-  specialistTags: string[];
 };
 
 /**
@@ -62,7 +61,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "The implant is left to fuse with the bone. This takes time, and you will be given a schedule at your appointment.",
       "Once it has integrated, the crown is made to match your other teeth and fitted.",
     ],
-    specialistTags: ["Implants"],
   },
   {
     id: "prosthetics",
@@ -96,7 +94,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "A temporary covering protects the tooth while the permanent one is made.",
       "The finished restoration is checked for fit, colour and bite, then fitted.",
     ],
-    specialistTags: ["Restorative Dentistry"],
   },
   {
     id: "dental-fillings",
@@ -130,7 +127,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "The filling material is placed and shaped to match the tooth.",
       "Your bite is checked and the filling smoothed so it feels natural.",
     ],
-    specialistTags: ["General Dentistry", "Restorative Dentistry"],
   },
   {
     id: "teeth-straightening",
@@ -164,7 +160,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "You return at intervals so progress can be checked and adjustments made.",
       "When treatment finishes, a retainer is provided to hold the teeth in their new position.",
     ],
-    specialistTags: ["Aligners"],
   },
   {
     id: "aesthetic-fillings",
@@ -198,7 +193,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "The material is applied in layers and shaped as it is built up.",
       "It is polished so that the surface catches the light in the same way as enamel.",
     ],
-    specialistTags: ["Cosmetic Dentistry", "Restorative Dentistry"],
   },
   {
     id: "root-canal",
@@ -232,7 +226,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "The infected tissue is removed, and the canals are cleaned and shaped.",
       "The canals are sealed and the tooth is rebuilt, usually with a crown to protect it.",
     ],
-    specialistTags: ["Root Canal"],
   },
   {
     id: "oral-hygiene",
@@ -266,7 +259,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "Fluoride is applied where it will be of benefit.",
       "You are shown the areas being missed at home, and a date for the next visit is agreed.",
     ],
-    specialistTags: ["General Dentistry", "Preventive Care"],
   },
   {
     id: "tooth-extraction",
@@ -300,7 +292,6 @@ export const SERVICES_DATA: ServiceData[] = [
       "The socket is cleaned, and stitches are placed where they are required.",
       "Aftercare is explained, covering bleeding, eating and pain relief over the first few days.",
     ],
-    specialistTags: ["Oral Surgery"],
   },
   {
     id: "childrens-dentistry",
@@ -334,6 +325,5 @@ export const SERVICES_DATA: ServiceData[] = [
       "Brushing and diet are talked through with you before you leave.",
       "A date for the next check-up is arranged.",
     ],
-    specialistTags: ["Preventive Care", "General Dentistry"],
   },
 ];

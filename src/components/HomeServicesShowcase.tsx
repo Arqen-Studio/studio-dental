@@ -134,14 +134,14 @@ export default function HomeServicesShowcase({
               </p>
               <Link
                 to={`/services/${featured.serviceId}`}
-                className="mt-auto inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-raw-porcelain underline-offset-4 transition hover:text-raw-porcelain hover:underline"
+                className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 text-[0.82rem] font-semibold text-raw-porcelain underline-offset-4 transition hover:text-raw-porcelain hover:underline"
               >
                 Read about this treatment
                 <ArrowRight size={12} strokeWidth={2.25} className="text-raw-porcelain opacity-90" aria-hidden />
               </Link>
               <Link
                 to="/services"
-                className="mt-3 inline-flex w-fit items-center gap-2 text-[0.82rem] font-semibold text-raw-porcelain/80 underline-offset-4 transition hover:text-raw-porcelain hover:underline"
+                className="inline-flex min-h-11 w-fit items-center gap-2 text-[0.82rem] font-semibold text-raw-porcelain/80 underline-offset-4 transition hover:text-raw-porcelain hover:underline"
               >
                 Explore all treatments
                 <ArrowRight size={12} strokeWidth={2.25} className="text-raw-porcelain opacity-90" aria-hidden />
@@ -163,7 +163,7 @@ export default function HomeServicesShowcase({
               </div>
               <Link
                 to={`/services/${item.serviceId}`}
-                className="mt-auto flex items-center gap-1.5 border-t border-line pt-3.5 text-[0.8rem] font-semibold text-brand underline-offset-4 transition hover:underline"
+                className="mt-auto flex min-h-11 items-center gap-1.5 border-t border-line pt-3.5 text-[0.8rem] font-semibold text-brand underline-offset-4 transition hover:underline"
               >
                 Read more
                 <ArrowRight size={12} strokeWidth={2.25} aria-hidden />
