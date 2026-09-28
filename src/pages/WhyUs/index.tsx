@@ -18,7 +18,7 @@ export default function WhyUs() {
     <section
       id="why"
       data-theme="dark"
-      className="no-reveal mx-4 overflow-hidden rounded-xl border border-line bg-surface py-10 text-creamBrand md:mx-8 md:py-16"
+      className="no-reveal mx-4 mb-10 overflow-hidden rounded-xl border border-line bg-surface py-10 text-creamBrand md:mx-8 md:mb-16 md:py-16"
     >
       <div className="mx-auto w-full page-shell px-5 py-10 md:px-8 md:py-14 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
         <div className="mb-8 max-w-[36rem] md:mb-10">
