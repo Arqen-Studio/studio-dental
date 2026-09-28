@@ -36,7 +36,7 @@ const CLINIC_LINKS = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-surface-raised py-10 md:py-16">
+    <section className="bg-surface-raised pb-10 pt-[calc(78px+2.5rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
       <div className="mx-auto w-full page-shell px-5 md:px-8">
         <div className="mx-auto mb-6 flex max-w-[36rem] flex-col items-center gap-3 text-center md:mb-9">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/15 px-4 py-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.12em] text-ink2">

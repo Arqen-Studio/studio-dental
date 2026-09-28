@@ -112,7 +112,7 @@ export default function HomeClinicHub() {
                 hover moves to true vertical center, pure transform (smooth).
               */}
               <div
-                className={`absolute left-1/2 top-1/2 z-[3] w-full max-w-[18rem] px-5 text-center -translate-x-1/2 translate-y-[calc(-50%+6.25rem)] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:-translate-y-1/2`}
+                className={`absolute left-1/2 top-1/2 z-[3] w-full max-w-[18rem] px-5 text-center -translate-x-1/2 translate-y-[calc(-50%+3.75rem)] lg:translate-y-[calc(-50%+6.25rem)] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:-translate-y-1/2`}
               >
                 <span className="block text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-raw-porcelain/90">
                   Clinics

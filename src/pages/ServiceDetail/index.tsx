@@ -271,7 +271,7 @@ export default function ServiceDetail() {
       <section className="reveal bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold text-ink">
-            Operation progress:
+            What happens, step by step
           </h2>
           <ul className="mt-6 flex flex-col gap-4">
             {service.steps.map((step, i) => (

@@ -80,7 +80,7 @@ export default function About() {
             </h1>
             <p className="mt-6 text-[1rem] leading-relaxed text-ink/80">
               Studio Dental brings world-class dentistry to Islamabad. Our two
-              specialized clinics combine experience and leadership ,
+              specialized clinics combine experience and leadership,
               integrating advanced treatment with exceptional patient service.
             </p>
             <p className="mt-4 text-[1rem] leading-relaxed text-ink/80">

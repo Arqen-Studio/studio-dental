@@ -11,7 +11,7 @@ const GALLERY = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-surface-raised py-10 md:py-16">
+    <section id="gallery" className="bg-surface-raised pb-10 pt-[calc(78px+2.5rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
       <div className="mx-auto w-full page-shell px-5 md:px-8">
         <div className="mb-6 flex max-w-[38rem] flex-col gap-3 md:mb-9">
           <Link

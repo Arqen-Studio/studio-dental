@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto w-full page-shell px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <div className="mb-7 flex items-start">
             <div className="inline-flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-raw-porcelain/25 bg-raw-porcelain/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
                 <span
                   className="h-2 w-2 rounded-full bg-raw-sage ring-4 ring-raw-sage/30"
                   aria-hidden="true"
@@ -95,7 +95,7 @@ export default function Hero() {
           </div>
 
           <div
-            className="flex max-w-[32rem] flex-wrap items-center gap-5 rounded-lg border border-white/20 bg-white/10 px-5 py-4 backdrop-blur"
+            className="flex max-w-[32rem] flex-wrap items-center gap-5 rounded-lg border border-raw-porcelain/20 bg-raw-porcelain/10 px-5 py-4 backdrop-blur lg:w-fit lg:max-w-none lg:flex-nowrap lg:gap-7 lg:px-7"
           >
             <div className="flex flex-col gap-1">
               <strong className="text-[1.15rem] font-bold text-creamBrand">
@@ -106,7 +106,7 @@ export default function Hero() {
               </span>
             </div>
             <div
-              className="hidden h-10 w-px bg-white/20 md:block"
+              className="hidden h-10 w-px bg-raw-porcelain/20 md:block"
               aria-hidden="true"
             />
             <div className="flex flex-col gap-1">
@@ -118,7 +118,7 @@ export default function Hero() {
               </span>
             </div>
             <div
-              className="hidden h-10 w-px bg-white/20 md:block"
+              className="hidden h-10 w-px bg-raw-porcelain/20 md:block"
               aria-hidden="true"
             />
             <div className="flex flex-col gap-1">
@@ -134,7 +134,7 @@ export default function Hero() {
 
         <Link
           to="/services"
-          className="absolute bottom-7 left-1/2 z-10 hidden h-[2.1rem] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-white/60 pt-1.5 md:inline-flex"
+          className="absolute bottom-7 left-1/2 z-10 hidden h-[2.1rem] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-raw-porcelain/60 pt-1.5 md:inline-flex"
           aria-label="Go to services"
         >
           <span className="h-2 w-[3px] rounded bg-raw-porcelain animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />

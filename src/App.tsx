@@ -100,11 +100,12 @@ function Layout() {
       <button
         type="button"
         onClick={() => setRegOpen(true)}
-        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3.5 text-[0.85rem] font-semibold text-on-brand shadow-2 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+        className="fixed bottom-5 right-5 z-[90] inline-flex h-14 w-14 items-center justify-center gap-2.5 rounded-full bg-brand text-[0.85rem] font-semibold text-on-brand shadow-2 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover sm:bottom-6 sm:right-6 sm:h-auto sm:w-auto sm:px-5 sm:py-3.5"
         aria-label="Open online registration"
       >
-        <Mail size={16} strokeWidth={2.2} aria-hidden />
-        Online registration
+        <Mail size={20} strokeWidth={2} aria-hidden />
+        {/* Icon only on phones so it does not cover the content; the aria-label names it. */}
+        <span className="hidden sm:inline">Online registration</span>
       </button>
       <ContactDrawer open={regOpen} onClose={() => setRegOpen(false)} />
       <main className="flex min-h-0 flex-1 flex-col bg-surface">

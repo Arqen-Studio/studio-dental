@@ -76,7 +76,7 @@ export default function DoctorProfile() {
       {/* Practice areas, full viewport width */}
       <section className="w-full bg-surface-sunken py-12 md:py-16">
         <div className="mx-auto w-full max-w-[45rem] px-5 md:px-8">
-          <ProfileSection title="Practice areas:" items={doctor.practiceAreas}>
+          <ProfileSection title="Practice areas" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
               <ul className="list-disc space-y-2.5 pl-5 text-[0.95rem] leading-relaxed text-ink2 marker:text-brand">
                 {practiceLeft.map((item) => (
@@ -94,7 +94,7 @@ export default function DoctorProfile() {
       </section>
 
       <div className="mx-auto w-full max-w-[45rem] px-5 py-12 md:px-8 md:py-16">
-        <ProfileSection title="Biography:" items={doctor.biography}>
+        <ProfileSection title="Biography" items={doctor.biography}>
           <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.biography.map((para) => (
               <p key={para}>{para}</p>
@@ -102,7 +102,7 @@ export default function DoctorProfile() {
           </div>
         </ProfileSection>
 
-        <ProfileSection title="Education:" items={doctor.education}>
+        <ProfileSection title="Education" items={doctor.education}>
           <div className="space-y-4 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.education.map((para) => (
               <p key={para}>{para}</p>
@@ -110,7 +110,7 @@ export default function DoctorProfile() {
           </div>
         </ProfileSection>
 
-        <ProfileSection title="Membership:" items={doctor.membership}>
+        <ProfileSection title="Membership" items={doctor.membership}>
           <ul className="list-none space-y-2.5 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.membership.map((item) => (
               <li key={item}>{item}</li>
@@ -118,7 +118,7 @@ export default function DoctorProfile() {
           </ul>
         </ProfileSection>
 
-        <ProfileSection title="Professional training:" items={doctor.professionalTraining}>
+        <ProfileSection title="Professional training" items={doctor.professionalTraining}>
           <ul className="space-y-3 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.professionalTraining.map((item) => (
               <li key={item} className="flex gap-2.5">

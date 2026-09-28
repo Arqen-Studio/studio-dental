@@ -117,10 +117,10 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
 ];
 
-/** "Rs. 20,000", or "On request" where the client gave no rate. */
+/** "Rs 20,000", or "On request" where the client gave no rate. */
 export function formatPrice(value: number | null | undefined): string {
   if (value === null || value === undefined) return "On request";
-  return `Rs. ${value.toLocaleString("en-PK")}`;
+  return `Rs ${value.toLocaleString("en-US")}`;
 }
 
 /** Categories filtered to the treatments a given branch actually lists. */

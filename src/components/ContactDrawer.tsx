@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -75,8 +76,9 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,26rem)] flex-col bg-surface-raised font-sans text-[0.72rem] leading-normal text-ink shadow-3 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
-          open ? "translate-x-0" : "translate-x-full",
+          "relative flex h-full w-[min(100%,26rem)] flex-col bg-surface-raised font-sans text-[0.72rem] leading-normal text-ink outline-none transition duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
+          // No shadow while parked off-screen, or it shows along the right edge.
+          open ? "translate-x-0 shadow-3" : "invisible translate-x-full shadow-none",
         ].join(" ")}
       >
         <div
@@ -173,13 +175,14 @@ export default function ContactDrawer({ open, onClose }: Props) {
               >
                 Choose a clinic
               </label>
-              <select
-                id="drawer-clinic"
+              <div className="relative">
+                <select
+                  id="drawer-clinic"
                 name="clinic"
                 required
                 defaultValue=""
-                className={fieldClass}
-              >
+                  className={`${fieldClass} appearance-none pr-9`}
+                >
                 <option value="" disabled>
                   Select location
                 </option>
@@ -187,7 +190,9 @@ export default function ContactDrawer({ open, onClose }: Props) {
                   DHA Phase II: Plaza No. 26, Main Iqbal Boulevard
                 </option>
                 <option value="f7-markaz">F-7 Markaz: Jinnah Super</option>
-              </select>
+                </select>
+                <ChevronDown size={16} strokeWidth={2} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-muted" aria-hidden />
+              </div>
             </div>
 
             <div className="flex flex-col gap-1">

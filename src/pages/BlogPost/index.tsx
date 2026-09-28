@@ -74,8 +74,8 @@ export default function BlogPost() {
 
           <p className="text-[1rem] leading-relaxed text-muted">
             If you have a history of gum disease, a weakened immune system, or are
-            prone to cavities, your dentist may recommend more frequent appointments
-           , every three to four months. Children and older adults often benefit
+            prone to cavities, your dentist may recommend more frequent appointments,
+           every three to four months. Children and older adults often benefit
             from more regular check-ins as well.
           </p>
 
@@ -87,7 +87,7 @@ export default function BlogPost() {
           </p>
 
           <div className="mt-10 border-t border-ink/10 pt-8">
-            <p className="text-[0.85rem] font-semibold text-ink-muted">Registration and information:</p>
+            <p className="text-[0.85rem] font-semibold text-ink-muted">Contact either clinic</p>
             {CLINICS.map((c, i) => (
               <p key={c.id} className={`${i === 0 ? "mt-2" : "mt-1"} text-[0.9rem] text-ink/70`}>
                 {c.address} | {c.phone}

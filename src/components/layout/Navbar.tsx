@@ -43,6 +43,7 @@ export default function Navbar() {
 
   // Transparent only over the home page video; every other page starts on a light panel.
   const hasHeroHeader = pathname === "/";
+  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
 
   const openContactDrawer = () => {
@@ -54,10 +55,11 @@ export default function Navbar() {
     <>
     <header
       className={[
-        "fixed inset-x-0 top-0 z-[100] h-[3.9rem] transition duration-300 ease-out",
+        "fixed inset-x-0 top-0 z-[100] h-[3.9rem] border-b transition duration-300 ease-out",
         isTransparent
-          ? "bg-transparent"
-          : ["border-b border-line bg-surface text-ink", scrolled ? "shadow-2" : ""].join(" "),
+          ? "border-transparent bg-transparent"
+          : // Frosted Porcelain with a hairline (design system, Site header); the shadow only once scrolled.
+            ["border-line bg-surface/95 text-ink backdrop-blur-md", scrolled ? "shadow-2" : ""].join(" "),
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -71,18 +73,22 @@ export default function Navbar() {
 
         <div className="ml-6 flex flex-1 items-center justify-end gap-2 lg:gap-4">
           <nav
-            className="hidden items-center gap-5 text-[0.82rem] font-semibold xl:flex"
+            className="hidden items-center gap-5 text-[0.82rem] font-medium xl:flex"
             aria-label="Primary navigation"
           >
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
+                aria-current={isCurrent(item.href) ? "page" : undefined}
                 className={[
-                  "whitespace-nowrap transition duration-200",
+                  "whitespace-nowrap border-b-2 py-2 transition duration-200",
                   isTransparent
-                    ? "text-raw-porcelain hover:text-raw-mist"
-                    : "text-ink hover:text-brand",
+                    ? "text-raw-porcelain hover:border-raw-champagne"
+                    : "text-ink hover:border-brand",
+                  isCurrent(item.href)
+                    ? isTransparent ? "border-raw-champagne" : "border-brand"
+                    : "border-transparent",
                 ].join(" ")}
               >
                 {item.label}
@@ -166,7 +172,7 @@ export default function Navbar() {
 
       <div
         className={[
-          "fixed left-0 right-0 top-[78px] border-y border-line bg-surface px-5 pb-10 pt-4 shadow-2 transition-all duration-300 ease-out xl:hidden",
+          "fixed left-0 right-0 top-[3.9rem] border-b border-line bg-surface px-5 pb-10 pt-4 shadow-3 transition-all duration-300 ease-out xl:hidden",
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
@@ -181,7 +187,8 @@ export default function Navbar() {
               key={item.label}
               to={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center min-h-11 border-b border-line py-4 text-[0.82rem] font-semibold text-ink transition hover:text-brand"
+              aria-current={isCurrent(item.href) ? "page" : undefined}
+              className={`flex min-h-11 items-center border-b border-line py-4 text-[0.82rem] font-medium transition hover:text-brand ${isCurrent(item.href) ? "text-brand" : "text-ink"}`}
             >
               {item.label}
             </Link>

@@ -52,7 +52,7 @@ export default function WhyUs() {
           </div>
           <div>
             <div className="text-[clamp(2rem,3vw+0.5rem,3rem)] font-extrabold leading-none tracking-tight text-brand">
-              5000+
+              5,000+
             </div>
             <div className="mt-2 text-[0.9rem] text-creamBrand/65">Happy clients treated</div>
           </div>

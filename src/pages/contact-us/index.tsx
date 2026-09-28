@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { ArrowRight, ChevronDown, Mail, MapPin } from "lucide-react";
 import { SERVICES_DATA } from "../../data/services";
 import { CLINICS } from "../../data/clinics";
 
@@ -130,16 +130,19 @@ export default function Contact() {
               >
                 Service
               </label>
-              <select
-                id="service"
-                name="service"
-                defaultValue={SERVICES_DATA[0]?.title}
-                className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
-              >
-                {SERVICES_DATA.map((service) => (
-                  <option key={service.id}>{service.title}</option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="service"
+                  name="service"
+                  defaultValue={SERVICES_DATA[0]?.title}
+                  className="w-full appearance-none rounded-sm border border-transparent bg-surface-sunken py-3 pl-4 pr-10 text-[0.95rem] outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
+                >
+                  {SERVICES_DATA.map((service) => (
+                    <option key={service.id}>{service.title}</option>
+                  ))}
+                </select>
+                <ChevronDown size={16} strokeWidth={2} className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted" aria-hidden />
+              </div>
             </div>
             <div className="flex flex-col gap-2">
               <label
