@@ -167,40 +167,6 @@ export const SERVICES_DATA: ServiceData[] = [
     specialistTags: ["Aligners"],
   },
   {
-    id: "aesthetic-fillings",
-    title: "Aesthetic Dental Fillings",
-    subtitle: "Tooth-coloured work that repairs chips, closes small gaps and improves the appearance of front teeth.",
-    heroImage: IMG_RECEPTION,
-    intro: "Aesthetic work uses the same materials as an ordinary filling, applied with a different purpose. Rather than only repairing damage, it reshapes and rebuilds teeth so they sit comfortably alongside those around them. In most cases no healthy tooth is removed, which makes it one of the more conservative ways to improve a smile.",
-    whenHeading: "What can be improved",
-    scenarios: [
-      {
-        title: "Chipped or uneven edges.",
-        text: "Front teeth chip easily and wear unevenly over the years. Material is built up along the edge and shaped until the tooth matches its neighbours again.",
-        image: IMG_TREATMENT_ROOM,
-      },
-      {
-        title: "Small gaps between teeth.",
-        text: "A narrow space between front teeth can be closed by adding material to the adjoining surfaces. Where the gap is small this is simpler than veneers or orthodontic treatment.",
-        image: IMG_CHAIR,
-      },
-      {
-        title: "Discoloured or misshapen teeth.",
-        text: "A tooth that sits slightly out of line, or that has darkened over time, can be reshaped or covered so that it blends with the rest.",
-        image: IMG_LOUNGE,
-      },
-    ],
-    priceCategories: ["fillings", "crowns"],
-    steps: [
-      "Your teeth are looked at together, since the aim is a result that matches everything around it.",
-      "A shade is chosen by comparing materials against your own teeth in natural light.",
-      "The surface of the tooth is prepared so that the material bonds securely.",
-      "The material is applied in layers and shaped as it is built up.",
-      "It is polished so that the surface catches the light in the same way as enamel.",
-    ],
-    specialistTags: ["Cosmetic Dentistry", "Restorative Dentistry"],
-  },
-  {
     id: "root-canal",
     title: "Root Canal Treatment",
     subtitle: "Treatment that saves a tooth when the nerve inside it has become infected or inflamed.",

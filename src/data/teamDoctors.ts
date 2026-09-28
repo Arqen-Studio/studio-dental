@@ -30,7 +30,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     services: [
       'Prosthetics: Teeth & Implants',
       'Dental Fillings',
-      'Aesthetic Dental Fillings',
       'Root Canal Treatment',
       'Oral Hygiene & Whitening',
     ],
@@ -76,7 +75,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Known for a meticulous approach and a real commitment to patient comfort, combining seventeen years of clinical experience with modern technique.',
     services: [
       'Dental Fillings',
-      'Aesthetic Dental Fillings',
       'Oral Hygiene & Whitening',
     ],
     heroTitleLines: ['BDS', 'Clinical director', 'Restorative and aesthetic dentistry'],
@@ -255,7 +253,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Prosthetics: Teeth & Implants',
       'Dental Fillings',
       'Teeth Straightening',
-      'Aesthetic Dental Fillings',
       'Root Canal Treatment',
       'Oral Hygiene & Whitening',
       'Tooth Extraction',
@@ -307,7 +304,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'She enjoys hiking in her spare time. The focus, patience and attention to detail developed through hiking complement the calm and methodical approach she brings to clinical dentistry.',
     services: [
       'Dental Fillings',
-      'Aesthetic Dental Fillings',
       'Root Canal Treatment',
       'Oral Hygiene & Whitening',
     ],
@@ -372,7 +368,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'When she is not in scrubs, you will probably find her baking something sweet, practising her German, creating content, or exploring new places with her family.',
     services: [
       'Dental Fillings',
-      'Aesthetic Dental Fillings',
       'Oral Hygiene & Whitening',
       "Children's Dentistry",
     ],
@@ -415,7 +410,6 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
       'Prosthetics: Teeth & Implants',
       'Dental Fillings',
       'Teeth Straightening',
-      'Aesthetic Dental Fillings',
       'Root Canal Treatment',
       'Oral Hygiene & Whitening',
     ],
