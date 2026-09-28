@@ -191,3 +191,14 @@ textarea.sd-field__control { resize: vertical; min-height: 120px; }
    4.4:1, under AA. Eyebrows on Stone sections use the secondary text colour. */
 .bg-surface-sunken .sd-eyebrow,
 .bg-surface-sunken .eyebrow { color: var(--ink-muted); }
+
+/* Phones: three stats share one row, so the figure steps down to the h4 mobile size. */
+@media (max-width: 639px) {
+  .sd-stat__value { font-size: 20px; line-height: 26px; }
+}
+
+/* 44px tap targets for text links that sit in cards and headers (Phase 4). */
+.sd-logo-link { min-height: var(--tap-target); align-items: center; }
+.sd-clinic__row a { display: inline-flex; align-items: center; min-height: var(--tap-target); }
+.sd-check { min-height: var(--tap-target); align-items: center; }
+.sd-check__input { top: 50%; transform: translateY(-50%); }

@@ -4,13 +4,15 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { getDoctorBySlug, type TeamDoctor } from '../../data/teamDoctors'
 import { useBooking } from '../../lib/booking'
 
-/** Branch name from "DHA Phase II, Islamabad"; a visible TODO where the clinic has not said. */
+/** Branch name from "DHA Phase II, Islamabad". Left out where the clinic has not said
+ *  (the open question is in docs/client-questions.md). */
 function Branch({ clinic }: { clinic: string }) {
   const branch = clinic.split(',')[0].trim()
+  if (!branch) return null
   return (
     <span className="sd-badge sd-badge--brand">
       <MapPin className="sd-icon" size={14} strokeWidth={1.75} aria-hidden />
-      {branch || '[TODO: confirm branch with client]'}
+      {branch}
     </span>
   )
 }

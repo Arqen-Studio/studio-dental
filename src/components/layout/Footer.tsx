@@ -55,7 +55,7 @@ function ClinicCard({ clinic }: { clinic: ClinicLocation }) {
   // large screens, so a two-line address in one clinic does not push its
   // dividers and rows out of step with the other clinic's.
   return (
-    <article className="grid content-start gap-8 rounded-md border border-line bg-surface-raised p-7 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
+    <article className="grid content-start gap-5 rounded-md border border-line bg-surface-raised p-5 md:gap-8 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
       <h3 className="h4 text-ink">{city}</h3>
 
       <div className="flex gap-4">
@@ -68,7 +68,7 @@ function ClinicCard({ clinic }: { clinic: ClinicLocation }) {
             href={mapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-block body font-medium text-brand underline-offset-2 transition hover:underline"
+            className="mt-1 inline-flex min-h-11 items-center body font-medium text-brand underline-offset-2 transition hover:underline"
           >
             Get directions
           </a>
@@ -83,19 +83,19 @@ function ClinicCard({ clinic }: { clinic: ClinicLocation }) {
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
           <p className="small font-medium text-ink-muted">Phone</p>
-          <a href={telHref(phone)} className="mt-0.5 block body text-ink transition hover:text-brand">
+          <a href={telHref(phone)} className="flex min-h-11 items-center body text-ink transition hover:text-brand">
             {phone}
           </a>
           <p className="mt-3 small font-medium text-ink-muted">Email</p>
           <a
             href={`mailto:${email}`}
-            className="mt-0.5 block break-all body text-ink transition hover:text-brand"
+            className="flex min-h-11 items-center break-all body text-ink transition hover:text-brand"
           >
             {email}
           </a>
           <Link
             to="/contact-us"
-            className="mt-3 inline-block label text-brand underline-offset-2 transition hover:underline"
+            className="mt-1 inline-flex min-h-11 items-center label text-brand underline-offset-2 transition hover:underline"
           >
             Contact the clinic
           </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
   return (
     // Ink band. The extra bottom padding on phones keeps the floating Book
     // button clear of the last lines.
-    <footer data-theme="dark" className="bg-surface pb-28 pt-14 text-ink md:pb-14 md:pt-16">
+    <footer data-theme="dark" className="bg-surface pb-24 pt-12 text-ink md:pb-14 md:pt-16">
       <div className="page-shell mx-auto w-full px-5 md:px-8">
 <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <Link to="/" className="sd-logo-link">
@@ -144,7 +144,7 @@ export default function Footer() {
         </nav>
         </div>
 
-        <h2 className="mb-8 mt-12 h2 text-ink md:mb-10">Contacts</h2>
+        <h2 className="mb-6 mt-10 h2 text-ink md:mb-10 md:mt-12">Contacts</h2>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto_auto_auto_auto] lg:gap-8">
           {CLINICS.map((clinic) => (

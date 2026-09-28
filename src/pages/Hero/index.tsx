@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <>
       {/* Light hero (brand guide, Applications): copy left, arch-framed photo right. */}
-      <section id="home" className="bg-surface px-5 pb-16 pt-[calc(var(--nav-h)+2.5rem)] md:px-8 md:pb-24 lg:pt-[calc(var(--nav-h)+4rem)]">
+      <section id="home" className="bg-surface px-5 pb-16 pt-[calc(var(--nav-h)+1.5rem)] sm:pt-[calc(var(--nav-h)+2.5rem)] md:px-8 md:pb-24 lg:pt-[calc(var(--nav-h)+4rem)]">
         <div className="mx-auto grid w-full max-w-[var(--container-wide)] items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
           <div className="flex flex-col gap-6">
             <p className="sd-eyebrow">DHA Phase II · F-7 Markaz</p>
@@ -47,7 +47,7 @@ export default function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-2 grid grid-cols-1 gap-5 border-t border-line pt-6 sm:grid-cols-3">
+            <dl className="mt-2 grid grid-cols-3 gap-3 border-t border-line pt-6 sm:gap-5">
               {STATS.map((s) => (
                 <div key={s.value} className="sd-stat">
                   <dt className="sd-stat__label order-2">{s.label}</dt>
@@ -60,12 +60,12 @@ export default function Hero() {
           <img
             src={HERO_PHOTO}
             alt="A treatment room at Studio Dental"
-            className="h-[420px] w-full max-w-[26rem] justify-self-center rounded-t-full rounded-b-lg bg-surface-sunken object-cover md:h-[520px] lg:h-[560px] lg:max-w-none"
+            className="h-[320px] w-full max-w-[16rem] justify-self-center sm:h-[420px] sm:max-w-[26rem] rounded-t-full rounded-b-lg bg-surface-sunken object-cover md:h-[520px] lg:h-[560px] lg:max-w-none"
           />
         </div>
       </section>
 
-      <section className="bg-surface-sunken px-5 py-10 md:px-8 md:py-16" aria-label="Featured campaign">
+      <section className="bg-surface-sunken px-5 py-16 md:px-8 md:py-24" aria-label="Featured campaign">
         <div className="mx-auto page-shell">
           <MissionCampaignBanner />
         </div>

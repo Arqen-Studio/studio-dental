@@ -6,6 +6,8 @@ type HubCard = {
   /** Names what the tile is: the page, as the navigation labels it. */
   eyebrow: string;
   title: string;
+  /** Hidden on phones to keep the section short; both pages stay in the menu and footer. */
+  hideOnPhones?: boolean;
   image: string;
   imageAlt: string;
 };
@@ -39,6 +41,7 @@ const HUB_CARDS: HubCard[] = [
   {
     to: "/about",
     eyebrow: "About",
+    hideOnPhones: true,
     title: "Who we are",
     image: "/images/hub/about.jpg",
     imageAlt: "The waiting lounge at Studio Dental",
@@ -46,6 +49,7 @@ const HUB_CARDS: HubCard[] = [
   {
     to: "/blog",
     eyebrow: "Journal",
+    hideOnPhones: true,
     title: "Articles and news",
     image: "/images/hub/news.jpg",
     imageAlt: "The Studio Dental name etched into the glass entrance door",
@@ -62,7 +66,7 @@ const HUB_CARDS: HubCard[] = [
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-surface px-5 py-9 md:px-8 md:py-12"
+      className="bg-surface px-5 py-16 md:px-8 md:py-24"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full page-shell">
@@ -80,7 +84,7 @@ export default function HomeClinicHub() {
               data-theme="dark"
               key={card.to}
               to={card.to}
-              className="group relative aspect-[4/5] overflow-hidden rounded-md shadow-1 transition-shadow duration-200 hover:shadow-2 sm:aspect-[4/3]"
+              className={`group relative aspect-square overflow-hidden rounded-md shadow-1 transition-shadow duration-200 hover:shadow-2 sm:aspect-[4/3] ${card.hideOnPhones ? "max-sm:hidden" : ""}`}
             >
               <img
                 src={card.image}

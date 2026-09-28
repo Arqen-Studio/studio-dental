@@ -11,7 +11,7 @@ export default function MissionCampaignBanner() {
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
         {/* Left: title panel */}
-        <div className="relative flex flex-1 flex-col justify-center border border-line bg-surface-raised px-8 py-12 md:h-[21rem] md:border-r md:px-12 md:py-14">
+        <div className="relative flex flex-1 flex-col justify-center border border-line bg-surface-raised px-6 py-8 md:h-[21rem] md:border-r md:px-12 md:py-14">
           <h2 className="relative z-[1] h2 text-ink">
             A mission for life
           </h2>
@@ -21,7 +21,7 @@ export default function MissionCampaignBanner() {
         </div>
 
         {/* Right: photo + circular CTA (brand) */}
-        <div className="relative h-52 w-full shrink-0 md:h-[21rem] md:w-[min(46%,420px)]">
+        <div className="relative h-40 w-full shrink-0 md:h-[21rem] md:w-[min(46%,420px)]">
           <img
             src={CAMPAIGN_IMG}
             alt="Dr. Yousaf Kamal"

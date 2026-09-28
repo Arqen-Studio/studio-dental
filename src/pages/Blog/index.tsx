@@ -68,7 +68,7 @@ export default function Blog() {
                   type="button"
                   onClick={() => switchClinic(c.id)}
                   className={[
-                    "rounded-full px-6 py-2.5 label transition duration-200",
+                    "min-h-11 rounded-full px-6 py-2.5 label transition duration-200",
                     activeClinic === c.id
                       ? "bg-ink text-surface"
                       : "bg-ink/10 text-ink hover:bg-ink/20",

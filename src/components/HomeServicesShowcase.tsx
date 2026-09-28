@@ -35,7 +35,25 @@ export default function HomeServicesShowcase() {
           className="mb-8 md:mb-10"
         />
 
-        <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {/* Phones: a compact list. From 768px: the card grid. */}
+        <ul className="divide-y divide-line rounded-md border border-line bg-surface-raised md:hidden">
+          {SHOWCASE.map((s) => {
+            const Icon = iconForService(s.id)
+            return (
+              <li key={s.id}>
+                <Link to={`/services/${s.id}`} className="flex min-h-14 items-center gap-4 px-4 py-2 text-ink">
+                  <span className="sd-icon-well h-10 w-10 shrink-0" aria-hidden="true">
+                    <Icon className="sd-icon" size={20} strokeWidth={1.75} />
+                  </span>
+                  <span className="label flex-1">{s.title}</span>
+                  <ArrowRight className="sd-icon text-brand" size={18} strokeWidth={1.75} aria-hidden />
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+
+        <ul className="hidden grid-cols-2 gap-5 md:grid lg:grid-cols-3">
           {SHOWCASE.map((s) => (
             <li key={s.id}>
               <ServiceCard id={s.id} title={s.title} description={s.subtitle} Icon={iconForService(s.id)} />

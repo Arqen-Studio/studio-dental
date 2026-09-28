@@ -72,7 +72,7 @@ export default function HomeDoctorsCarousel() {
   }, [])
 
   return (
-    <section className="bg-surface-sunken px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
+    <section className="bg-surface-sunken px-5 py-16 md:px-8 md:py-24" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full page-shell">
         <SectionHeader
           id="home-doctors-heading"

@@ -27,7 +27,7 @@ export default function BlogPost() {
         <div className="mx-auto w-full page-shell px-5 pb-8 pt-8 md:px-8 [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 small font-semibold text-ink-muted transition hover:text-ink"
+            className="inline-flex min-h-11 items-center gap-2 small font-semibold text-ink-muted transition hover:text-ink"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>

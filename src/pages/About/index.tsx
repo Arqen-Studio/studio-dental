@@ -186,7 +186,7 @@ export default function About() {
                 </p>
                 <Link
                   to="/doctors"
-                  className={`mt-4 block body font-normal transition ${LINK_COLOR[card.bg]}`}
+                  className={`mt-2 inline-flex min-h-11 items-center body font-normal transition ${LINK_COLOR[card.bg]}`}
                 >
                   In detail
                 </Link>

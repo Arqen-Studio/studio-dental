@@ -41,7 +41,7 @@ function scrollToHash(e: React.MouseEvent, href: string) {
 }
 
 function PanelLinks() {
-  const cls = 'group inline-flex items-center gap-3 py-2 label text-ink-muted transition duration-200 hover:text-ink'
+  const cls = 'group inline-flex min-h-11 items-center gap-3 label text-ink-muted transition duration-200 hover:text-ink'
   return (
     <ul className="mt-7 flex flex-col gap-0.5">
       {PANEL_LINKS.map(({ label, href }) => {

@@ -57,7 +57,7 @@ export default function ServiceDetail() {
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
               <Link
                 to="/services"
-                className="mb-6 inline-flex items-center gap-2 small font-semibold text-ink-muted transition hover:text-ink"
+                className="mb-4 inline-flex min-h-11 items-center gap-2 small font-semibold text-ink-muted transition hover:text-ink"
               >
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

@@ -57,7 +57,7 @@ export default function Testimonials() {
               </p>
               <Link
                 to={item.href}
-                className="inline-flex items-center gap-2 border-t border-line pt-3 label text-ink transition hover:text-ink"
+                className="inline-flex min-h-11 items-center gap-2 border-t border-line pt-3 label text-ink transition hover:text-brand"
               >
                 Open section
               </Link>
