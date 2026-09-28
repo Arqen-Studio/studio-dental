@@ -56,7 +56,7 @@ export default function Blog() {
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <div className="flex flex-col items-center text-center">
             <h1 className="h1 text-ink">
-              News
+              Journal
             </h1>
             <div className="mt-4 h-px w-16 bg-line" />
 
@@ -119,9 +119,9 @@ export default function Blog() {
                 <div className="mt-auto flex justify-end pt-4">
                   <Link
                     to={`/blog/${post.id}`}
-                    className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 small font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
+                    className="sd-btn sd-btn--secondary sd-btn--sm"
                   >
-                    More
+                    Read the article
                   </Link>
                 </div>
               </div>
@@ -135,9 +135,9 @@ export default function Blog() {
             <button
               type="button"
               onClick={() => setVisibleCount((v) => v + PAGE_SIZE)}
-              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
+              className="sd-btn sd-btn--secondary sd-btn--md"
             >
-              More
+              Show more articles
             </button>
           </div>
         )}

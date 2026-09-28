@@ -1,3 +1,4 @@
+import SectionHeader from "../../components/SectionHeader";
 import { useCountUp, useInView } from "../../hooks/useCountUp";
 
 const FEATURES = [
@@ -29,13 +30,7 @@ export default function WhyUs() {
       className="no-reveal mx-4 overflow-hidden rounded-lg border border-line bg-surface py-10 text-ink md:mx-8 md:py-16"
     >
       <div className="mx-auto w-full page-shell px-5 py-10 md:px-8 md:py-14 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
-        <div className="mb-8 max-w-[36rem] md:mb-10">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 bg-brand-soft px-4 py-1.5 eyebrow text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
-            Why Studio Dental
-          </span>
-          <h2 className="mt-4 h2 text-balance text-ink">Experienced specialists and modern dentistry.</h2>
-        </div>
+        <SectionHeader level={1} eyebrow="Why Studio Dental" title="Experienced specialists and modern dentistry." className="mb-8 md:mb-10" />
 
         <div
           ref={statsRef}

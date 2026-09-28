@@ -34,3 +34,9 @@ export const CLINICS: ClinicLocation[] = [
     hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
   },
 ]
+
+/** The number the header and form messages show (the DHA Phase II line). */
+export const MAIN_PHONE = CLINICS[0].phone
+
+/** `+92 329 9961999` → `tel:+923299961999` */
+export const telHref = (phone: string) => `tel:${phone.replace(/\s/g, '')}`

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SectionHeader from "./SectionHeader";
 
 type HubCard = {
   to: string;
@@ -61,21 +62,12 @@ export default function HomeClinicHub() {
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full page-shell">
-        <header className="mx-auto max-w-[56rem] text-center">
-          <h2
-            id="home-clinic-hub-heading"
-            className="h3 text-ink"
-          >
-            Dental and implantology clinics, Studio Dental
-          </h2>
-          <p className="mx-auto mt-4 max-w-[52ch] text-left body text-ink-muted">
-            With over 17 years of experience, Studio Dental brings specialized
-            care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics
-            and imaging to implants, orthodontics, restorative dentistry, and
-            pediatric care, our teams help you plan treatment with clarity and
-            confidence.
-          </p>
-        </header>
+        <SectionHeader
+          id="home-clinic-hub-heading"
+          eyebrow="Clinics"
+          title="Dental and implantology clinics, Studio Dental"
+          lead="With over 17 years of experience, Studio Dental brings specialized care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics and imaging to implants, orthodontics, restorative dentistry, and pediatric care, our teams help you plan treatment with clarity and confidence."
+        />
 
         {/* 2 columns × 3 rows on sm+ (reference layout) */}
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-10 lg:gap-6">

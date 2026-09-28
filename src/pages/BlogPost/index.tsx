@@ -1,3 +1,4 @@
+import SectionHeader from "../../components/SectionHeader";
 import { Link, useParams } from "react-router-dom";
 
 const IMG_A = "/images/gallery/g1.jpg";
@@ -31,7 +32,7 @@ export default function BlogPost() {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            News
+            Journal
           </Link>
         </div>
       </section>
@@ -95,9 +96,7 @@ export default function BlogPost() {
       {/* ── Other news ── */}
       <section className="reveal bg-surface-sunken py-16 md:py-20">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
-          <h2 className="text-center h2 text-ink">
-            Other news
-          </h2>
+          <SectionHeader eyebrow="Journal" title="More from the journal" />
           <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
             {others.map((p, i) => (
               <article
@@ -126,9 +125,9 @@ export default function BlogPost() {
                   <div className="mt-auto flex justify-end pt-4">
                     <Link
                       to={`/blog/${p.id}`}
-                      className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 small font-semibold text-on-brand transition duration-200 hover:bg-brand-hover"
+                      className="sd-btn sd-btn--secondary sd-btn--sm"
                     >
-                      More
+                      Read the article
                     </Link>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { TEAM_DOCTORS } from '../data/teamDoctors'
+import SectionHeader from './SectionHeader'
 
 function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
   return (
@@ -69,12 +70,16 @@ export default function HomeDoctorsCarousel() {
   return (
     <section className="bg-surface-sunken px-5 py-9 md:px-8 md:py-12" aria-labelledby="home-doctors-heading">
       <div className="mx-auto w-full page-shell">
-        <h2
+        <SectionHeader
           id="home-doctors-heading"
-          className="text-center h3 text-ink"
-        >
-          Doctors
-        </h2>
+          eyebrow="Doctors"
+          title="Meet the team"
+          action={
+            <Link to="/doctors" className="sd-btn sd-btn--secondary sd-btn--md">
+              See all doctors
+            </Link>
+          }
+        />
 
         <div className="relative mt-7 md:mt-8">
           <div
@@ -137,14 +142,6 @@ export default function HomeDoctorsCarousel() {
           </button>
         </div>
 
-        <div className="mt-8 flex justify-center md:mt-10">
-          <Link
-            to="/doctors"
-            className="inline-flex items-center justify-center rounded-full border border-transparent bg-brand px-9 py-3 label text-on-brand shadow-1 transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-2"
-          >
-            All doctors
-          </Link>
-        </div>
       </div>
     </section>
   )

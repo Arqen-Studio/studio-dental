@@ -1,22 +1,34 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { X } from "lucide-react";
+import { CLINICS, MAIN_PHONE, telHref } from "../data/clinics";
+import { focusFirstError, isEmail, postEnquiry } from "../lib/enquiry";
+import { Checkbox, Field } from "./Field";
 
 type Props = {
   open: boolean;
   onClose: () => void;
 };
 
-type Status = "idle" | "sending" | "sent" | "invalid" | "error";
+type Status = "idle" | "sending" | "sent" | "error";
+type Errors = Partial<Record<"name" | "email" | "privacy", string>>;
 
-const CLINIC_PHONE = "0329 9961999";
+function validate(data: Record<string, string>): Errors {
+  const errors: Errors = {};
+  if (!data.name?.trim()) errors.name = "Enter your name.";
+  if (!data.email?.trim()) errors.email = "Enter an email address so the clinic can reply.";
+  else if (!isEmail(data.email)) errors.email = "Enter an email address like name@example.com";
+  if (!data.privacy) errors.privacy = "Tick the box to agree to the privacy policy before sending.";
+  return errors;
+}
 
-/** Px-based sizing so the drawer stays compact vs global rem scale. */
-
+/** The booking drawer. One instance, opened from the header and the floating Book button. */
 export default function ContactDrawer({ open, onClose }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState<Errors>({});
 
   useEffect(() => {
     if (!open) return;
@@ -27,6 +39,15 @@ export default function ContactDrawer({ open, onClose }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  useEffect(() => {
+    if (!open) return;
+    document.body.style.overflow = "hidden";
+    panelRef.current?.focus();
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   // Reset the form state each time the drawer opens (during render, not in an effect).
   const [wasOpen, setWasOpen] = useState(open);
   if (open !== wasOpen) {
@@ -34,19 +55,11 @@ export default function ContactDrawer({ open, onClose }: Props) {
     if (open) {
       setStatus("idle");
       setError("");
+      setErrors({});
     }
   }
 
-  useEffect(() => {
-    if (open) panelRef.current?.focus();
-  }, [open]);
-
   if (typeof document === "undefined") return null;
-
-  const fieldClass =
-    "w-full rounded-sm border border-line-strong bg-surface-raised px-3 py-2 small text-ink outline-none transition placeholder:text-ink-muted focus:border-brand focus:ring-2 focus:ring-brand/25";
-
-  const inset = "px-10 sm:px-12";
 
   return createPortal(
     <div
@@ -62,7 +75,7 @@ export default function ContactDrawer({ open, onClose }: Props) {
           "absolute inset-0 bg-scrim backdrop-blur-[2px] transition-opacity duration-300 ease-out",
           open ? "opacity-100" : "opacity-0",
         ].join(" ")}
-        aria-label="Close contact form"
+        aria-label="Close the booking form"
         tabIndex={open ? 0 : -1}
         onClick={onClose}
       />
@@ -74,196 +87,86 @@ export default function ContactDrawer({ open, onClose }: Props) {
         aria-labelledby={titleId}
         tabIndex={-1}
         className={[
-          "relative flex h-full w-[min(100%,26rem)] flex-col bg-surface-raised font-sans small text-ink shadow-3 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] sm:w-[min(50vw,26rem)]",
+          "relative flex h-full w-[min(100%,28rem)] flex-col bg-surface-raised text-ink shadow-3 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >
-        <div
-          className={`flex shrink-0 items-start justify-between gap-3 pt-6 ${inset}`}
-        >
-          <h2
-            id={titleId}
-            className="max-w-[calc(100%-3.25rem)] pt-0.5 h4 text-ink"
-          >
-            Let&apos;s get in touch
+        <div className="flex shrink-0 items-start justify-between gap-3 px-6 pt-6 sm:px-8">
+          <h2 id={titleId} className="h3 text-ink">
+            Book a consultation
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="-mr-1 -mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink transition hover:text-brand"
+            className="-mr-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink transition hover:bg-surface-sunken"
             aria-label="Close"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="[stroke-width:2.25] [vector-effect:non-scaling-stroke]"
-            >
-              <path
-                d="M6 6l12 12M18 6L6 18"
-                stroke="currentColor"
-                strokeLinecap="round"
-              />
-            </svg>
+            <X size={22} strokeWidth={1.75} aria-hidden />
           </button>
         </div>
 
-        <div
-          className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-10 pt-3 ${inset}`}
-        >
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 pb-10 pt-4 sm:px-8">
           <form
-            className="flex max-w-full flex-col gap-3.5"
+            className="flex flex-col gap-5"
             noValidate
             onSubmit={async (e) => {
               e.preventDefault();
               const form = e.currentTarget;
               const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
-
-              // The form carries noValidate so the browser does not interrupt
-              // with its own bubbles, which means these are checked here.
-              if (!String(data.name || "").trim()) {
-                setError("Please tell us your name.");
-                setStatus("invalid");
-                return;
-              }
-              if (!String(data.email || "").trim()) {
-                setError("Please give an email address so we can reply.");
-                setStatus("invalid");
-                return;
-              }
-              if (!data.privacy) {
-                setError("Please agree to the privacy policy before sending.");
-                setStatus("invalid");
-                return;
-              }
+              const found = validate(data);
+              setErrors(found);
+              if (Object.keys(found).length) return focusFirstError(form, found);
 
               setStatus("sending");
               setError("");
               try {
-                const res = await fetch("/api/enquiry", {
-                  method: "POST",
-                  headers: { "content-type": "application/json" },
-                  body: JSON.stringify(data),
-                });
-                if (!res.ok) {
-                  const body = await res.json().catch(() => ({}));
-                  throw new Error(body.error || "The enquiry could not be sent.");
-                }
+                await postEnquiry(data);
                 form.reset();
                 setStatus("sent");
               } catch (err) {
                 // Covers a failed request and a network drop alike: either way
                 // the enquiry did not arrive, and saying so is the point.
-                setError(
-                  err instanceof Error && err.message
-                    ? err.message
-                    : "The enquiry could not be sent.",
-                );
+                setError(err instanceof Error && err.message ? err.message : "The enquiry could not be sent.");
                 setStatus("error");
               }
             }}
           >
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="drawer-clinic"
-                className="small font-normal text-ink-muted"
-              >
-                Choose a clinic
-              </label>
-              <select
-                id="drawer-clinic"
-                name="clinic"
-                required
-                defaultValue=""
-                className={fieldClass}
-              >
-                <option value="" disabled>
-                  Select location
-                </option>
-                <option value="dha-phase-ii">
-                  DHA Phase II: Plaza No. 26, Main Iqbal Boulevard
-                </option>
-                <option value="f7-markaz">F-7 Markaz: Jinnah Super</option>
+            <Field id="drawer-clinic" label="Clinic" optional>
+              <select name="clinic" defaultValue="">
+                <option value="">No preference</option>
+                {CLINICS.map((c) => (
+                  <option key={c.id} value={c.name}>
+                    {c.name}
+                  </option>
+                ))}
               </select>
-            </div>
+            </Field>
 
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="drawer-name"
-                className="small font-normal text-ink-muted"
-              >
-                Your name
-              </label>
-              <input
-                id="drawer-name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                required
-                className={fieldClass}
+            <Field id="drawer-name" label="Full name" error={errors.name}>
+              <input type="text" name="name" autoComplete="name" />
+            </Field>
+
+            <Field id="drawer-email" label="Email" error={errors.email}>
+              <input type="email" name="email" autoComplete="email" />
+            </Field>
+
+            <Field id="drawer-message" label="What would you like help with?" optional>
+              <textarea name="message" rows={4} />
+            </Field>
+
+            <div className="flex flex-col gap-3">
+              {/* Unlinked until the clinic supplies a privacy policy. */}
+              <Checkbox
+                id="drawer-privacy"
+                name="privacy"
+                label="I have read and agree to the privacy policy of Studio Dental Clinic."
+                error={errors.privacy}
               />
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="drawer-email"
-                className="small font-normal text-ink-muted"
-              >
-                Your email
-              </label>
-              <input
-                id="drawer-email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className={fieldClass}
+              <Checkbox
+                id="drawer-marketing"
+                name="marketing"
+                label="I agree that my data will be used for marketing purposes."
               />
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor="drawer-message"
-                className="small font-normal text-ink-muted"
-              >
-                Message
-              </label>
-              <textarea
-                id="drawer-message"
-                name="message"
-                rows={4}
-                required
-                className={`${fieldClass} min-h-[4.8rem] resize-y`}
-              />
-            </div>
-
-            <div className="flex flex-col gap-2.5 pt-1">
-              <label className="flex cursor-pointer items-start gap-2 small text-ink-muted">
-                <input
-                  type="checkbox"
-                  name="privacy"
-                  required
-                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded-sm border-line-strong accent-brand"
-                />
-                <span>
-                  {/* Unlinked until the clinic supplies a privacy policy:
-                      this used to point at /contact-us, which is not one. */}
-                  I have read and agree to the privacy policy of Studio Dental
-                  Clinic.
-                </span>
-              </label>
-              <label className="flex cursor-pointer items-start gap-2 small text-ink-muted">
-                <input
-                  type="checkbox"
-                  name="marketing"
-                  className="mt-0.5 h-[0.75rem] w-[15px] shrink-0 rounded-sm border-line-strong accent-brand"
-                />
-                <span>
-                  I agree that my data will be used for marketing purposes.
-                </span>
-              </label>
             </div>
 
             {/* Hidden from people, filled in by bots. The endpoint accepts and
@@ -280,42 +183,27 @@ export default function ContactDrawer({ open, onClose }: Props) {
             <button
               type="submit"
               disabled={status === "sending" || status === "sent"}
-              className="mt-2 inline-flex h-8 w-auto min-w-[5rem] shrink-0 items-center justify-center self-start rounded-full border border-transparent bg-brand px-5 small font-semibold text-on-brand shadow-none transition hover:bg-brand-hover hover:shadow-2 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-brand"
+              className="sd-btn sd-btn--primary sd-btn--md self-start"
             >
-              {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send"}
+              {status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send request"}
             </button>
 
             {status === "sent" && (
-              <p
-                role="status"
-                className="rounded-sm bg-brand-soft px-3 py-2.5 small text-ink"
-              >
+              <p role="status" className="rounded-md bg-brand-soft px-4 py-3 small text-ink">
                 Thank you. Your enquiry has reached the clinic and we will be in
                 touch shortly. If it is urgent, please call{" "}
-                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
-                  {CLINIC_PHONE}
+                <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
+                  {MAIN_PHONE}
                 </a>
                 .
               </p>
             )}
 
-            {status === "invalid" && (
-              <p
-                role="alert"
-                className="rounded-sm bg-warning-soft px-3 py-2.5 small text-warning"
-              >
-                {error}
-              </p>
-            )}
-
             {status === "error" && (
-              <p
-                role="alert"
-                className="rounded-sm bg-warning-soft px-3 py-2.5 small text-warning"
-              >
+              <p role="alert" className="rounded-md bg-warning-soft px-4 py-3 small text-warning">
                 {error} Please call us on{" "}
-                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
-                  {CLINIC_PHONE}
+                <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
+                  {MAIN_PHONE}
                 </a>{" "}
                 if it is urgent.
               </p>

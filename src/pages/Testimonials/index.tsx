@@ -1,3 +1,4 @@
+import SectionHeader from "../../components/SectionHeader";
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -38,13 +39,7 @@ export default function Testimonials() {
   return (
     <section className="bg-surface-raised py-10 md:py-16">
       <div className="mx-auto w-full page-shell px-5 md:px-8">
-        <div className="mx-auto mb-6 flex max-w-[36rem] flex-col items-center gap-3 text-center md:mb-9">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-1.5 eyebrow text-ink">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
-            Clinic information
-          </span>
-          <h2 className="mt-4 h2">Everything you may need in one place.</h2>
-        </div>
+        <SectionHeader level={1} eyebrow="Clinic information" title="Everything you may need in one place." className="mb-8 md:mb-10" />
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {CLINIC_LINKS.map((item) => (

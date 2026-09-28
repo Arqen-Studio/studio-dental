@@ -32,7 +32,7 @@ export default function Services() {
         <div className="relative flex flex-col justify-center overflow-hidden bg-surface-sunken px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="relative z-[1] w-full max-w-[29rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="h1 text-ink">
-              Services
+              Treatments
             </h1>
 
             <ul className="mt-8 divide-y divide-line">

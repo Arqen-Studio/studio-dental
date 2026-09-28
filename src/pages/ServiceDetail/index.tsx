@@ -5,6 +5,8 @@ import { TeamDoctorCard } from "../../components/TeamDoctorCard";
 import { PRICE_CATEGORIES, formatPrice } from "../../data/prices";
 import { CLINICS } from "../../data/clinics";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
+import { useBooking } from "../../lib/booking";
+import SectionHeader from "../../components/SectionHeader";
 
 const DENTIST_PHOTO = "/images/clinic/interior-portrait.jpg";
 
@@ -13,6 +15,7 @@ const DENTIST_PHOTO = "/images/clinic/interior-portrait.jpg";
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const videoRef = useAutoplayVideo();
+  const openBooking = useBooking();
   const service = SERVICES_DATA.find((s) => s.id === id);
   const priceCategories = PRICE_CATEGORIES.filter((c) =>
     service?.priceCategories.includes(c.id)
@@ -59,7 +62,7 @@ export default function ServiceDetail() {
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                All services
+                All treatments
               </Link>
               <h1 className="h1 text-ink">
                 {service.title}
@@ -69,12 +72,8 @@ export default function ServiceDetail() {
               </p>
               <button
                 type="button"
-                onClick={() =>
-                  document
-                    .querySelector<HTMLButtonElement>('[aria-label="Open online registration"]')
-                    ?.click()
-                }
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
+                onClick={openBooking}
+                className="sd-btn sd-btn--primary sd-btn--lg mt-8"
               >
                 Register for a consultation
               </button>
@@ -92,12 +91,8 @@ export default function ServiceDetail() {
           <div className="mt-8 flex justify-center">
             <button
               type="button"
-              onClick={() =>
-                document
-                  .querySelector<HTMLButtonElement>('[aria-label="Open online registration"]')
-                  ?.click()
-              }
-              className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
+              onClick={openBooking}
+              className="sd-btn sd-btn--primary sd-btn--md"
             >
               Register for a consultation
             </button>
@@ -107,10 +102,8 @@ export default function ServiceDetail() {
 
       {/* ── When necessary, alternating split rows ── */}
       <section className="reveal bg-surface-raised">
-        <div className="mx-auto w-full page-shell px-5 pb-4 pt-0 text-center md:px-8">
-          <h2 className="h2 text-ink">
-            {service.whenHeading}
-          </h2>
+        <div className="mx-auto w-full page-shell px-5 pb-10 pt-0 md:px-8">
+          <SectionHeader eyebrow={service.title} title={service.whenHeading} />
         </div>
 
         {service.scenarios.map((scenario, i) => (
@@ -227,7 +220,7 @@ export default function ServiceDetail() {
                     <p className="mt-1 small text-ink-muted">{c.address}</p>
                   </div>
                   <div>
-                    <span className="inline-flex items-center justify-center rounded-full bg-raw-porcelain px-6 py-2.5 small font-semibold text-raw-ink transition duration-200 group-hover:bg-raw-mist">
+                    <span className="sd-btn sd-btn--inverse sd-btn--sm">
                       View prices
                     </span>
                   </div>
@@ -242,9 +235,7 @@ export default function ServiceDetail() {
       {specialists.length > 0 && (
         <section className="reveal bg-surface-sunken py-16 md:py-20">
           <div className="mx-auto w-full page-shell px-5 md:px-8">
-            <h2 className="text-center h2 text-ink">
-              Specialists
-            </h2>
+            <SectionHeader eyebrow="Doctors" title="Specialists" />
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
               {specialists.map((doctor) => (
                 <TeamDoctorCard
@@ -258,12 +249,9 @@ export default function ServiceDetail() {
                 />
               ))}
             </div>
-            <div className="mt-10 flex justify-center">
-              <Link
-                to="/doctors"
-                className="inline-flex items-center justify-center rounded-full bg-brand px-8 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
-              >
-                More specialists
+            <div className="mt-10">
+              <Link to="/doctors" className="sd-btn sd-btn--secondary sd-btn--md">
+                See all doctors
               </Link>
             </div>
           </div>
@@ -295,9 +283,7 @@ export default function ServiceDetail() {
           {/* Text left, Stone bg */}
           <div className="relative flex flex-col justify-center bg-surface-sunken px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
             <div className="relative z-[1]">
-              <h2 className="h2 text-ink">
-                Other services
-              </h2>
+              <SectionHeader eyebrow="Treatments" title="Other treatments" />
               <ul className="mt-6 flex flex-col">
                 {otherServices.map((s) => (
                   <li key={s.id}>
@@ -313,9 +299,9 @@ export default function ServiceDetail() {
               <div className="mt-8">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center rounded-full px-7 py-3 label border border-ink text-ink transition duration-200 hover:bg-ink hover:text-surface"
+                  className="sd-btn sd-btn--secondary sd-btn--md"
                 >
-                  All services
+                  See all treatments
                 </Link>
               </div>
             </div>

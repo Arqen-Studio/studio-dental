@@ -1,3 +1,4 @@
+import SectionHeader from "../../components/SectionHeader";
 import { Link } from "react-router-dom";
 
 const CLINICS = [
@@ -94,7 +95,7 @@ export default function Clinics() {
       <section className="no-reveal bg-surface-sunken pb-12 pt-[calc(78px+2rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <h1 className="h1 text-ink">
-            Contacts
+            Clinics
           </h1>
         </div>
       </section>
@@ -141,7 +142,7 @@ export default function Clinics() {
                         rel="noopener noreferrer"
                         className="mt-1 block small font-medium text-brand transition hover:underline"
                       >
-                        Location on the map
+                        Get directions
                       </a>
                     </div>
                   </div>
@@ -196,7 +197,7 @@ export default function Clinics() {
                   <div className="flex gap-3 py-5">
                     <Link
                       to="/contact-us"
-                      className="flex-1 rounded-full bg-brand py-3 text-center label text-on-brand transition hover:bg-brand-hover"
+                      className="sd-btn sd-btn--primary sd-btn--md flex-1"
                     >
                       Contact
                     </Link>
@@ -204,9 +205,9 @@ export default function Clinics() {
                       href={clinic.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 rounded-full py-3 text-center label border border-ink text-ink transition duration-200 hover:bg-ink hover:text-surface"
+                      className="sd-btn sd-btn--secondary sd-btn--md flex-1"
                     >
-                      Directions
+                      Get directions
                     </a>
                   </div>
                 </div>
@@ -218,19 +219,9 @@ export default function Clinics() {
 
       {/* ── "You will be welcomed." — teaser to the team page ── */}
       <section className="bg-surface-sunken py-16 md:py-24">
-        <div className="mx-auto w-full max-w-[46rem] px-5 text-center md:px-8">
-          <h2 className="h2 text-ink">
-            You will be welcomed.
-          </h2>
-          <p className="mx-auto mt-4 max-w-[42ch] body text-ink-muted">
-            The same team looks after patients at both branches, from routine
-            check-ups to implants and orthodontics. Get to know the people who
-            will be treating you.
-          </p>
-          <Link
-            to="/doctors"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
-          >
+        <div className="mx-auto flex w-full max-w-[46rem] flex-col items-center px-5 md:px-8">
+          <SectionHeader align="center" eyebrow="Doctors" title="You will be welcomed." lead="The same team looks after patients at both branches, from routine check-ups to implants and orthodontics. Get to know the people who will be treating you." />
+          <Link to="/doctors" className="sd-btn sd-btn--primary sd-btn--md mt-8">
             Meet the team
           </Link>
         </div>

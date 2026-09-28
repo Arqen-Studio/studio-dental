@@ -1,11 +1,27 @@
 import { useState } from "react";
-import { CLINICS } from "../data/clinics";
+import { CLINICS, MAIN_PHONE, telHref } from "../data/clinics";
+import { focusFirstError, isEmail, postEnquiry } from "../lib/enquiry";
+import { Checkbox, Field } from "./Field";
+import SectionHeader from "./SectionHeader";
 
 type Status = "idle" | "sending" | "sent" | "error";
+type Errors = Partial<Record<"name" | "phone" | "email", string>>;
+
+/** The rules /api/enquiry applies: a name, and a phone number or an email. */
+function validate(data: Record<string, string>): Errors {
+  const errors: Errors = {};
+  if (!data.name?.trim()) errors.name = "Enter your name.";
+  if (!data.phone?.trim() && !data.email?.trim())
+    errors.phone = "Enter a phone number or an email address so the clinic can reply.";
+  if (data.email?.trim() && !isEmail(data.email))
+    errors.email = "Enter an email address like name@example.com";
+  return errors;
+}
 
 export default function ContactFormSection() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState<Errors>({});
 
   return (
     <section className="reveal grid lg:grid-cols-2">
@@ -20,130 +36,77 @@ export default function ContactFormSection() {
       </div>
 
       {/* Right, form */}
-      <div className="flex flex-col justify-center bg-surface-sunken px-8 py-16 md:px-12 lg:px-16">
-        <div className="w-full max-w-[29rem]">
-          <h2 className="h2 text-ink">
-            Let's get in touch
-          </h2>
+      <div className="flex flex-col justify-center bg-surface-sunken px-5 py-16 md:px-12 lg:px-16">
+        <div className="w-full max-w-[32rem]">
+          <SectionHeader eyebrow="Contact" title="Let's get in touch" />
 
           <form
             className="mt-8 flex flex-col gap-5"
             noValidate
             onSubmit={async (e) => {
               e.preventDefault();
-              const data = Object.fromEntries(new FormData(e.currentTarget));
+              const form = e.currentTarget;
+              const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+              const found = validate(data);
+              setErrors(found);
+              if (Object.keys(found).length) return focusFirstError(form, found);
+
               setStatus("sending");
               setError("");
               try {
-                const res = await fetch("/api/enquiry", {
-                  method: "POST",
-                  headers: { "content-type": "application/json" },
-                  body: JSON.stringify(data),
-                });
-                if (!res.ok) {
-                  const body = await res.json().catch(() => ({}));
-                  throw new Error(body.error || "Something went wrong.");
-                }
+                await postEnquiry(data);
                 setStatus("sent");
               } catch (err) {
-                setError(err instanceof Error ? err.message : "Something went wrong.");
+                setError(err instanceof Error ? err.message : "The enquiry could not be sent.");
                 setStatus("error");
               }
             }}
           >
-            {/* Choose a clinic */}
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="cf-clinic" className="small text-ink">
-                Choose a clinic
-              </label>
-              <div className="relative">
-                <select
-                  id="cf-clinic"
-                  name="clinic"
-                  defaultValue=""
-                  className="w-full appearance-none rounded-sm border border-line bg-surface-sunken px-4 py-3 body text-ink outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
-                >
-                  <option value="" disabled />
-                  {CLINICS.map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.city}
-                    </option>
-                  ))}
-                </select>
-                <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </span>
-              </div>
-            </div>
+            <Field id="cf-clinic" label="Clinic" optional>
+              <select name="clinic" defaultValue="">
+                <option value="">No preference</option>
+                {CLINICS.map((c) => (
+                  <option key={c.id} value={c.name}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </Field>
 
-            {/* Name + Phone */}
+            <Field id="cf-name" label="Full name" error={errors.name}>
+              <input type="text" name="name" autoComplete="name" />
+            </Field>
+
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="cf-name" className="small text-ink">
-                  Your name
-                </label>
-                <input
-                  id="cf-name"
-                  type="text"
-                  name="name"
-                  className="rounded-sm border border-line px-4 py-3 body outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="cf-phone" className="small text-ink">
-                  Your phone
-                </label>
-                <input
-                  id="cf-phone"
-                  type="tel"
-                  name="phone"
-                  className="rounded-sm border border-line px-4 py-3 body outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
-                />
-              </div>
+              <Field
+                id="cf-phone"
+                label="Phone"
+                hint="A phone number, an email address, or both."
+                error={errors.phone}
+              >
+                <input type="tel" name="phone" autoComplete="tel" />
+              </Field>
+              <Field id="cf-email" label="Email" error={errors.email}>
+                <input type="email" name="email" autoComplete="email" />
+              </Field>
             </div>
 
-            {/* Email */}
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="cf-email" className="small text-ink">
-                Your email
-              </label>
-              <input
-                id="cf-email"
-                type="email"
-                name="email"
-                className="rounded-sm border border-line px-4 py-3 body outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
-              />
-            </div>
+            <Field id="cf-message" label="What would you like help with?" optional>
+              <textarea name="message" rows={4} />
+            </Field>
 
-            {/* Message */}
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="cf-message" className="small text-ink">
-                Message
-              </label>
-              <textarea
-                id="cf-message"
-                name="message"
-                rows={4}
-                className="min-h-[5.5rem] resize-y rounded-sm border border-line px-4 py-3 body outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
-              />
-            </div>
-
-            {/* Checkboxes */}
             <div className="flex flex-col gap-3">
-              <label className="flex cursor-pointer items-start gap-3 small text-ink">
-                <input type="checkbox" name="privacy" className="mt-0.5 h-4 w-4 flex-shrink-0 accent-ink" />
-                <span>
-                  {/* Unlinked until the clinic supplies a privacy policy:
-                      this used to point at /contact-us, which is not one. */}
-                  I have read and agree to the privacy policy of Studio Dental
-                </span>
-              </label>
-              <label className="flex cursor-pointer items-start gap-3 small text-ink">
-                <input type="checkbox" name="marketing" className="mt-0.5 h-4 w-4 flex-shrink-0 accent-ink" />
-                <span>I agree that my data will be used for marketing purposes.</span>
-              </label>
+              {/* Unlinked until the clinic supplies a privacy policy. */}
+              <Checkbox
+                id="cf-privacy"
+                name="privacy"
+                label="I have read and agree to the privacy policy of Studio Dental"
+              />
+              <Checkbox
+                id="cf-marketing"
+                name="marketing"
+                label="I agree that my data will be used for marketing purposes."
+              />
             </div>
 
             {/* Hidden from people, tempting to bots. */}
@@ -159,26 +122,27 @@ export default function ContactFormSection() {
             <button
               type="submit"
               disabled={status === "sending" || status === "sent"}
-              className="mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full bg-brand px-8 py-4 label text-on-brand transition hover:-translate-y-0.5 hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+              className="sd-btn sd-btn--primary sd-btn--md self-start"
             >
-              {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send"}
+              {status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send enquiry"}
             </button>
 
             {status === "sent" && (
-              <p role="status" className="rounded-lg bg-brand-soft px-5 py-4 body text-ink">
+              <p role="status" className="rounded-md bg-brand-soft px-5 py-4 body text-ink">
                 Thank you. Your enquiry has reached the clinic and we will be in
                 touch shortly. If it is urgent, please call{" "}
-                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
-                  0329 9961999
-                </a>.
+                <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
+                  {MAIN_PHONE}
+                </a>
+                .
               </p>
             )}
 
             {status === "error" && (
-              <p role="alert" className="rounded-lg bg-warning-soft px-5 py-4 body text-warning">
+              <p role="alert" className="rounded-md bg-warning-soft px-5 py-4 body text-warning">
                 {error} Please call us on{" "}
-                <a href="tel:03299961999" className="font-semibold underline underline-offset-2">
-                  0329 9961999
+                <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
+                  {MAIN_PHONE}
                 </a>{" "}
                 and we will book you in.
               </p>

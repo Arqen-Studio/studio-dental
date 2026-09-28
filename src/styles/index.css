@@ -3,6 +3,8 @@
    components layer so utilities such as font-medium still win over the type
    classes (.h2, .body, .small, ...). */
 @import './tokens.css' layer(components);
+/* Design-system components (sd- classes); same layer, so utilities can adjust them. */
+@import './components.css' layer(components);
 @config '../../tailwind.config.cjs';
 
 /* The site's page column. It widens once on very large screens so the content

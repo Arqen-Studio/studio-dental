@@ -1,3 +1,4 @@
+import SectionHeader from "../../components/SectionHeader";
 import { useState } from "react";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { SERVICES_DATA } from "../../data/services";
@@ -13,18 +14,12 @@ export default function Contact() {
     <section id="contact" className="bg-surface-raised pb-10 pt-[calc(78px+2rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
       <div className="mx-auto grid w-full max-w-[max(62rem,min(2500px,86vw))] min-[1900px]:max-w-[min(2500px,92vw)] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-1.5 eyebrow text-ink">
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-brand"
-              aria-hidden="true"
-            />
-            Contacts
-          </span>
-          <h2 className="mt-3 h2 text-balance">Visit Studio Dental in Islamabad.</h2>
-          <p className="mt-4 max-w-[60ch] body text-ink-muted">
-            Studio Dental provides expert dental care with a focus on comfort,
-            advanced technology, and affordable treatment.
-          </p>
+          <SectionHeader
+            level={1}
+            eyebrow="Contact"
+            title="Visit Studio Dental in Islamabad."
+            lead="Studio Dental provides expert dental care with a focus on comfort, advanced technology, and affordable treatment."
+          />
 
           <ul className="mt-8 grid gap-5">
             {CLINICS.map((clinic) => (
@@ -178,15 +173,10 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending" || status === "sent"}
-            className="mt-5 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-brand px-7 py-4 label text-on-brand transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-2 disabled:opacity-95 disabled:hover:translate-y-0"
+            className="sd-btn sd-btn--primary sd-btn--md mt-5"
           >
-            {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send request"}
-            <span
-              className="inline-flex h-[1.1rem] w-[22px] items-center justify-center rounded-full bg-on-brand/10"
-              aria-hidden="true"
-            >
-              <ArrowRight size={11} strokeWidth={2.5} className="text-ink" aria-hidden />
-            </span>
+            <span>{status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send request"}</span>
+            <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
           </button>
 
           {status === "sent" && (

@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import { Mail } from "lucide-react";
 import ScrollToHash from "./ScrollToHash";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import ContactDrawer from "./components/ContactDrawer";
+import { BookingContext } from "./lib/booking";
 import Hero from "./pages/Hero";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -27,7 +27,9 @@ const TRANSITION_MS = 500;
 function Layout() {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
-  const [regOpen, setRegOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const openBooking = useCallback(() => setBookingOpen(true), []);
+  const closeBooking = useCallback(() => setBookingOpen(false), []);
   const nodeRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef(location);
   const revealObserverRef = useRef<IntersectionObserver | null>(null);
@@ -94,19 +96,19 @@ function Layout() {
   }, [location.pathname]);
 
   return (
-    <>
+    <BookingContext.Provider value={openBooking}>
       <Navbar />
-      {/* Floating registration button */}
+      {/* Floating booking button: a compact Ink pill. The footer carries extra
+          bottom padding on phones so it never covers the last content. */}
       <button
         type="button"
-        onClick={() => setRegOpen(true)}
-        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3.5 small font-semibold text-on-brand shadow-1 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-2"
-        aria-label="Open online registration"
+        onClick={openBooking}
+        className="sd-btn sd-btn--sm fixed bottom-4 right-4 z-[90] bg-ink text-surface ring-1 ring-line-strong hover:bg-ink/85 md:bottom-6 md:right-6"
+        aria-label="Book a consultation"
       >
-        <Mail size={16} strokeWidth={2.2} aria-hidden />
-        Online registration
+        Book
       </button>
-      <ContactDrawer open={regOpen} onClose={() => setRegOpen(false)} />
+      <ContactDrawer open={bookingOpen} onClose={closeBooking} />
       <main className="flex min-h-0 flex-1 flex-col bg-surface">
         <SwitchTransition mode="out-in">
           <CSSTransition
@@ -139,7 +141,7 @@ function Layout() {
         </SwitchTransition>
       </main>
       <Footer />
-    </>
+    </BookingContext.Provider>
   );
 }
 

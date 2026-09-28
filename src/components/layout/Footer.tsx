@@ -1,62 +1,38 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { CLINICS } from "../../data/clinics";
+import { Clock, MapPin, Phone } from "lucide-react";
+import Logo from "../Logo";
+import { CLINICS, telHref, type ClinicLocation } from "../../data/clinics";
 
-function PinIcon() {
+/** The clinic's real profiles only. Facebook, LinkedIn and YouTube were
+ *  placeholders pointing at the platforms' home pages, so they are gone until
+ *  the clinic supplies its own URLs. */
+const SOCIAL_LINKS = [
+  {
+    label: "Studio Dental on Instagram",
+    href: "https://www.instagram.com/studiodentalpk?igsh=MWt5cmJzbzZhbms2bw%3D%3D",
+    icon: <InstagramIcon />,
+  },
+];
+
+/** Line icon on the 24px grid, drawn in currentColor like the Lucide set. */
+function InstagramIcon() {
   return (
     <svg
-      width="20"
-      height="20"
+      width="22"
+      height="22"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.65"
+      strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
+      focusable="false"
     >
-      <path d="M12 21C12 21 5 13.5 5 8.5a7 7 0 0 1 14 0c0 5-7 12.5-7 12.5z" />
-      <circle cx="12" cy="8.5" r="2.5" />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.65"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="5" y="2" width="14" height="20" rx="2" />
-      <line x1="9" y1="7" x2="15" y2="7" />
-      <line x1="9" y1="11" x2="15" y2="11" />
-      <line x1="9" y1="15" x2="12" y2="15" />
-    </svg>
-  );
-}
-
-function ClockIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.65"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <polyline points="12 7 12 12 15.5 14.5" />
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <path d="M17.5 6.5h.01" />
     </svg>
   );
 }
@@ -72,33 +48,18 @@ function IconCircle({ children }: { children: ReactNode }) {
   );
 }
 
-function ClinicCard({
-  city,
-  address,
-  mapUrl,
-  phone,
-  email,
-  hours,
-}: {
-  city: string;
-  address: string;
-  mapUrl: string;
-  phone: string;
-  email: string;
-  hours: string[];
-}) {
+function ClinicCard({ clinic }: { clinic: ClinicLocation }) {
+  const { city, address, mapUrl, phone, email, hours } = clinic;
   // The card is a six-row grid that adopts the parent grid's row bands on
   // large screens, so a two-line address in one clinic does not push its
   // dividers and rows out of step with the other clinic's.
   return (
     <article className="grid content-start gap-8 rounded-md border border-line bg-surface-raised p-7 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
-      <h3 className="h4 text-ink">
-        {city}
-      </h3>
+      <h3 className="h4 text-ink">{city}</h3>
 
       <div className="flex gap-4">
         <IconCircle>
-          <PinIcon />
+          <MapPin size={20} strokeWidth={1.75} />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
           <p className="body text-ink">{address}</p>
@@ -108,7 +69,7 @@ function ClinicCard({
             rel="noopener noreferrer"
             className="mt-2 inline-block body font-medium text-brand underline-offset-2 transition hover:underline"
           >
-            Location on the map
+            Get directions
           </a>
         </div>
       </div>
@@ -117,19 +78,14 @@ function ClinicCard({
 
       <div className="flex gap-4">
         <IconCircle>
-          <PhoneIcon />
+          <Phone size={20} strokeWidth={1.75} />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="small font-medium text-ink-muted">
-            Tel. for registration:
-          </p>
-          <a
-            href={`tel:${phone.replace(/\s/g, "")}`}
-            className="mt-0.5 block body text-ink transition hover:text-brand"
-          >
+          <p className="small font-medium text-ink-muted">Phone</p>
+          <a href={telHref(phone)} className="mt-0.5 block body text-ink transition hover:text-brand">
             {phone}
           </a>
-          <p className="mt-3 small font-medium text-ink-muted">E-mail:</p>
+          <p className="mt-3 small font-medium text-ink-muted">Email</p>
           <a
             href={`mailto:${email}`}
             className="mt-0.5 block break-all body text-ink transition hover:text-brand"
@@ -140,7 +96,7 @@ function ClinicCard({
             to="/contact-us"
             className="mt-3 inline-block label text-brand underline-offset-2 transition hover:underline"
           >
-            Contact
+            Contact the clinic
           </Link>
         </div>
       </div>
@@ -149,12 +105,10 @@ function ClinicCard({
 
       <div className="flex gap-4">
         <IconCircle>
-          <ClockIcon />
+          <Clock size={20} strokeWidth={1.75} />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="small font-medium text-ink-muted">
-            Working hours:
-          </p>
+          <p className="small font-medium text-ink-muted">Opening hours</p>
           {hours.map((h) => (
             <p key={h} className="mt-1 body text-ink">
               {h}
@@ -167,110 +121,44 @@ function ClinicCard({
 }
 
 export default function Footer() {
-  const INSTAGRAM_URL =
-    "https://www.instagram.com/studiodentalpk?igsh=MWt5cmJzbzZhbms2bw%3D%3D";
-
-  /** Replace with your Studio Dental Facebook, LinkedIn, and YouTube URLs when available */
-  const FACEBOOK_URL = "https://www.facebook.com/";
-  const LINKEDIN_URL = "https://www.linkedin.com/";
-  const YOUTUBE_URL = "https://www.youtube.com/";
-
-  /** Assets under `public/svg/` */
-  const socialLinks = [
-    {
-      label: "Facebook",
-      href: FACEBOOK_URL,
-      src: "/svg/facebook-circle-svgrepo-com.svg",
-    },
-    {
-      label: "Instagram",
-      href: INSTAGRAM_URL,
-      src: "/svg/instagram-167-svgrepo-com.svg",
-    },
-    {
-      label: "LinkedIn",
-      href: LINKEDIN_URL,
-      src: "/svg/linkedin-linked-in-svgrepo-com.svg",
-    },
-    {
-      label: "YouTube",
-      href: YOUTUBE_URL,
-      src: "/svg/social-youtube-svgrepo-com.svg",
-    },
-  ] as const;
-
   return (
-    <footer data-theme="dark" className="bg-surface pb-10 pt-14 text-ink md:pb-14 md:pt-16">
+    // Ink band. The extra bottom padding on phones keeps the floating Book
+    // button clear of the last lines.
+    <footer data-theme="dark" className="bg-surface pb-28 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="page-shell mx-auto w-full px-5 md:px-8">
-        <h2 className="mb-8 h2 text-ink md:mb-10">
-          Contacts
-        </h2>
+        <Link to="/" className="sd-logo-link">
+          <Logo size={48} tone="inverse" descriptor="Clinic · Islamabad" />
+        </Link>
+
+        <h2 className="mb-8 mt-12 h2 text-ink md:mb-10">Contacts</h2>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto_auto_auto_auto] lg:gap-8">
           {CLINICS.map((clinic) => (
-            <ClinicCard
-              key={clinic.id}
-              city={clinic.city}
-              address={clinic.address}
-              mapUrl={clinic.mapUrl}
-              phone={clinic.phone}
-              email={clinic.email}
-              hours={clinic.hours}
-            />
+            <ClinicCard key={clinic.id} clinic={clinic} />
           ))}
         </div>
 
-        <div className="mt-5   pt-10">
-          <div className="flex flex-col items-start text-left">
-            <div className="flex flex-wrap gap-2">
-              {socialLinks.map((s) => (
+        <div className="mt-12 flex flex-col items-start gap-4 border-t border-line pt-8">
+          <ul className="flex flex-wrap gap-2">
+            {SOCIAL_LINKS.map((s) => (
+              <li key={s.label}>
                 <a
-                  key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-raw-evergreen ring-1 ring-line transition duration-200 hover:bg-raw-evergreen/80 sm:h-12 sm:w-12"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line-strong text-ink transition duration-200 hover:border-brand hover:text-brand"
                 >
-                  <img
-                    src={s.src}
-                    alt=""
-                    className="h-[1.1rem] w-[22px] object-contain sm:h-[1.3rem] sm:w-[26px]"
-                  />
+                  {s.icon}
                 </a>
-              ))}
-            </div>
+              </li>
+            ))}
+          </ul>
 
-            <p className="mt-3 max-w-[52rem] font-sans small text-brand">
-              Report potential ethical, corruption, violence or
-              harassment-related violations and other concerns.
-            </p>
-
-            <p className="mt-3 max-w-[52rem] font-sans small text-ink-muted">
-              &copy; {new Date().getFullYear()} Studio Dental, clinics at DHA
-              Phase II and F-7 Markaz, Islamabad. All rights reserved.{" "}
-              <a
-                href="https://thestudiodental.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ink-muted underline underline-offset-2 transition hover:text-ink"
-              >
-                Studio Dental
-              </a>
-            </p>
-
-            <p className="mt-2 font-sans small text-ink-muted">
-              Touched by{" "}
-              <a
-                href="https://digitouch.lt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ink-muted underline underline-offset-2 transition hover:text-ink"
-              >
-                digitouch!
-              </a>
-            </p>
-          </div>
+          <p className="max-w-[52rem] small text-ink-muted">
+            &copy; {new Date().getFullYear()} Studio Dental, clinics at DHA
+            Phase II and F-7 Markaz, Islamabad. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

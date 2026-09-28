@@ -5,8 +5,10 @@ import { TEAM_DOCTORS } from '../../data/teamDoctors'
 import ContactFormSection from '../../components/ContactFormSection'
 import { SERVICES_DATA } from '../../data/services'
 import { useAutoplayVideo } from '../../hooks/useAutoplayVideo'
+import SectionHeader from '../../components/SectionHeader'
+import { Field } from '../../components/Field'
 
-const ALL_SERVICES = 'Select a service'
+const ALL_SERVICES = 'All treatments'
 /**
  * Our own clinic footage, with a still from the same clip as the poster so the
  * panel is never empty while the video loads or if autoplay is refused.
@@ -20,10 +22,10 @@ const TEAM_HERO_VIDEO_F7 = '/videos/treatment-room-720.mp4'
 const TEAM_HERO_POSTER_F7 = '/videos/treatment-room-poster.jpg'
 
 /** Each branch panel links to the doctors grid, the services page and the
-*  contact form. Both panels are Ink bands. */
+*  contact form. The two branch panels are identical Stone panels. */
 const PANEL_LINKS = [
   { label: 'Doctors', href: '#doctors' },
-  { label: 'Services', href: '/services' },
+  { label: 'Treatments', href: '/services' },
   { label: 'Contact', href: '/contact-us' },
 ] as const
 
@@ -87,7 +89,14 @@ export default function TeamPage() {
 
   return (
     <>
-      {/* ── Hero, two stacked 50/50 rows ── */}
+      {/* ── Page title ── */}
+      <section className="no-reveal bg-surface px-5 pb-12 pt-[calc(78px+3rem)] md:px-8 md:pb-16">
+        <div className="mx-auto w-full page-shell">
+          <SectionHeader level={1} eyebrow="DHA Phase II · F-7 Markaz" title="Doctors" />
+        </div>
+      </section>
+
+      {/* ── The two branches, equal Stone panels ── */}
       <section className="no-reveal">
         {/* Row 1: photo left · text right, DHA Phase II */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
@@ -108,11 +117,11 @@ export default function TeamPage() {
             </video>
           </div>
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-surface-sunken px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-surface-sunken px-6 py-14 md:px-12 lg:px-16">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
-              <h1 className="h1 text-ink">
+              <h2 className="h2 text-ink">
                 DHA Phase II
-              </h1>
+              </h2>
               <PanelLinks />
             </div>
           </div>
@@ -121,9 +130,9 @@ export default function TeamPage() {
         {/* Row 2: text left · photo right, F-7 Markaz */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Text */}
-          <div data-theme="dark" className="relative flex flex-col justify-center overflow-hidden bg-surface px-6 py-14 md:px-12 lg:px-16">
-            <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.7s_both]">
-              <h2 className="h1 text-ink">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-surface-sunken px-6 py-14 md:px-12 lg:px-16">
+            <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
+              <h2 className="h2 text-ink">
                 F-7 Markaz
               </h2>
               <PanelLinks />
@@ -148,39 +157,23 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section id="doctors" className="bg-surface-sunken py-16 md:py-24">
+      <section id="doctors" className="bg-surface py-16 md:py-24">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
-          <h2 className="text-center h3 text-ink">Doctors</h2>
+          <SectionHeader eyebrow="Team" title="Find a doctor" />
 
-          <div className="mt-6 max-w-[340px]">
-            <label htmlFor="service-filter" className="sr-only">
-              Select a service
-            </label>
-            <div className="relative">
-              <select
-                id="service-filter"
-                value={selectedService}
-                onChange={(e) => setSelectedService(e.target.value)}
-                className="w-full appearance-none border-b-2 border-brand bg-transparent pb-2.5 pr-9 body text-ink outline-none"
-              >
+          <div className="mt-8 max-w-[340px]">
+            <Field id="service-filter" label="Treatment">
+              <select value={selectedService} onChange={(e) => setSelectedService(e.target.value)}>
                 {serviceOptions.map((service) => (
                   <option key={service} value={service}>
                     {service}
                   </option>
                 ))}
               </select>
-              <svg
-                className="pointer-events-none absolute right-1 top-1/2 h-4 w-4 -translate-y-1/2 text-ink"
-                viewBox="0 0 20 20"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
+            </Field>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {filteredDoctors.map((doctor) => (
               <TeamDoctorCard
                 key={doctor.name}

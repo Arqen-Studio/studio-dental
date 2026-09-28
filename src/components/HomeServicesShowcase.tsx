@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { Anchor, ArrowRight, Baby, BarChart3, Rows3, Star, Zap } from 'lucide-react'
+import SectionHeader from './SectionHeader'
 import { Link } from 'react-router-dom'
 import type { ServiceData } from '../data/services'
 import { SERVICES_DATA } from '../data/services'
@@ -73,35 +74,19 @@ export default function HomeServicesShowcase({
       aria-labelledby="home-services-heading"
     >
       <div className="relative z-10 mx-auto w-full page-shell px-5 md:px-8">
-        <h2
+        <SectionHeader
           id="home-services-heading"
-          className="text-center h3 text-ink"
-        >
-          Services
-        </h2>
-
-        <div className="mt-7 mb-7 flex flex-col gap-5 md:mt-8 md:mb-9 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[42rem]">
-            <p className="mt-4 h2 text-ink">
-              Everything your smile needs, in one place.
-            </p>
-            <p className="mt-3 max-w-[52ch] body text-ink-muted">
-              From check-ups and hygiene to fillings, crowns, implants, aligners and
-              dental care for children. A few are below, and every treatment we offer is
-              listed on the services page with prices for both clinics.
-            </p>
-          </div>
-
-          <Link
-            to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-ink px-5 small font-semibold text-ink transition duration-300 hover:bg-ink hover:text-surface lg:self-auto"
-          >
-            All services & prices
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-ink/10 transition group-hover:bg-surface/20">
-              <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
-            </span>
-          </Link>
-        </div>
+          eyebrow="Treatments"
+          title="Everything your smile needs, in one place"
+          lead="From check-ups and hygiene to fillings, crowns, implants, aligners and dental care for children. A few are below, and every treatment we offer is listed on the treatments page with prices for both clinics."
+          action={
+            <Link to="/services" className="sd-btn sd-btn--secondary sd-btn--md">
+              <span>See treatments and prices</span>
+              <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
+            </Link>
+          }
+          className="mb-8 md:mb-10"
+        />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-5">
           <article

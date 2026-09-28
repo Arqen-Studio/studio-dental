@@ -1,3 +1,4 @@
+import SectionHeader from "../../components/SectionHeader";
 import { Link } from 'react-router-dom'
 
 /**
@@ -33,18 +34,12 @@ export default function MissionCampaign() {
     <>
       <section className="no-reveal bg-surface-sunken pb-16 pt-[calc(78px+2rem)] md:pb-20 md:pt-[calc(78px+2.5rem)]">
         <div className="mx-auto page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-1.5 eyebrow text-ink">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
-            Our mission
-          </span>
-          <h1 className="mt-4 max-w-[20ch] h1 text-ink">
-            A mission for life
-          </h1>
-          <p className="mt-5 max-w-[62ch] body text-ink">
-            Teeth are meant to last a lifetime. Nearly everything that goes
-            wrong with them is easier to treat early than late, and easier
-            still to avoid altogether. That is the work.
-          </p>
+          <SectionHeader
+            level={1}
+            eyebrow="Our mission"
+            title="A mission for life"
+            lead="Teeth are meant to last a lifetime. Nearly everything that goes wrong with them is easier to treat early than late, and easier still to avoid altogether. That is the work."
+          />
         </div>
       </section>
 
@@ -79,13 +74,13 @@ export default function MissionCampaign() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
               to="/services"
-              className="inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
+              className="sd-btn sd-btn--primary sd-btn--md"
             >
               See what we treat
             </Link>
             <Link
               to="/prices"
-              className="inline-flex items-center justify-center rounded-full px-7 py-3.5 label border border-ink text-ink transition duration-200 hover:bg-ink hover:text-surface"
+              className="sd-btn sd-btn--secondary sd-btn--md"
             >
               View the price list
             </Link>

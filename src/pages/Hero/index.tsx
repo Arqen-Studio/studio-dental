@@ -73,28 +73,12 @@ export default function Hero() {
           </div>
 
           <div className="mb-10 flex flex-wrap items-center gap-3">
-            <Link
-              to="/contact-us"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent bg-raw-porcelain px-6 py-3 label text-raw-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-raw-mist hover:shadow-2"
-            >
-              Book a consultation
-              <span
-                className="inline-flex h-[1.1rem] w-[22px] items-center justify-center rounded-full bg-raw-ink/10"
-                aria-hidden="true"
-              >
-                <ArrowRight
-                  size={11}
-                  strokeWidth={2.5}
-                  className="text-raw-ink"
-                  aria-hidden
-                />
-              </span>
+            <Link to="/contact-us" className="sd-btn sd-btn--inverse sd-btn--lg max-sm:w-full">
+              <span>Book a consultation</span>
+              <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
             </Link>
-            <Link
-              to="/services"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-ink px-6 py-3 label text-ink transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-ink hover:text-surface"
-            >
-              View all services
+            <Link to="/services" className="sd-btn sd-btn--secondary sd-btn--lg max-sm:w-full">
+              See all treatments
             </Link>
           </div>
 
