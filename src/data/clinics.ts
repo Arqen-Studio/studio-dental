@@ -7,7 +7,8 @@ export type ClinicLocation = {
   mapUrl: string
   phone: string
   email: string
-  hours: string[]
+  /** [days, times] pairs, in the voice format: ['Mon–Fri', '10:00–20:00'] */
+  hours: [string, string][]
 }
 
 export const CLINICS: ClinicLocation[] = [
@@ -21,7 +22,7 @@ export const CLINICS: ClinicLocation[] = [
     mapUrl: 'https://maps.google.com/?q=DHA+Phase+II+Islamabad',
     phone: '+92 329 9961999',
     email: 'thestudiodentalclinic@gmail.com',
-    hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
+    hours: [['Mon–Fri', '10:00–20:00'], ['Sat', '10:00–17:00']],
   },
   {
     id: 'f7',
@@ -33,7 +34,7 @@ export const CLINICS: ClinicLocation[] = [
     mapUrl: 'https://maps.google.com/?q=F-7+Markaz+Islamabad',
     phone: '+92 329 3519999',
     email: 'thestudiodentalclinic@gmail.com',
-    hours: ['Mon – Fri  10:00 – 20:00', 'Sat  10:00 – 17:00'],
+    hours: [['Mon–Fri', '10:00–20:00'], ['Sat', '10:00–17:00']],
   },
 ]
 
@@ -48,3 +49,10 @@ export const telHref = (phone: string) => `tel:${phone.replace(/\s/g, '')}`
  * not confirmed it is their profile (it is not in docs/client-questions.md).
  */
 export const INSTAGRAM_URL = 'https://www.instagram.com/studiodentalpk?igsh=MWt5cmJzbzZhbms2bw%3D%3D'
+
+/**
+ * The clinic's years of experience, used everywhere the site states it.
+ * [TODO: confirm with client] The site said 17; Dr. Yousaf Kamal's biography
+ * says sixteen years of his own experience. See docs/client-questions.md.
+ */
+export const YEARS_OF_EXPERIENCE = 17

@@ -4,17 +4,16 @@ import MissionCampaignBanner from "../../components/MissionCampaignBanner";
 import HomeClinicHub from "../../components/HomeClinicHub";
 import HomeDoctorsCarousel from "../../components/HomeDoctorsCarousel";
 import HomeServicesShowcase from "../../components/HomeServicesShowcase";
-import { CLINICS } from "../../data/clinics";
+import { CLINICS, YEARS_OF_EXPERIENCE } from "../../data/clinics";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 import { useBooking } from "../../lib/booking";
 
 /** The arch frame (pill top, radius-lg bottom) is the brand's one signature shape per view. */
 const HERO_PHOTO = "/images/clinic/interior-portrait.jpg";
 
-/** Static figures, rendered as text (no count-up). The years figure is the one
- *  the site already used; Phase 5 reconciles it across pages. */
+/** Static figures, rendered as text (no count-up); every value comes from src/data. */
 const STATS = [
-  { value: "17+ years", label: "of clinical experience" },
+  { value: `${YEARS_OF_EXPERIENCE}+ years`, label: "of clinical experience" },
   { value: `${TEAM_DOCTORS.length} doctors`, label: "from general dentists to specialists" },
   { value: `${CLINICS.length} clinics`, label: CLINICS.map((c) => c.name).join(" and ") },
 ];

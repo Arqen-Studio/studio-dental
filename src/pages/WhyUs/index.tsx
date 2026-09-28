@@ -1,4 +1,6 @@
 import SectionHeader from "../../components/SectionHeader";
+import { CLINICS, YEARS_OF_EXPERIENCE } from "../../data/clinics";
+import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
 const FEATURES = [
   {
@@ -30,23 +32,24 @@ export default function WhyUs() {
         >
           <div>
             <div className="h1 text-brand">
-              17+
+              {YEARS_OF_EXPERIENCE}+
             </div>
             <div className="mt-2 body text-ink-muted">Years of experience</div>
           </div>
           <div>
             <div className="h1 text-brand">
-              2
+              {CLINICS.length}
             </div>
             <div className="mt-2 body text-ink-muted">Specialized clinics</div>
           </div>
           <div>
             <div className="h1 text-brand">
-              10+
+              {TEAM_DOCTORS.length}
             </div>
-            <div className="mt-2 body text-ink-muted">Top specialists</div>
+            <div className="mt-2 body text-ink-muted">Doctors across both clinics</div>
           </div>
           <div>
+            {/* [TODO: confirm with client] unverified figure; see docs/client-questions.md */}
             <div className="h1 text-brand">
               5000+
             </div>

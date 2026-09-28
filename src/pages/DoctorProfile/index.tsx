@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { ArrowRight, MapPin } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { getDoctorBySlug, type TeamDoctor } from '../../data/teamDoctors'
+import { doctorInitials, getDoctorBySlug, type TeamDoctor } from '../../data/teamDoctors'
 import { useBooking } from '../../lib/booking'
 
 /** Branch name from "DHA Phase II, Islamabad". Left out where the clinic has not said
@@ -79,13 +79,18 @@ export default function DoctorProfile() {
     <div className="bg-surface">
       {/* Hero: portrait left, name and credentials on Stone right */}
       <section className="grid min-h-[min(100dvh,920px)] lg:grid-cols-2">
-        <div className="relative min-h-[52vw] bg-surface-sunken lg:min-h-0">
-          {doctor.image && (
+        <div className="relative flex min-h-[52vw] items-center justify-center bg-raw-ink lg:min-h-0">
+          {doctor.image ? (
             <img
               src={doctor.image}
               alt={doctor.name}
               className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
             />
+          ) : (
+            // Portrait pending: initials on the charcoal backdrop, as on the cards.
+            <span className="sd-doctor__initials" role="img" aria-label={doctor.name}>
+              {doctorInitials(doctor.name)}
+            </span>
           )}
         </div>
         <div className="flex flex-col justify-center bg-surface-sunken px-6 py-14 md:px-12 lg:px-16 lg:pt-[calc(var(--nav-h)+3rem)]">

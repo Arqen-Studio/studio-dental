@@ -7,7 +7,7 @@ export default function MissionCampaignBanner() {
     <Link
       to="/mission-campaign"
       className="group relative block min-h-[15rem] overflow-hidden rounded-lg shadow-1 outline-none ring-offset-2 ring-offset-surface transition hover:shadow-2 focus-visible:ring-2 focus-visible:ring-brand md:min-h-[19rem] md:rounded-lg"
-      aria-label="A mission for life. New image campaign. Open campaign page."
+      aria-label="A mission for life: read what we stand for"
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
         {/* Left: title panel */}

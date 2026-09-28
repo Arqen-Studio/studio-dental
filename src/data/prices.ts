@@ -39,7 +39,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
   {
     id: "hygiene",
-    label: "Hygiene & Whitening",
+    label: "Hygiene and whitening",
     items: [
       { name: "Scaling & polishing",   dha: 10000, f7: 20000 },
       { name: "Teeth whitening",       dha: 50000, f7: 50000 },
@@ -56,7 +56,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
   {
     id: "endodontics",
-    label: "Root Canal Treatment",
+    label: "Root canal treatment",
     items: [
       { name: "Root canal treatment",     dha: 20000, f7: 25000 },
       { name: "Re-root canal treatment",  dha: 25000 },
@@ -64,7 +64,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
   {
     id: "crowns",
-    label: "Crowns & Veneers",
+    label: "Crowns and veneers",
     items: [
       { name: "PFM crown",                            dha: 20000, f7: 30000 },
       { name: "Simple zirconium crown",               dha: 40000 },
@@ -76,7 +76,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
   {
     id: "extractions",
-    label: "Extractions & Oral Surgery",
+    label: "Extractions and oral surgery",
     items: [
       { name: "Mobile extraction",              dha: 5000  },
       { name: "Normal extraction",              dha: 8000,  f7: 10000 },
@@ -87,7 +87,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
   {
     id: "implants",
-    label: "Dental Implants",
+    label: "Dental implants",
     items: [
       { name: "Dental implant",                 f7: 200000 },
       { name: "Dental implant (category 1)",    dha: 200000 },
@@ -106,7 +106,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
   {
     id: "paediatric",
-    label: "Children's Dentistry",
+    label: "Children's dentistry",
     items: [
       { name: "Kids cleaning",            f7: null   },
       { name: "Kids extraction",          dha: 5000, f7: 8000  },

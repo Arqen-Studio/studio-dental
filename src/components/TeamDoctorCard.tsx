@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { doctorInitials } from '../data/teamDoctors'
 
 export type TeamDoctorCardProps = {
   slug: string
@@ -9,16 +10,6 @@ export type TeamDoctorCardProps = {
   image: string
   clinic: string
 }
-
-/** "Dr. Nayab Farooq" → "NF": the stand-in while a portrait is pending. */
-const initials = (name: string) =>
-  name
-    .replace(/^Dr\.?\s+/, '')
-    .split(/\s+/)
-    .map((part) => part[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase()
 
 /** A doctor's photo, full name, role, credentials and branch (design system, DoctorCard). */
 export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamDoctorCardProps) {
@@ -30,7 +21,7 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
           <img src={image} alt={name} loading="lazy" />
         ) : (
           <span className="sd-doctor__initials" role="img" aria-label={name}>
-            {initials(name)}
+            {doctorInitials(name)}
           </span>
         )}
       </span>

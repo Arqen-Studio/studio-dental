@@ -110,9 +110,9 @@ function ClinicCard({ clinic }: { clinic: ClinicLocation }) {
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
           <p className="small font-medium text-ink-muted">Opening hours</p>
-          {hours.map((h) => (
-            <p key={h} className="mt-1 body text-ink">
-              {h}
+          {hours.map(([days, times]) => (
+            <p key={days} className="mt-1 body tabular-nums text-ink">
+              {days}, {times}
             </p>
           ))}
         </div>

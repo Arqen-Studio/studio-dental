@@ -15,7 +15,6 @@ export type ServiceData = {
   /** ids from PRICE_CATEGORIES in data/prices.ts */
   priceCategories: string[];
   steps: string[];
-  specialistTags: string[];
 };
 
 /**
@@ -32,7 +31,7 @@ const IMG_INSTRUMENTS    = "/images/clinic/interior-e.jpg";
 export const SERVICES_DATA: ServiceData[] = [
   {
     id: "dental-implantation",
-    title: "Dental Implantation",
+    title: "Dental implantation",
     subtitle: "An implant replaces the root of a missing tooth, providing a fixed replacement that is cared for in the same way as a natural one.",
     heroImage: IMG_TREATMENT_ROOM,
     intro: "When a tooth is lost, the bone that once supported it gradually changes shape. An implant replaces the root itself, which keeps that bone in use and provides a stable foundation for the replacement tooth. Unlike a conventional bridge, it does not rely on the teeth on either side, so healthy teeth are left untouched.",
@@ -62,11 +61,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "The implant is left to fuse with the bone. This takes time, and you will be given a schedule at your appointment.",
       "Once it has integrated, the crown is made to match your other teeth and fitted.",
     ],
-    specialistTags: ["Implants"],
   },
   {
     id: "prosthetics",
-    title: "Prosthetics: Teeth & Implants",
+    title: "Prosthetics: teeth and implants",
     subtitle: "Crowns, bridges and dentures that restore the shape, strength and appearance of teeth that are damaged or missing.",
     heroImage: IMG_CHAIR,
     intro: "A tooth weakened by a large filling, a fracture or root canal treatment often needs more than another filling to hold it together. A crown covers the whole tooth and takes the force of biting off what remains of it. Where teeth are missing altogether, bridges and dentures replace them and restore normal chewing.",
@@ -96,11 +94,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "A temporary covering protects the tooth while the permanent one is made.",
       "The finished restoration is checked for fit, colour and bite, then fitted.",
     ],
-    specialistTags: ["Restorative Dentistry"],
   },
   {
     id: "dental-fillings",
-    title: "Dental Fillings",
+    title: "Dental fillings",
     subtitle: "Treatment for decayed, worn or chipped teeth, using materials matched to the natural colour of the tooth.",
     heroImage: IMG_LOUNGE,
     intro: "Decay does not reverse on its own. Once it breaks through the enamel it spreads into the softer dentine beneath, and the sooner it is removed the less of the tooth is lost. A filling clears the damage and rebuilds the tooth so it can be used normally again.",
@@ -130,11 +127,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "The filling material is placed and shaped to match the tooth.",
       "Your bite is checked and the filling smoothed so it feels natural.",
     ],
-    specialistTags: ["General Dentistry", "Restorative Dentistry"],
   },
   {
     id: "teeth-straightening",
-    title: "Teeth Straightening",
+    title: "Teeth straightening",
     subtitle: "Braces and clear aligners that move teeth into better alignment, for both adults and teenagers.",
     heroImage: IMG_CHAIR,
     intro: "Crowded or crooked teeth are harder to clean, which makes decay and gum problems more likely over time, so straightening them is not only a question of appearance. Treatment works by applying gentle, sustained pressure, so that teeth move gradually into position. The method is chosen to suit the case and the patient.",
@@ -164,11 +160,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "You return at intervals so progress can be checked and adjustments made.",
       "When treatment finishes, a retainer is provided to hold the teeth in their new position.",
     ],
-    specialistTags: ["Aligners"],
   },
   {
     id: "aesthetic-fillings",
-    title: "Aesthetic Dental Fillings",
+    title: "Aesthetic dental fillings",
     subtitle: "Tooth-coloured work that repairs chips, closes small gaps and improves the appearance of front teeth.",
     heroImage: IMG_RECEPTION,
     intro: "Aesthetic work uses the same materials as an ordinary filling, applied with a different purpose. Rather than only repairing damage, it reshapes and rebuilds teeth so they sit comfortably alongside those around them. In most cases no healthy tooth is removed, which makes it one of the more conservative ways to improve a smile.",
@@ -198,11 +193,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "The material is applied in layers and shaped as it is built up.",
       "It is polished so that the surface catches the light in the same way as enamel.",
     ],
-    specialistTags: ["Cosmetic Dentistry", "Restorative Dentistry"],
   },
   {
     id: "root-canal",
-    title: "Root Canal Treatment",
+    title: "Root canal treatment",
     subtitle: "Treatment that saves a tooth when the nerve inside it has become infected or inflamed.",
     heroImage: IMG_CHAIR,
     intro: "Inside every tooth is a soft core of nerve and blood vessels. If decay or a crack allows bacteria to reach it, that tissue becomes infected, and the pain can be considerable. Root canal treatment removes the infected tissue, cleans the space it occupied and seals it. The tooth stays in place and continues to work.",
@@ -232,11 +226,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "The infected tissue is removed, and the canals are cleaned and shaped.",
       "The canals are sealed and the tooth is rebuilt, usually with a crown to protect it.",
     ],
-    specialistTags: ["Root Canal"],
   },
   {
     id: "oral-hygiene",
-    title: "Oral Hygiene & Whitening",
+    title: "Oral hygiene and whitening",
     subtitle: "Professional cleaning, fluoride treatment and whitening, for healthier gums and a brighter smile.",
     heroImage: IMG_TREATMENT_ROOM,
     intro: "Plaque hardens into deposits that brushing cannot shift, and it is those deposits that irritate the gums. A professional clean removes them from the tooth surfaces and from just below the gumline. It is the single most effective appointment for preventing gum disease, and it leaves teeth looking noticeably cleaner.",
@@ -266,11 +259,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "Fluoride is applied where it will be of benefit.",
       "You are shown the areas being missed at home, and a date for the next visit is agreed.",
     ],
-    specialistTags: ["General Dentistry", "Preventive Care"],
   },
   {
     id: "tooth-extraction",
-    title: "Tooth Extraction",
+    title: "Tooth extraction",
     subtitle: "Removal of teeth that cannot be saved, including wisdom teeth, carried out with the area fully numbed.",
     heroImage: IMG_INSTRUMENTS,
     intro: "Removing a tooth is a last resort, and most teeth can be saved by other means. Where a tooth is beyond repair, or is causing problems for those around it, taking it out relieves the pain and stops infection spreading. The area is fully numbed beforehand, and what to expect afterwards is explained before you leave.",
@@ -300,11 +292,10 @@ export const SERVICES_DATA: ServiceData[] = [
       "The socket is cleaned, and stitches are placed where they are required.",
       "Aftercare is explained, covering bleeding, eating and pain relief over the first few days.",
     ],
-    specialistTags: ["Oral Surgery"],
   },
   {
     id: "childrens-dentistry",
-    title: "Children's Dentistry",
+    title: "Children's dentistry",
     subtitle: "Dental care for children, from first visits and cleaning through to fillings and extractions.",
     heroImage: IMG_TREATMENT_ROOM,
     intro: "A child's first experiences at a dentist shape how they feel about it for years afterwards. Appointments are unhurried, everything is explained before it happens, and a first visit often involves no treatment at all. Children are seen at both branches.",
@@ -334,6 +325,5 @@ export const SERVICES_DATA: ServiceData[] = [
       "Brushing and diet are talked through with you before you leave.",
       "A date for the next check-up is arranged.",
     ],
-    specialistTags: ["Preventive Care", "General Dentistry"],
   },
 ];

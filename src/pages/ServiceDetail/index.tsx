@@ -23,9 +23,8 @@ export default function ServiceDetail() {
 
   if (!service) return <Navigate to="/services" replace />;
 
-  const specialists = TEAM_DOCTORS.filter((d) =>
-    d.services.some((s) => service.specialistTags.includes(s))
-  );
+  // Doctor `services` hold service titles, so match on the title.
+  const specialists = TEAM_DOCTORS.filter((d) => d.services.includes(service.title));
 
   const otherServices = SERVICES_DATA.filter((s) => s.id !== service.id).slice(0, 6);
 

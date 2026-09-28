@@ -32,7 +32,7 @@ export default function Contact() {
             level={1}
             eyebrow="Contact"
             title="Visit Studio Dental in Islamabad."
-            lead="Studio Dental provides expert dental care with a focus on comfort, advanced technology, and affordable treatment."
+            lead="Two clinics in Islamabad, at DHA Phase II and F-7 Markaz. Call either branch, or send a booking request below."
           />
           <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-8">
             {CLINICS.map((clinic) => (

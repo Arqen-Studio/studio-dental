@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SectionHeader from "./SectionHeader";
+import { YEARS_OF_EXPERIENCE } from "../data/clinics";
 
 type HubCard = {
   to: string;
@@ -74,7 +75,7 @@ export default function HomeClinicHub() {
           id="home-clinic-hub-heading"
           eyebrow="Clinics"
           title="Two clinics, one standard of care"
-          lead="With over 17 years of experience, Studio Dental brings specialized care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics and imaging to implants, orthodontics, restorative dentistry, and pediatric care, our teams help you plan treatment with clarity and confidence."
+          lead={`With over ${YEARS_OF_EXPERIENCE} years of experience, Studio Dental brings specialized care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics and imaging to implants, orthodontics, restorative dentistry, and pediatric care, our teams help you plan treatment with clarity and confidence.`}
         />
 
         {/* 2 columns at every width, so the section stays short on phones */}

@@ -2,10 +2,6 @@ import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { telHref, type ClinicLocation } from "../data/clinics";
 import { useBooking } from "../lib/booking";
 
-/** "Mon – Fri  10:00 – 20:00" → ["Mon–Fri", "10:00–20:00"] (voice rule: closed en dashes). */
-const splitHours = (line: string) =>
-  line.split(/\s{2,}/).map((part) => part.replace(/\s*–\s*/g, "–"));
-
 const iconProps = { className: "sd-icon", size: 18, strokeWidth: 1.75, "aria-hidden": true } as const;
 
 /** A branch's address, phone, email and hours, with directions and booking (design system, ClinicCard). */
@@ -69,15 +65,12 @@ export default function ClinicCard({
             Hours
           </dt>
           <dd>
-            {clinic.hours.map((line) => {
-              const [days, times] = splitHours(line);
-              return (
-                <span key={line} className="sd-clinic__hours">
-                  <span>{days}</span>
-                  <span>{times}</span>
-                </span>
-              );
-            })}
+            {clinic.hours.map(([days, times]) => (
+              <span key={days} className="sd-clinic__hours">
+                <span>{days}</span>
+                <span>{times}</span>
+              </span>
+            ))}
           </dd>
         </div>
       </dl>

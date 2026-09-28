@@ -20,7 +20,7 @@ const PRINCIPLES = [
   {
     title: 'Knowing the cost before you begin',
     body:
-      'Every treatment we offer is priced on this site, for both branches. You can read the full list before you pick up the phone, and the final cost is agreed after an examination rather than arriving as a surprise.',
+      'Both branches\u2019 price lists are on this site. Some treatments are offered at one branch only, and a few are marked "On request" where there is no fixed rate. You can read the full list before you pick up the phone, and the final cost is agreed after an examination rather than arriving as a surprise.',
   },
   {
     title: 'Starting early',

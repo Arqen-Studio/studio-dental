@@ -1,19 +1,8 @@
 import SectionHeader from "../../components/SectionHeader";
 import { Link, useParams } from "react-router-dom";
+import { POSTS, formatDate } from "../../data/journal";
+import { CLINICS, telHref } from "../../data/clinics";
 
-const IMG_A = "/images/gallery/g1.jpg";
-const IMG_B = "/images/gallery/g3.jpg";
-
-const POSTS = [
-  { id: "1", date: "2026-03-15", title: "How often should you visit the dentist?",                       image: IMG_A },
-  { id: "2", date: "2026-02-28", title: "Dental implants: what to expect before, during and after.",    image: IMG_B },
-  { id: "3", date: "2026-02-10", title: "Clear aligners vs braces, which is right for you?",           image: IMG_A },
-  { id: "4", date: "2026-01-22", title: "Gum disease, seek treatment as early as possible.",           image: IMG_B },
-  { id: "5", date: "2025-12-18", title: "Studio Dental DHA Phase II: updated working hours for 2026.",  image: IMG_A },
-  { id: "6", date: "2025-12-05", title: "New zirconia crowns now available at F-7 Markaz.",             image: IMG_B },
-  { id: "7", date: "2025-11-14", title: "How to brush your teeth properly, a simple guide.",           image: IMG_A },
-  { id: "8", date: "2025-10-30", title: "What is a root canal and does it hurt?",                       image: IMG_B },
-];
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
@@ -42,7 +31,7 @@ export default function BlogPost() {
         <div
           className="mx-auto w-full max-w-[39rem] px-5 py-14 md:px-8 md:py-20 [animation:sd-hero-text-in_0.8s_cubic-bezier(0.25,0.46,0.45,0.94)_0.2s_both]"
         >
-          <p className="small font-semibold text-ink-muted">{post.date}</p>
+          <p className="small font-semibold text-ink-muted">{formatDate(post.date)}</p>
           <h1 className="mt-3 h2 text-ink">
             {post.title}
           </h1>
@@ -73,8 +62,8 @@ export default function BlogPost() {
 
           <p className="body text-ink-muted">
             If you have a history of gum disease, a weakened immune system, or are
-            prone to cavities, your dentist may recommend more frequent appointments
-           , every three to four months. Children and older adults often benefit
+            prone to cavities, your dentist may recommend more frequent appointments,
+            every three to four months. Children and older adults often benefit
             from more regular check-ins as well.
           </p>
 
@@ -86,9 +75,15 @@ export default function BlogPost() {
           </p>
 
           <div className="mt-10 border-t border-line pt-8">
-            <p className="small font-semibold text-ink-muted">Registration and information:</p>
-            <p className="mt-2 body text-ink-muted">📍 Plaza No. 26, Main Iqbal Boulevard, DHA Phase II | 0329 9961999</p>
-            <p className="mt-1 body text-ink-muted">📍 Jinnah Super, F-7 Markaz, F-7 Markaz | 0329 9961999</p>
+            <p className="small font-semibold text-ink-muted">Booking and information</p>
+            {CLINICS.map((c) => (
+              <p key={c.id} className="mt-2 body text-ink-muted">
+                {c.name}: {c.address},{" "}
+                <a href={telHref(c.phone)} className="inline-flex min-h-11 items-center text-brand underline underline-offset-2">
+                  {c.phone}
+                </a>
+              </p>
+            ))}
           </div>
         </div>
       </article>
@@ -118,7 +113,7 @@ export default function BlogPost() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col px-6 py-5 md:px-8 md:py-6">
-                  <p className="small font-semibold text-ink-muted">{p.date}</p>
+                  <p className="small font-semibold text-ink-muted">{formatDate(p.date)}</p>
                   <h3 className="mt-2 h4 text-ink">
                     {p.title}
                   </h3>
