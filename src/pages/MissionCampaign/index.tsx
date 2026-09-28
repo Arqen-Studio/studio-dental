@@ -79,13 +79,13 @@ export default function MissionCampaign() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
               to="/services"
-              className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 label text-surface transition duration-200 hover:bg-ink/85"
+              className="inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
             >
               See what we treat
             </Link>
             <Link
               to="/prices"
-              className="inline-flex items-center justify-center rounded-full border border-line-strong px-7 py-3.5 label text-ink transition duration-200 hover:bg-ink/5"
+              className="inline-flex items-center justify-center rounded-full px-7 py-3.5 label border border-ink text-ink transition duration-200 hover:bg-ink hover:text-surface"
             >
               View the price list
             </Link>

@@ -100,7 +100,7 @@ function Layout() {
       <button
         type="button"
         onClick={() => setRegOpen(true)}
-        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3.5 small font-semibold text-on-brand shadow-2 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-3"
+        className="fixed bottom-6 right-6 z-[90] inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3.5 small font-semibold text-on-brand shadow-1 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover hover:shadow-2"
         aria-label="Open online registration"
       >
         <Mail size={16} strokeWidth={2.2} aria-hidden />

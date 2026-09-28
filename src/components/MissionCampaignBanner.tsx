@@ -6,7 +6,7 @@ export default function MissionCampaignBanner() {
   return (
     <Link
       to="/mission-campaign"
-      className="group relative block min-h-[15rem] overflow-hidden rounded-lg shadow-2 outline-none ring-offset-2 ring-offset-surface transition hover:shadow-3 focus-visible:ring-2 focus-visible:ring-brand md:min-h-[19rem] md:rounded-lg"
+      className="group relative block min-h-[15rem] overflow-hidden rounded-lg shadow-1 outline-none ring-offset-2 ring-offset-surface transition hover:shadow-2 focus-visible:ring-2 focus-visible:ring-brand md:min-h-[19rem] md:rounded-lg"
       aria-label="A mission for life. New image campaign. Open campaign page."
     >
       <div className="flex min-h-[inherit] flex-col-reverse md:flex-row">
@@ -30,7 +30,7 @@ export default function MissionCampaignBanner() {
             decoding="async"
           />
           <span
-            className="absolute right-5 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-on-brand shadow-2 transition duration-300 group-hover:scale-105 group-hover:bg-brand-hover md:right-8 md:h-14 md:w-14"
+            className="absolute right-5 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-on-brand transition duration-300 group-hover:scale-105 group-hover:bg-brand-hover md:right-8 md:h-14 md:w-14"
             aria-hidden="true"
           >
             <svg

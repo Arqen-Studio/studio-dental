@@ -52,7 +52,7 @@ export default function Blog() {
   return (
     <>
       {/* ── Hero ── */}
-      <section data-theme="dark" className="no-reveal bg-surface pb-10 pt-[calc(78px+2.5rem)]">
+      <section className="no-reveal bg-surface-sunken pb-10 pt-[calc(78px+2.5rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <div className="flex flex-col items-center text-center">
             <h1 className="h1 text-ink">
@@ -83,7 +83,7 @@ export default function Blog() {
       </section>
 
       {/* ── Cards grid ── */}
-      <section className="bg-surface-sunken py-0">
+      <section className="bg-surface py-0">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
         <div
           key={gridKey}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 
-const CARD_BG = ["blue", "white", "gray", "lightblue"] as const;
+const CARD_BG = ["photo", "white", "gray", "mist"] as const;
 
 // These cards exist to show the people rather than the credentials, so a
 // doctor with no personal line yet would be an empty card. They appear here
@@ -13,29 +13,29 @@ const TEAM_CARDS = TEAM_DOCTORS.filter((doctor) => doctor.bio).map((doctor, i) =
     name: doctor.name,
     blurb: doctor.bio,
     bg,
-    image: bg === "blue" ? doctor.image : undefined,
+    image: bg === "photo" ? doctor.image : undefined,
   };
 });
 
 const BG: Record<string, string> = {
-  blue: "bg-brand",
+  photo: "bg-surface",
   white: "bg-surface-raised",
   gray: "bg-surface-sunken",
-  lightblue: "bg-brand-soft",
+  mist: "bg-brand-soft",
 };
 
 const TEXT: Record<string, string> = {
-  blue: "text-on-brand",
+  photo: "text-ink",
   white: "text-ink",
   gray: "text-ink",
-  lightblue: "text-ink",
+  mist: "text-ink",
 };
 
 const LINK_COLOR: Record<string, string> = {
-  blue: "text-on-brand/80 hover:text-on-brand",
-  white: "text-brand hover:text-brand",
-  gray: "text-brand hover:text-brand",
-  lightblue: "text-brand hover:text-brand",
+  photo: "text-ink hover:underline",
+  white: "text-brand hover:underline",
+  gray: "text-brand hover:underline",
+  mist: "text-brand hover:underline",
 };
 
 function VideoBlock({ src, poster }: { src: string; poster: string }) {
@@ -73,7 +73,7 @@ export default function About() {
         </div>
 
         {/* Right, Ink panel */}
-        <div data-theme="dark" className="flex flex-col justify-center bg-surface px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
+        <div className="flex flex-col justify-center bg-surface-sunken px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[31rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="h1 text-ink">
               About us
@@ -103,7 +103,7 @@ export default function About() {
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="reveal bg-surface-sunken py-16 md:py-20">
+      <section className="reveal bg-surface py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="body text-ink-muted">
             We are sure you know that all of us at Studio Dental love our work,
@@ -121,7 +121,7 @@ export default function About() {
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="reveal bg-surface-sunken px-5 pb-16 md:px-8 md:pb-20">
+      <section className="reveal bg-surface px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock src="/videos/clinic-team-720.mp4" poster="/videos/clinic-team-poster.jpg" />
       </section>
 
@@ -158,6 +158,7 @@ export default function About() {
           {TEAM_CARDS.map((card) => (
             <div
               key={card.name}
+              data-theme={card.image ? "dark" : undefined}
               className={`relative min-h-[16rem] p-8 md:min-h-[19rem] md:p-10 ${BG[card.bg]}`}
             >
               {card.image && (
@@ -166,10 +167,10 @@ export default function About() {
                     src={card.image}
                     alt=""
                     aria-hidden="true"
-                    className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
                   />
                   <div
-                    className="absolute inset-0 bg-brand/60"
+                    className="absolute inset-0 bg-scrim"
                     aria-hidden="true"
                   />
                 </>

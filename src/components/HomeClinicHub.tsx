@@ -96,15 +96,9 @@ export default function HomeClinicHub() {
                 className={`absolute inset-0 z-0 h-full w-full object-cover transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:scale-[1.03]`}
               />
 
-              {/* Scrim for the title, fades as the brand sheet rises */}
+              {/* Scrim behind the title (no colour overlays on photos) */}
               <div
-                className={`pointer-events-none absolute inset-0 z-[1] bg-scrim opacity-100 transition-opacity ${hoverDur} ${hoverEase} group-hover:opacity-20`}
-                aria-hidden="true"
-              />
-
-              {/* Primary tint slides up from bottom; photo stays visible through semi-transparent fill */}
-              <div
-                className={`pointer-events-none absolute inset-x-0 bottom-0 top-0 z-[2] translate-y-full bg-raw-evergreen/75 transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:translate-y-0`}
+                className="pointer-events-none absolute inset-0 z-[1] bg-scrim"
                 aria-hidden="true"
               />
 

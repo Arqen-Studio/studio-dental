@@ -50,7 +50,7 @@ export default function ServiceDetail() {
           </div>
 
           {/* Text, right */}
-          <div data-theme="dark" className="relative flex flex-col justify-center overflow-hidden bg-surface px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-surface-sunken px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
               <Link
                 to="/services"
@@ -74,7 +74,7 @@ export default function ServiceDetail() {
                     .querySelector<HTMLButtonElement>('[aria-label="Open online registration"]')
                     ?.click()
                 }
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 label text-surface transition duration-200 hover:bg-ink/85"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 label text-on-brand transition duration-200 hover:bg-brand-hover"
               >
                 Register for a consultation
               </button>
@@ -148,7 +148,7 @@ export default function ServiceDetail() {
                   />
                 </div>
                 {/* Text right */}
-                <div data-theme="dark" className="order-first flex flex-col justify-center bg-surface px-6 py-12 md:px-12 lg:order-last lg:px-16">
+                <div className="order-first flex flex-col justify-center bg-surface-sunken px-6 py-12 md:px-12 lg:order-last lg:px-16">
                   <h3 className="h3 text-ink">
                     {scenario.title}
                   </h3>
@@ -227,7 +227,7 @@ export default function ServiceDetail() {
                     <p className="mt-1 small text-ink-muted">{c.address}</p>
                   </div>
                   <div>
-                    <span className="inline-flex items-center justify-center rounded-full bg-surface-raised px-6 py-2.5 small font-semibold text-ink transition duration-200 group-hover:bg-brand group-hover:text-on-brand">
+                    <span className="inline-flex items-center justify-center rounded-full bg-raw-porcelain px-6 py-2.5 small font-semibold text-raw-ink transition duration-200 group-hover:bg-raw-mist">
                       View prices
                     </span>
                   </div>
@@ -292,8 +292,8 @@ export default function ServiceDetail() {
       {/* ── Other services ── */}
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
-          {/* Text left, brand bg */}
-          <div data-theme="dark" className="relative flex flex-col justify-center bg-surface px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
+          {/* Text left, Stone bg */}
+          <div className="relative flex flex-col justify-center bg-surface-sunken px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
             <div className="relative z-[1]">
               <h2 className="h2 text-ink">
                 Other services
@@ -313,7 +313,7 @@ export default function ServiceDetail() {
               <div className="mt-8">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3 label text-surface transition duration-200 hover:bg-ink/85"
+                  className="inline-flex items-center justify-center rounded-full px-7 py-3 label border border-ink text-ink transition duration-200 hover:bg-ink hover:text-surface"
                 >
                   All services
                 </Link>

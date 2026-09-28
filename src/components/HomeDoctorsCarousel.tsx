@@ -21,7 +21,7 @@ function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
 }
 
 const navBtnBase =
-  'absolute z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-transparent bg-brand text-ink shadow-2 transition hover:bg-brand-hover hover:shadow-2 disabled:pointer-events-none disabled:opacity-30'
+  'absolute z-10 flex -translate-y-1/2 items-center justify-center rounded-full border border-transparent bg-brand text-on-brand shadow-1 transition hover:bg-brand-hover hover:shadow-2 disabled:pointer-events-none disabled:opacity-30'
 
 export default function HomeDoctorsCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null)

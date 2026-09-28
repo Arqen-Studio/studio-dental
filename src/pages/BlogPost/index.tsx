@@ -22,7 +22,7 @@ export default function BlogPost() {
   return (
     <>
       {/* ── Thin hero band ── */}
-      <section data-theme="dark" className="no-reveal bg-surface pt-[78px]">
+      <section className="no-reveal bg-surface-sunken pt-[78px]">
         <div className="mx-auto w-full page-shell px-5 pb-8 pt-8 md:px-8 [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]">
           <Link
             to="/blog"

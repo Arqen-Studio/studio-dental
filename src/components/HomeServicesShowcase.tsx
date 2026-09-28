@@ -94,10 +94,10 @@ export default function HomeServicesShowcase({
 
           <Link
             to="/services"
-            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-brand/35 bg-surface-raised px-5 small font-semibold text-ink shadow-1 transition duration-300 hover:-translate-y-0.5 hover:border-brand/80 hover:text-ink hover:shadow-2 lg:self-auto"
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-full border border-ink px-5 small font-semibold text-ink transition duration-300 hover:bg-ink hover:text-surface lg:self-auto"
           >
             All services & prices
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand/20 text-ink transition group-hover:bg-brand/35">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-ink/10 transition group-hover:bg-surface/20">
               <ArrowRight size={11} strokeWidth={2.5} aria-hidden />
             </span>
           </Link>
@@ -106,7 +106,7 @@ export default function HomeServicesShowcase({
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-5">
           <article
             data-theme="dark"
-            className="group relative flex min-h-[14rem] flex-col overflow-hidden rounded-md border border-line shadow-2 sm:col-span-2 sm:min-h-[15rem] lg:col-span-2 lg:row-span-2 lg:min-h-[21rem]"
+            className="group relative flex min-h-[14rem] flex-col overflow-hidden rounded-md border border-line shadow-1 sm:col-span-2 sm:min-h-[15rem] lg:col-span-2 lg:row-span-2 lg:min-h-[21rem]"
           >
             <video
               ref={featuredVideoRef}

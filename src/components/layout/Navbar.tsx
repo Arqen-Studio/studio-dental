@@ -40,10 +40,10 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Only the home hero sits fully under a scrim. The split heroes on other
-  // pages put a bright photo under half the bar, so they get the solid bar.
-  const hasHeroHeader = pathname === "/";
-  const isTransparent = hasHeroHeader && !scrolled && !open && !contactOpen;
+  // The home hero is the only Ink hero, so it is the only place the bar
+  // goes transparent (and takes the dark theme).
+  const hasInkHero = pathname === "/";
+  const isTransparent = hasInkHero && !scrolled && !open && !contactOpen;
 
   const openContactDrawer = () => {
     setOpen(false);
@@ -52,15 +52,14 @@ export default function Navbar() {
 
   return (
     <>
-    {/* The header is always an Ink bar: transparent only over the home
-        hero, solid everywhere else. */}
+    {/* Porcelain bar with a hairline; shadow-2 once the page scrolls. */}
     <header
-      data-theme="dark"
+      data-theme={isTransparent ? "dark" : undefined}
       className={[
         "fixed inset-x-0 top-0 z-[100] h-[var(--nav-h)] text-ink transition duration-300 ease-out",
         isTransparent
           ? "bg-transparent"
-          : "border-b border-line bg-surface shadow-2",
+          : ["border-b border-line bg-surface", scrolled ? "shadow-2" : ""].join(" "),
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">

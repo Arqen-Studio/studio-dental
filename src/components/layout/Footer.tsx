@@ -91,7 +91,7 @@ function ClinicCard({
   // large screens, so a two-line address in one clinic does not push its
   // dividers and rows out of step with the other clinic's.
   return (
-    <article className="grid content-start gap-8 rounded-md border border-line bg-surface-raised p-7 shadow-2 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
+    <article className="grid content-start gap-8 rounded-md border border-line bg-surface-raised p-7 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
       <h3 className="h4 text-ink">
         {city}
       </h3>
@@ -200,7 +200,7 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-surface-sunken pb-10 pt-14 text-ink md:pb-14 md:pt-16">
+    <footer data-theme="dark" className="bg-surface pb-10 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="page-shell mx-auto w-full px-5 md:px-8">
         <h2 className="mb-8 h2 text-ink md:mb-10">
           Contacts
@@ -230,7 +230,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand shadow-1 ring-1 ring-line transition duration-200 hover:bg-brand-hover hover:shadow-2 sm:h-12 sm:w-12"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-raw-evergreen ring-1 ring-line transition duration-200 hover:bg-raw-evergreen/80 sm:h-12 sm:w-12"
                 >
                   <img
                     src={s.src}

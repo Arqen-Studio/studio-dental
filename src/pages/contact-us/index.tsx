@@ -64,7 +64,7 @@ export default function Contact() {
         </div>
 
         <form
-          className="rounded-lg border border-line bg-surface-raised p-6 shadow-2 md:p-9"
+          className="rounded-lg border border-line bg-surface-raised p-6 shadow-1 md:p-9"
           noValidate
           onSubmit={async (e) => {
             e.preventDefault();

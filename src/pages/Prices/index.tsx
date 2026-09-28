@@ -32,7 +32,7 @@ export default function Prices() {
       <section className="no-reveal lg:min-h-screen">
         <div className="grid lg:grid-cols-2">
           {/* Left panel */}
-          <div data-theme="dark" className="relative flex flex-col justify-center overflow-hidden bg-surface px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
+          <div className="relative flex flex-col justify-center overflow-hidden bg-surface-sunken px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
               <h1 className="h1 text-ink">
                 Service prices

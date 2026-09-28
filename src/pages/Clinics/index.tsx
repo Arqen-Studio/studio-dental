@@ -91,7 +91,7 @@ export default function Clinics() {
   return (
     <>
       {/* ── Hero ── */}
-      <section data-theme="dark" className="no-reveal bg-surface pb-12 pt-[calc(78px+2rem)]">
+      <section className="no-reveal bg-surface-sunken pb-12 pt-[calc(78px+2rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <h1 className="h1 text-ink">
             Contacts
@@ -100,7 +100,7 @@ export default function Clinics() {
       </section>
 
       {/* ── Clinic photo cards ── */}
-      <section className="bg-surface-sunken py-12 md:py-16">
+      <section className="bg-surface py-12 md:py-16">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           {/* The five row bands are declared on this grid and adopted by each
               card, so the longer DHA address cannot push that card's hours and
@@ -204,7 +204,7 @@ export default function Clinics() {
                       href={clinic.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 rounded-full border border-brand py-3 text-center label text-brand transition hover:bg-brand/10"
+                      className="flex-1 rounded-full py-3 text-center label border border-ink text-ink transition duration-200 hover:bg-ink hover:text-surface"
                     >
                       Directions
                     </a>

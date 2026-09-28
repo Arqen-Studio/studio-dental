@@ -28,7 +28,7 @@ export default function DoctorProfile() {
             />
           )}
         </div>
-        <div data-theme="dark" className="relative flex flex-col justify-center bg-surface px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
+        <div className="relative flex flex-col justify-center bg-surface-sunken px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
           <div className="relative z-[1] text-ink">
             {doctor.heroTitleLines && doctor.heroTitleLines.length > 0 ? (
               <>
@@ -74,7 +74,7 @@ export default function DoctorProfile() {
       </section>
 
       {/* Practice areas, full viewport width */}
-      <section className="w-full bg-surface-sunken py-12 md:py-16">
+      <section className="w-full bg-surface py-12 md:py-16">
         <div className="mx-auto w-full max-w-[45rem] px-5 md:px-8">
           <ProfileSection title="Practice areas:" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
