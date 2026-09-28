@@ -24,7 +24,7 @@ export default function ContactFormSection() {
   const [errors, setErrors] = useState<Errors>({});
 
   return (
-    <section className="reveal grid lg:grid-cols-2">
+    <section className="grid lg:grid-cols-2">
       {/* Left, clinic interior photo */}
       <div className="relative min-h-[19rem] lg:min-h-full">
         <img

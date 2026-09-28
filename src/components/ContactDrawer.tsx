@@ -11,13 +11,13 @@ type Props = {
 };
 
 type Status = "idle" | "sending" | "sent" | "error";
-type Errors = Partial<Record<"name" | "email" | "privacy", string>>;
+type Errors = Partial<Record<"name" | "phone" | "email" | "privacy", string>>;
 
 function validate(data: Record<string, string>): Errors {
   const errors: Errors = {};
   if (!data.name?.trim()) errors.name = "Enter your name.";
-  if (!data.email?.trim()) errors.email = "Enter an email address so the clinic can reply.";
-  else if (!isEmail(data.email)) errors.email = "Enter an email address like name@example.com";
+  if (!data.phone?.trim()) errors.phone = "Enter a phone number so the clinic can call you to agree a time.";
+  if (data.email?.trim() && !isEmail(data.email)) errors.email = "Enter an email address like name@example.com";
   if (!data.privacy) errors.privacy = "Tick the box to agree to the privacy policy before sending.";
   return errors;
 }
@@ -146,7 +146,16 @@ export default function ContactDrawer({ open, onClose }: Props) {
               <input type="text" name="name" autoComplete="name" />
             </Field>
 
-            <Field id="drawer-email" label="Email" error={errors.email}>
+            <Field
+              id="drawer-phone"
+              label="Phone"
+              hint="We will call or WhatsApp to confirm a time."
+              error={errors.phone}
+            >
+              <input type="tel" name="phone" autoComplete="tel" />
+            </Field>
+
+            <Field id="drawer-email" label="Email" optional error={errors.email}>
               <input type="email" name="email" autoComplete="email" />
             </Field>
 
@@ -185,13 +194,13 @@ export default function ContactDrawer({ open, onClose }: Props) {
               disabled={status === "sending" || status === "sent"}
               className="sd-btn sd-btn--primary sd-btn--md self-start"
             >
-              {status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send request"}
+              {status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send enquiry"}
             </button>
 
             {status === "sent" && (
               <p role="status" className="rounded-md bg-brand-soft px-4 py-3 small text-ink">
-                Thank you. Your enquiry has reached the clinic and we will be in
-                touch shortly. If it is urgent, please call{" "}
+                Thank you, we have your request. This is not a confirmed booking yet:
+                the clinic will call you to agree a time. If it is urgent, please call{" "}
                 <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
                   {MAIN_PHONE}
                 </a>

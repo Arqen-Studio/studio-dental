@@ -52,7 +52,7 @@ export default function Blog() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="no-reveal bg-surface-sunken pb-10 pt-[calc(78px+2.5rem)]">
+      <section className="bg-surface-sunken pb-10 pt-[calc(78px+2.5rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <div className="flex flex-col items-center text-center">
             <h1 className="h1 text-ink">

@@ -90,14 +90,14 @@ export default function TeamPage() {
   return (
     <>
       {/* ── Page title ── */}
-      <section className="no-reveal bg-surface px-5 pb-12 pt-[calc(78px+3rem)] md:px-8 md:pb-16">
+      <section className="bg-surface px-5 pb-12 pt-[calc(78px+3rem)] md:px-8 md:pb-16">
         <div className="mx-auto w-full page-shell">
           <SectionHeader level={1} eyebrow="DHA Phase II · F-7 Markaz" title="Doctors" />
         </div>
       </section>
 
       {/* ── The two branches, equal Stone panels ── */}
-      <section className="no-reveal">
+      <section>
         {/* Row 1: photo left · text right, DHA Phase II */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Photo */}

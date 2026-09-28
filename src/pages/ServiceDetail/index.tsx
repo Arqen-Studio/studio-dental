@@ -2,8 +2,8 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { SERVICES_DATA } from "../../data/services";
 import { TEAM_DOCTORS } from "../../data/teamDoctors";
 import { TeamDoctorCard } from "../../components/TeamDoctorCard";
-import { PRICE_CATEGORIES, formatPrice } from "../../data/prices";
-import { CLINICS } from "../../data/clinics";
+import { PRICE_CATEGORIES, PRICE_NOTE } from "../../data/prices";
+import PriceTable from "../../components/PriceTable";
 import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import { useBooking } from "../../lib/booking";
 import SectionHeader from "../../components/SectionHeader";
@@ -32,7 +32,7 @@ export default function ServiceDetail() {
   return (
     <>
       {/* ── Hero, full-screen split ── */}
-      <section className="no-reveal">
+      <section>
         <div className="grid lg:grid-cols-2 lg:min-h-screen">
           {/* Video, left */}
           <div className="relative min-h-[45vh] overflow-hidden lg:min-h-screen">
@@ -83,7 +83,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── Intro paragraph ── */}
-      <section className="reveal bg-surface-raised py-16 md:py-20">
+      <section className="bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
           <p className="body text-ink-muted">
             {service.intro}
@@ -101,7 +101,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── When necessary, alternating split rows ── */}
-      <section className="reveal bg-surface-raised">
+      <section className="bg-surface-raised">
         <div className="mx-auto w-full page-shell px-5 pb-10 pt-0 md:px-8">
           <SectionHeader eyebrow={service.title} title={service.whenHeading} />
         </div>
@@ -156,84 +156,27 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── Prices ── */}
-      <section className="reveal bg-surface-raised py-16 md:py-20">
+      <section className="bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[55rem] px-5 md:px-8">
-          <h2 className="h2 text-ink">Prices</h2>
-          <div className="mb-8 mt-3 h-px bg-ink/15" />
-
-          {/* Price rows, the two branches price most treatments differently */}
-          {priceCategories.map((cat) => (
-            <div key={cat.id} className="mb-8 last:mb-0">
-              <div className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 border-b border-line pb-2 eyebrow text-ink-muted sm:gap-x-10">
-                <span>{cat.label}</span>
-                <span className="text-right">DHA Phase II</span>
-                <span className="text-right">F-7 Markaz</span>
-              </div>
-              {cat.items.map((item, i) => (
-                <div
-                  key={i}
-                  className="grid grid-cols-[1fr_auto_auto] items-center gap-x-6 px-1 py-3 body odd:bg-surface-sunken sm:gap-x-10 sm:px-3"
-                >
-                  <span className="text-ink">{item.name}</span>
-                  <span className="text-right font-semibold tabular-nums text-ink">
-                    {"dha" in item ? formatPrice(item.dha) : <span className="small font-normal text-ink-muted">Not offered</span>}
-                  </span>
-                  <span className="text-right font-semibold tabular-nums text-ink">
-                    {"f7" in item ? formatPrice(item.f7) : <span className="small font-normal text-ink-muted">Not offered</span>}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ))}
-
-          {/* Disclaimer */}
-          <div className="mt-6 rounded-lg bg-brand-soft px-5 py-4">
-            <p className="small text-ink-muted">
-              ! The exact price of treatment is determined after a doctor's examination, assessing
-              the patient's condition and discussing the individual treatment plan and possible
-              additional procedures. Prices may be updated at registration.
-            </p>
-          </div>
-
-          {/* Clinic selector cards */}
-          <p className="mt-10 text-center body text-ink-muted">
-            Select the clinic price list you want to see:
-          </p>
-          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
-            {CLINICS.map((c) => (
-              <Link
-                key={c.id}
-                to="/prices"
-                data-theme="dark"
-                className="group relative min-h-[10rem] overflow-hidden rounded-md"
-              >
-                <img
-                  src={c.photo}
-                  alt={`Studio Dental ${c.name}`}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-scrim" />
-                <div className="relative flex h-full flex-col justify-between p-8">
-                  <div>
-                    <p className="h4 text-ink">{c.name}</p>
-                    <p className="mt-1 small text-ink-muted">{c.address}</p>
-                  </div>
-                  <div>
-                    <span className="sd-btn sd-btn--inverse sd-btn--sm">
-                      View prices
-                    </span>
-                  </div>
-                </div>
-              </Link>
+          <SectionHeader eyebrow={service.title} title="Prices" className="mb-8" />
+          <div className="flex flex-col gap-5">
+            {priceCategories.map((cat, i) => (
+              <PriceTable
+                key={cat.id}
+                category={cat}
+                note={i === priceCategories.length - 1 ? PRICE_NOTE : undefined}
+              />
             ))}
           </div>
+          <Link to="/prices" className="sd-btn sd-btn--secondary sd-btn--md mt-8">
+            See all prices
+          </Link>
         </div>
       </section>
 
       {/* ── Specialists ── */}
       {specialists.length > 0 && (
-        <section className="reveal bg-surface-sunken py-16 md:py-20">
+        <section className="bg-surface-sunken py-16 md:py-20">
           <div className="mx-auto w-full page-shell px-5 md:px-8">
             <SectionHeader eyebrow="Doctors" title="Specialists" />
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -258,12 +201,10 @@ export default function ServiceDetail() {
         </section>
       )}
 
-      {/* ── Operation progress ── */}
-      <section className="reveal bg-surface-raised py-16 md:py-20">
+      {/* ── What happens, step by step ── */}
+      <section className="bg-surface-raised py-16 md:py-20">
         <div className="mx-auto w-full max-w-[39rem] px-5 md:px-8">
-          <h2 className="h3 text-ink">
-            Operation progress:
-          </h2>
+          <SectionHeader eyebrow={service.title} title="What happens, step by step" />
           <ul className="mt-6 flex flex-col gap-4">
             {service.steps.map((step, i) => (
               <li key={i} className="flex gap-4">
@@ -278,7 +219,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── Other services ── */}
-      <section className="no-reveal">
+      <section>
         <div className="grid lg:grid-cols-2">
           {/* Text left, Stone bg */}
           <div className="relative flex flex-col justify-center bg-surface-sunken px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">

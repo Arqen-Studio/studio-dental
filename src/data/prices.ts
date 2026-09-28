@@ -117,10 +117,11 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   },
 ];
 
-/** "Rs. 20,000", or "On request" where the client gave no rate. */
+/** "Rs 20,000", or "On request" where the client gave no rate. */
 export function formatPrice(value: number | null | undefined): string {
   if (value === null || value === undefined) return "On request";
-  return `Rs. ${value.toLocaleString("en-PK")}`;
+  // Voice rule: "Rs 150,000" (no full stop, thousands grouped in threes).
+  return `Rs ${value.toLocaleString("en-US")}`;
 }
 
 /** Categories filtered to the treatments a given branch actually lists. */
@@ -130,3 +131,7 @@ export function categoriesForClinic(clinic: ClinicId): PriceCategory[] {
     items: category.items.filter((item) => clinic in item),
   })).filter((category) => category.items.length > 0);
 }
+
+/** The client's standing note on prices, shown under a price list. */
+export const PRICE_NOTE =
+  "The exact price of treatment is determined after a doctor's examination, assessing the patient's condition and discussing the individual treatment plan and possible additional procedures. Prices may be updated at registration.";

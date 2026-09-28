@@ -3,6 +3,8 @@ import SectionHeader from "./SectionHeader";
 
 type HubCard = {
   to: string;
+  /** Names what the tile is: the page, as the navigation labels it. */
+  eyebrow: string;
   title: string;
   image: string;
   imageAlt: string;
@@ -15,45 +17,47 @@ type HubCard = {
 const HUB_CARDS: HubCard[] = [
   {
     to: "/services",
-    title: "Services",
+    eyebrow: "Treatments",
+    title: "What we treat",
     image: "/images/hub/services.jpg",
     imageAlt: "A Studio Dental treatment room, with the chair beside the window",
   },
   {
     to: "/prices",
-    title: "Prices",
+    eyebrow: "Prices",
+    title: "Both price lists",
     image: "/images/hub/prices.jpg",
     imageAlt: "Instruments laid out on a Studio Dental treatment unit",
   },
   {
     to: "/doctors",
-    title: "Doctors",
+    eyebrow: "Doctors",
+    title: "Meet the team",
     image: "/images/hub/doctors.jpg",
     imageAlt: "Studio Dental clinicians treating a patient",
   },
   {
     to: "/about",
-    title: "About us",
+    eyebrow: "About",
+    title: "Who we are",
     image: "/images/hub/about.jpg",
     imageAlt: "The waiting lounge at Studio Dental",
   },
   {
     to: "/blog",
-    title: "News",
+    eyebrow: "Journal",
+    title: "Articles and news",
     image: "/images/hub/news.jpg",
     imageAlt: "The Studio Dental name etched into the glass entrance door",
   },
   {
     to: "/contact-us",
-    title: "Contacts",
+    eyebrow: "Contact",
+    title: "Visit or call us",
     image: "/images/hub/contacts.jpg",
     imageAlt: "The reception desk at Studio Dental",
   },
 ];
-
-/** Transform-only transitions (GPU-friendly); overlay + text share timing */
-const hoverDur = "duration-[680ms]";
-const hoverEase = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 
 export default function HomeClinicHub() {
   return (
@@ -65,18 +69,18 @@ export default function HomeClinicHub() {
         <SectionHeader
           id="home-clinic-hub-heading"
           eyebrow="Clinics"
-          title="Dental and implantology clinics, Studio Dental"
+          title="Two clinics, one standard of care"
           lead="With over 17 years of experience, Studio Dental brings specialized care to Islamabad, at DHA Phase II and F-7 Markaz. From diagnostics and imaging to implants, orthodontics, restorative dentistry, and pediatric care, our teams help you plan treatment with clarity and confidence."
         />
 
-        {/* 2 columns × 3 rows on sm+ (reference layout) */}
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:mt-10 lg:gap-6">
+        {/* 2 columns at every width, so the section stays short on phones */}
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5 lg:mt-10 lg:gap-6">
           {HUB_CARDS.map((card) => (
             <Link
               data-theme="dark"
-              key={card.title}
+              key={card.to}
               to={card.to}
-              className={`group relative aspect-[4/3] min-h-[10rem] overflow-hidden rounded-md shadow-1 outline-none ring-offset-2 ring-offset-surface transition-shadow ${hoverDur} ${hoverEase} hover:shadow-2 focus-visible:ring-2 focus-visible:ring-brand`}
+              className="group relative aspect-[4/5] overflow-hidden rounded-md shadow-1 transition-shadow duration-200 hover:shadow-2 sm:aspect-[4/3]"
             >
               <img
                 src={card.image}
@@ -85,7 +89,7 @@ export default function HomeClinicHub() {
                 decoding="async"
                 width={1000}
                 height={750}
-                className={`absolute inset-0 z-0 h-full w-full object-cover transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:scale-[1.03]`}
+                className="absolute inset-0 z-0 h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.03]"
               />
 
               {/* Scrim behind the title (no colour overlays on photos) */}
@@ -94,19 +98,10 @@ export default function HomeClinicHub() {
                 aria-hidden="true"
               />
 
-              {/*
-                Text: anchored at card center; default translate pushes it toward bottom,
-                hover moves to true vertical center, pure transform (smooth).
-              */}
-              <div
-                className={`absolute left-1/2 top-1/2 z-[3] w-full max-w-[18rem] px-5 text-center -translate-x-1/2 translate-y-[calc(-50%+6.25rem)] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:-translate-y-1/2`}
-              >
-                <span className="block eyebrow">
-                  Clinics
-                </span>
-                <span className="mt-2 block h4 text-ink">
-                  {card.title}
-                </span>
+              {/* Anchored to the bottom so a long title never runs off the tile. */}
+              <div className="absolute inset-x-0 bottom-0 z-[2] p-4 sm:p-6">
+                <span className="block eyebrow">{card.eyebrow}</span>
+                <span className="mt-1 block h4 text-ink">{card.title}</span>
               </div>
             </Link>
           ))}

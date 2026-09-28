@@ -1,139 +1,71 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useCountUp, useInView } from "../../hooks/useCountUp";
-import { useAutoplayVideo } from "../../hooks/useAutoplayVideo";
 import MissionCampaignBanner from "../../components/MissionCampaignBanner";
 import HomeClinicHub from "../../components/HomeClinicHub";
 import HomeDoctorsCarousel from "../../components/HomeDoctorsCarousel";
 import HomeServicesShowcase from "../../components/HomeServicesShowcase";
+import { CLINICS } from "../../data/clinics";
+import { TEAM_DOCTORS } from "../../data/teamDoctors";
+import { useBooking } from "../../lib/booking";
 
-/** Studio Dental clinic walkaround, supplied by the client */
-const HERO_VIDEO_HD = "/videos/clinic-walkaround-1600.mp4";
-const HERO_VIDEO_SD = "/videos/clinic-walkaround-640.mp4";
+/** The arch frame (pill top, radius-lg bottom) is the brand's one signature shape per view. */
+const HERO_PHOTO = "/images/clinic/interior-portrait.jpg";
 
-const HERO_POSTER = "/videos/clinic-walkaround-poster.jpg";
+/** Static figures, rendered as text (no count-up). The years figure is the one
+ *  the site already used; Phase 5 reconciles it across pages. */
+const STATS = [
+  { value: "17+ years", label: "of clinical experience" },
+  { value: `${TEAM_DOCTORS.length} doctors`, label: "from general dentists to specialists" },
+  { value: `${CLINICS.length} clinics`, label: CLINICS.map((c) => c.name).join(" and ") },
+];
 
 export default function Hero() {
-  const heroVideoRef = useAutoplayVideo();
-  const { ref: heroStatsRef, inView: heroStatsInView } =
-    useInView<HTMLDivElement>(0.3);
-  const yearsCount = useCountUp(17, heroStatsInView);
-  const clinicsCount = useCountUp(2, heroStatsInView);
+  const openBooking = useBooking();
 
   return (
     <>
-      <section
-        id="home"
-        data-theme="dark"
-        className="no-reveal relative isolate flex min-h-screen items-center overflow-hidden text-ink"
-      >
-        <div className="absolute inset-0 z-0" aria-hidden="true">
-          <video
-            ref={heroVideoRef}
-            className="h-full w-full object-cover [animation:sd-hero-img-in_1.1s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={HERO_POSTER}
-          >
-            <source
-              src={HERO_VIDEO_SD}
-              type="video/mp4"
-              media="(max-width: 768px)"
-            />
-            <source src={HERO_VIDEO_HD} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-scrim" />
-        </div>
-
-        <div className="relative z-10 mx-auto w-full page-shell px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
-          <div className="mb-7 flex items-start">
-            <div className="inline-flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-line bg-ink/10 px-4 py-1.5 small font-medium backdrop-blur">
-                <span
-                  className="h-2 w-2 rounded-full bg-brand ring-4 ring-brand/30"
-                  aria-hidden="true"
-                />
-                Mission for life
-              </span>
-              
-            </div>
-          </div>
-
-          <div className="mb-10 max-w-[46rem]">
-            <h1 className="max-w-[19ch] display text-ink">
+      {/* Light hero (brand guide, Applications): copy left, arch-framed photo right. */}
+      <section id="home" className="bg-surface px-5 pb-16 pt-[calc(var(--nav-h)+2.5rem)] md:px-8 md:pb-24 lg:pt-[calc(var(--nav-h)+4rem)]">
+        <div className="mx-auto grid w-full max-w-[var(--container-wide)] items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+          <div className="flex flex-col gap-6">
+            <p className="sd-eyebrow">DHA Phase II · F-7 Markaz</p>
+            <h1 className="display max-w-[16ch] text-ink">
               Dentistry you can trust, in the heart of Islamabad
             </h1>
-            <p className="mt-5 max-w-[46ch] body text-ink">
-              Two clinics, DHA Phase II and F-7 Markaz. From routine check-ups
-              to implants and orthodontics.
+            <p className="lead max-w-[46ch] text-ink-muted">
+              Two clinics, DHA Phase II and F-7 Markaz. From routine check-ups to
+              implants and orthodontics.
             </p>
+
+            <div className="flex flex-wrap gap-3">
+              <button type="button" onClick={openBooking} className="sd-btn sd-btn--primary sd-btn--lg max-sm:w-full">
+                <span>Book a consultation</span>
+                <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
+              </button>
+              <Link to="/prices" className="sd-btn sd-btn--secondary sd-btn--lg max-sm:w-full">
+                See prices
+              </Link>
+            </div>
+
+            <dl className="mt-2 grid grid-cols-1 gap-5 border-t border-line pt-6 sm:grid-cols-3">
+              {STATS.map((s) => (
+                <div key={s.value} className="sd-stat">
+                  <dt className="sd-stat__label order-2">{s.label}</dt>
+                  <dd className="sd-stat__value order-1 m-0">{s.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          <div className="mb-10 flex flex-wrap items-center gap-3">
-            <Link to="/contact-us" className="sd-btn sd-btn--inverse sd-btn--lg max-sm:w-full">
-              <span>Book a consultation</span>
-              <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
-            </Link>
-            <Link to="/services" className="sd-btn sd-btn--secondary sd-btn--lg max-sm:w-full">
-              See all treatments
-            </Link>
-          </div>
-
-          <div
-            ref={heroStatsRef}
-            className="flex max-w-[32rem] flex-wrap items-center gap-5 rounded-lg border border-line bg-ink/10 px-5 py-4 backdrop-blur"
-          >
-            <div className="flex flex-col gap-1">
-              <strong className="h4 text-ink">
-                {yearsCount}+ years
-              </strong>
-              <span className="small text-ink-muted">
-                of clinical experience
-              </span>
-            </div>
-            <div
-              className="hidden h-10 w-px bg-line md:block"
-              aria-hidden="true"
-            />
-            <div className="flex flex-col gap-1">
-              <strong className="h4 text-ink">
-                Top doctors
-              </strong>
-              <span className="small text-ink-muted">
-                from oral surgeons to orthodontists
-              </span>
-            </div>
-            <div
-              className="hidden h-10 w-px bg-line md:block"
-              aria-hidden="true"
-            />
-            <div className="flex flex-col gap-1">
-              <strong className="h4 text-ink">
-                {clinicsCount} clinics
-              </strong>
-              <span className="small text-ink-muted">
-                DHA Phase II and F-7 Markaz
-              </span>
-            </div>
-          </div>
+          <img
+            src={HERO_PHOTO}
+            alt="A treatment room at Studio Dental"
+            className="h-[420px] w-full max-w-[26rem] justify-self-center rounded-t-full rounded-b-lg bg-surface-sunken object-cover md:h-[520px] lg:h-[560px] lg:max-w-none"
+          />
         </div>
-
-        <Link
-          to="/services"
-          className="absolute bottom-7 left-1/2 z-10 hidden h-[2.1rem] w-[26px] -translate-x-1/2 items-start justify-center rounded-full border border-ink/60 pt-1.5 md:inline-flex"
-          aria-label="Go to services"
-        >
-          <span className="h-2 w-[3px] rounded-sm bg-ink animate-[sd-scroll_1.8s_cubic-bezier(0.22,1,0.36,1)_infinite]" />
-        </Link>
       </section>
 
-      <section
-        className="bg-surface-sunken px-5 pb-7 pt-4 md:px-8 md:pb-10 md:pt-5"
-        aria-label="Featured campaign"
-      >
+      <section className="bg-surface-sunken px-5 py-10 md:px-8 md:py-16" aria-label="Featured campaign">
         <div className="mx-auto page-shell">
           <MissionCampaignBanner />
         </div>

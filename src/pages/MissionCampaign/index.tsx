@@ -32,7 +32,7 @@ const PRINCIPLES = [
 export default function MissionCampaign() {
   return (
     <>
-      <section className="no-reveal bg-surface-sunken pb-16 pt-[calc(78px+2rem)] md:pb-20 md:pt-[calc(78px+2.5rem)]">
+      <section className="bg-surface-sunken pb-16 pt-[calc(78px+2rem)] md:pb-20 md:pt-[calc(78px+2.5rem)]">
         <div className="mx-auto page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <SectionHeader
             level={1}
@@ -43,7 +43,7 @@ export default function MissionCampaign() {
         </div>
       </section>
 
-      <section className="reveal bg-surface-raised py-16 md:py-20">
+      <section className="bg-surface-raised py-16 md:py-20">
         <div className="mx-auto page-shell px-5 md:px-8">
           <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
             {PRINCIPLES.map((p) => (
@@ -60,7 +60,7 @@ export default function MissionCampaign() {
         </div>
       </section>
 
-      <section className="reveal bg-surface-sunken py-16 md:py-20">
+      <section className="bg-surface-sunken py-16 md:py-20">
         <div className="mx-auto max-w-[43rem] px-5 text-center md:px-8">
           <p className="h3 text-ink">
             &ldquo;Our goal is not simply to treat dental problems, but to

@@ -23,7 +23,7 @@ export default function BlogPost() {
   return (
     <>
       {/* ── Thin hero band ── */}
-      <section className="no-reveal bg-surface-sunken pt-[78px]">
+      <section className="bg-surface-sunken pt-[78px]">
         <div className="mx-auto w-full page-shell px-5 pb-8 pt-8 md:px-8 [animation:sd-hero-text-in_0.7s_cubic-bezier(0.25,0.46,0.45,0.94)_0.3s_both]">
           <Link
             to="/blog"
@@ -94,7 +94,7 @@ export default function BlogPost() {
       </article>
 
       {/* ── Other news ── */}
-      <section className="reveal bg-surface-sunken py-16 md:py-20">
+      <section className="bg-surface-sunken py-16 md:py-20">
         <div className="mx-auto w-full page-shell px-5 md:px-8">
           <SectionHeader eyebrow="Journal" title="More from the journal" />
           <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">

@@ -1,3 +1,4 @@
+import { MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export type TeamDoctorCardProps = {
@@ -9,36 +10,41 @@ export type TeamDoctorCardProps = {
   clinic: string
 }
 
+/** "Dr. Nayab Farooq" → "NF": the stand-in while a portrait is pending. */
+const initials = (name: string) =>
+  name
+    .replace(/^Dr\.?\s+/, '')
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
+
+/** A doctor's photo, full name, role, credentials and branch (design system, DoctorCard). */
 export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamDoctorCardProps) {
+  const branch = clinic.split(',')[0].trim()
   return (
-    <Link
-      to={`/doctors/${slug}`}
-      className="block h-full overflow-hidden rounded-lg border border-line bg-surface-raised shadow-1 transition-shadow duration-300 hover:shadow-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-    >
-    <article className="flex h-full flex-col overflow-hidden">
-      <div className="aspect-[4/3] flex-none bg-surface-sunken">
-        {image && (
-          <img
-            src={image}
-            alt={name}
-            loading="lazy"
-            className="h-full w-full object-cover object-center"
-          />
+    <Link to={`/doctors/${slug}`} className="sd-doctor h-full">
+      <span className="sd-doctor__photo">
+        {image ? (
+          <img src={image} alt={name} loading="lazy" />
+        ) : (
+          <span className="sd-doctor__initials" role="img" aria-label={name}>
+            {initials(name)}
+          </span>
         )}
-      </div>
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="h4 text-brand">{name}</h3>
-        {creds && <p className="mt-1 small text-ink-muted">{creds}</p>}
-        {role && <p className="mt-1 small text-ink-muted">{role}</p>}
-        {clinic && (
-          <div className="mt-auto pt-4">
-            <span className="inline-flex rounded-sm bg-brand-soft px-3 py-1 small font-medium text-brand">
-              {clinic}
-            </span>
-          </div>
+      </span>
+      <span className="sd-doctor__body">
+        <span className="sd-doctor__name">{name}</span>
+        {role && <span className="sd-doctor__role">{role}</span>}
+        {creds && <span className="sd-doctor__cred">{creds}</span>}
+        {branch && (
+          <span className="sd-badge sd-badge--brand">
+            <MapPin className="sd-icon" size={14} strokeWidth={1.75} aria-hidden />
+            {branch}
+          </span>
         )}
-      </div>
-    </article>
+      </span>
     </Link>
   )
 }

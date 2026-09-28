@@ -32,68 +32,10 @@ function Layout() {
   const closeBooking = useCallback(() => setBookingOpen(false), []);
   const nodeRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef(location);
-  const revealObserverRef = useRef<IntersectionObserver | null>(null);
-  const revealFallbackRef = useRef<number | null>(null);
 
   useEffect(() => {
     locationRef.current = location;
   }, [location]);
-
-  useEffect(() => {
-    revealObserverRef.current?.disconnect();
-    revealObserverRef.current = null;
-
-    const timer = setTimeout(() => {
-      const root = document.querySelector('.page-transition-root');
-      if (root) {
-        root.querySelectorAll('section:not(.no-reveal)').forEach((el) => {
-          if (!el.classList.contains('reveal')) el.classList.add('reveal');
-        });
-      }
-
-      const els = document.querySelectorAll<HTMLElement>(
-        '.page-transition-root .reveal:not(.is-visible)',
-      );
-      if (!('IntersectionObserver' in window) || els.length === 0) {
-        els.forEach((el) => el.classList.add('is-visible'));
-        return;
-      }
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('is-visible');
-              io.unobserve(e.target);
-            }
-          });
-        },
-        // A section taller than about twelve screens can never show 8 per cent
-        // of itself at once, so it would have stayed hidden for good. Trigger
-        // on any sliver, and start slightly before the element reaches the
-        // fold so nothing pops in late.
-        { threshold: 0.01, rootMargin: '0px 0px 15% 0px' },
-      );
-      revealObserverRef.current = io;
-      els.forEach((el) => io.observe(el));
-
-      // Content must never depend on the observer firing. If anything is still
-      // hidden shortly after, show it: a missed animation is a small cost, a
-      // section of the page that never appears is not.
-      revealFallbackRef.current = window.setTimeout(() => {
-        document
-          .querySelectorAll('.page-transition-root .reveal:not(.is-visible)')
-          .forEach((el) => el.classList.add('is-visible'));
-      }, 2500);
-    }, 550);
-
-    return () => {
-      clearTimeout(timer);
-      if (revealFallbackRef.current) clearTimeout(revealFallbackRef.current);
-      revealFallbackRef.current = null;
-      revealObserverRef.current?.disconnect();
-      revealObserverRef.current = null;
-    };
-  }, [location.pathname]);
 
   return (
     <BookingContext.Provider value={openBooking}>

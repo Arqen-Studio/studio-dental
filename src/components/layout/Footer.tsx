@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Clock, MapPin, Phone } from "lucide-react";
 import Logo from "../Logo";
-import { CLINICS, telHref, type ClinicLocation } from "../../data/clinics";
+import { CLINICS, INSTAGRAM_URL, telHref, type ClinicLocation } from "../../data/clinics";
+import { NAV_ITEMS, SECONDARY_NAV_ITEMS } from "../../data/navigation";
 
 /** The clinic's real profiles only. Facebook, LinkedIn and YouTube were
  *  placeholders pointing at the platforms' home pages, so they are gone until
@@ -10,7 +11,7 @@ import { CLINICS, telHref, type ClinicLocation } from "../../data/clinics";
 const SOCIAL_LINKS = [
   {
     label: "Studio Dental on Instagram",
-    href: "https://www.instagram.com/studiodentalpk?igsh=MWt5cmJzbzZhbms2bw%3D%3D",
+    href: INSTAGRAM_URL,
     icon: <InstagramIcon />,
   },
 ];
@@ -126,9 +127,22 @@ export default function Footer() {
     // button clear of the last lines.
     <footer data-theme="dark" className="bg-surface pb-28 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="page-shell mx-auto w-full px-5 md:px-8">
+<div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <Link to="/" className="sd-logo-link">
           <Logo size={48} tone="inverse" descriptor="Clinic · Islamabad" />
         </Link>
+        <nav aria-label="Footer">
+          <ul className="flex flex-wrap gap-x-6 gap-y-1">
+            {[...NAV_ITEMS, ...SECONDARY_NAV_ITEMS].map((item) => (
+              <li key={item.href}>
+                <Link to={item.href} className="label inline-flex min-h-11 items-center text-ink transition hover:text-brand">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        </div>
 
         <h2 className="mb-8 mt-12 h2 text-ink md:mb-10">Contacts</h2>
 

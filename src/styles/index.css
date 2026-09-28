@@ -199,18 +199,6 @@
   }
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Route transition: fade + split vertical curtain (same idea as vicklinika.lt) */
 .page-transition-root {
   position: relative;
@@ -302,3 +290,15 @@
 }
 
 
+
+/* Motion is decoration only: with reduced motion, entrance animations and
+   hover lifts are off and every element renders in its final state. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,210 +1,166 @@
-import SectionHeader from "../../components/SectionHeader";
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import ClinicCard from "../../components/ClinicCard";
+import { Field } from "../../components/Field";
+import SectionHeader from "../../components/SectionHeader";
+import { CLINICS, MAIN_PHONE, telHref } from "../../data/clinics";
 import { SERVICES_DATA } from "../../data/services";
-import { CLINICS } from "../../data/clinics";
+import { focusFirstError, isEmail, postEnquiry } from "../../lib/enquiry";
 
 type Status = "idle" | "sending" | "sent" | "error";
+type Errors = Partial<Record<"name" | "phone" | "email", string>>;
+
+/** A booking request: the clinic calls back to agree a time. */
+function validate(data: Record<string, string>): Errors {
+  const errors: Errors = {};
+  if (!data.name?.trim()) errors.name = "Enter your name.";
+  if (!data.phone?.trim()) errors.phone = "Enter a phone number so the clinic can call you to agree a time.";
+  if (data.email?.trim() && !isEmail(data.email)) errors.email = "Enter an email address like name@example.com";
+  return errors;
+}
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState<Errors>({});
 
   return (
-    <section id="contact" className="bg-surface-raised pb-10 pt-[calc(78px+2rem)] md:pb-16 md:pt-[calc(78px+3rem)]">
-      <div className="mx-auto grid w-full max-w-[max(62rem,min(2500px,86vw))] min-[1900px]:max-w-[min(2500px,92vw)] grid-cols-1 gap-8 px-5 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
-        <div>
+    <>
+      <section id="contact" className="bg-surface px-5 pb-12 pt-[calc(var(--nav-h)+3rem)] md:px-8 md:pb-16">
+        <div className="mx-auto w-full page-shell">
           <SectionHeader
             level={1}
             eyebrow="Contact"
             title="Visit Studio Dental in Islamabad."
             lead="Studio Dental provides expert dental care with a focus on comfort, advanced technology, and affordable treatment."
           />
-
-          <ul className="mt-8 grid gap-5">
+          <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-8">
             {CLINICS.map((clinic) => (
-              <li key={clinic.id} className="flex items-start gap-4">
-                <span
-                  className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand"
-                  aria-hidden="true"
-                >
-                  <MapPin size={18} strokeWidth={2} aria-hidden />
-                </span>
-                <div>
-                  <strong className="block label text-ink">
-                    {clinic.city}
-                  </strong>
-                  <p className="mt-0.5 body text-ink-muted">{clinic.address}</p>
-                </div>
-              </li>
+              <ClinicCard key={clinic.id} clinic={clinic} />
             ))}
-            <li className="flex items-start gap-4">
-              <span
-                className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand"
-                aria-hidden="true"
-              >
-                <Mail size={18} strokeWidth={2} aria-hidden />
-              </span>
-              <div>
-                <strong className="block label text-ink">Contact</strong>
-                <p className="mt-0.5 body text-ink-muted">
-                  {CLINICS.map((clinic) => clinic.phone).join("  |  ")}
-                </p>
-                <p className="mt-0.5 body text-ink-muted">
-                  {CLINICS[0].email}
-                </p>
-              </div>
-            </li>
-          </ul>
+          </div>
         </div>
+      </section>
 
-        <form
-          className="rounded-lg border border-line bg-surface-raised p-6 shadow-1 md:p-9"
-          noValidate
-          onSubmit={async (e) => {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(e.currentTarget));
-            setStatus("sending");
-            setError("");
-            try {
-              const res = await fetch("/api/enquiry", {
-                method: "POST",
-                headers: { "content-type": "application/json" },
-                body: JSON.stringify(data),
-              });
-              if (!res.ok) {
-                const body = await res.json().catch(() => ({}));
-                throw new Error(body.error || "Something went wrong.");
+      <section className="bg-surface-sunken px-5 py-16 md:px-8 md:py-20" aria-labelledby="booking-heading">
+        <div className="mx-auto w-full max-w-[var(--container-text)]">
+          <SectionHeader
+            id="booking-heading"
+            eyebrow="Booking"
+            title="Request a consultation"
+            lead="Send a request and the clinic will call you to agree a time."
+          />
+
+          <form
+            className="mt-8 flex flex-col gap-5 rounded-md border border-line bg-surface-raised p-6 md:p-8"
+            noValidate
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+              const found = validate(data);
+              setErrors(found);
+              if (Object.keys(found).length) return focusFirstError(form, found);
+
+              setStatus("sending");
+              setError("");
+              try {
+                await postEnquiry(data);
+                setStatus("sent");
+              } catch (err) {
+                setError(err instanceof Error ? err.message : "The enquiry could not be sent.");
+                setStatus("error");
               }
-              setStatus("sent");
-            } catch (err) {
-              setError(err instanceof Error ? err.message : "Something went wrong.");
-              setStatus("error");
-            }
-          }}
-        >
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="name"
-              className="small font-semibold text-ink"
-            >
-                Full name
-            </label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-                placeholder="Your full name"
-              required
-              className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
-            />
-          </div>
-
-          <div className="mt-4 flex flex-col gap-2">
-            <label
-              htmlFor="email"
-              className="small font-semibold text-ink"
-            >
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-                placeholder="you@example.com"
-              required
-              className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
-            />
-          </div>
-
-          <div className="mt-4 grid grid-cols-1 gap-4">
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="service"
-                className="small font-semibold text-ink"
-              >
-                Service
-              </label>
-              <select
-                id="service"
-                name="service"
-                defaultValue={SERVICES_DATA[0]?.title}
-                className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
-              >
-                {SERVICES_DATA.map((service) => (
-                  <option key={service.id}>{service.title}</option>
-                ))}
-              </select>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="date"
-                className="small font-semibold text-ink"
-              >
-                Preferred date
-              </label>
-              <input
-                id="date"
-                type="date"
-                name="date"
-                className="w-full rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
-              />
-            </div>
-          </div>
-
-          <div className="mt-4 flex flex-col gap-2">
-            <label
-              htmlFor="message"
-              className="small font-semibold text-ink"
-            >
-              Tell us more (optional)
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              placeholder="Any additional details for your consultation?"
-              className="min-h-[5.5rem] w-full resize-y rounded-sm border border-transparent bg-surface-sunken px-4 py-3 body outline-none transition placeholder:text-ink-muted focus:border-brand focus:bg-surface-raised focus:ring-4 focus:ring-brand/25"
-            />
-          </div>
-
-          <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
-
-          <button
-            type="submit"
-            disabled={status === "sending" || status === "sent"}
-            className="sd-btn sd-btn--primary sd-btn--md mt-5"
+            }}
           >
-            <span>{status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send request"}</span>
-            <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
-          </button>
+            <Field id="contact-name" label="Full name" error={errors.name}>
+              <input type="text" name="name" autoComplete="name" />
+            </Field>
 
-          {status === "sent" && (
-            <p role="status" className="mt-5 rounded-lg bg-brand-soft px-5 py-4 body text-ink">
-              Thank you. Your enquiry has reached the clinic and we will be in
-              touch shortly. If it is urgent, please call{" "}
-              <a href={`tel:${CLINICS[0].phone.replace(/\s/g, "")}`} className="font-semibold underline underline-offset-2">
-                {CLINICS[0].phone}
-              </a>.
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <Field
+                id="contact-phone"
+                label="Phone"
+                hint="We will call or WhatsApp to confirm a time."
+                error={errors.phone}
+              >
+                <input type="tel" name="phone" autoComplete="tel" />
+              </Field>
+              <Field id="contact-email" label="Email" optional error={errors.email}>
+                <input type="email" name="email" autoComplete="email" />
+              </Field>
+            </div>
+
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <Field id="contact-clinic" label="Clinic" optional>
+                <select name="clinic" defaultValue="">
+                  <option value="">No preference</option>
+                  {CLINICS.map((c) => (
+                    <option key={c.id} value={c.name}>
+                      {c.name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field id="contact-service" label="Treatment" optional>
+                <select name="service" defaultValue="">
+                  <option value="">Not sure yet</option>
+                  {SERVICES_DATA.map((service) => (
+                    <option key={service.id} value={service.title}>
+                      {service.title}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+            </div>
+
+            <Field id="contact-date" label="Preferred date" optional>
+              <input type="date" name="date" />
+            </Field>
+
+            <Field id="contact-message" label="What would you like help with?" optional>
+              <textarea name="message" rows={4} />
+            </Field>
+
+            <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
+            <button
+              type="submit"
+              disabled={status === "sending" || status === "sent"}
+              className="sd-btn sd-btn--primary sd-btn--md self-start"
+            >
+              <span>{status === "sending" ? "Sending…" : status === "sent" ? "Sent" : "Send enquiry"}</span>
+              <ArrowRight className="sd-icon" size={18} strokeWidth={1.75} aria-hidden />
+            </button>
+
+            {status === "sent" && (
+              <p role="status" className="rounded-md bg-brand-soft px-5 py-4 body text-ink">
+                Thank you, we have your request. This is not a confirmed booking yet:
+                the clinic will call you to agree a time. If it is urgent, please call{" "}
+                <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
+                  {MAIN_PHONE}
+                </a>
+                .
+              </p>
+            )}
+
+            {status === "error" && (
+              <p role="alert" className="rounded-md bg-warning-soft px-5 py-4 body text-warning">
+                {error} Please call us on{" "}
+                <a href={telHref(MAIN_PHONE)} className="font-semibold underline underline-offset-2">
+                  {MAIN_PHONE}
+                </a>{" "}
+                and we will book you in.
+              </p>
+            )}
+
+            <p className="small text-ink-muted">
+              By submitting, you agree to be contacted regarding your registration.
+              We never share your data.
             </p>
-          )}
-
-          {status === "error" && (
-            <p role="alert" className="mt-5 rounded-lg bg-warning-soft px-5 py-4 body text-warning">
-              {error} Please call us on{" "}
-              <a href={`tel:${CLINICS[0].phone.replace(/\s/g, "")}`} className="font-semibold underline underline-offset-2">
-                {CLINICS[0].phone}
-              </a>{" "}
-              and we will book you in.
-            </p>
-          )}
-
-          <p className="mt-3 small text-ink-muted">
-            By submitting, you agree to be contacted regarding your registration.
-            We never share your data.
-          </p>
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }

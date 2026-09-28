@@ -62,7 +62,7 @@ export default function About() {
   return (
     <>
       {/* ── 1. Split hero ── */}
-      <section className="no-reveal grid min-h-screen lg:grid-cols-2">
+      <section className="grid min-h-screen lg:grid-cols-2">
         {/* Left, photo */}
         <div className="relative min-h-[50vw] overflow-hidden lg:min-h-screen">
           <img
@@ -76,18 +76,16 @@ export default function About() {
         <div className="flex flex-col justify-center bg-surface-sunken px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[31rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="h1 text-ink">
-              About us
+              About
             </h1>
             <p className="mt-6 body text-ink-muted">
-              Studio Dental brings world-class dentistry to Islamabad. Our two
-              specialized clinics combine experience and leadership ,
-              integrating advanced treatment with exceptional patient service.
+              Studio Dental has two clinics in Islamabad, bringing together
+              experienced dentists, modern treatment and careful patient service.
             </p>
             <p className="mt-4 body text-ink-muted">
               In our clinics at DHA Phase II and F-7 Markaz, a large team of
               specialists takes care of patients, including implantologists,
-              orthodontists, and oral surgeons who share their knowledge at
-              international conferences.
+              orthodontists and oral surgeons.
             </p>
             <p className="mt-4 body text-ink-muted">
               Patients can receive all necessary dental services under one roof:
@@ -103,7 +101,7 @@ export default function About() {
       </section>
 
       {/* ── 2. Text block ── */}
-      <section className="reveal bg-surface py-16 md:py-20">
+      <section className="bg-surface py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="body text-ink-muted">
             We are sure you know that all of us at Studio Dental love our work,
@@ -121,12 +119,12 @@ export default function About() {
       </section>
 
       {/* ── 3. Video ── */}
-      <section className="reveal bg-surface px-5 pb-16 md:px-8 md:pb-20">
+      <section className="bg-surface px-5 pb-16 md:px-8 md:pb-20">
         <VideoBlock src="/videos/clinic-team-720.mp4" poster="/videos/clinic-team-poster.jpg" />
       </section>
 
       {/* ── 4. Full-bleed image with overlay text ── */}
-      <section data-theme="dark" className="reveal relative min-h-[27rem] md:min-h-[34rem]">
+      <section data-theme="dark" className="relative min-h-[27rem] md:min-h-[34rem]">
         <img
           src="/images/clinic/lounge-wide.jpg"
           alt="The waiting lounge at Studio Dental"
@@ -135,13 +133,13 @@ export default function About() {
         <div className="absolute inset-0 bg-scrim" aria-hidden="true" />
         <div className="relative flex h-full min-h-[27rem] items-center justify-center md:min-h-[34rem]">
           <h2 className="text-center h1 text-ink">
-            Get to know us better :)
+            Meet the team
           </h2>
         </div>
       </section>
 
       {/* ── 5. Text block ── */}
-      <section className="reveal bg-surface-sunken py-16 md:py-20">
+      <section className="bg-surface-sunken py-16 md:py-20">
         <div className="mx-auto w-full max-w-[46rem] 2xl:page-shell px-5 md:px-8">
           <p className="body text-ink-muted">
             We are all dentists with our own hobbies and passions, which often
@@ -153,7 +151,7 @@ export default function About() {
       </section>
 
       {/* ── 6. Seamless 3-col team cards ── */}
-      <section className="reveal">
+      <section>
         <div className="mx-auto grid max-w-[90rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM_CARDS.map((card) => (
             <div
@@ -199,7 +197,7 @@ export default function About() {
       </section>
 
       {/* ── 7. Second video ── */}
-      <section className="reveal bg-surface-sunken px-5 py-16 md:px-8 md:py-20">
+      <section className="bg-surface-sunken px-5 py-16 md:px-8 md:py-20">
         <VideoBlock src="/videos/clinic-detail-720.mp4" poster="/videos/clinic-detail-poster.jpg" />
       </section>
     </>
