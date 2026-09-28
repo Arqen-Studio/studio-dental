@@ -16,7 +16,7 @@ export function TeamDoctorCard({ slug, name, creds, role, image, clinic }: TeamD
       className="block h-full overflow-hidden rounded-lg border border-line bg-surface-raised shadow-soft-sm transition-shadow duration-300 hover:shadow-soft-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
     >
     <article className="flex h-full flex-col overflow-hidden">
-      <div className="aspect-[4/3] flex-none bg-surface-sunken">
+      <div className="aspect-[4/3] flex-none bg-brand-soft">
         {image && (
           <img
             src={image}
