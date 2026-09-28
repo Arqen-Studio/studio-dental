@@ -61,6 +61,28 @@ function ClockIcon() {
   );
 }
 
+/** Line icon on the 24px grid, drawn in currentColor like the Lucide set. */
+function InstagramIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <path d="M17.5 6.5h.01" />
+    </svg>
+  );
+}
+
 function IconCircle({ children }: { children: ReactNode }) {
   return (
     <span
@@ -91,7 +113,7 @@ function ClinicCard({
   // large screens, so a two-line address in one clinic does not push its
   // dividers and rows out of step with the other clinic's.
   return (
-    <article className="grid content-start gap-8 rounded-2xl border border-black/[0.06] bg-white p-7 shadow-[0_4px_24px_rgba(18,52,32,0.08)] md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
+    <article className="grid content-start gap-8 rounded-2xl border border-line bg-surface-raised p-7 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
       <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">
         {city}
       </h3>
@@ -108,28 +130,26 @@ function ClinicCard({
             rel="noopener noreferrer"
             className="mt-2 inline-block text-[0.88rem] font-medium text-brand underline-offset-2 transition hover:underline"
           >
-            Location on the map
+            Get directions
           </a>
         </div>
       </div>
 
-      <div className="h-px w-full self-center bg-black/10" aria-hidden="true" />
+      <div className="h-px w-full self-center bg-line" aria-hidden="true" />
 
       <div className="flex gap-4">
         <IconCircle>
           <PhoneIcon />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="text-[0.78rem] font-medium text-muted">
-            Tel. for registration:
-          </p>
+          <p className="text-[0.78rem] font-medium text-muted">Phone</p>
           <a
             href={`tel:${phone.replace(/\s/g, "")}`}
             className="mt-0.5 block text-[0.88rem] text-ink transition hover:text-brand"
           >
             {phone}
           </a>
-          <p className="mt-3 text-[0.78rem] font-medium text-muted">E-mail:</p>
+          <p className="mt-3 text-[0.78rem] font-medium text-muted">Email</p>
           <a
             href={`mailto:${email}`}
             className="mt-0.5 block break-all text-[0.88rem] text-ink transition hover:text-brand"
@@ -145,16 +165,14 @@ function ClinicCard({
         </div>
       </div>
 
-      <div className="h-px w-full self-center bg-black/10" aria-hidden="true" />
+      <div className="h-px w-full self-center bg-line" aria-hidden="true" />
 
       <div className="flex gap-4">
         <IconCircle>
           <ClockIcon />
         </IconCircle>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="text-[0.78rem] font-medium text-muted">
-            Working hours:
-          </p>
+          <p className="text-[0.78rem] font-medium text-muted">Hours</p>
           {hours.map((h) => (
             <p key={h} className="mt-1 text-[0.88rem] leading-snug text-ink">
               {h}
@@ -167,40 +185,12 @@ function ClinicCard({
 }
 
 export default function Footer() {
+  // [TODO: confirm this is the clinic's Instagram. Facebook, LinkedIn and YouTube were removed: they pointed at the platforms' home pages.]
   const INSTAGRAM_URL =
     "https://www.instagram.com/studiodentalpk?igsh=MWt5cmJzbzZhbms2bw%3D%3D";
 
-  /** Replace with your Studio Dental Facebook, LinkedIn, and YouTube URLs when available */
-  const FACEBOOK_URL = "https://www.facebook.com/";
-  const LINKEDIN_URL = "https://www.linkedin.com/";
-  const YOUTUBE_URL = "https://www.youtube.com/";
-
-  /** Assets under `public/svg/` */
-  const socialLinks = [
-    {
-      label: "Facebook",
-      href: FACEBOOK_URL,
-      src: "/svg/facebook-circle-svgrepo-com.svg",
-    },
-    {
-      label: "Instagram",
-      href: INSTAGRAM_URL,
-      src: "/svg/instagram-167-svgrepo-com.svg",
-    },
-    {
-      label: "LinkedIn",
-      href: LINKEDIN_URL,
-      src: "/svg/linkedin-linked-in-svgrepo-com.svg",
-    },
-    {
-      label: "YouTube",
-      href: YOUTUBE_URL,
-      src: "/svg/social-youtube-svgrepo-com.svg",
-    },
-  ] as const;
-
   return (
-    <footer className="bg-[#EEF6EC] pb-10 pt-14 text-ink md:pb-14 md:pt-16">
+    <footer data-theme="dark" className="bg-surface pb-10 pt-14 text-ink md:pb-14 md:pt-16">
       <div className="page-shell mx-auto w-full px-5 md:px-8">
         <h2 className="mb-8 text-[clamp(1.75rem,3.2vw,2.35rem)] font-bold tracking-tight text-ink md:mb-10">
           Contacts
@@ -222,29 +212,15 @@ export default function Footer() {
 
         <div className="mt-5   pt-10 ">
           <div className="flex flex-col items-start text-left">
-            <div className="flex flex-wrap gap-2">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand shadow-[0_1px_3px_rgba(18,52,32,0.12)] ring-1 ring-ink/10 transition duration-200 hover:bg-brand/90 hover:shadow-md sm:h-12 sm:w-12"
-                >
-                  <img
-                    src={s.src}
-                    alt=""
-                    className="h-[1.1rem] w-[22px] object-contain sm:h-[1.3rem] sm:w-[26px]"
-                  />
-                </a>
-              ))}
-            </div>
-
-            <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-brand md:text-[0.875rem]">
-              Report potential ethical, corruption, violence or
-              harassment-related violations and other concerns.
-            </p>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-on-brand transition duration-200 hover:bg-brand-hover"
+            >
+              <InstagramIcon />
+            </a>
 
             <p className="mt-3 max-w-[52rem] font-sans text-[0.8125rem] leading-relaxed text-muted">
               &copy; {new Date().getFullYear()} Studio Dental, clinics at DHA
@@ -256,18 +232,6 @@ export default function Footer() {
                 className="text-muted underline underline-offset-2 transition hover:text-ink"
               >
                 Studio Dental
-              </a>
-            </p>
-
-            <p className="mt-2 font-sans text-[0.8125rem] leading-relaxed text-muted">
-              Touched by{" "}
-              <a
-                href="https://digitouch.lt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted underline underline-offset-2 transition hover:text-ink"
-              >
-                digitouch!
               </a>
             </p>
           </div>

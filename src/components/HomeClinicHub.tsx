@@ -57,7 +57,7 @@ const hoverEase = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 export default function HomeClinicHub() {
   return (
     <section
-      className="bg-[#EEF6EC] px-5 py-9 md:px-8 md:py-12"
+      className="bg-surface-sunken px-5 py-9 md:px-8 md:py-12"
       aria-labelledby="home-clinic-hub-heading"
     >
       <div className="mx-auto w-full page-shell">
@@ -83,7 +83,7 @@ export default function HomeClinicHub() {
             <Link
               key={card.title}
               to={card.to}
-              className={`group relative aspect-[4/3] min-h-[10rem] overflow-hidden rounded-2xl shadow-soft-sm outline-none ring-offset-2 ring-offset-white transition-shadow ${hoverDur} ${hoverEase} hover:shadow-soft-md focus-visible:ring-2 focus-visible:ring-brand`}
+              className={`group relative aspect-[4/3] min-h-[10rem] overflow-hidden rounded-2xl shadow-1 outline-none ring-offset-2 ring-offset-surface-sunken transition-shadow ${hoverDur} ${hoverEase} hover:shadow-2 focus-visible:ring-2 focus-visible:ring-brand`}
             >
               <img
                 src={card.image}
@@ -95,9 +95,9 @@ export default function HomeClinicHub() {
                 className={`absolute inset-0 z-0 h-full w-full object-cover transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:scale-[1.03]`}
               />
 
-              {/* Bottom gradient, fades as primary sheet rises */}
+              {/* Scrim behind the label, fades as the Evergreen sheet rises */}
               <div
-                className={`pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/30 to-black/10 opacity-100 transition-opacity ${hoverDur} ${hoverEase} group-hover:opacity-20`}
+                className={`pointer-events-none absolute inset-0 z-[1] bg-scrim opacity-100 transition-opacity ${hoverDur} ${hoverEase} group-hover:opacity-20`}
                 aria-hidden="true"
               />
 
@@ -114,10 +114,10 @@ export default function HomeClinicHub() {
               <div
                 className={`absolute left-1/2 top-1/2 z-[3] w-full max-w-[18rem] px-5 text-center -translate-x-1/2 translate-y-[calc(-50%+6.25rem)] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:-translate-y-1/2`}
               >
-                <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-white/90 md:text-[0.65rem]">
+                <span className="block text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-raw-porcelain/90">
                   Clinics
                 </span>
-                <span className="mt-2 block font-heading text-[1.22rem] font-extrabold leading-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.45)] md:text-[1.38rem]">
+                <span className="mt-2 block font-heading text-[1.22rem] font-extrabold leading-tight text-raw-porcelain md:text-[1.38rem]">
                   {card.title}
                 </span>
               </div>

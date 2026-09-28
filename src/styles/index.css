@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+/* Design tokens (copied from docs/brand/tokens.css) and the design-system sd- classes. */
+@import './tokens.css' layer(components);
+@import './components.css' layer(components);
 @config '../../tailwind.config.cjs';
 
 /* The site's page column. It widens in two steps on large screens so the
@@ -23,13 +26,13 @@
 @layer base {
   :root {
     --nav-h: 78px;
-    --page-transition-curtain: #256B3C;
+    --page-transition-curtain: var(--brand);
   }
 
   html {
     scroll-behavior: smooth;
     font-size: 18px; /* mobile base */
-    background: #ffffff;
+    background: var(--surface);
   }
 
   @media (min-width: 900px) {
@@ -62,14 +65,14 @@
 
   #root {
     min-height: 100dvh;
-    background: #ffffff;
+    background: var(--surface);
   }
 
   body {
-    background: #ffffff;
-    color: #4F6557;
-    font-family: 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 500;
+    background: var(--surface);
+    color: var(--ink-muted);
+    font-family: var(--font-sans);
+    font-weight: 400;
     line-height: 25px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -78,8 +81,8 @@
   }
 
   ::selection {
-    background: #5FB979;
-    color: #123420;
+    background: var(--brand-soft);
+    color: var(--ink);
   }
 
   h1,
@@ -88,9 +91,9 @@
   h4,
   h5,
   h6 {
-    font-family: 'Bricolage Grotesque', 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 800;
-    color: rgb(18, 52, 32);
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink);
     letter-spacing: -0.02em;
   }
 
@@ -203,19 +206,7 @@
   }
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Route transition: fade + split vertical curtain (same idea as vicklinika.lt) */
+/* Route transition: fade + split vertical curtain */
 .page-transition-root {
   position: relative;
   width: 100%;
