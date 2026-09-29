@@ -42,11 +42,11 @@ export default function Hero() {
           </video>
           {/* A light veil over the whole video, with the scrim concentrated behind the text
               column and the nav (design system: --scrim only behind text on a photo). The two
-              blurred Ink panels overlap the veil to give about the old 55% behind the text, while
-              the rest of the clinic shows through at 30%. */}
-          <div className="absolute inset-0 bg-raw-ink/30" />
-          <div className="absolute -inset-y-24 -left-24 -right-24 bg-raw-ink/45 blur-[48px] md:right-[18%]" />
-          <div className="absolute -inset-x-24 -top-24 h-[calc(3.9rem+7rem)] bg-raw-ink/35 blur-[40px]" />
+              blurred Ink panels overlap the veil to give about 44% behind the text, while
+              the rest of the clinic shows through at 20%. */}
+          <div className="absolute inset-0 bg-raw-ink/20" />
+          <div className="absolute -inset-y-24 -left-24 -right-24 bg-raw-ink/30 blur-[48px] md:right-[18%]" />
+          <div className="absolute -inset-x-24 -top-24 h-[calc(3.9rem+7rem)] bg-raw-ink/25 blur-[40px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full page-shell px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
