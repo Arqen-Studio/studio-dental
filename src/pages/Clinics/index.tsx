@@ -91,7 +91,7 @@ export default function Clinics() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="no-reveal bg-brand-soft pb-12 pt-[calc(78px+2rem)]">
+      <section data-theme="evergreen" className="no-reveal bg-brand-soft pb-12 pt-[calc(78px+2rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <h1 className="text-[clamp(2.6rem,5vw,4rem)] font-bold leading-none text-ink">
             Contacts

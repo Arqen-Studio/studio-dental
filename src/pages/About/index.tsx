@@ -73,7 +73,7 @@ export default function About() {
         </div>
 
         {/* Right, blue panel */}
-        <div className="flex flex-col justify-center bg-brand-soft px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
+        <div data-theme="evergreen" className="flex flex-col justify-center bg-brand-soft px-8 py-16 md:px-12 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="w-full max-w-[31rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               About us

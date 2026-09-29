@@ -48,7 +48,7 @@ export default function ServiceDetail() {
           </div>
 
           {/* Text, right */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
+          <div data-theme="evergreen" className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:py-20 lg:pt-[calc(78px+4rem)]">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
               <Link
                 to="/services"
@@ -146,7 +146,7 @@ export default function ServiceDetail() {
                   />
                 </div>
                 {/* Text right */}
-                <div className="order-first flex flex-col justify-center bg-brand-soft px-6 py-12 md:px-12 lg:order-last lg:px-16">
+                <div data-theme="evergreen" className="order-first flex flex-col justify-center bg-brand-soft px-6 py-12 md:px-12 lg:order-last lg:px-16">
                   <h3 className="text-[clamp(1.4rem,2.5vw,2rem)] font-bold leading-tight text-ink">
                     {scenario.title}
                   </h3>
@@ -293,7 +293,7 @@ export default function ServiceDetail() {
       <section className="no-reveal">
         <div className="grid lg:grid-cols-2">
           {/* Text left, brand bg */}
-          <div className="relative flex flex-col justify-center bg-brand-soft px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
+          <div data-theme="evergreen" className="relative flex flex-col justify-center bg-brand-soft px-6 py-16 md:px-12 lg:min-h-[26rem] lg:px-16">
             <div className="relative z-[1]">
               <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-ink">
                 Other services

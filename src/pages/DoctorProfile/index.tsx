@@ -28,7 +28,7 @@ export default function DoctorProfile() {
             />
           )}
         </div>
-        <div className="relative flex flex-col justify-center bg-brand-soft px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
+        <div data-theme="evergreen" className="relative flex flex-col justify-center bg-brand-soft px-6 py-14 pt-[calc(78px+2.5rem)] md:px-12 lg:px-16">
           <div className="relative z-[1] text-ink">
             {doctor.heroTitleLines && doctor.heroTitleLines.length > 0 ? (
               <>

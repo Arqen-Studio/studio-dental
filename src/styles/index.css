@@ -348,3 +348,21 @@
     backdrop-filter: none !important;
   }
 }
+
+/* Evergreen bands: page intro panels. Text flips to Porcelain like the nav and footer. */
+[data-theme="evergreen"] {
+  --surface: var(--raw-evergreen);
+  --surface-raised: color-mix(in oklab, var(--raw-porcelain) 10%, var(--raw-evergreen));
+  --surface-sunken: color-mix(in oklab, var(--raw-ink) 20%, var(--raw-evergreen));
+  --brand-soft: var(--raw-evergreen);
+  --line: color-mix(in oklab, var(--raw-porcelain) 25%, var(--raw-evergreen));
+  --line-strong: color-mix(in oklab, var(--raw-porcelain) 50%, var(--raw-evergreen));
+  --ink: var(--raw-porcelain);
+  --ink-muted: color-mix(in oklab, var(--raw-porcelain) 88%, var(--raw-evergreen));
+  --brand: var(--raw-porcelain);
+  --brand-hover: var(--raw-mist);
+  --on-brand: var(--raw-evergreen);
+  --accent: var(--raw-champagne);
+  --focus: var(--raw-champagne);
+  color: var(--ink-muted);
+}

@@ -32,7 +32,7 @@ export default function Prices() {
       <section className="no-reveal lg:min-h-screen">
         <div className="grid lg:grid-cols-2">
           {/* Left panel */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
+          <div data-theme="evergreen" className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 pb-14 pt-[calc(78px+2.5rem)] md:px-12 lg:min-h-screen lg:px-16 lg:pt-[calc(78px+3rem)]">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
               <h1 className="text-[clamp(2.2rem,4vw,3.4rem)] font-extrabold leading-[1] tracking-tight text-ink">
                 Service prices
@@ -135,7 +135,7 @@ export default function Prices() {
       {selectedClinic && categories.map((cat) => (
         <section key={cat.id} id={cat.id} className="scroll-mt-[78px]">
           {/* Category heading band */}
-          <div className="bg-brand-soft py-10 text-center">
+          <div data-theme="evergreen" className="bg-brand-soft py-10 text-center">
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-tight text-brand">
               {cat.label}
             </h2>

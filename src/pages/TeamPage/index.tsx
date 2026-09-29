@@ -111,7 +111,7 @@ export default function TeamPage() {
             </video>
           </div>
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
+          <div data-theme="evergreen" className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 pt-[calc(78px+3rem)] md:px-12 lg:px-16 lg:pt-14">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
               <h1 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
                 DHA Phase II
@@ -124,7 +124,7 @@ export default function TeamPage() {
         {/* Row 2: text left · photo right, F-7 Markaz */}
         <div className="grid min-h-[50vh] lg:grid-cols-2">
           {/* Text */}
-          <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 md:px-12 lg:px-16">
+          <div data-theme="evergreen" className="relative flex flex-col justify-center overflow-hidden bg-brand-soft px-6 py-14 md:px-12 lg:px-16">
             <div className="relative z-[1] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.7s_both]">
               <h2 className="text-[clamp(2.4rem,4.5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-ink">
                 F-7 Markaz

@@ -29,7 +29,7 @@ export default function Services() {
       {/* ── 1. Split hero (Mist panel, matches Team / Mission campaign) ── */}
       <section className="no-reveal grid min-h-screen border-t border-brand/25 lg:grid-cols-2">
         {/* Left, Mist panel + accordion */}
-        <div className="relative flex flex-col justify-center overflow-hidden bg-brand-soft border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
+        <div data-theme="evergreen" className="relative flex flex-col justify-center overflow-hidden bg-brand-soft border-b border-brand/25 px-8 py-16 md:px-12 lg:border-b-0 lg:border-r lg:border-brand/25 lg:px-16 lg:pt-[calc(78px+3rem)]">
           <div className="relative z-[1] w-full max-w-[29rem] [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
             <h1 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-semibold leading-tight text-ink">
               Services

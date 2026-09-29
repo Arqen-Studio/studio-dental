@@ -53,7 +53,7 @@ export default function Blog() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="no-reveal bg-brand-soft pb-10 pt-[calc(78px+2.5rem)]">
+      <section data-theme="evergreen" className="no-reveal bg-brand-soft pb-10 pt-[calc(78px+2.5rem)]">
         <div className="mx-auto w-full page-shell px-5 md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.45s_both]">
           <div className="flex flex-col items-center text-center">
             <h1 className="text-[clamp(2.8rem,5vw,4.2rem)] font-extrabold leading-none tracking-tight text-ink">
@@ -71,7 +71,7 @@ export default function Blog() {
                   className={[
                     "rounded-full px-6 py-2.5 text-[0.9rem] font-semibold transition duration-200",
                     activeClinic === c.id
-                      ? "bg-ink text-creamBrand"
+                      ? "bg-ink text-surface"
                       : "bg-surface-raised/30 text-ink hover:bg-surface-raised/55",
                   ].join(" ")}
                 >

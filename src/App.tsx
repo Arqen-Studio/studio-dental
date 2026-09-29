@@ -102,7 +102,7 @@ function Layout() {
           href="https://wa.me/923299961999"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand text-on-brand shadow-2 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+          className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand text-on-brand shadow-2 ring-1 ring-raw-porcelain/40 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
           aria-label="Chat on WhatsApp, +92 329 9961999"
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -112,7 +112,7 @@ function Layout() {
         <button
           type="button"
           onClick={() => setRegOpen(true)}
-          className="inline-flex h-14 w-14 items-center justify-center gap-2.5 rounded-full bg-brand text-[0.85rem] font-semibold text-on-brand shadow-2 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover sm:w-auto sm:px-5"
+          className="inline-flex h-14 w-14 items-center justify-center gap-2.5 rounded-full bg-brand text-[0.85rem] font-semibold text-on-brand shadow-2 ring-1 ring-raw-porcelain/40 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-hover sm:w-auto sm:px-5"
           aria-label="Open online registration"
         >
           <Mail size={20} strokeWidth={2} aria-hidden />
