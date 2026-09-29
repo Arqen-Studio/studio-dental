@@ -40,14 +40,19 @@ export default function Hero() {
             />
             <source src={HERO_VIDEO_HD} type="video/mp4" />
           </video>
-          {/* Scrim behind the hero text (design system: --scrim only behind text on a photo). */}
-          <div className="absolute inset-0 bg-scrim" />
+          {/* A light veil over the whole video, with the scrim concentrated behind the text
+              column and the nav (design system: --scrim only behind text on a photo). The two
+              blurred Ink panels overlap the veil to give about the old 55% behind the text, while
+              the rest of the clinic shows through at 30%. */}
+          <div className="absolute inset-0 bg-raw-ink/30" />
+          <div className="absolute -inset-y-24 -left-24 -right-24 bg-raw-ink/45 blur-[48px] md:right-[18%]" />
+          <div className="absolute -inset-x-24 -top-24 h-[calc(3.9rem+7rem)] bg-raw-ink/35 blur-[40px]" />
         </div>
 
         <div className="relative z-10 mx-auto w-full page-shell px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <div className="mb-7 flex items-start">
             <div className="inline-flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-raw-porcelain/25 bg-raw-porcelain/10 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-raw-porcelain/25 bg-raw-ink/25 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
                 <span
                   className="h-2 w-2 rounded-full bg-raw-sage ring-4 ring-raw-sage/30"
                   aria-hidden="true"
@@ -62,7 +67,7 @@ export default function Hero() {
             <h1 className="max-w-[19ch] font-heading text-[clamp(2.4rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-creamBrand">
               Dentistry you can trust, in the heart of Islamabad
             </h1>
-            <p className="mt-5 max-w-[46ch] text-[1rem] leading-relaxed text-creamBrand/85 md:text-[1.08rem]">
+            <p className="mt-5 max-w-[46ch] text-[1rem] leading-relaxed text-creamBrand md:text-[1.08rem]">
               Two clinics, DHA Phase II and F-7 Markaz. From routine check-ups
               to implants and orthodontics.
             </p>
@@ -95,13 +100,13 @@ export default function Hero() {
           </div>
 
           <div
-            className="flex max-w-[32rem] flex-wrap items-center gap-5 rounded-lg border border-raw-porcelain/20 bg-raw-porcelain/10 px-5 py-4 backdrop-blur lg:w-fit lg:max-w-none lg:flex-nowrap lg:gap-7 lg:px-7"
+            className="flex max-w-[32rem] flex-wrap items-center gap-5 rounded-lg border border-raw-porcelain/20 bg-raw-ink/25 px-5 py-4 backdrop-blur lg:w-fit lg:max-w-none lg:flex-nowrap lg:gap-7 lg:px-7"
           >
             <div className="flex flex-col gap-1">
               <strong className="text-[1.15rem] font-bold text-creamBrand">
                 17+ years
               </strong>
-              <span className="text-[0.82rem] text-creamBrand/70">
+              <span className="text-[0.82rem] text-creamBrand">
                 of clinical experience
               </span>
             </div>
@@ -113,7 +118,7 @@ export default function Hero() {
               <strong className="text-[1.15rem] font-bold text-creamBrand">
                 Top doctors
               </strong>
-              <span className="text-[0.82rem] text-creamBrand/70">
+              <span className="text-[0.82rem] text-creamBrand">
                 from oral surgeons to orthodontists
               </span>
             </div>
@@ -125,7 +130,7 @@ export default function Hero() {
               <strong className="text-[1.15rem] font-bold text-creamBrand">
                 2 clinics
               </strong>
-              <span className="text-[0.82rem] text-creamBrand/70">
+              <span className="text-[0.82rem] text-creamBrand">
                 DHA Phase II and F-7 Markaz
               </span>
             </div>

@@ -169,7 +169,7 @@ export default function About() {
                     className="absolute inset-0 h-full w-full object-cover object-center opacity-30"
                   />
                   <div
-                    className="absolute inset-0 bg-brand/60"
+                    className="absolute inset-0 bg-brand-soft/80"
                     aria-hidden="true"
                   />
                 </>

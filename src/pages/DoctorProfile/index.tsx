@@ -32,14 +32,14 @@ export default function DoctorProfile() {
           <div className="relative z-[1] text-ink">
             {doctor.heroTitleLines && doctor.heroTitleLines.length > 0 ? (
               <>
-                <h1 className="font-heading text-[clamp(1.85rem,4vw,3.25rem)] font-extrabold leading-[1.05] tracking-tight text-ink">
+                <h1 className="font-heading text-[clamp(1.6rem,2.8vw,2.4rem)] font-extrabold leading-[1.12] tracking-tight text-ink">
                   {doctor.heroTitleLines.map((line) => (
                     <span key={line} className="block">
                       {line}
                     </span>
                   ))}
                 </h1>
-                <p className="mt-7 text-[clamp(1.15rem,2.2vw,1.5rem)] font-bold leading-snug text-ink">
+                <p className="mt-6 font-heading text-[clamp(1.35rem,2.4vw,1.85rem)] font-semibold leading-snug tracking-tight text-ink">
                   {doctor.name}
                 </p>
               </>
@@ -74,7 +74,7 @@ export default function DoctorProfile() {
       </section>
 
       {/* Practice areas, full viewport width */}
-      <section className="w-full bg-surface-sunken py-12 md:py-16">
+      <section className="w-full bg-surface-sunken pt-12 md:pt-16">
         <div className="mx-auto w-full max-w-[45rem] px-5 md:px-8">
           <ProfileSection title="Practice areas" items={doctor.practiceAreas}>
             <div className="grid gap-8 sm:grid-cols-2 sm:gap-12">
@@ -93,7 +93,7 @@ export default function DoctorProfile() {
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-[45rem] px-5 py-12 md:px-8 md:py-16">
+      <div className="mx-auto w-full max-w-[45rem] px-5 pb-12 md:px-8 md:pb-16">
         <ProfileSection title="Biography" items={doctor.biography}>
           <div className="space-y-3 text-[0.95rem] leading-relaxed text-ink2">
             {doctor.biography.map((para) => (

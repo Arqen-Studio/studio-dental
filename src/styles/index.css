@@ -95,6 +95,23 @@
     font-weight: 600;
     color: var(--ink);
     letter-spacing: -0.02em;
+    /* Even line lengths, so a heading never ends on one stranded word. */
+    text-wrap: balance;
+  }
+
+  /* Tracking is size-specific: small headings (card titles) need less tightening than display sizes. */
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.01em;
+  }
+
+  /* No single-word last lines in running text. */
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
   }
 
   h2 {
@@ -297,3 +314,37 @@
 }
 
 
+
+/* Press feedback on pill buttons: they respond the moment they are pressed, not on release. */
+:where(a, button)[class*="rounded-full"]:active {
+  scale: 0.97;
+}
+
+/* Reduced motion: no slides, scaling, looping or page curtain; colour and opacity
+   changes stay as short cross-fades so state changes are still visible. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-property: opacity, color, background-color, border-color !important;
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .page-transition-root::before,
+  .page-transition-root::after {
+    display: none;
+  }
+
+  :where(a, button)[class*="rounded-full"]:active {
+    scale: none;
+  }
+}
+
+/* Reduced transparency: glass panels lose their blur and read as solid tints. */
+@media (prefers-reduced-transparency: reduce) {
+  * {
+    backdrop-filter: none !important;
+  }
+}

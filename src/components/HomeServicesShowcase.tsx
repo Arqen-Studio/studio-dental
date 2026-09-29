@@ -152,7 +152,7 @@ export default function HomeServicesShowcase({
           {rest.map((item) => (
             <article
               key={item.serviceId}
-              className="reveal flex min-h-[10rem] flex-col rounded-2xl border border-line bg-surface-raised p-5 shadow-1 transition duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-2 sm:min-h-0"
+              className="flex min-h-[10rem] flex-col gap-5 rounded-2xl border border-line bg-surface-raised p-5 shadow-1 transition duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-2 sm:min-h-0"
             >
               <div className="flex items-start gap-3">
                 <IconBubble Icon={item.Icon} />

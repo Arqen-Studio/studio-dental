@@ -139,7 +139,7 @@ export default function Clinics() {
                         href={clinic.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex min-h-11 items-center text-[0.85rem] font-medium text-brand transition hover:underline"
+                        className="-my-2.5 block py-3 text-[0.85rem] font-medium text-brand transition hover:underline"
                       >
                         Get directions
                       </a>
@@ -157,7 +157,7 @@ export default function Clinics() {
                       </p>
                       <a
                         href={`tel:${clinic.phone.replace(/\s/g, "")}`}
-                        className="flex min-h-11 items-center text-[0.9rem] font-medium text-brand transition hover:underline"
+                        className="-my-2.5 block py-3 text-[0.9rem] font-medium text-brand transition hover:underline"
                       >
                         {clinic.phone}
                       </a>
@@ -166,7 +166,7 @@ export default function Clinics() {
                       </p>
                       <a
                         href={`mailto:${clinic.email}`}
-                        className="flex min-h-11 items-center break-all text-[0.9rem] font-medium text-brand transition hover:underline"
+                        className="-my-2.5 block py-3 break-all text-[0.9rem] font-medium text-brand transition hover:underline"
                       >
                         {clinic.email}
                       </a>

@@ -242,17 +242,20 @@ export default function ServiceDetail() {
             <h2 className="text-center text-[clamp(1.8rem,3vw,2.4rem)] font-bold text-ink">
               Specialists
             </h2>
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {/* Centred rows, so two or four specialists sit under the centred heading
+                instead of leaving empty columns on the right. */}
+            <div className="mt-10 flex flex-wrap justify-center gap-5">
               {specialists.map((doctor) => (
-                <TeamDoctorCard
-                  key={doctor.name}
-                  slug={doctor.slug}
-                  name={doctor.name}
-                  creds={doctor.creds}
-                  role={doctor.role}
-                  image={doctor.image}
-                  clinic={doctor.clinic}
-                />
+                <div key={doctor.name} className="w-full sm:w-[calc((100%-1.25rem)/2)] xl:w-[calc((100%-2.5rem)/3)]">
+                  <TeamDoctorCard
+                    slug={doctor.slug}
+                    name={doctor.name}
+                    creds={doctor.creds}
+                    role={doctor.role}
+                    image={doctor.image}
+                    clinic={doctor.clinic}
+                  />
+                </div>
               ))}
             </div>
             <div className="mt-10 flex justify-center">
