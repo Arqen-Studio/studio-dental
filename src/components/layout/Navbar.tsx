@@ -58,8 +58,8 @@ export default function Navbar() {
         "fixed inset-x-0 top-0 z-[100] h-[3.9rem] border-b transition duration-300 ease-out",
         isTransparent
           ? "border-transparent bg-transparent"
-          : // Frosted Porcelain with a hairline (design system, Site header); the shadow only once scrolled.
-            ["border-line bg-surface/95 text-ink backdrop-blur-md", scrolled ? "shadow-2" : ""].join(" "),
+          : // Evergreen bar, as on the original site; the shadow only once scrolled.
+            ["border-raw-porcelain/10 bg-raw-evergreen", scrolled ? "shadow-2" : ""].join(" "),
       ].join(" ")}
     >
       <div className="flex h-full w-full items-center justify-between px-3 sm:px-5 md:px-8">
@@ -68,7 +68,7 @@ export default function Navbar() {
           className="inline-flex min-h-11 shrink-0 items-center"
           aria-label="Studio Dental home"
         >
-          <Logo size={30} tone={isTransparent ? "inverse" : "brand"} />
+          <Logo size={30} tone="inverse" />
         </Link>
 
         <div className="ml-6 flex flex-1 items-center justify-end gap-2 lg:gap-4">
@@ -83,12 +83,8 @@ export default function Navbar() {
                 aria-current={isCurrent(item.href) ? "page" : undefined}
                 className={[
                   "whitespace-nowrap border-b-2 py-2 transition duration-200",
-                  isTransparent
-                    ? "text-raw-porcelain hover:border-raw-champagne"
-                    : "text-ink hover:border-brand",
-                  isCurrent(item.href)
-                    ? isTransparent ? "border-raw-champagne" : "border-brand"
-                    : "border-transparent",
+                  "text-raw-porcelain hover:border-raw-champagne",
+                  isCurrent(item.href) ? "border-raw-champagne" : "border-transparent",
                 ].join(" ")}
               >
                 {item.label}
@@ -101,9 +97,7 @@ export default function Navbar() {
               href="tel:03299961999"
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
-                isTransparent
-                  ? "text-raw-porcelain hover:bg-raw-porcelain/10"
-                  : "text-ink hover:bg-surface-sunken",
+                "text-raw-porcelain hover:bg-raw-porcelain/10",
               ].join(" ")}
               aria-label="Call us"
             >
@@ -120,9 +114,7 @@ export default function Navbar() {
               onClick={openContactDrawer}
               className={[
                 "inline-flex h-10 w-10 items-center justify-center rounded-full transition duration-200",
-                isTransparent
-                  ? "text-raw-porcelain hover:bg-raw-porcelain/10"
-                  : "text-ink hover:bg-surface-sunken",
+                "text-raw-porcelain hover:bg-raw-porcelain/10",
               ].join(" ")}
               aria-label="Open contact form"
               aria-haspopup="dialog"
@@ -140,9 +132,7 @@ export default function Navbar() {
           <button
             className={[
               "inline-flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full border transition xl:hidden",
-              isTransparent
-                ? "border-raw-porcelain/40 bg-raw-porcelain/10 text-raw-porcelain hover:bg-raw-porcelain/20"
-                : "border-line bg-surface-raised text-ink hover:bg-surface-sunken",
+              "border-raw-porcelain/40 bg-raw-porcelain/10 text-raw-porcelain hover:bg-raw-porcelain/20",
             ].join(" ")}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -170,7 +160,9 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Ink sheet, as on the original site; the dark theme flips its tokens. */}
       <div
+        data-theme="dark"
         className={[
           "fixed left-0 right-0 top-[3.9rem] border-b border-line bg-surface px-5 pb-10 pt-4 shadow-3 transition-all duration-300 ease-out xl:hidden",
           open
