@@ -52,7 +52,7 @@ export default function Hero() {
         <div className="relative z-10 mx-auto w-full page-shell px-5 pb-10 pt-[calc(78px+2rem)] md:px-8 [animation:sd-hero-text-in_0.9s_cubic-bezier(0.25,0.46,0.45,0.94)_0.5s_both]">
           <div className="mb-7 flex items-start">
             <div className="inline-flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-raw-porcelain/25 bg-raw-ink/25 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-raw-porcelain/25 bg-raw-ink/60 px-4 py-1.5 text-[0.85rem] font-medium backdrop-blur">
                 <span
                   className="h-2 w-2 rounded-full bg-raw-sage ring-4 ring-raw-sage/30"
                   aria-hidden="true"
@@ -67,7 +67,7 @@ export default function Hero() {
             <h1 className="max-w-[19ch] font-heading text-[clamp(2.4rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-creamBrand">
               Dentistry you can trust, in the heart of Islamabad
             </h1>
-            <p className="mt-5 max-w-[46ch] text-[1rem] leading-relaxed text-creamBrand md:text-[1.08rem]">
+            <p className="-mx-4 mt-4 w-fit max-w-[calc(46ch+2rem)] rounded-lg border border-raw-porcelain/15 bg-raw-ink/40 px-4 py-2.5 text-[1rem] leading-relaxed text-creamBrand backdrop-blur md:text-[1.08rem]">
               Two clinics, DHA Phase II and F-7 Markaz. From routine check-ups
               to implants and orthodontics.
             </p>
