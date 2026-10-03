@@ -161,7 +161,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     creds: 'BDS (Ziauddin College of Dentistry, Ziauddin University)',
     role: 'Aesthetic and restorative dentist',
     image: '/images/doctors/dr-rida.jpg',
-    clinic: '',
+    clinic: 'DHA Phase II & F-7 Markaz, Islamabad',
     bio: '',
     services: [
       "Dental fillings",
@@ -169,7 +169,7 @@ export const TEAM_DOCTORS: TeamDoctor[] = [
     ],
     heroTitleLines: ['BDS Dentist', 'Aesthetic Dentistry', 'Veneers & Smile Makeovers'],
     licenseLine: 'PMDC: 762294-02-D',
-    locationLine: '',
+    locationLine: 'Islamabad / DHA Phase II and F-7 Markaz clinics',
     practiceAreas: [
       'Aesthetic and composite veneers',
       'Smile design and smile makeovers',
