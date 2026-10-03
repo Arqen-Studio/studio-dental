@@ -11,11 +11,11 @@ const SERVICES: ServiceEntry[] = [
   { id: "prosthetics",          title: "Prosthetics: teeth and implants" },
   { id: "dental-fillings",      title: "Dental fillings" },
   { id: "teeth-straightening",  title: "Teeth straightening" },
-  { id: "aesthetic-fillings",   title: "Aesthetic dental fillings" },
   { id: "root-canal",           title: "Root canal treatment" },
   { id: "oral-hygiene",         title: "Oral hygiene and whitening" },
   { id: "tooth-extraction",     title: "Tooth extraction" },
   { id: "childrens-dentistry",  title: "Children\u2019s dentistry" },
+  { id: "dental-consultation",  title: "Dental consultation" },
 ];
 
 

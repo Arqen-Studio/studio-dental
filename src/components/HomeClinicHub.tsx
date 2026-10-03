@@ -114,10 +114,7 @@ export default function HomeClinicHub() {
               <div
                 className={`absolute left-1/2 top-1/2 z-[3] w-full max-w-[18rem] px-5 text-center -translate-x-1/2 translate-y-[calc(-50%+3.75rem)] lg:translate-y-[calc(-50%+6.25rem)] transition-transform will-change-transform ${hoverDur} ${hoverEase} group-hover:-translate-y-1/2`}
               >
-                <span className="block text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-raw-porcelain/90">
-                  Clinics
-                </span>
-                <span className="mt-2 block font-heading text-[1.22rem] font-extrabold leading-tight text-raw-porcelain md:text-[1.38rem]">
+                <span className="block font-heading text-[1.22rem] font-extrabold leading-tight text-raw-porcelain md:text-[1.38rem]">
                   {card.title}
                 </span>
               </div>

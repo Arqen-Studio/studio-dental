@@ -162,39 +162,6 @@ export const SERVICES_DATA: ServiceData[] = [
     ],
   },
   {
-    id: "aesthetic-fillings",
-    title: "Aesthetic dental fillings",
-    subtitle: "Tooth-coloured work that repairs chips, closes small gaps and improves the appearance of front teeth.",
-    heroImage: IMG_RECEPTION,
-    intro: "Aesthetic work uses the same materials as an ordinary filling, applied with a different purpose. Rather than only repairing damage, it reshapes and rebuilds teeth so they sit comfortably alongside those around them. In most cases no healthy tooth is removed, which makes it one of the more conservative ways to improve a smile.",
-    whenHeading: "What can be improved",
-    scenarios: [
-      {
-        title: "Chipped or uneven edges.",
-        text: "Front teeth chip easily and wear unevenly over the years. Material is built up along the edge and shaped until the tooth matches its neighbours again.",
-        image: IMG_TREATMENT_ROOM,
-      },
-      {
-        title: "Small gaps between teeth.",
-        text: "A narrow space between front teeth can be closed by adding material to the adjoining surfaces. Where the gap is small this is simpler than veneers or orthodontic treatment.",
-        image: IMG_CHAIR,
-      },
-      {
-        title: "Discoloured or misshapen teeth.",
-        text: "A tooth that sits slightly out of line, or that has darkened over time, can be reshaped or covered so that it blends with the rest.",
-        image: IMG_LOUNGE,
-      },
-    ],
-    priceCategories: ["fillings", "crowns"],
-    steps: [
-      "Your teeth are looked at together, since the aim is a result that matches everything around it.",
-      "A shade is chosen by comparing materials against your own teeth in natural light.",
-      "The surface of the tooth is prepared so that the material bonds securely.",
-      "The material is applied in layers and shaped as it is built up.",
-      "It is polished so that the surface catches the light in the same way as enamel.",
-    ],
-  },
-  {
     id: "root-canal",
     title: "Root canal treatment",
     subtitle: "Treatment that saves a tooth when the nerve inside it has become infected or inflamed.",
@@ -324,6 +291,39 @@ export const SERVICES_DATA: ServiceData[] = [
       "Any treatment agreed is carried out, with breaks whenever your child needs one.",
       "Brushing and diet are talked through with you before you leave.",
       "A date for the next check-up is arranged.",
+    ],
+  },
+  {
+    id: "dental-consultation",
+    title: "Dental consultation",
+    subtitle: "A first appointment to examine your teeth and gums, understand what is bothering you, and set out a clear plan and the costs before any treatment begins.",
+    heroImage: IMG_RECEPTION,
+    intro: "A consultation is the starting point for any treatment at Studio Dental. The dentist examines your teeth, gums and bite, talks through anything that is troubling you, and takes any images needed to see the full picture. You leave knowing what is going on, what the options are, and what each one would cost, with no obligation to book treatment on the day.",
+    whenHeading: "When a consultation is the right first step",
+    scenarios: [
+      {
+        title: "A specific problem.",
+        text: "Pain, a broken or sensitive tooth, bleeding gums, or something that simply does not feel right. The dentist examines the area, explains what is causing it, and sets out how it can be treated.",
+        image: IMG_CHAIR,
+      },
+      {
+        title: "A general check-up.",
+        text: "A routine look at your teeth and gums to catch anything early. Small problems are far simpler to treat before they grow, and a check-up is also where scaling, whitening or other care can be planned.",
+        image: IMG_LOUNGE,
+      },
+      {
+        title: "Planning a larger treatment.",
+        text: "For implants, braces, crowns or a smile makeover, the consultation is where the plan is drawn up: what is involved, how long it takes, and the full cost, so you can decide with everything in front of you.",
+        image: IMG_TREATMENT_ROOM,
+      },
+    ],
+    priceCategories: ["consultation"],
+    steps: [
+      "The dentist asks what has brought you in, and about your general health and any medication you take.",
+      "Your teeth, gums and bite are examined.",
+      "Any images or X-rays needed to see below the surface are taken.",
+      "The findings are explained to you, along with the treatment options.",
+      "You are given a plan and the cost of each option, with no obligation to proceed on the day.",
     ],
   },
 ];
