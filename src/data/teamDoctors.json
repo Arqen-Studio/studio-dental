@@ -1,0 +1,479 @@
+[
+  {
+    "slug": "yousaf-kamal",
+    "name": "Dr. Yousaf Kamal",
+    "creds": "BDS, MSc (King’s College London), DDPH (RCS England), American Board Certified",
+    "role": "Consultant dental surgeon",
+    "image": "/images/doctors/dr-yousuf.jpg",
+    "clinic": "DHA Phase II, Islamabad",
+    "bio": "His view is that exceptional dentistry goes beyond treating individual teeth. As he puts it: our goal is not simply to treat dental problems, but to create healthy, confident smiles that last.",
+    "services": [
+      "Prosthetics: teeth and implants",
+      "Dental fillings",
+      "Root canal treatment",
+      "Oral hygiene and whitening"
+    ],
+    "heroTitleLines": [
+      "BDS, MSc, DDPH",
+      "Consultant dental surgeon",
+      "American Board Certified"
+    ],
+    "licenseLine": "PMDC-registered; American Board Certified",
+    "locationLine": "Islamabad / DHA Phase II clinic",
+    "practiceAreas": [
+      "Comprehensive and preventive dentistry",
+      "Cosmetic and aesthetic dentistry",
+      "Smile design and smile makeovers",
+      "Restorative dentistry",
+      "Dental crowns and bridges",
+      "Root canal treatment",
+      "Tooth-coloured restorations",
+      "Prosthodontic rehabilitation",
+      "Management of complex dental cases",
+      "Digital dentistry and modern dental technology",
+      "Comprehensive treatment planning",
+      "Patient-centred preventive care"
+    ],
+    "biography": [
+      "An internationally trained dental surgeon with sixteen years of clinical experience, combining advanced dental education with extensive hands-on expertise in comprehensive patient care.",
+      "He holds a Master of Science from King’s College London and a DDPH from the Royal College of Surgeons of England, and is American Board Certified. Alongside private practice, he has served with the Government of Pakistan for over fourteen years, across both clinical dentistry and public-sector healthcare.",
+      "His approach focuses on long-term oral health, function, aesthetics and patient comfort, with each treatment plan tailored to the individual and built on evidence-based dentistry."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS).",
+      "Master of Science (MSc), King’s College London.",
+      "Diploma in Dental Public Health (DDPH), Royal College of Surgeons of England.",
+      "American Board Certified."
+    ],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "aqsa-malik",
+    "name": "Dr. Aqsa Malik",
+    "creds": "BDS",
+    "role": "Clinical director",
+    "image": "/images/doctors/dr-aqsa.jpg",
+    "clinic": "DHA Phase II, Islamabad",
+    "bio": "Known for a meticulous approach and a real commitment to patient comfort, combining seventeen years of clinical experience with modern technique.",
+    "services": [
+      "Dental fillings",
+      "Oral hygiene and whitening"
+    ],
+    "heroTitleLines": [
+      "BDS",
+      "Clinical director",
+      "Restorative and aesthetic dentistry"
+    ],
+    "licenseLine": "PMDC-registered; Clinical Director, Studio Dental",
+    "locationLine": "Islamabad / DHA Phase II clinic",
+    "practiceAreas": [
+      "Comprehensive treatment planning",
+      "Restorative dentistry",
+      "Aesthetic dentistry",
+      "Long-term oral health"
+    ],
+    "biography": [
+      "An experienced dental surgeon and Clinical Director at Studio Dental, with over seventeen years of clinical experience.",
+      "She is dedicated to high-quality, patient-focused care, with a strong emphasis on comprehensive treatment planning, restorative dentistry, aesthetic dentistry and long-term oral health.",
+      "Her meticulous approach and commitment to patient comfort combine extensive clinical experience with modern dental technique, so that treatment is personalised and reliable for every patient."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS)."
+    ],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "amna-hassan",
+    "name": "Dr. Amna Hassan",
+    "creds": "BDS, FCPS (OMFS), MFDRCSI",
+    "role": "Oral and maxillofacial surgeon, implantologist and aesthetic physician (AACME)",
+    "image": "/images/doctors/dr-amna.jpg",
+    "clinic": "DHA Phase II, Islamabad",
+    "bio": "Runs regularly, including marathons with Islamabad Run For You, and is a firm believer in what movement does for mental health. Also practises pilates, and fills weekends with hikes and pottery.",
+    "services": [
+      "Dental implantation",
+      "Oral hygiene and whitening",
+      "Tooth extraction"
+    ],
+    "heroTitleLines": [
+      "BDS, FCPS, MFDRCSI",
+      "Oral and maxillofacial surgeon, implantologist",
+      "Aesthetic physician"
+    ],
+    "licenseLine": "PMDC-registered; CPSP Fellow, FCPS (OMFS)",
+    "locationLine": "Islamabad / DHA Phase II clinic",
+    "practiceAreas": [
+      "Third molar and wisdom tooth extraction",
+      "Complex and surgical extractions",
+      "Oral surgical procedures",
+      "Dental implant placement, both immediate and conventional",
+      "Implant-based tooth replacement"
+    ],
+    "biography": [
+      "She provides comprehensive oral surgical care at Studio Dental, DHA Phase II, with expertise in routine and complex dental extractions, including wisdom tooth removal.",
+      "She also provides implant-based tooth replacement, both immediate and conventional, with treatment plans tailored to each patient rather than a standard approach.",
+      "Her approach focuses on safe, precise surgical care and personalised treatment planning, to achieve outcomes that are comfortable, functional and predictable."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS).",
+      "FCPS in Oral and Maxillofacial Surgery, College of Physicians and Surgeons Pakistan.",
+      "MFD, Royal College of Surgeons in Ireland."
+    ],
+    "membership": [
+      "College of Physicians and Surgeons Pakistan (CPSP)",
+      "Pakistan Dental Association",
+      "Royal College of Surgeons in Ireland (RCSI)"
+    ],
+    "professionalTraining": []
+  },
+  {
+    "slug": "umair",
+    "name": "Dr. Umair",
+    "creds": "",
+    "role": "",
+    "image": "/images/doctors/dr-umair.jpg",
+    "clinic": "",
+    "bio": "",
+    "services": [],
+    "licenseLine": "",
+    "locationLine": "",
+    "practiceAreas": [],
+    "biography": [],
+    "education": [],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "rida",
+    "name": "Dr. Rida Zainab",
+    "creds": "BDS (Ziauddin College of Dentistry, Ziauddin University)",
+    "role": "Aesthetic and restorative dentist",
+    "image": "/images/doctors/dr-rida.jpg",
+    "clinic": "DHA Phase II & F-7 Markaz, Islamabad",
+    "bio": "",
+    "services": [
+      "Dental fillings",
+      "Oral hygiene and whitening"
+    ],
+    "heroTitleLines": [
+      "BDS Dentist",
+      "Aesthetic Dentistry",
+      "Veneers & Smile Makeovers"
+    ],
+    "licenseLine": "PMDC: 762294-02-D",
+    "locationLine": "Islamabad / DHA Phase II and F-7 Markaz clinics",
+    "practiceAreas": [
+      "Aesthetic and composite veneers",
+      "Smile design and smile makeovers",
+      "Composite fillings and restorations",
+      "Direct anterior aesthetic restorations",
+      "Aesthetic bonding and tooth reshaping",
+      "Conservative restorative dentistry"
+    ],
+    "biography": [
+      "Dr. Rida Zainab is an aesthetic and restorative dentist with a strong interest in creating natural, harmonious and aesthetically pleasing smiles. She focuses on understanding each patient’s needs and developing personalised treatment plans that balance aesthetics, function and oral health.",
+      "She has completed multiple courses in aesthetic dentistry, with particular training in aesthetic veneers, composite veneers, smile makeovers, composite restorations and direct anterior dentistry.",
+      "She has gained clinical experience at Vanguard Dental Clinic, Smile Center Dental Clinic, Studio Dental and South City Hospital, and continues to develop her skills through professional courses, conferences and hands-on training in modern aesthetic dentistry."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS), Ziauddin College of Dentistry, Ziauddin University, 2016–2022.",
+      "Completed her house job at Ziauddin Hospital, followed by a six-month internship at South City Hospital. She subsequently pursued further training in aesthetic and restorative dentistry, including a six-month Diploma in Aesthetic Veneers from Vanguard."
+    ],
+    "membership": [],
+    "professionalTraining": [
+      "Six-month Diploma in Aesthetic Veneers, Vanguard",
+      "Styleitaliano Aesthetic Dentistry Conference",
+      "Espresso Anterior Hands-on Workshop",
+      "Additional courses in aesthetic veneers, composite veneers, smile makeovers, composite fillings, direct anterior restorations and aesthetic dental procedures"
+    ]
+  },
+  {
+    "slug": "maria",
+    "name": "Dr. Maria",
+    "creds": "",
+    "role": "",
+    "image": "/images/doctors/dr-maria.jpg",
+    "clinic": "",
+    "bio": "",
+    "services": [],
+    "licenseLine": "",
+    "locationLine": "",
+    "practiceAreas": [],
+    "biography": [],
+    "education": [],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "mashal",
+    "name": "Dr. Mashal",
+    "creds": "",
+    "role": "",
+    "image": "/images/doctors/dr-mashal.jpg",
+    "clinic": "",
+    "bio": "",
+    "services": [],
+    "licenseLine": "",
+    "locationLine": "",
+    "practiceAreas": [],
+    "biography": [],
+    "education": [],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "abeera",
+    "name": "Dr. Abeera",
+    "creds": "",
+    "role": "",
+    "image": "/images/doctors/dr-abeera.jpg",
+    "clinic": "",
+    "bio": "",
+    "services": [],
+    "licenseLine": "",
+    "locationLine": "",
+    "practiceAreas": [],
+    "biography": [],
+    "education": [],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "shayzmin",
+    "name": "Dr. Shayzmin",
+    "creds": "",
+    "role": "",
+    "image": "/images/doctors/dr-shayzmin.jpg",
+    "clinic": "",
+    "bio": "",
+    "services": [],
+    "licenseLine": "",
+    "locationLine": "",
+    "practiceAreas": [],
+    "biography": [],
+    "education": [],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "nayab-farooq",
+    "name": "Dr. Nayab Farooq",
+    "creds": "BDS, CHPE, C-Endo, Aesthetic Physician (CPD UK), ClearPath Certified",
+    "role": "General and cosmetic dentist",
+    "image": "",
+    "clinic": "DHA Phase II, Islamabad",
+    "bio": "Well organised, with a natural eye for detail and aesthetics. Whether it is creating beautiful spaces at home or crafting the perfect smile, that precision shows in her approach to restorative and cosmetic dentistry.",
+    "services": [
+      "Prosthetics: teeth and implants",
+      "Dental fillings",
+      "Teeth straightening",
+      "Root canal treatment",
+      "Oral hygiene and whitening",
+      "Tooth extraction",
+      "Children’s dentistry"
+    ],
+    "heroTitleLines": [
+      "BDS, C-Endo, CHPE",
+      "Restorative & cosmetic dentist",
+      "Aesthetic physician (CPD UK)"
+    ],
+    "licenseLine": "PMDC-registered dental surgeon",
+    "locationLine": "Islamabad / DHA Phase II clinic",
+    "practiceAreas": [
+      "Smile design and veneers",
+      "Minimally invasive aesthetic restorations and composite bonding",
+      "Root canal treatment",
+      "Crown, bridge and post and core build-up",
+      "Diagnosis and treatment planning",
+      "Dental cleaning and whitening",
+      "Simple extractions and suturing",
+      "Dentures",
+      "Paediatric dentistry",
+      "Aligners"
+    ],
+    "biography": [
+      "A dedicated general dentist who has been with Studio Dental since the beginning, providing comprehensive care for patients of all ages.",
+      "Her approach combines clinical precision with patient comfort, working to a treatment plan tailored to each patient rather than a standard one.",
+      "Her work covers aesthetic fillings, composite bonding, veneers, root canals, crowns and bridges, extractions and suturing, cleaning and whitening, and paediatric dentistry, so most treatments can be carried out under one roof."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS).",
+      "Certificate in Health Professions Education (CHPE).",
+      "Endodontics certification, aesthetics certification (CPD UK) and ClearPath certification."
+    ],
+    "membership": [],
+    "professionalTraining": [
+      "Aesthetics certification (CPD UK, 2025)",
+      "Root canal excellence course, British Academy of Restorative Dentistry",
+      "Advanced tooth preparation techniques course, British Academy of Aesthetic Dentistry",
+      "Endodontics certification (ACHER, 2023)",
+      "Annual dental conference (APDSA, CMH Lahore, 2022)",
+      "Observership in the trauma and emergency department, CMH"
+    ]
+  },
+  {
+    "slug": "arfa-rehman",
+    "name": "Dr. Arfa Rehman",
+    "creds": "BDS, FCPS (Operative Dentistry & Endodontics)",
+    "role": "Restorative and endodontic dentist",
+    "image": "",
+    "clinic": "F-7 Markaz, Islamabad",
+    "bio": "She enjoys hiking in her spare time. The focus, patience and attention to detail developed through hiking complement the calm and methodical approach she brings to clinical dentistry.",
+    "services": [
+      "Dental fillings",
+      "Root canal treatment",
+      "Oral hygiene and whitening"
+    ],
+    "heroTitleLines": [
+      "BDS, FCPS",
+      "Operative Dentistry & Endodontics",
+      "Restorative Dentistry"
+    ],
+    "licenseLine": "PMDC: 18325-D; FCPS Operative Dentistry and Endodontics",
+    "locationLine": "Islamabad / F-7 Markaz clinic",
+    "practiceAreas": [
+      "Direct composite restorations and aesthetic bonding",
+      "Anterior and posterior restorative procedures",
+      "Root canal treatment and endodontic procedures",
+      "Direct composite veneers and smile enhancement",
+      "Tooth whitening and bleaching procedures",
+      "Management of complex restorative cases"
+    ],
+    "biography": [
+      "She focuses on conservative, evidence-based restorative and endodontic care, with an emphasis on preserving natural tooth structure and achieving predictable long-term results.",
+      "Her clinical approach combines function and aesthetics, particularly in anterior restorations, cosmetic bonding, tooth whitening and smile-enhancement procedures.",
+      "She also has a strong interest in teaching and clinical education, with experience delivering hands-on workshops and lectures in restorative dentistry, endodontics and aesthetic dental procedures."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS), Khyber College of Dentistry, Peshawar, Pakistan.",
+      "FCPS in Operative Dentistry and Endodontics, College of Physicians and Surgeons Pakistan (CPSP).",
+      "Ongoing professional development through clinical workshops, teaching activities and hands-on training in restorative, endodontic and aesthetic dentistry."
+    ],
+    "membership": [
+      "Pakistan Academy of Operative Dentistry and Endodontics (PAODE)"
+    ],
+    "professionalTraining": [
+      "Hands-on teaching and workshops in restorative and aesthetic dentistry",
+      "Lectures and clinical teaching in operative dentistry and endodontics",
+      "Clinical training and continuing professional development in tooth whitening and minimally invasive aesthetic procedures"
+    ]
+  },
+  {
+    "slug": "rabia",
+    "name": "Dr. Rabia",
+    "creds": "BDS, MDS (Orthodontics), M.Orth (RCS England)",
+    "role": "Consultant orthodontist",
+    "image": "",
+    "clinic": "",
+    "bio": "",
+    "services": [
+      "Teeth straightening"
+    ],
+    "heroTitleLines": [
+      "BDS, MDS (Ortho)",
+      "M.Orth (RCS England)",
+      "Consultant orthodontist"
+    ],
+    "licenseLine": "PMDC: 17421-D",
+    "locationLine": "",
+    "practiceAreas": [],
+    "biography": [],
+    "education": [],
+    "membership": [],
+    "professionalTraining": []
+  },
+  {
+    "slug": "alizeh-hassan",
+    "name": "Dr. Syeda Alizeh Hassan",
+    "creds": "BDS, MFD (RCS Ireland)",
+    "role": "Paediatric dentist",
+    "image": "/images/doctors/dr-alizey.jpg",
+    "clinic": "F-7 Markaz, Islamabad",
+    "bio": "When she is not in scrubs, you will probably find her baking something sweet, practising her German, creating content, or exploring new places with her family.",
+    "services": [
+      "Dental fillings",
+      "Oral hygiene and whitening",
+      "Children’s dentistry"
+    ],
+    "heroTitleLines": [
+      "BDS, MFD Ireland",
+      "Special interest in paediatric dentistry"
+    ],
+    "licenseLine": "PMDC-registered",
+    "locationLine": "Islamabad / F-7 Markaz clinic",
+    "practiceAreas": [
+      "Minimally invasive paediatric dentistry",
+      "Caries arrest with silver diamine fluoride",
+      "Paediatric restorative dentistry and crowns",
+      "Preventive care and fluoride therapies",
+      "Aesthetic composite bonding and restorations"
+    ],
+    "biography": [
+      "A general dentist with a special interest in paediatric dentistry, focusing on creating positive and comfortable dental experiences for children and their families.",
+      "She takes a preventive and minimally invasive approach, with an emphasis on early caries management, preserving natural tooth structure, and helping children develop healthy oral habits from an early age.",
+      "Known for her patient, child-friendly manner, she believes in building trust before treatment, and works closely with parents to make dental care understandable, practical and less intimidating for young patients."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS).",
+      "Membership of the Faculty of Dentistry (MFD), Royal College of Surgeons in Ireland."
+    ],
+    "membership": [],
+    "professionalTraining": [
+      "Hands-on modules in paediatric rotary endodontics",
+      "Minimally invasive paediatric dentistry"
+    ]
+  },
+  {
+    "slug": "zainab-qureshi",
+    "name": "Dr. Zainab Qureshi",
+    "creds": "BDS (Shaheed Zulfiqar Ali Bhutto Medical University, Islamabad), C-Endo, C-Implantology, Certified Aesthetic Medicine & Facial Aesthetics Practitioner",
+    "role": "General and cosmetic dentist, implant dentistry",
+    "image": "/images/doctors/dr-zainab.jpg",
+    "clinic": "F-7 Markaz, Islamabad",
+    "bio": "An executive member of the Islamabad Winter Sports Association. She skis, travels and seeks out experiences that break the routine and bring a fresh perspective on everyday life.",
+    "services": [
+      "Dental implantation",
+      "Prosthetics: teeth and implants",
+      "Dental fillings",
+      "Teeth straightening",
+      "Root canal treatment",
+      "Oral hygiene and whitening"
+    ],
+    "heroTitleLines": [
+      "BDS (RDS)",
+      "Cosmetic dentist",
+      "Implant dentistry"
+    ],
+    "licenseLine": "PMDC-registered, Bachelor of Dental Surgery",
+    "locationLine": "Islamabad / F-7 Markaz clinic",
+    "practiceAreas": [
+      "Teeth whitening, scaling and smile design",
+      "Porcelain veneers and aesthetic dentistry",
+      "Crowns, bridges and restorative dentistry",
+      "Dental implant placement and implant-supported restorations",
+      "Root canal treatment and endodontics",
+      "Clear aligners and facial aesthetics"
+    ],
+    "biography": [
+      "At Studio Dental F-7 she offers comprehensive general, restorative and aesthetic dentistry, with an approach that emphasises thoughtful treatment planning and natural-looking results.",
+      "Preserving healthy tooth structure is her priority, balancing function, aesthetics and long-term oral health in every treatment plan.",
+      "She works closely with patients to understand their concerns and priorities, combining clear communication with meticulous, detail-oriented treatment."
+    ],
+    "education": [
+      "Bachelor of Dental Surgery (BDS), Shaheed Zulfiqar Ali Bhutto Medical University, Islamabad.",
+      "C-Endo certification in endodontics.",
+      "C-Implantology certification in implant dentistry.",
+      "Certified in aesthetic medicine and facial aesthetics."
+    ],
+    "membership": [
+      "Pakistan Dental Association"
+    ],
+    "professionalTraining": [
+      "Hands-on modules in implant surgery and prosthetics",
+      "Hands-on modules in endodontics and restorative dentistry",
+      "International Academy of Dermatology, Aesthetic, Anti-Aging and Plastic Surgery"
+    ]
+  }
+]
