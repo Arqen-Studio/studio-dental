@@ -2,7 +2,7 @@
   {
     "slug": "yousaf-kamal",
     "name": "Dr. Yousaf Kamal",
-    "creds": "BDS, MSc (King’s College London), DDPH (RCS England), American Board Certified",
+    "creds": "BDS, MSc (King’s College London), American Board Certified",
     "role": "Consultant dental surgeon",
     "image": "/images/doctors/dr-yousuf.jpg",
     "clinic": "DHA Phase II, Islamabad",
@@ -14,7 +14,7 @@
       "Oral hygiene and whitening"
     ],
     "heroTitleLines": [
-      "BDS, MSc, DDPH",
+      "BDS, MSc",
       "Consultant dental surgeon",
       "American Board Certified"
     ],
@@ -36,13 +36,12 @@
     ],
     "biography": [
       "An internationally trained dental surgeon with sixteen years of clinical experience, combining advanced dental education with extensive hands-on expertise in comprehensive patient care.",
-      "He holds a Master of Science from King’s College London and a DDPH from the Royal College of Surgeons of England, and is American Board Certified. Alongside private practice, he has served with the Government of Pakistan for over fourteen years, across both clinical dentistry and public-sector healthcare.",
+      "He holds a Master of Science from King’s College London and is American Board Certified. Alongside private practice, he has served with the Government of Pakistan for over fourteen years, across both clinical dentistry and public-sector healthcare.",
       "His approach focuses on long-term oral health, function, aesthetics and patient comfort, with each treatment plan tailored to the individual and built on evidence-based dentistry."
     ],
     "education": [
       "Bachelor of Dental Surgery (BDS).",
       "Master of Science (MSc), King’s College London.",
-      "Diploma in Dental Public Health (DDPH), Royal College of Surgeons of England.",
       "American Board Certified."
     ],
     "membership": [],
