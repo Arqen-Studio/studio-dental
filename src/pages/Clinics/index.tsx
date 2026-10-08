@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BranchMap from "../../components/BranchMap";
 
 const CLINICS = [
   {
@@ -105,11 +106,11 @@ export default function Clinics() {
           {/* The five row bands are declared on this grid and adopted by each
               card, so the longer DHA address cannot push that card's hours and
               buttons out of step with the F-7 card's. */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-[auto_auto_auto_auto_auto] md:gap-y-0">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:grid-rows-[auto_auto_auto_auto_auto_auto] md:gap-y-0">
             {CLINICS.map((clinic) => (
               <div
                 key={clinic.id}
-                className="flex h-full flex-col overflow-hidden rounded-xl bg-surface-raised shadow-soft-sm md:grid md:row-span-5 md:grid-rows-subgrid"
+                className="flex h-full flex-col overflow-hidden rounded-xl bg-surface-raised shadow-soft-sm md:grid md:row-span-6 md:grid-rows-subgrid"
               >
                 {/* Photo */}
                 <div className="aspect-[8/3] overflow-hidden bg-surface-sunken">
@@ -122,7 +123,7 @@ export default function Clinics() {
                 </div>
 
                 {/* Info rows with dividers */}
-                <div className="divide-y divide-line px-5 py-2 md:row-span-4 md:grid md:grid-rows-subgrid md:px-7 md:py-0">
+                <div className="divide-y divide-line px-5 py-2 md:row-span-5 md:grid md:grid-rows-subgrid md:px-7 md:py-0">
                   {/* Address */}
                   <div className="flex items-start gap-4 py-5">
                     <span className="mt-0.5 flex-shrink-0 text-brand">
@@ -144,6 +145,11 @@ export default function Clinics() {
                         Get directions
                       </a>
                     </div>
+                  </div>
+
+                  {/* Map */}
+                  <div className="py-5">
+                    <BranchMap name={clinic.name} address={clinic.address} />
                   </div>
 
                   {/* Phone & Email */}

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { CLINICS } from "../../data/clinics";
+import BranchMap from "../BranchMap";
 
 function PinIcon() {
   return (
@@ -113,7 +114,7 @@ function ClinicCard({
   // large screens, so a two-line address in one clinic does not push its
   // dividers and rows out of step with the other clinic's.
   return (
-    <article className="grid content-start gap-8 rounded-2xl border border-line bg-surface-raised p-7 md:p-9 lg:row-span-6 lg:grid-rows-subgrid">
+    <article className="grid content-start gap-8 rounded-2xl border border-line bg-surface-raised p-7 md:p-9 lg:row-span-7 lg:grid-rows-subgrid">
       <h3 className="text-[1.35rem] font-bold tracking-tight text-ink">
         {city}
       </h3>
@@ -180,6 +181,8 @@ function ClinicCard({
           ))}
         </div>
       </div>
+
+      <BranchMap name={city} address={address} />
     </article>
   );
 }
@@ -196,7 +199,7 @@ export default function Footer() {
           Contacts
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto_auto_auto_auto] lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto_auto_auto_auto_auto] lg:gap-8">
           {CLINICS.map((clinic) => (
             <ClinicCard
               key={clinic.id}

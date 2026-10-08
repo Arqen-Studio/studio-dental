@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, ChevronDown, Mail, MapPin } from "lucide-react";
 import { SERVICES_DATA } from "../../data/services";
 import { CLINICS } from "../../data/clinics";
+import BranchMap from "../../components/BranchMap";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -217,6 +218,19 @@ export default function Contact() {
             We never share your data.
           </p>
         </form>
+      </div>
+
+      <div className="mx-auto mt-12 w-full max-w-[max(62rem,min(2500px,86vw))] min-[1900px]:max-w-[min(2500px,92vw)] px-5 md:mt-16 md:px-8">
+        <h2 className="text-[clamp(1.6rem,1.3rem+1.2vw,2.2rem)] leading-tight text-ink">Find us</h2>
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          {CLINICS.map((clinic) => (
+            <div key={clinic.id}>
+              <h3 className="text-[1.15rem] font-semibold text-ink">{clinic.city}</h3>
+              <p className="mt-1 text-[0.92rem] text-muted">{clinic.address}</p>
+              <BranchMap name={clinic.name} address={clinic.address} className="mt-4" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
