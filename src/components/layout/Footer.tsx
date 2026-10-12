@@ -229,7 +229,7 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Studio Dental, clinics at DHA
               Phase II and F-7 Markaz, Islamabad. All rights reserved.{" "}
               <a
-                href="https://thestudiodental.com"
+                href="https://studiodental.pk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted underline underline-offset-2 transition hover:text-ink"

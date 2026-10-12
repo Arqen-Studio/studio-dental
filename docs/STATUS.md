@@ -45,7 +45,8 @@ already supplied.
 
 1. **Privacy policy.** The clinic must supply it; the consent checkboxes point
    at a page that does not exist yet.
-2. **A domain.** The clinic does not have one yet. See the domain note below.
+2. **Pointing the domain.** The clinic's domain is studiodental.pk. The site
+   still needs the Vercel records added to its DNS. See the domain note below.
 3. **Enquiry email to the clinic's own inbox.** The flow works and currently
    delivers to tech@arqen.studio. Delivering to the clinic's Gmail needs the
    domain verified in Resend. Interim: a Gmail auto-forward. See "Our side".
@@ -111,23 +112,22 @@ price lists and should be checked before launch.
 
 ## Domain
 
-The clinic does not have its own domain yet; it uses a Gmail address. A domain is
-both the website's address and the part of an email after the @ sign. It needs to
-be bought once and renewed yearly.
+The clinic's domain is **studiodental.pk**. Its DNS is managed in the hosting
+cPanel (Zone Editor; nameservers ns1/ns2.ideatech.org), which is where both the
+Vercel records and the Resend records go. The WordPress dashboard does not
+control DNS.
 
-Availability checked 28 September 2026:
+- **Website:** add the records Vercel shows under Project, Domains (typically an
+  A record on the root and a CNAME on www), replacing the records that point at
+  the old WordPress site. Leave the root MX and SPF alone so the clinic's email
+  keeps working.
+- **Resend:** add its `resend._domainkey` DKIM record and the MX and SPF records
+  on `send`. The zone already has `_dmarc` set to `v=DMARC1; p=none;`, so do not
+  add a second one. Then set ENQUIRY_FROM to an address on studiodental.pk and
+  remove the ENQUIRY_TO override (see "Our side").
 
-- **thestudiodental.com is already registered** (created January 2025). If the
-  clinic or a previous developer bought it, we only need access to it. If it is
-  not theirs, it is taken by someone else.
-- **studiodental.com** (2007) and **studiodentalclinic.com** (2018) are taken by
-  others.
-- Appear **available:** thestudiodentalclinic.com (matches the clinic's Gmail
-  name), studiodental.pk, studiodentalclinic.pk, studiodentalislamabad.com.
-
-Once a domain exists, we point the site at it and verify it in Resend so
-enquiries send from the clinic's own address (which also stops them being
-treated as spam).
+thestudiodental.com is not the clinic's domain: it was registered in January 2025
+by someone we have not identified. The site no longer links to it.
 
 ---
 
