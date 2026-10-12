@@ -78,10 +78,10 @@ export default async function handler(request: Request): Promise<Response> {
   const message = clean(body.message, 4000);
   const date = clean(body.date, 40);
 
-  // The two forms ask for different things: one takes a phone, the other an
-  // email and a preferred date. Either is enough to reply to.
-  if (!name || (!phone && !email)) {
-    return json({ error: "Please give a name and either a phone number or an email address." }, 400);
+  // Email is required on every form: the clinic answers by replying to the
+  // enquiry email, which goes to the patient's address. Phone stays optional.
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return json({ error: "Please give your name and a valid email address so the clinic can reply." }, 400);
   }
 
   const apiKey = env.RESEND_API_KEY;
@@ -155,7 +155,7 @@ export default async function handler(request: Request): Promise<Response> {
       subject: `Website enquiry from ${name}`,
       html,
       // So a reply from the inbox goes straight back to the patient.
-      ...(email ? { reply_to: email } : {}),
+      reply_to: email,
     }),
   });
 

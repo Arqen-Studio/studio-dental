@@ -88,6 +88,8 @@ export default function ContactFormSection() {
                   id="cf-name"
                   type="text"
                   name="name"
+                  required
+                  autoComplete="name"
                   className="rounded-sm border border-line-strong px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
                 />
               </div>
@@ -113,6 +115,8 @@ export default function ContactFormSection() {
                 id="cf-email"
                 type="email"
                 name="email"
+                required
+                autoComplete="email"
                 className="rounded-sm border border-line-strong px-4 py-3 text-[0.95rem] outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/25"
               />
             </div>
